@@ -1,0 +1,12 @@
+{
+  "name": "genshin-kaihatsu",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Lightweight task, combat trigger and chest rule sandbox",
+  "scripts": {
+    "test": "node sandbox/test-world.cjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
