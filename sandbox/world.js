@@ -55,6 +55,26 @@
         ensure(text(scene.id) && text(scene.title), "id 和 title 必须是非空字符串");
         ensure(object(scene.provenance) && text(scene.provenance.kind) && text(scene.provenance.notice),
             "必须说明 provenance.kind 和 provenance.notice");
+        function keys(value, allowed, label) {
+            ensure(object(value), label + " 必须是对象");
+            Object.keys(value).forEach(function (key) {
+                ensure(allowed.split(" ").includes(key), label + " 不支持字段：" + key);
+            });
+        }
+        keys(scene, "schemaVersion id title description provenance bounds player areas combat enemies chest quest rules", "场景");
+        keys(scene.provenance, "kind notice source version mapLayer coordinateSystem", "来源");
+        ["source", "version", "mapLayer", "coordinateSystem"].forEach(function (key) {
+            ensure(text(scene.provenance[key]), "provenance." + key + " 必须声明");
+        });
+        ensure(scene.provenance.coordinateSystem === "sandbox-cartesian-v1", "坐标系尚未适配，须先转换为 sandbox-cartesian-v1");
+        keys(scene.bounds, "minX maxX minY maxY", "边界");
+        keys(scene.player, "spawn maxHp", "角色");
+        keys(scene.player.spawn, "x y", "出生点");
+        keys(scene.combat, "battleAreaId groupId attackDamage attackRange counterDamage", "战斗");
+        keys(scene.chest, "id name x y interactionRange unlockGroupId reward", "宝箱");
+        keys(scene.chest.reward, "tokens", "奖励");
+        keys(scene.quest, "id title steps", "任务");
+        keys(scene.rules, "movement movementNotice combatNotice rewardNotice", "规则");
         var bounds = scene.bounds;
         ensure(object(bounds) && [bounds.minX, bounds.maxX, bounds.minY, bounds.maxY].every(finite),
             "bounds 必须包含有限数值");
@@ -79,6 +99,7 @@
         var areas = new Set();
         scene.areas.forEach(function (area) {
             ensure(object(area), "area 必须是对象");
+            keys(area, "id name shape x y radius", "区域");
             id(area.id, "区域");
             ensure(text(area.name) && area.shape === "circle", "区域必须有 name，且 shape 为 circle");
             point(area, "区域");
@@ -89,6 +110,7 @@
         var groups = new Set();
         scene.enemies.forEach(function (enemy) {
             ensure(object(enemy), "enemy 必须是对象");
+            keys(enemy, "id name groupId maxHp x y", "敌人");
             id(enemy.id, "敌人");
             ensure(text(enemy.name) && text(enemy.groupId), "敌人必须有 name 和 groupId");
             ensure(positiveInteger(enemy.maxHp), "敌人 maxHp 必须为正整数");
@@ -118,9 +140,11 @@
         ensure(Array.isArray(scene.quest.steps) && scene.quest.steps.length > 0, "quest.steps 必须是非空数组");
         scene.quest.steps.forEach(function (step) {
             ensure(object(step), "任务步骤必须是对象");
+            keys(step, "id title condition", "任务步骤");
             id(step.id, "任务步骤");
             ensure(text(step.title) && object(step.condition), "任务步骤必须有 title 和 condition");
             var condition = step.condition;
+            keys(condition, condition.type === "enter-area" ? "type areaId" : condition.type === "defeat-group" ? "type groupId" : "type chestId", "任务条件");
             if (condition.type === "enter-area") {
                 ensure(areas.has(condition.areaId), "enter-area 引用了不存在的区域");
             } else if (condition.type === "defeat-group") {

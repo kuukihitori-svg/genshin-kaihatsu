@@ -4,7 +4,10 @@
   "private": true,
   "description": "Lightweight task, combat trigger and chest rule sandbox",
   "scripts": {
-    "test": "node sandbox/test-world.cjs"
+    "test": "node sandbox/test-world.cjs",
+    "build": "node sandbox/build.cjs",
+    "start": "python3 -m http.server 8000 --bind 0.0.0.0 --directory sandbox",
+    "test:browser": "node sandbox/test-browser.cjs"
   },
   "engines": {
     "node": ">=18"

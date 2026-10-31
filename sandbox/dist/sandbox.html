@@ -1,0 +1,507 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>二维任务实验室</title><style>:root{font-family:system-ui,sans-serif;color:#dfe9f3;background:#101923}*{box-sizing:border-box}body{margin:0}header,main{max-width:1260px;margin:auto;padding:24px}header{padding-bottom:0}h1{font-size:32px;margin:12px 0}h2{font-size:19px}.tag{color:#74dfc4;font-size:12px;letter-spacing:2px}p{color:#a9bbcb;line-height:1.65}main{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,1fr);gap:20px}section{background:#192632;border:1px solid #304355;border-radius:12px;padding:20px}aside{display:grid;gap:20px;align-content:start}.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}button{background:#284356;color:#edf7ff;border:1px solid #4b6b80;border-radius:6px;padding:10px;cursor:pointer}button:hover{background:#386079}button:disabled{opacity:.4;cursor:default}#step{background:#237664}input,textarea{background:#101923;color:#edf7ff;border:1px solid #4b6b80;border-radius:4px;padding:8px}input[type=number]{width:90px}svg{width:100%;background:#101e29;border-radius:8px;touch-action:manipulation}svg text{font-size:2.7px;fill:#e4eef7;pointer-events:none}svg .entity{cursor:pointer}#log{height:260px;overflow:auto;padding-left:24px;font-size:13px;line-height:1.8}#quest li{padding:6px}.completed{color:#74dfc4}.active{color:#ffcf75}.pending{color:#8192a3}.error{color:#ff9b9b!important}.success{color:#74dfc4!important}.import{grid-column:1/-1}textarea{display:block;width:100%;height:200px;margin:12px 0;font-family:monospace}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:12px}@media(max-width:800px){main{grid-template-columns:1fr;padding:12px}header{padding:20px}section{padding:14px}}
+</style>
+<header><span class="tag">SYNTHETIC / 合成数据</span><h1>二维任务实验室</h1><p>任务步骤 · 战斗触发 · 宝箱解锁。所有操作仅作用于当前模拟世界。</p></header>
+<main><section class="map-panel"><div class="toolbar"><button id="step">执行下一步示例</button><button id="reset">重置世界</button><button id="demo">载入合成示例</button></div><svg id="map" viewBox="0 0 100 100" role="img" aria-label="交互地图，点击空白移动，点击敌人攻击，点击宝箱交互"></svg><p>蓝色 ● 角色　红色 ● 守卫　虚线 ○ 触发区域　◆ 宝箱</p><p>点击空白直线移动；点击守卫攻击，点击宝箱开箱。可用下方数值移动。</p><form id="move"><label>X <input id="x" type="number" step="any" required value="54"></label><label>Y <input id="y" type="number" step="any" required value="44"></label><button>移动</button></form><div class="toolbar"><button id="attack">攻击最近守卫</button><button id="interact">尝试开箱</button></div><p id="feedback" role="status" aria-live="polite"></p></section>
+<aside><section><h2 id="title"></h2><p id="stats"></p><ol id="quest"></ol><div id="enemies"></div><p id="chest"></p></section><section><h2>事件记录</h2><ol id="log" aria-label="事件日志"></ol></section></aside>
+<section class="import"><h2>场景 JSON</h2><p>导入会替换当前世界。失败时保留原世界；最大 256 KiB。坐标、版本与来源必须声明，不支持的规则会被拒绝。</p><input id="file" type="file" accept=".json,application/json"><textarea id="json" aria-label="场景 JSON" spellcheck="false"></textarea><button id="import">校验并导入</button><p id="import-result" role="alert"></p><details><summary>来源与模拟边界</summary><pre id="source"></pre><p>直线瞬移、固定伤害，无障碍物与三维层高。不连接真实游戏，不发送真实键鼠，不实现 OCR、真实寻路或 BetterGI 宿主绑定。模拟通过不代表实机成功。</p></details></section></main><script>(function (root, factory) {
+    if (typeof module === "object" && module.exports) {
+        module.exports = factory();
+    } else {
+        root.TaskSandbox = factory();
+    }
+})(typeof globalThis !== "undefined" ? globalThis : this, function () {
+    "use strict";
+
+    function copy(value) {
+        return JSON.parse(JSON.stringify(value));
+    }
+
+    function object(value) {
+        return value !== null && typeof value === "object" && !Array.isArray(value);
+    }
+
+    function ensure(condition, message) {
+        if (!condition) throw new TypeError("场景无效：" + message);
+    }
+
+    function text(value) {
+        return typeof value === "string" && value.trim().length > 0;
+    }
+
+    function finite(value) {
+        return typeof value === "number" && Number.isFinite(value);
+    }
+
+    function positiveInteger(value) {
+        return Number.isSafeInteger(value) && value > 0;
+    }
+
+    function distance(a, b) {
+        return Math.hypot(a.x - b.x, a.y - b.y);
+    }
+
+    function inside(point, area) {
+        return distance(point, area) <= area.radius;
+    }
+
+    function traverses(from, to, area) {
+        var dx = to.x - from.x;
+        var dy = to.y - from.y;
+        var lengthSquared = dx * dx + dy * dy;
+        if (!lengthSquared) return inside(from, area);
+        var t = Math.max(0, Math.min(1,
+            ((area.x - from.x) * dx + (area.y - from.y) * dy) / lengthSquared));
+        return inside({ x: from.x + t * dx, y: from.y + t * dy }, area);
+    }
+
+    function validate(scene) {
+        ensure(object(scene), "根节点必须是对象");
+        ensure(scene.schemaVersion === 1, "schemaVersion 必须为 1");
+        ensure(text(scene.id) && text(scene.title), "id 和 title 必须是非空字符串");
+        ensure(object(scene.provenance) && text(scene.provenance.kind) && text(scene.provenance.notice),
+            "必须说明 provenance.kind 和 provenance.notice");
+        function keys(value, allowed, label) {
+            ensure(object(value), label + " 必须是对象");
+            Object.keys(value).forEach(function (key) {
+                ensure(allowed.split(" ").includes(key), label + " 不支持字段：" + key);
+            });
+        }
+        keys(scene, "schemaVersion id title description provenance bounds player areas combat enemies chest quest rules", "场景");
+        keys(scene.provenance, "kind notice source version mapLayer coordinateSystem", "来源");
+        ["source", "version", "mapLayer", "coordinateSystem"].forEach(function (key) {
+            ensure(text(scene.provenance[key]), "provenance." + key + " 必须声明");
+        });
+        ensure(scene.provenance.coordinateSystem === "sandbox-cartesian-v1", "坐标系尚未适配，须先转换为 sandbox-cartesian-v1");
+        keys(scene.bounds, "minX maxX minY maxY", "边界");
+        keys(scene.player, "spawn maxHp", "角色");
+        keys(scene.player.spawn, "x y", "出生点");
+        keys(scene.combat, "battleAreaId groupId attackDamage attackRange counterDamage", "战斗");
+        keys(scene.chest, "id name x y interactionRange unlockGroupId reward", "宝箱");
+        keys(scene.chest.reward, "tokens", "奖励");
+        keys(scene.quest, "id title steps", "任务");
+        keys(scene.rules, "movement movementNotice combatNotice rewardNotice", "规则");
+        var bounds = scene.bounds;
+        ensure(object(bounds) && [bounds.minX, bounds.maxX, bounds.minY, bounds.maxY].every(finite),
+            "bounds 必须包含有限数值");
+        ensure(bounds.minX < bounds.maxX && bounds.minY < bounds.maxY, "bounds 范围无效");
+        ensure(finite(bounds.maxX - bounds.minX) && finite(bounds.maxY - bounds.minY), "bounds 范围过大");
+
+        var ids = new Set();
+        function id(value, label) {
+            ensure(text(value), label + " id 必须是非空字符串");
+            ensure(!ids.has(value), "重复 id：" + value);
+            ids.add(value);
+        }
+        function point(value, label) {
+            ensure(object(value) && finite(value.x) && finite(value.y), label + " 坐标必须是有限数值");
+            ensure(value.x >= bounds.minX && value.x <= bounds.maxX &&
+                value.y >= bounds.minY && value.y <= bounds.maxY, label + " 坐标超出 bounds");
+        }
+        id(scene.id, "场景");
+        ensure(object(scene.player) && positiveInteger(scene.player.maxHp), "player.maxHp 必须为正整数");
+        point(scene.player.spawn, "出生点");
+        ensure(Array.isArray(scene.areas) && scene.areas.length > 0, "areas 必须是非空数组");
+        var areas = new Set();
+        scene.areas.forEach(function (area) {
+            ensure(object(area), "area 必须是对象");
+            keys(area, "id name shape x y radius", "区域");
+            id(area.id, "区域");
+            ensure(text(area.name) && area.shape === "circle", "区域必须有 name，且 shape 为 circle");
+            point(area, "区域");
+            ensure(finite(area.radius) && area.radius > 0, "区域 radius 必须为正有限数值");
+            areas.add(area.id);
+        });
+        ensure(Array.isArray(scene.enemies) && scene.enemies.length > 0, "enemies 必须是非空数组");
+        var groups = new Set();
+        scene.enemies.forEach(function (enemy) {
+            ensure(object(enemy), "enemy 必须是对象");
+            keys(enemy, "id name groupId maxHp x y", "敌人");
+            id(enemy.id, "敌人");
+            ensure(text(enemy.name) && text(enemy.groupId), "敌人必须有 name 和 groupId");
+            ensure(positiveInteger(enemy.maxHp), "敌人 maxHp 必须为正整数");
+            point(enemy, "敌人");
+            groups.add(enemy.groupId);
+        });
+        var combat = scene.combat;
+        ensure(object(combat), "combat 必须是对象");
+        ensure(areas.has(combat.battleAreaId), "combat.battleAreaId 引用了不存在的区域");
+        ensure(groups.has(combat.groupId), "combat.groupId 引用了不存在的敌人组");
+        ensure(positiveInteger(combat.attackDamage), "combat.attackDamage 必须为正整数");
+        ensure(finite(combat.attackRange) && combat.attackRange > 0, "combat.attackRange 必须为正有限数值");
+        ensure(Number.isSafeInteger(combat.counterDamage) && combat.counterDamage >= 0,
+            "combat.counterDamage 必须为非负整数");
+        var chest = scene.chest;
+        ensure(object(chest), "chest 必须是对象");
+        id(chest.id, "宝箱");
+        ensure(text(chest.name), "宝箱 name 必须是非空字符串");
+        point(chest, "宝箱");
+        ensure(finite(chest.interactionRange) && chest.interactionRange > 0,
+            "宝箱 interactionRange 必须为正有限数值");
+        ensure(groups.has(chest.unlockGroupId), "chest.unlockGroupId 引用了不存在的敌人组");
+        ensure(object(chest.reward) && Number.isSafeInteger(chest.reward.tokens) && chest.reward.tokens >= 0,
+            "宝箱 reward.tokens 必须为非负整数");
+        ensure(object(scene.quest) && text(scene.quest.title), "quest 必须包含 title");
+        id(scene.quest.id, "任务");
+        ensure(Array.isArray(scene.quest.steps) && scene.quest.steps.length > 0, "quest.steps 必须是非空数组");
+        scene.quest.steps.forEach(function (step) {
+            ensure(object(step), "任务步骤必须是对象");
+            keys(step, "id title condition", "任务步骤");
+            id(step.id, "任务步骤");
+            ensure(text(step.title) && object(step.condition), "任务步骤必须有 title 和 condition");
+            var condition = step.condition;
+            keys(condition, condition.type === "enter-area" ? "type areaId" : condition.type === "defeat-group" ? "type groupId" : "type chestId", "任务条件");
+            if (condition.type === "enter-area") {
+                ensure(areas.has(condition.areaId), "enter-area 引用了不存在的区域");
+            } else if (condition.type === "defeat-group") {
+                ensure(groups.has(condition.groupId), "defeat-group 引用了不存在的敌人组");
+            } else if (condition.type === "open-chest") {
+                ensure(condition.chestId === chest.id, "open-chest 引用了不存在的宝箱");
+            } else {
+                ensure(false, "未知任务条件：" + String(condition.type));
+            }
+        });
+        ensure(object(scene.rules) && scene.rules.movement === "straight-line",
+            "rules.movement 仅支持 straight-line");
+    }
+
+    class World {
+        constructor(scene) {
+            validate(scene);
+            this._scene = copy(scene);
+            this._reset("演示环境已就绪；所有坐标和规则均为合成示例。");
+        }
+
+        _event(type, message) {
+            this._state.events.push({ tick: this._state.tick, type: type, message: message });
+        }
+
+        _reset(message) {
+            var scene = this._scene;
+            this._enteredAreas = new Set();
+            this._state = {
+                scene: copy(scene),
+                player: { x: scene.player.spawn.x, y: scene.player.spawn.y,
+                    hp: scene.player.maxHp, maxHp: scene.player.maxHp },
+                enemies: scene.enemies.map(function (enemy) {
+                    return { id: enemy.id, name: enemy.name, x: enemy.x, y: enemy.y,
+                        hp: enemy.maxHp, maxHp: enemy.maxHp, groupId: enemy.groupId };
+                }),
+                chest: { id: scene.chest.id, name: scene.chest.name, x: scene.chest.x, y: scene.chest.y,
+                    state: "locked", reward: copy(scene.chest.reward) },
+                battle: { active: false, cleared: false },
+                quest: { steps: scene.quest.steps.map(function (step, index) {
+                    return { id: step.id, title: step.title, status: index === 0 ? "active" : "pending" };
+                }), complete: false },
+                inventory: { tokens: 0 },
+                events: [],
+                tick: 0
+            };
+            this._event("reset", message);
+            this._scene.areas.forEach((area) => {
+                if (inside(this._state.player, area)) this._enteredAreas.add(area.id);
+            });
+            this._refresh();
+        }
+
+        snapshot() {
+            return copy(this._state);
+        }
+
+        _groupDefeated(groupId) {
+            return this._state.enemies.filter(function (enemy) { return enemy.groupId === groupId; })
+                .every(function (enemy) { return enemy.hp === 0; });
+        }
+
+        _battleArea() {
+            return this._scene.areas.find((area) => area.id === this._scene.combat.battleAreaId);
+        }
+
+        _conditionMet(condition) {
+            if (condition.type === "enter-area") return this._enteredAreas.has(condition.areaId);
+            if (condition.type === "defeat-group") return this._groupDefeated(condition.groupId);
+            return this._state.chest.state === "opened";
+        }
+
+        _refresh() {
+            var state = this._state;
+            var battle = state.battle;
+            var wasActive = battle.active;
+            var wasCleared = battle.cleared;
+            battle.cleared = this._groupDefeated(this._scene.combat.groupId);
+            battle.active = state.player.hp > 0 && !battle.cleared && inside(state.player, this._battleArea());
+            if (!wasCleared && battle.cleared) this._event("battle-cleared", "营地守卫已全部击败。");
+            if (!wasActive && battle.active) this._event("battle-start", "进入营地战斗范围。");
+            if (wasActive && !battle.active && !battle.cleared && state.player.hp > 0) {
+                this._event("battle-exit", "已离开营地，战斗暂停；守卫生命值保留。");
+            }
+            if (state.chest.state === "locked" && this._groupDefeated(this._scene.chest.unlockGroupId)) {
+                state.chest.state = "available";
+                this._event("chest-unlocked", "守卫已清除，营地宝箱解锁。");
+            }
+            // A lethal counterattack never advances the quest or awards a reward.
+            if (state.player.hp === 0) return;
+            for (var i = 0; i < state.quest.steps.length; i++) {
+                var step = state.quest.steps[i];
+                if (step.status === "completed") continue;
+                if (!this._conditionMet(this._scene.quest.steps[i].condition)) break;
+                step.status = "completed";
+                this._event("quest-step", "任务步骤完成：" + step.title);
+                if (i + 1 < state.quest.steps.length) state.quest.steps[i + 1].status = "active";
+            }
+            var complete = state.quest.steps.every(function (step) { return step.status === "completed"; });
+            if (complete && !state.quest.complete) this._event("quest-complete", "演示任务已完成。");
+            state.quest.complete = complete;
+        }
+
+        _result(ok, code, message) {
+            this._event(ok ? "action" : "rejected", message);
+            return { ok: ok, code: code, message: message };
+        }
+
+        dispatch(action) {
+            if (object(action) && action.type === "reset") {
+                this._reset("环境已重置；任务、敌人和奖励状态已恢复。");
+                return { ok: true, code: "RESET", message: "环境已重置。" };
+            }
+            this._state.tick++;
+            if (!object(action) || !text(action.type)) {
+                return this._result(false, "INVALID_ACTION", "动作必须是包含 type 的对象。");
+            }
+            if (!["move", "attack", "interact"].includes(action.type)) {
+                return this._result(false, "UNKNOWN_ACTION", "不支持的动作：" + action.type);
+            }
+            if (this._state.player.hp === 0) {
+                return this._result(false, "PLAYER_DEAD", "角色已倒下，请重置环境后继续。");
+            }
+            if (action.type === "move") return this._move(action);
+            if (action.type === "attack") return this._attack(action);
+            return this._interact();
+        }
+
+        _move(action) {
+            var bounds = this._scene.bounds;
+            if (!finite(action.x) || !finite(action.y)) {
+                return this._result(false, "INVALID_COORDINATES", "移动坐标必须是有限数值。");
+            }
+            if (action.x < bounds.minX || action.x > bounds.maxX ||
+                action.y < bounds.minY || action.y > bounds.maxY) {
+                return this._result(false, "OUT_OF_BOUNDS", "移动目标超出场景边界。");
+            }
+            var from = { x: this._state.player.x, y: this._state.player.y };
+            this._state.player.x = action.x;
+            this._state.player.y = action.y;
+            this._scene.areas.forEach((area) => {
+                if (traverses(from, action, area) && !this._enteredAreas.has(area.id)) {
+                    this._enteredAreas.add(area.id);
+                    this._event("area-entered", "直线路径经过区域：" + area.name);
+                }
+            });
+            this._refresh();
+            return this._result(true, "MOVED", "直线移动至 (" + action.x + ", " + action.y + ")。");
+        }
+
+        _attack(action) {
+            var combat = this._scene.combat;
+            if (action.targetId !== undefined && !text(action.targetId)) {
+                return this._result(false, "INVALID_TARGET", "targetId 必须是非空字符串。");
+            }
+            if (!inside(this._state.player, this._battleArea())) {
+                return this._result(false, "OUTSIDE_BATTLE_AREA", "请进入营地范围后攻击。");
+            }
+            var enemy;
+            if (action.targetId !== undefined) {
+                enemy = this._state.enemies.find(function (item) { return item.id === action.targetId; });
+                if (!enemy) return this._result(false, "TARGET_NOT_FOUND", "未找到指定守卫。");
+                if (enemy.groupId !== combat.groupId) {
+                    return this._result(false, "TARGET_NOT_IN_BATTLE", "目标不属于当前营地守卫组。");
+                }
+                if (enemy.hp === 0) return this._result(false, "TARGET_DEFEATED", "该守卫已被击败。");
+            } else {
+                var targets = this._state.enemies.filter(function (item) {
+                    return item.groupId === combat.groupId && item.hp > 0;
+                });
+                if (!targets.length) return this._result(false, "BATTLE_CLEARED", "营地守卫已全部击败。");
+                targets.sort((a, b) => distance(a, this._state.player) - distance(b, this._state.player));
+                enemy = targets[0];
+            }
+            if (distance(enemy, this._state.player) > combat.attackRange) {
+                return this._result(false, "OUT_OF_RANGE", "守卫不在攻击范围内（" + combat.attackRange + "）。");
+            }
+            enemy.hp = Math.max(0, enemy.hp - combat.attackDamage);
+            this._event("damage", enemy.name + "受到 " + combat.attackDamage + " 点伤害，剩余生命 " + enemy.hp + "。");
+            if (enemy.hp === 0) this._event("enemy-defeated", enemy.name + "已被击败。");
+            if (!this._groupDefeated(combat.groupId) && combat.counterDamage > 0) {
+                this._state.player.hp = Math.max(0, this._state.player.hp - combat.counterDamage);
+                this._event("counterattack", "存活守卫反击一次，角色受到 " + combat.counterDamage + " 点伤害。");
+                if (this._state.player.hp === 0) this._event("player-defeated", "角色已倒下，后续操作被阻止。");
+            }
+            this._refresh();
+            return this._result(true, "ATTACKED", "已攻击" + enemy.name + "。");
+        }
+
+        _interact() {
+            var chest = this._state.chest;
+            if (chest.state === "opened") return this._result(false, "ALREADY_OPENED", "宝箱已打开，奖励不会重复领取。");
+            if (chest.state === "locked") return this._result(false, "CHEST_LOCKED", "宝箱尚未解锁，请先击败全部指定守卫。");
+            if (distance(chest, this._state.player) > this._scene.chest.interactionRange) {
+                return this._result(false, "OUT_OF_RANGE", "距离宝箱过远，无法交互。");
+            }
+            // State and reward are updated together; later attempts are rejected above.
+            chest.state = "opened";
+            this._state.inventory.tokens += chest.reward.tokens;
+            this._event("reward", "打开营地宝箱，获得 " + chest.reward.tokens + " 枚演示代币。");
+            this._refresh();
+            return this._result(true, "CHEST_OPENED", "宝箱已打开，演示奖励已领取。");
+        }
+    }
+
+    return { World: World };
+});
+</script><script>const DEMO_SCENE = {
+  "schemaVersion": 1,
+  "id": "synthetic-camp-demo",
+  "title": "营地任务与宝箱解锁演示",
+  "description": "进入营地、击败两名守卫，再打开宝箱。所有动作由二维规则计算；移动仅为简化直线，不代表真实原神寻路或战斗。",
+  "provenance": {
+    "kind": "synthetic",
+    "notice": "所有坐标、人物、任务条件、战斗数值和奖励均为合成示例，并非真实原神任务或游戏数据。",
+    "source": "本仓库手工合成",
+    "version": "demo-1",
+    "mapLayer": "synthetic-surface",
+    "coordinateSystem": "sandbox-cartesian-v1"
+  },
+  "bounds": {
+    "minX": 0,
+    "maxX": 100,
+    "minY": 0,
+    "maxY": 100
+  },
+  "player": {
+    "spawn": {
+      "x": 12,
+      "y": 50
+    },
+    "maxHp": 100
+  },
+  "areas": [
+    {
+      "id": "camp",
+      "name": "演示营地",
+      "shape": "circle",
+      "x": 60,
+      "y": 50,
+      "radius": 24
+    }
+  ],
+  "combat": {
+    "battleAreaId": "camp",
+    "groupId": "camp-guards",
+    "attackDamage": 10,
+    "attackRange": 12,
+    "counterDamage": 6
+  },
+  "enemies": [
+    {
+      "id": "guard-a",
+      "name": "守卫甲",
+      "x": 54,
+      "y": 44,
+      "maxHp": 20,
+      "groupId": "camp-guards"
+    },
+    {
+      "id": "guard-b",
+      "name": "守卫乙",
+      "x": 65,
+      "y": 55,
+      "maxHp": 20,
+      "groupId": "camp-guards"
+    }
+  ],
+  "chest": {
+    "id": "camp-chest",
+    "name": "营地宝箱",
+    "x": 72,
+    "y": 50,
+    "interactionRange": 5,
+    "unlockGroupId": "camp-guards",
+    "reward": {
+      "tokens": 10
+    }
+  },
+  "quest": {
+    "id": "camp-quest",
+    "title": "清理演示营地",
+    "steps": [
+      {
+        "id": "enter-camp",
+        "title": "进入营地",
+        "condition": {
+          "type": "enter-area",
+          "areaId": "camp"
+        }
+      },
+      {
+        "id": "defeat-guards",
+        "title": "击败守卫",
+        "condition": {
+          "type": "defeat-group",
+          "groupId": "camp-guards"
+        }
+      },
+      {
+        "id": "open-chest",
+        "title": "打开宝箱",
+        "condition": {
+          "type": "open-chest",
+          "chestId": "camp-chest"
+        }
+      }
+    ]
+  },
+  "rules": {
+    "movement": "straight-line",
+    "movementNotice": "移动瞬时沿直线到达目标；路径与圆形区域相交即记录进入，战斗是否进行由终点决定。没有真实碰撞、层高、体力或寻路。",
+    "combatNotice": "在营地内、攻击范围内可攻击守卫；每次成功攻击后，只要本组仍有存活守卫，就固定反击一次 6 点。移动和失败动作不触发反击。",
+    "rewardNotice": "指定守卫组全灭才解锁宝箱；进入交互范围后可领一次 10 枚演示代币。角色倒下后只允许重置。"
+  }
+}
+;</script><script>/* UI adapter: all gameplay decisions remain in World. Imported text is never HTML/code. */
+'use strict';
+const $ = id => document.getElementById(id);
+let world, scene;
+const labels = {locked:'锁定',available:'可开启',opened:'已开启'};
+function report(el, message, ok) { el.textContent = message; el.className = ok ? 'success' : 'error'; }
+function load(data) { const next = new TaskSandbox.World(data); scene = next.snapshot().scene; world = next; $('json').value = JSON.stringify(scene,null,2); render(); report($('feedback'),'世界已载入',true); }
+function act(action) { const result = world.dispatch(action); report($('feedback'),result.code+'：'+result.message,result.ok); render(); return result; }
+function svg(tag, attrs, text) { const el=document.createElementNS('http://www.w3.org/2000/svg',tag); for(const [k,v] of Object.entries(attrs)) el.setAttribute(k,v); if(text) el.textContent=text; return el; }
+function render() {
+ const s=world.snapshot(), b=scene.bounds, map=$('map');
+ map.replaceChildren(); map.setAttribute('viewBox',`${b.minX} ${b.minY} ${b.maxX-b.minX} ${b.maxY-b.minY}`);
+ const unit=Math.min(b.maxX-b.minX,b.maxY-b.minY)/100;
+ function circle(x,y,r,fill,stroke,dash){map.append(svg('circle',{cx:x,cy:y,r,fill,stroke,'pointer-events':'none','stroke-width':.35*unit,...(dash?{'stroke-dasharray':unit}: {})}));}
+ function entity(x,y,color,name,callback,square=false){const g=svg('g',{class:'entity',role:'button',tabindex:0,'aria-label':name});g.append(svg(square?'rect':'circle',square?{x:x-2*unit,y:y-2*unit,width:4*unit,height:4*unit,fill:color,transform:`rotate(45 ${x} ${y})`}:{cx:x,cy:y,r:2*unit,fill:color}));const t=svg('text',{x,y:y+(callback?-3.5:6)*unit,'text-anchor':'middle',style:`font-size:${2.7*unit}px`},name);g.append(t);if(!callback)g.setAttribute('pointer-events','none');if(callback){g.onclick=e=>{e.stopPropagation();callback();};g.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();callback();}};}map.append(g);}
+ scene.areas.forEach(a=>circle(a.x,a.y,a.radius,s.battle.active?'#793a3033':'#287b6333','#64b89d',true));
+ circle(s.player.x,s.player.y,scene.combat.attackRange,'none','#37638a',true);
+ circle(s.chest.x,s.chest.y,scene.chest.interactionRange,'none','#8c7544',true);
+ s.enemies.forEach(e=>entity(e.x,e.y,e.hp?'#ef827d':'#677581',`${e.name} ${e.hp}/${e.maxHp}`,()=>act({type:'attack',targetId:e.id})));
+ entity(s.chest.x,s.chest.y,{locked:'#8492a0',available:'#f4c369',opened:'#68ccb0'}[s.chest.state],labels[s.chest.state],()=>act({type:'interact'}),true);
+ entity(s.player.x,s.player.y,s.player.hp?'#75bcff':'#9b748d','角色');
+ $('title').textContent=scene.quest.title;
+ $('stats').textContent=`生命 ${s.player.hp}/${s.player.maxHp} · 代币 ${s.inventory.tokens} · ${s.player.hp===0?'角色倒下':s.battle.cleared?'战斗结束':s.battle.active?'战斗进行中':'战斗未激活'} · ${s.quest.complete?'任务完成（模拟通过）':'任务进行中'}`;
+ $('quest').replaceChildren(...s.quest.steps.map(step=>{const li=document.createElement('li');li.className=step.status;li.textContent=({completed:'✓ ',active:'→ ',pending:'○ '})[step.status]+step.title;return li;}));
+ $('enemies').textContent=s.enemies.map(e=>`${e.name}：${e.hp}/${e.maxHp}`).join(' ｜ ');
+ $('chest').textContent=`宝箱：${labels[s.chest.state]}；距离 ${Math.hypot(s.player.x-s.chest.x,s.player.y-s.chest.y).toFixed(1)} / 交互范围 ${scene.chest.interactionRange}`;
+ $('log').replaceChildren(...s.events.slice(-150).map(e=>{const li=document.createElement('li');li.textContent=`[${e.tick}] ${e.type} · ${e.message}`;if(e.type==='rejected')li.className='error';return li;}));$('log').scrollTop=$('log').scrollHeight;
+ $('source').textContent=JSON.stringify(scene.provenance,null,2)+'\n'+JSON.stringify(scene.rules,null,2);
+ $('step').disabled=JSON.stringify(scene)!==JSON.stringify(DEMO_SCENE)||s.quest.complete||s.player.hp===0;
+}
+$('map').onclick=e=>{const pt=new DOMPoint(e.clientX,e.clientY).matrixTransform($('map').getScreenCTM().inverse());act({type:'move',x:pt.x,y:pt.y});};
+$('move').onsubmit=e=>{e.preventDefault();act({type:'move',x:Number($('x').value),y:Number($('y').value)});};
+$('attack').onclick=()=>act({type:'attack'});$('interact').onclick=()=>act({type:'interact'});$('reset').onclick=()=>act({type:'reset'});$('demo').onclick=()=>load(DEMO_SCENE);
+$('step').onclick=()=>{const s=world.snapshot(), c=scene.combat, a=scene.areas.find(a=>a.id===c.battleAreaId), enemy=s.enemies.find(e=>e.groupId===c.groupId&&e.hp>0);if(enemy){if(Math.hypot(s.player.x-a.x,s.player.y-a.y)>a.radius||Math.hypot(s.player.x-enemy.x,s.player.y-enemy.y)>c.attackRange)act({type:'move',x:enemy.x,y:enemy.y});else act({type:'attack',targetId:enemy.id});}else if(Math.hypot(s.player.x-s.chest.x,s.player.y-s.chest.y)>scene.chest.interactionRange)act({type:'move',x:s.chest.x,y:s.chest.y});else act({type:'interact'});};
+function importText(text){try{if(new TextEncoder().encode(text).length>262144)throw Error('超过 256 KiB 限制');load(JSON.parse(text));report($('import-result'),'校验通过，已导入新的模拟世界。',true);}catch(e){report($('import-result'),'导入失败：'+e.message,false);}}
+$('import').onclick=()=>importText($('json').value);
+$('file').onchange=async e=>{const f=e.target.files[0];if(!f)return;if(f.size>262144){report($('import-result'),'导入失败：超过 256 KiB 限制',false);return;}try{importText(await f.text());}catch(err){report($('import-result'),'读取失败：'+err.message,false);}};
+load(DEMO_SCENE);
+</script></html>
