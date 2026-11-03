@@ -1,0 +1,946 @@
+{
+  "schemaVersion": 1,
+  "packageVersion": "0.1.0-experimental",
+  "source": {
+    "bvid": "BV1xysNe1Ec4",
+    "page": 2,
+    "url": "https://www.bilibili.com/video/BV1xysNe1Ec4/?p=2",
+    "creator": "某橙sama",
+    "title": "纳塔5.0 回声之子1—6号",
+    "sha256": "dff9f9eb1bf34e12425db2dcaaf8c99c415d3b9ea419cab2d9ff1298fe4e93bb",
+    "durationSeconds": 305.536,
+    "frameCount": 9165,
+    "decode": "all-frames",
+    "locatedFrameCount": 4777,
+    "visualReview": "62张5秒采样帧，以及起跳、下降、龙形态、剧情、末段台阶的原分辨率细查",
+    "audio": {
+      "status": "automatic-transcription-reviewed-against-picture",
+      "model": "Systran/faster-whisper-small",
+      "segments": 63,
+      "notice": "转写包含锚点、神像等同音误识，按画面和点位资料核对；未声称逐字人工听校。"
+    },
+    "subtitles": {
+      "platformTrack": "not-acquired-login-required",
+      "burnedText": "sampled-ocr-and-dialogue-checked",
+      "sampleIntervalSeconds": 3,
+      "notice": "可见文本主要为交互、教程和剧情对白；未取得平台完整字幕轨，未声称逐条字幕验收。"
+    }
+  },
+  "alignment": {
+    "pixelsPerGameUnit": 1.3077806529174507,
+    "originPixelX": 11305.477295687662,
+    "originPixelY": -1631.3397169425139,
+    "referenceFrameTime": 3,
+    "mapName": "Teyvat",
+    "points": [
+      {
+        "key": "Teyvat:1170",
+        "tpId": 1170,
+        "videoNumber": 1,
+        "pixel": {
+          "x": 1853,
+          "y": 253
+        },
+        "control": true,
+        "x": 7228.402,
+        "y": -1441.346
+      },
+      {
+        "key": "Teyvat:1252",
+        "tpId": 1252,
+        "videoNumber": 2,
+        "pixel": {
+          "x": 1460,
+          "y": 145
+        },
+        "control": false,
+        "x": 7528.338,
+        "y": -1358.574
+      },
+      {
+        "key": "Teyvat:1166",
+        "tpId": 1166,
+        "videoNumber": 3,
+        "pixel": {
+          "x": 1175,
+          "y": 195
+        },
+        "control": true,
+        "x": 7745.57,
+        "y": -1395.92
+      },
+      {
+        "key": "Teyvat:1172",
+        "tpId": 1172,
+        "videoNumber": 4,
+        "pixel": {
+          "x": 876,
+          "y": 416
+        },
+        "control": false,
+        "x": 7975.659,
+        "y": -1565.583
+      },
+      {
+        "key": "Teyvat:1177",
+        "tpId": 1177,
+        "videoNumber": 5,
+        "pixel": {
+          "x": 528,
+          "y": 639
+        },
+        "control": false,
+        "x": 8242.47,
+        "y": -1735.36
+      },
+      {
+        "key": "Teyvat:1167",
+        "tpId": 1167,
+        "videoNumber": 6,
+        "pixel": {
+          "x": 61,
+          "y": 898
+        },
+        "control": true,
+        "x": 8598.354,
+        "y": -1934.191
+      }
+    ],
+    "maxResidualPixels": 2.0581789701328814
+  },
+  "review": [
+    {
+      "interval": [
+        13,
+        35
+      ],
+      "finding": "入口附近可触发迷林之子，解说建议先完成以取得附身能力。首版不自动接续这个任务。"
+    },
+    {
+      "interval": [
+        38,
+        112
+      ],
+      "finding": "1→2→3经过嵴锋龙附身、遁地和爬升，且小地图未揭示。此段保留人工接续，不输出猜测坐标。"
+    },
+    {
+      "interval": [
+        120,
+        168
+      ],
+      "finding": "3→4为普通起跳滑翔并落地接近营地锚点。编号计数不作为解锁证明。"
+    },
+    {
+      "interval": [
+        169,
+        179
+      ],
+      "finding": "营地触发剧情。脚本等待主界面定位恢复，超时停下供玩家处理后重跑。"
+    },
+    {
+      "interval": [
+        219,
+        235
+      ],
+      "finding": "解说把匿叶龙能力解释为赶路加速。首版不盲按T/E附身，普通步行替代需实机确认。"
+    },
+    {
+      "interval": [
+        284,
+        301
+      ],
+      "finding": "靠近6号时小地图未揭示区域增加，弃用低可信匹配；最后草地和浅台阶接近单独标记为待实机校准。"
+    }
+  ],
+  "fragments": [
+    {
+      "id": "03-04-camp",
+      "name": "回声之子神像至营地锚点",
+      "points": [
+        {
+          "x": 7750.861,
+          "y": -1394.873,
+          "timeSeconds": 120.000123,
+          "frame": 3600,
+          "absoluteInliers": 157,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 7760.596,
+          "y": -1400.761,
+          "timeSeconds": 122.000125,
+          "frame": 3660,
+          "absoluteInliers": 147,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 7774.249,
+          "y": -1409.985,
+          "timeSeconds": 124.000127,
+          "frame": 3720,
+          "absoluteInliers": 135,
+          "origin": "sift",
+          "move_mode": "fly"
+        },
+        {
+          "x": 7785.227,
+          "y": -1417.614,
+          "timeSeconds": 126.000129,
+          "frame": 3780,
+          "absoluteInliers": 170,
+          "origin": "sift",
+          "move_mode": "fly"
+        },
+        {
+          "x": 7796.143,
+          "y": -1425.458,
+          "timeSeconds": 128.000131,
+          "frame": 3840,
+          "absoluteInliers": 174,
+          "origin": "sift",
+          "move_mode": "fly"
+        },
+        {
+          "x": 7806.898,
+          "y": -1434.122,
+          "timeSeconds": 130.000133,
+          "frame": 3900,
+          "absoluteInliers": 171,
+          "origin": "sift",
+          "move_mode": "fly"
+        },
+        {
+          "x": 7817.998,
+          "y": -1443.342,
+          "timeSeconds": 132.000135,
+          "frame": 3960,
+          "absoluteInliers": 141,
+          "origin": "sift",
+          "move_mode": "fly"
+        },
+        {
+          "x": 7828.215,
+          "y": -1451.817,
+          "timeSeconds": 134.000137,
+          "frame": 4020,
+          "absoluteInliers": 148,
+          "origin": "sift",
+          "move_mode": "fly"
+        },
+        {
+          "x": 7838.643,
+          "y": -1461.079,
+          "timeSeconds": 136.000139,
+          "frame": 4080,
+          "absoluteInliers": 100,
+          "origin": "sift",
+          "move_mode": "fly"
+        },
+        {
+          "x": 7848.936,
+          "y": -1470.674,
+          "timeSeconds": 138.000141,
+          "frame": 4140,
+          "absoluteInliers": 104,
+          "origin": "sift",
+          "move_mode": "fly"
+        },
+        {
+          "x": 7858.634,
+          "y": -1480.106,
+          "timeSeconds": 140.000143,
+          "frame": 4200,
+          "absoluteInliers": 104,
+          "origin": "sift",
+          "move_mode": "fly"
+        },
+        {
+          "x": 7868.818,
+          "y": -1489.368,
+          "timeSeconds": 142.000145,
+          "frame": 4260,
+          "absoluteInliers": 88,
+          "origin": "sift",
+          "move_mode": "fly"
+        },
+        {
+          "x": 7879.419,
+          "y": -1498.844,
+          "timeSeconds": 144.000147,
+          "frame": 4320,
+          "absoluteInliers": 105,
+          "origin": "sift",
+          "move_mode": "fly"
+        },
+        {
+          "x": 7889.516,
+          "y": -1507.733,
+          "timeSeconds": 146.000149,
+          "frame": 4380,
+          "absoluteInliers": 86,
+          "origin": "sift",
+          "move_mode": "fly"
+        },
+        {
+          "x": 7899.741,
+          "y": -1516.96,
+          "timeSeconds": 148.000151,
+          "frame": 4440,
+          "absoluteInliers": 64,
+          "origin": "sift",
+          "move_mode": "fly"
+        },
+        {
+          "x": 7910.664,
+          "y": -1524.606,
+          "timeSeconds": 150.000153,
+          "frame": 4500,
+          "absoluteInliers": 52,
+          "origin": "sift",
+          "move_mode": "fly"
+        },
+        {
+          "x": 7921.575,
+          "y": -1532.593,
+          "timeSeconds": 152.000155,
+          "frame": 4560,
+          "absoluteInliers": 66,
+          "origin": "sift",
+          "move_mode": "fly"
+        },
+        {
+          "x": 7930.528,
+          "y": -1539.028,
+          "timeSeconds": 154.000158,
+          "frame": 4620,
+          "absoluteInliers": 61,
+          "origin": "sift",
+          "move_mode": "fly"
+        },
+        {
+          "x": 7934.484,
+          "y": -1542.493,
+          "timeSeconds": 156.00016,
+          "frame": 4680,
+          "absoluteInliers": 49,
+          "origin": "sift",
+          "move_mode": "fly"
+        },
+        {
+          "x": 7944.402,
+          "y": -1551.251,
+          "timeSeconds": 158.000162,
+          "frame": 4740,
+          "absoluteInliers": 58,
+          "origin": "sift",
+          "move_mode": "fly"
+        },
+        {
+          "x": 7952.423,
+          "y": -1556.2,
+          "timeSeconds": 160.000164,
+          "frame": 4800,
+          "absoluteInliers": 38,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 7955.28,
+          "y": -1557.55,
+          "timeSeconds": 162.000166,
+          "frame": 4860,
+          "absoluteInliers": 46,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 7958.29,
+          "y": -1558.12,
+          "timeSeconds": 164.000168,
+          "frame": 4920,
+          "absoluteInliers": 60,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 7971.811,
+          "y": -1562.859,
+          "timeSeconds": 166.00017,
+          "frame": 4980,
+          "absoluteInliers": 43,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 7975.659,
+          "y": -1565.583,
+          "timeSeconds": 167,
+          "origin": "source-tp",
+          "sourceKey": "Teyvat:1172",
+          "move_mode": "walk"
+        }
+      ],
+      "sourceInterval": [
+        120,
+        168
+      ],
+      "target": "Teyvat:1172",
+      "tolerance": 7,
+      "notice": "按画面分为走向崖边、普通滑翔、落地接近；不在飞行中暂停核验。营地可能触发小龙剧情。"
+    },
+    {
+      "id": "04-05-river",
+      "name": "营地至河谷锚点",
+      "points": [
+        {
+          "x": 7974.697,
+          "y": -1560.581,
+          "timeSeconds": 186.00019,
+          "frame": 5580,
+          "absoluteInliers": 60,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 7988.465,
+          "y": -1563.65,
+          "timeSeconds": 188.000192,
+          "frame": 5640,
+          "absoluteInliers": 57,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8000.911,
+          "y": -1569.004,
+          "timeSeconds": 190.000194,
+          "frame": 5700,
+          "absoluteInliers": 51,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8013.06,
+          "y": -1572.739,
+          "timeSeconds": 192.000196,
+          "frame": 5760,
+          "absoluteInliers": 47,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8024.661,
+          "y": -1581.352,
+          "timeSeconds": 194.000198,
+          "frame": 5820,
+          "absoluteInliers": 74,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8032.236,
+          "y": -1586.998,
+          "timeSeconds": 196.0002,
+          "frame": 5880,
+          "absoluteInliers": 65,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8045.281,
+          "y": -1595.781,
+          "timeSeconds": 198.000203,
+          "frame": 5940,
+          "absoluteInliers": 55,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8056.338,
+          "y": -1602.762,
+          "timeSeconds": 200.000205,
+          "frame": 6000,
+          "absoluteInliers": 43,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8069.635,
+          "y": -1610.58,
+          "timeSeconds": 202.000207,
+          "frame": 6060,
+          "absoluteInliers": 45,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8083.177,
+          "y": -1622.024,
+          "timeSeconds": 204.000209,
+          "frame": 6120,
+          "absoluteInliers": 54,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8095.485,
+          "y": -1630.965,
+          "timeSeconds": 206.000211,
+          "frame": 6180,
+          "absoluteInliers": 47,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8110.269,
+          "y": -1641.86,
+          "timeSeconds": 208.000213,
+          "frame": 6240,
+          "absoluteInliers": 59,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8122.015,
+          "y": -1651.439,
+          "timeSeconds": 210.000215,
+          "frame": 6300,
+          "absoluteInliers": 55,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8134.026,
+          "y": -1660.93,
+          "timeSeconds": 212.000217,
+          "frame": 6360,
+          "absoluteInliers": 44,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8152.474,
+          "y": -1660.024,
+          "timeSeconds": 214.000219,
+          "frame": 6420,
+          "absoluteInliers": 33,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8160.225,
+          "y": -1665.905,
+          "timeSeconds": 216.000221,
+          "frame": 6480,
+          "absoluteInliers": 42,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8168.419,
+          "y": -1672.296,
+          "timeSeconds": 218.000223,
+          "frame": 6540,
+          "absoluteInliers": 27,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8179.918,
+          "y": -1680.99,
+          "timeSeconds": 220.000225,
+          "frame": 6600,
+          "absoluteInliers": 39,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8187.767,
+          "y": -1689.507,
+          "timeSeconds": 222.000227,
+          "frame": 6660,
+          "absoluteInliers": 50,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8198.214,
+          "y": -1702.118,
+          "timeSeconds": 224.000229,
+          "frame": 6720,
+          "absoluteInliers": 48,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8206.186,
+          "y": -1713.609,
+          "timeSeconds": 226.000231,
+          "frame": 6780,
+          "absoluteInliers": 44,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8215.799,
+          "y": -1720.213,
+          "timeSeconds": 228.000233,
+          "frame": 6840,
+          "absoluteInliers": 38,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8230.276,
+          "y": -1726.988,
+          "timeSeconds": 230.000235,
+          "frame": 6900,
+          "absoluteInliers": 39,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8238.249,
+          "y": -1732.116,
+          "timeSeconds": 232.000237,
+          "frame": 6960,
+          "absoluteInliers": 43,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8244.107,
+          "y": -1735.584,
+          "timeSeconds": 234.000239,
+          "frame": 7020,
+          "absoluteInliers": 59,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8242.47,
+          "y": -1735.36,
+          "timeSeconds": 235,
+          "origin": "source-tp",
+          "sourceKey": "Teyvat:1177",
+          "move_mode": "walk"
+        }
+      ],
+      "sourceInterval": [
+        180,
+        236
+      ],
+      "target": "Teyvat:1177",
+      "tolerance": 7,
+      "notice": "语音说明变龙用于加快移动；本段用普通步行跟随画面地面路线，仍需实机确认。先手动处理营地剧情。"
+    },
+    {
+      "id": "05-06-statue",
+      "name": "河谷至万火之瓯神像",
+      "points": [
+        {
+          "x": 8261.814,
+          "y": -1740.851,
+          "timeSeconds": 244.00025,
+          "frame": 7320,
+          "absoluteInliers": 49,
+          "origin": "sift",
+          "move_mode": "fly"
+        },
+        {
+          "x": 8274.547,
+          "y": -1747.41,
+          "timeSeconds": 246.000252,
+          "frame": 7380,
+          "absoluteInliers": 53,
+          "origin": "sift",
+          "move_mode": "fly"
+        },
+        {
+          "x": 8286.589,
+          "y": -1753.316,
+          "timeSeconds": 248.000254,
+          "frame": 7440,
+          "absoluteInliers": 49,
+          "origin": "sift",
+          "move_mode": "fly"
+        },
+        {
+          "x": 8298.757,
+          "y": -1759.204,
+          "timeSeconds": 250.000256,
+          "frame": 7500,
+          "absoluteInliers": 46,
+          "origin": "sift",
+          "move_mode": "fly"
+        },
+        {
+          "x": 8311.368,
+          "y": -1765.465,
+          "timeSeconds": 252.000258,
+          "frame": 7560,
+          "absoluteInliers": 37,
+          "origin": "sift",
+          "move_mode": "fly"
+        },
+        {
+          "x": 8323.568,
+          "y": -1770.472,
+          "timeSeconds": 254.00026,
+          "frame": 7620,
+          "absoluteInliers": 40,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8340.08,
+          "y": -1774.975,
+          "timeSeconds": 256.000262,
+          "frame": 7680,
+          "absoluteInliers": 35,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8355.545,
+          "y": -1778.806,
+          "timeSeconds": 258.000264,
+          "frame": 7740,
+          "absoluteInliers": 30,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8372.302,
+          "y": -1784.836,
+          "timeSeconds": 260.000266,
+          "frame": 7800,
+          "absoluteInliers": 22,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8388.936,
+          "y": -1790.303,
+          "timeSeconds": 262.000268,
+          "frame": 7860,
+          "absoluteInliers": 29,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8405.263,
+          "y": -1795.207,
+          "timeSeconds": 264.00027,
+          "frame": 7920,
+          "absoluteInliers": 25,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8420.716,
+          "y": -1800.548,
+          "timeSeconds": 266.000272,
+          "frame": 7980,
+          "absoluteInliers": 31,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8435.573,
+          "y": -1806.15,
+          "timeSeconds": 268.000274,
+          "frame": 8040,
+          "absoluteInliers": 35,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8448.106,
+          "y": -1811.459,
+          "timeSeconds": 270.000276,
+          "frame": 8100,
+          "absoluteInliers": 41,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8464.398,
+          "y": -1818.282,
+          "timeSeconds": 272.000278,
+          "frame": 8160,
+          "absoluteInliers": 37,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8476.939,
+          "y": -1828.621,
+          "timeSeconds": 274.00028,
+          "frame": 8220,
+          "absoluteInliers": 50,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8490.163,
+          "y": -1835.656,
+          "timeSeconds": 276.000282,
+          "frame": 8280,
+          "absoluteInliers": 36,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8500.161,
+          "y": -1842.314,
+          "timeSeconds": 278.000284,
+          "frame": 8340,
+          "absoluteInliers": 25,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8512.263,
+          "y": -1850.624,
+          "timeSeconds": 280.000286,
+          "frame": 8400,
+          "absoluteInliers": 22,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8522.332,
+          "y": -1859.665,
+          "timeSeconds": 282.000288,
+          "frame": 8460,
+          "absoluteInliers": 15,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8530.188,
+          "y": -1866.866,
+          "timeSeconds": 284.000291,
+          "frame": 8520,
+          "absoluteInliers": 23,
+          "origin": "sift",
+          "move_mode": "walk"
+        },
+        {
+          "x": 8598.354,
+          "y": -1934.191,
+          "timeSeconds": 298,
+          "origin": "source-tp",
+          "sourceKey": "Teyvat:1167",
+          "move_mode": "jump"
+        }
+      ],
+      "sourceInterval": [
+        242,
+        301
+      ],
+      "target": "Teyvat:1167",
+      "tolerance": 8,
+      "terminalApproach": {
+        "maxDistance": 100,
+        "reviewInterval": [
+          284,
+          301
+        ],
+        "notice": "末段小地图进入未揭示区域，不接受后续低可信匹配。视频连续显示草地、浅台阶向神像接近；从末个可靠点交给原生跳跃接近已知神像坐标，约90坐标单位，需实机校准。"
+      },
+      "notice": "短滑翔后沿河岸行走，最后为草地和浅台阶。未将龙能力作为此段前置。"
+    }
+  ],
+  "groups": [
+    {
+      "id": "p2-03-06",
+      "name": "5.0首批：3→6（回声之子神像已开）",
+      "status": "reviewed-experimental",
+      "stages": [
+        {
+          "target": "Teyvat:1172",
+          "start": "Teyvat:1166",
+          "requires": [],
+          "fragments": [
+            "03-04-camp"
+          ]
+        },
+        {
+          "target": "Teyvat:1177",
+          "start": "Teyvat:1172",
+          "requires": [],
+          "fragments": [
+            "04-05-river"
+          ]
+        },
+        {
+          "target": "Teyvat:1167",
+          "start": "Teyvat:1177",
+          "requires": [],
+          "fragments": [
+            "05-06-statue"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p2-only-4",
+      "name": "仅3→4：滑翔至营地",
+      "status": "reviewed-experimental",
+      "stages": [
+        {
+          "target": "Teyvat:1172",
+          "start": "Teyvat:1166",
+          "requires": [],
+          "fragments": [
+            "03-04-camp"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p2-only-5",
+      "name": "仅4→5：营地至河谷",
+      "status": "reviewed-experimental",
+      "stages": [
+        {
+          "target": "Teyvat:1177",
+          "start": "Teyvat:1172",
+          "requires": [],
+          "fragments": [
+            "04-05-river"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p2-only-6",
+      "name": "仅5→6：河谷至神像",
+      "status": "reviewed-experimental",
+      "stages": [
+        {
+          "target": "Teyvat:1167",
+          "start": "Teyvat:1177",
+          "requires": [],
+          "fragments": [
+            "05-06-statue"
+          ]
+        }
+      ]
+    }
+  ],
+  "witnesses": {
+    "Teyvat": [
+      "Teyvat:1170",
+      "Teyvat:1166"
+    ],
+    "AncientSacredMountain": [
+      "AncientSacredMountain:2",
+      "AncientSacredMountain:3"
+    ]
+  }
+}

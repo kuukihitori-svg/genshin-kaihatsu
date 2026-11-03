@@ -12,7 +12,9 @@
     "test:study-browser": "node video-study/test-browser.cjs",
     "study": "python3 tools/video_study.py",
     "build:bettergi": "python3 tools/build_open_map.py",
-    "test:bettergi": "node bettergi/test-runner.cjs"
+    "test:bettergi": "node bettergi/test-runner.cjs",
+    "build:natlan": "python3 tools/build_natlan.py",
+    "test:natlan": "node bettergi/test-natlan.cjs && python3 tools/test_natlan_build.py"
   },
   "engines": {
     "node": ">=18"
