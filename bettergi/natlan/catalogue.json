@@ -1,0 +1,5109 @@
+{
+  "schemaVersion": 1,
+  "coordinateSystem": "bettergi-pathing-v1",
+  "reference": {
+    "repository": "babalae/better-genshin-impact",
+    "ref": "0.66.0",
+    "commit": "0af68c28f6b0e714d5304625ce644736d508022e",
+    "path": "BetterGenshinImpact/GameTask/AutoTrackPath/Assets/tp.json",
+    "blobSha": "f0cc04464dfa28511b383ada32a1422cb665ceb8",
+    "dataVersion": "d8ab29ce843fe7f2a41aa63458fd020a9da130ff",
+    "sha256": "e5060e56ba27ec31d2dc89afc9262914cf6682774dea3a3587d421c213665149",
+    "axes": "x=position[2], y=position[0], height=position[1]"
+  },
+  "notice": "这是固定版本的点位目录。收录点位不代表已有可执行路线或已解锁。远古圣山使用独立地图。",
+  "points": [
+    {
+      "key": "Teyvat:1166",
+      "tpId": 1166,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "七天神像-火",
+      "type": "Goddess",
+      "areas": [
+        "坚岩隘谷"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1395.92,
+        198.83,
+        7745.57
+      ],
+      "worldArrival": [
+        -1400.7882,
+        199.53546,
+        7759.5884
+      ],
+      "x": 7745.57,
+      "y": -1395.92,
+      "height": 198.83,
+      "arrival": {
+        "x": 7759.5884,
+        "y": -1400.7882,
+        "height": 199.53546
+      }
+    },
+    {
+      "key": "Teyvat:1167",
+      "tpId": 1167,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "七天神像-火",
+      "type": "Goddess",
+      "areas": [
+        "万火之瓯"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1934.191,
+        95.53,
+        8598.354
+      ],
+      "worldArrival": [
+        -1927.9766,
+        96.20734,
+        8597.631
+      ],
+      "x": 8598.354,
+      "y": -1934.191,
+      "height": 95.53,
+      "arrival": {
+        "x": 8597.631,
+        "y": -1927.9766,
+        "height": 96.20734
+      }
+    },
+    {
+      "key": "Teyvat:1168",
+      "tpId": 1168,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "七天神像-火",
+      "type": "Goddess",
+      "areas": [
+        "涌流地",
+        "溶水域"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2656.534,
+        229.6824,
+        8578.123
+      ],
+      "worldArrival": [
+        -2674.62,
+        231.2256,
+        8582.302
+      ],
+      "x": 8578.123,
+      "y": -2656.534,
+      "height": 229.6824,
+      "arrival": {
+        "x": 8582.302,
+        "y": -2674.62,
+        "height": 231.2256
+      }
+    },
+    {
+      "key": "Teyvat:1169",
+      "tpId": 1169,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "七天神像-火",
+      "type": "Goddess",
+      "areas": [
+        "踞石山"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2224.33,
+        200.12,
+        8668.51
+      ],
+      "worldArrival": [
+        -2220,
+        200,
+        8661
+      ],
+      "x": 8668.51,
+      "y": -2224.33,
+      "height": 200.12,
+      "arrival": {
+        "x": 8661,
+        "y": -2220,
+        "height": 200
+      }
+    },
+    {
+      "key": "Teyvat:1170",
+      "tpId": 1170,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "坚岩隘谷"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1441.346,
+        172.25,
+        7228.402
+      ],
+      "worldArrival": [
+        -1432.672,
+        168.44173,
+        7234.5303
+      ],
+      "x": 7228.402,
+      "y": -1441.346,
+      "height": 172.25,
+      "arrival": {
+        "x": 7234.5303,
+        "y": -1432.672,
+        "height": 168.44173
+      }
+    },
+    {
+      "key": "Teyvat:1172",
+      "tpId": 1172,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "坚岩隘谷"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1565.583,
+        102.646,
+        7975.659
+      ],
+      "worldArrival": [
+        -1557,
+        102,
+        7974
+      ],
+      "x": 7975.659,
+      "y": -1565.583,
+      "height": 102.646,
+      "arrival": {
+        "x": 7974,
+        "y": -1557,
+        "height": 102
+      }
+    },
+    {
+      "key": "Teyvat:1173",
+      "tpId": 1173,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "坚岩隘谷",
+        "硫晶支脉"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1426.39,
+        65.307,
+        8269.2
+      ],
+      "worldArrival": [
+        -1416,
+        65,
+        8276
+      ],
+      "x": 8269.2,
+      "y": -1426.39,
+      "height": 65.307,
+      "arrival": {
+        "x": 8276,
+        "y": -1416,
+        "height": 65
+      }
+    },
+    {
+      "key": "Teyvat:1174",
+      "tpId": 1174,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "万火之瓯"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1580.537,
+        144.2501,
+        8708.484
+      ],
+      "worldArrival": [
+        -1574.4532,
+        144.81668,
+        8706.823
+      ],
+      "x": 8708.484,
+      "y": -1580.537,
+      "height": 144.2501,
+      "arrival": {
+        "x": 8706.823,
+        "y": -1574.4532,
+        "height": 144.81668
+      }
+    },
+    {
+      "key": "Teyvat:1175",
+      "tpId": 1175,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "坚岩隘谷"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1265.167,
+        254.4427,
+        8672.737
+      ],
+      "worldArrival": [
+        -1269.0631,
+        255.4233,
+        8671.208
+      ],
+      "x": 8672.737,
+      "y": -1265.167,
+      "height": 254.4427,
+      "arrival": {
+        "x": 8671.208,
+        "y": -1269.0631,
+        "height": 255.4233
+      }
+    },
+    {
+      "key": "Teyvat:1176",
+      "tpId": 1176,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "坚岩隘谷",
+        "硫晶支脉"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1486.16,
+        127.2329,
+        8444.196
+      ],
+      "worldArrival": [
+        -1476.635,
+        125.71338,
+        8452.818
+      ],
+      "x": 8444.196,
+      "y": -1486.16,
+      "height": 127.2329,
+      "arrival": {
+        "x": 8452.818,
+        "y": -1476.635,
+        "height": 125.71338
+      }
+    },
+    {
+      "key": "Teyvat:1177",
+      "tpId": 1177,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "坚岩隘谷"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1735.36,
+        50.22,
+        8242.47
+      ],
+      "worldArrival": [
+        -1744.0372,
+        48.684914,
+        8258.578
+      ],
+      "x": 8242.47,
+      "y": -1735.36,
+      "height": 50.22,
+      "arrival": {
+        "x": 8258.578,
+        "y": -1744.0372,
+        "height": 48.684914
+      }
+    },
+    {
+      "key": "Teyvat:1178",
+      "tpId": 1178,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "涌流地"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2301.28,
+        243.319,
+        8946.624
+      ],
+      "worldArrival": [
+        -2305.9463,
+        244.56912,
+        8940.624
+      ],
+      "x": 8946.624,
+      "y": -2301.28,
+      "height": 243.319,
+      "arrival": {
+        "x": 8940.624,
+        "y": -2305.9463,
+        "height": 244.56912
+      }
+    },
+    {
+      "key": "Teyvat:1179",
+      "tpId": 1179,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "踞石山",
+        "彩石顶"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2345.919,
+        287.53,
+        8376.648
+      ],
+      "worldArrival": [
+        -2342.587,
+        288.0913,
+        8373.026
+      ],
+      "x": 8376.648,
+      "y": -2345.919,
+      "height": 287.53,
+      "arrival": {
+        "x": 8373.026,
+        "y": -2342.587,
+        "height": 288.0913
+      }
+    },
+    {
+      "key": "Teyvat:1181",
+      "tpId": 1181,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "踞石山"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2047.318,
+        266.3516,
+        7848.197
+      ],
+      "worldArrival": [
+        -2046.7621,
+        266.6196,
+        7845.3735
+      ],
+      "x": 7848.197,
+      "y": -2047.318,
+      "height": 266.3516,
+      "arrival": {
+        "x": 7845.3735,
+        "y": -2046.7621,
+        "height": 266.6196
+      }
+    },
+    {
+      "key": "Teyvat:1182",
+      "tpId": 1182,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "坚岩隘谷",
+        "隆崛坡"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1748.796,
+        190.3732,
+        7855.479
+      ],
+      "worldArrival": [
+        -1750.629,
+        190.6446,
+        7857.792
+      ],
+      "x": 7855.479,
+      "y": -1748.796,
+      "height": 190.3732,
+      "arrival": {
+        "x": 7857.792,
+        "y": -1750.629,
+        "height": 190.6446
+      }
+    },
+    {
+      "key": "Teyvat:1183",
+      "tpId": 1183,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "踞石山"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2253.84,
+        251.334,
+        7739.67
+      ],
+      "worldArrival": [
+        -2249.97,
+        251.39566,
+        7746.8403
+      ],
+      "x": 7739.67,
+      "y": -2253.84,
+      "height": 251.334,
+      "arrival": {
+        "x": 7746.8403,
+        "y": -2249.97,
+        "height": 251.39566
+      }
+    },
+    {
+      "key": "Teyvat:1184",
+      "tpId": 1184,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "万火之瓯"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2062.12,
+        150.788,
+        8668.682
+      ],
+      "worldArrival": [
+        -2062.648,
+        150.86894,
+        8674.457
+      ],
+      "x": 8668.682,
+      "y": -2062.12,
+      "height": 150.788,
+      "arrival": {
+        "x": 8674.457,
+        "y": -2062.648,
+        "height": 150.86894
+      }
+    },
+    {
+      "key": "Teyvat:1185",
+      "tpId": 1185,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "万火之瓯"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1460.666,
+        126.0757,
+        9045.765
+      ],
+      "worldArrival": [
+        -1457.6024,
+        126.7604,
+        9041.409
+      ],
+      "x": 9045.765,
+      "y": -1460.666,
+      "height": 126.0757,
+      "arrival": {
+        "x": 9041.409,
+        "y": -1457.6024,
+        "height": 126.7604
+      }
+    },
+    {
+      "key": "Teyvat:1186",
+      "tpId": 1186,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "蕴火的幽墟",
+      "type": "MasteryDomain",
+      "areas": [
+        "踞石山"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1865.46,
+        216,
+        7792.9
+      ],
+      "worldArrival": [
+        -1872.568,
+        216.55875,
+        7796.266
+      ],
+      "x": 7792.9,
+      "y": -1865.46,
+      "height": 216,
+      "arrival": {
+        "x": 7796.266,
+        "y": -1872.568,
+        "height": 216.55875
+      }
+    },
+    {
+      "key": "Teyvat:1188",
+      "tpId": 1188,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "深古瞭望所",
+      "type": "ForgeryDomain",
+      "areas": [
+        "踞石山"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1873.17,
+        129.97,
+        8173.37
+      ],
+      "worldArrival": [
+        -1867.4619,
+        130.31166,
+        8179.71
+      ],
+      "x": 8173.37,
+      "y": -1873.17,
+      "height": 129.97,
+      "arrival": {
+        "x": 8179.71,
+        "y": -1867.4619,
+        "height": 130.31166
+      }
+    },
+    {
+      "key": "Teyvat:1190",
+      "tpId": 1190,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "虹灵的净土",
+      "type": "BlessDomain",
+      "areas": [
+        "涌流地"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2419.41,
+        211.22,
+        9042.58
+      ],
+      "worldArrival": [
+        -2428.7231,
+        212.24771,
+        9039.115
+      ],
+      "x": 9042.58,
+      "y": -2419.41,
+      "height": 211.22,
+      "arrival": {
+        "x": 9039.115,
+        "y": -2428.7231,
+        "height": 212.24771
+      }
+    },
+    {
+      "key": "Teyvat:1219",
+      "tpId": 1219,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "踞石山",
+        "彩石顶"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2192.802,
+        355.9498,
+        8366.984
+      ],
+      "worldArrival": [
+        -2195.6096,
+        356.02493,
+        8372.452
+      ],
+      "x": 8366.984,
+      "y": -2192.802,
+      "height": 355.9498,
+      "arrival": {
+        "x": 8372.452,
+        "y": -2195.6096,
+        "height": 356.02493
+      }
+    },
+    {
+      "key": "Teyvat:1220",
+      "tpId": 1220,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "坚岩隘谷"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1816.259,
+        -63.582,
+        8428.384
+      ],
+      "worldArrival": [
+        -1813.8978,
+        -64.81028,
+        8431.665
+      ],
+      "x": 8428.384,
+      "y": -1816.259,
+      "height": -63.582,
+      "arrival": {
+        "x": 8431.665,
+        "y": -1813.8978,
+        "height": -64.81028
+      }
+    },
+    {
+      "key": "Teyvat:1227",
+      "tpId": 1227,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "踞石山",
+        "祖遗庙宇"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2227.401,
+        226.3093,
+        7977.11
+      ],
+      "worldArrival": [
+        -2225.6438,
+        226.85782,
+        7974.6
+      ],
+      "x": 7977.11,
+      "y": -2227.401,
+      "height": 226.3093,
+      "arrival": {
+        "x": 7974.6,
+        "y": -2225.6438,
+        "height": 226.85782
+      }
+    },
+    {
+      "key": "Teyvat:1228",
+      "tpId": 1228,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "涌流地"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2740.382,
+        42.78197,
+        8660.228
+      ],
+      "worldArrival": [
+        -2743.02,
+        44.235313,
+        8663.918
+      ],
+      "x": 8660.228,
+      "y": -2740.382,
+      "height": 42.78197,
+      "arrival": {
+        "x": 8663.918,
+        "y": -2743.02,
+        "height": 44.235313
+      }
+    },
+    {
+      "key": "Teyvat:1232",
+      "tpId": 1232,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "七天神像-火",
+      "type": "Goddess",
+      "areas": [
+        "镜璧山"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1777.462,
+        160.31,
+        9520.9
+      ],
+      "worldArrival": [
+        -1784.0339,
+        161.60156,
+        9540.989
+      ],
+      "x": 9520.9,
+      "y": -1777.462,
+      "height": 160.31,
+      "arrival": {
+        "x": 9540.989,
+        "y": -1784.0339,
+        "height": 161.60156
+      }
+    },
+    {
+      "key": "Teyvat:1233",
+      "tpId": 1233,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "七天神像-火",
+      "type": "Goddess",
+      "areas": [
+        "奥奇卡纳塔"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -616.9355,
+        287.47,
+        9755.238
+      ],
+      "worldArrival": [
+        -612.9871,
+        287.47,
+        9758.252
+      ],
+      "x": 9755.238,
+      "y": -616.9355,
+      "height": 287.47,
+      "arrival": {
+        "x": 9758.252,
+        "y": -612.9871,
+        "height": 287.47
+      }
+    },
+    {
+      "key": "Teyvat:1237",
+      "tpId": 1237,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "坚岩隘谷",
+        "分道誓约之厅",
+        "圣途试炼遗迹·分道誓约之地"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1512.887,
+        -76.80016,
+        8024.736
+      ],
+      "worldArrival": [
+        -1549.916,
+        -69.20596,
+        8022.875
+      ],
+      "x": 8024.736,
+      "y": -1512.887,
+      "height": -76.80016,
+      "arrival": {
+        "x": 8022.875,
+        "y": -1549.916,
+        "height": -69.20596
+      }
+    },
+    {
+      "key": "Teyvat:1238",
+      "tpId": 1238,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "涌流地",
+        "浮土静界"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2845.78,
+        422.995,
+        8351.01
+      ],
+      "worldArrival": [
+        -2842.6804,
+        423.20737,
+        8353.21
+      ],
+      "x": 8351.01,
+      "y": -2845.78,
+      "height": 422.995,
+      "arrival": {
+        "x": 8353.21,
+        "y": -2842.6804,
+        "height": 423.20737
+      }
+    },
+    {
+      "key": "Teyvat:1239",
+      "tpId": 1239,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "坚岩隘谷",
+        "圣途试炼遗迹·入口长廊"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1330.293,
+        60.0198,
+        7994.354
+      ],
+      "worldArrival": [
+        -1334.687,
+        60.01979,
+        7992.879
+      ],
+      "x": 7994.354,
+      "y": -1330.293,
+      "height": 60.0198,
+      "arrival": {
+        "x": 7992.879,
+        "y": -1334.687,
+        "height": 60.01979
+      }
+    },
+    {
+      "key": "Teyvat:1243",
+      "tpId": 1243,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "翘枝崖",
+        "「花羽会」"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1113.253,
+        314.3133,
+        9543.288
+      ],
+      "worldArrival": [
+        -1116.4355,
+        314.54544,
+        9548.298
+      ],
+      "x": 9543.288,
+      "y": -1113.253,
+      "height": 314.3133,
+      "arrival": {
+        "x": 9548.298,
+        "y": -1116.4355,
+        "height": 314.54544
+      }
+    },
+    {
+      "key": "Teyvat:1244",
+      "tpId": 1244,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "翘枝崖"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -846.208,
+        245.596,
+        9715.814
+      ],
+      "worldArrival": [
+        -851.3685,
+        244.98346,
+        9719.522
+      ],
+      "x": 9715.814,
+      "y": -846.208,
+      "height": 245.596,
+      "arrival": {
+        "x": 9719.522,
+        "y": -851.3685,
+        "height": 244.98346
+      }
+    },
+    {
+      "key": "Teyvat:1245",
+      "tpId": 1245,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "奥奇卡纳塔",
+        "火鹦之塔"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -395.145,
+        269.6082,
+        9868.892
+      ],
+      "worldArrival": [
+        -400.401,
+        269.64688,
+        9875.88
+      ],
+      "x": 9868.892,
+      "y": -395.145,
+      "height": 269.6082,
+      "arrival": {
+        "x": 9875.88,
+        "y": -400.401,
+        "height": 269.64688
+      }
+    },
+    {
+      "key": "Teyvat:1246",
+      "tpId": 1246,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "万火之瓯"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1856.395,
+        131.4421,
+        8733.689
+      ],
+      "worldArrival": [
+        -1856.8505,
+        131.91359,
+        8738.567
+      ],
+      "x": 8733.689,
+      "y": -1856.395,
+      "height": 131.4421,
+      "arrival": {
+        "x": 8738.567,
+        "y": -1856.8505,
+        "height": 131.91359
+      }
+    },
+    {
+      "key": "Teyvat:1249",
+      "tpId": 1249,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "万火之瓯",
+        "圣火竞技场·楚汶市集"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1847.722,
+        66.31197,
+        9050.453
+      ],
+      "worldArrival": [
+        -1847.429,
+        66.25993,
+        9060.555
+      ],
+      "x": 9050.453,
+      "y": -1847.722,
+      "height": 66.31197,
+      "arrival": {
+        "x": 9060.555,
+        "y": -1847.429,
+        "height": 66.25993
+      }
+    },
+    {
+      "key": "Teyvat:1250",
+      "tpId": 1250,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "万火之瓯",
+        "圣火竞技场"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1879,
+        59.20488,
+        8974.075
+      ],
+      "worldArrival": [
+        -1872.2054,
+        59.628372,
+        8978.337
+      ],
+      "x": 8974.075,
+      "y": -1879,
+      "height": 59.20488,
+      "arrival": {
+        "x": 8978.337,
+        "y": -1872.2054,
+        "height": 59.628372
+      }
+    },
+    {
+      "key": "Teyvat:1251",
+      "tpId": 1251,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "万火之瓯",
+        "圣火竞技场·帕克斯神庙"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1969.999,
+        64.50869,
+        9090.25
+      ],
+      "worldArrival": [
+        -1965.2123,
+        65.75389,
+        9084.186
+      ],
+      "x": 9090.25,
+      "y": -1969.999,
+      "height": 64.50869,
+      "arrival": {
+        "x": 9084.186,
+        "y": -1965.2123,
+        "height": 65.75389
+      }
+    },
+    {
+      "key": "Teyvat:1252",
+      "tpId": 1252,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "坚岩隘谷",
+        "「回声之子」"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1358.574,
+        141.0152,
+        7528.338
+      ],
+      "worldArrival": [
+        -1353.1753,
+        141.01518,
+        7529.74
+      ],
+      "x": 7528.338,
+      "y": -1358.574,
+      "height": 141.0152,
+      "arrival": {
+        "x": 7529.74,
+        "y": -1353.1753,
+        "height": 141.01518
+      }
+    },
+    {
+      "key": "Teyvat:1253",
+      "tpId": 1253,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "踞石山",
+        "「悬木人」"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2219.234,
+        254.8634,
+        8508.783
+      ],
+      "worldArrival": [
+        -2221.7683,
+        255.21523,
+        8497.847
+      ],
+      "x": 8508.783,
+      "y": -2219.234,
+      "height": 254.8634,
+      "arrival": {
+        "x": 8497.847,
+        "y": -2221.7683,
+        "height": 255.21523
+      }
+    },
+    {
+      "key": "Teyvat:1254",
+      "tpId": 1254,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "涌流地",
+        "「流泉之众」"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2682.282,
+        217.18,
+        8913.717
+      ],
+      "worldArrival": [
+        -2679,
+        217,
+        8919
+      ],
+      "x": 8913.717,
+      "y": -2682.282,
+      "height": 217.18,
+      "arrival": {
+        "x": 8919,
+        "y": -2679,
+        "height": 217
+      }
+    },
+    {
+      "key": "Teyvat:1268",
+      "tpId": 1268,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "奥奇卡纳塔",
+        "流灰之街"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -379.3744,
+        255.6507,
+        9815.479
+      ],
+      "worldArrival": [
+        -371.58163,
+        255.57742,
+        9813.817
+      ],
+      "x": 9815.479,
+      "y": -379.3744,
+      "height": 255.6507,
+      "arrival": {
+        "x": 9813.817,
+        "y": -371.58163,
+        "height": 255.57742
+      }
+    },
+    {
+      "key": "Teyvat:1269",
+      "tpId": 1269,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "奥奇卡纳塔",
+        "旧日的统律之心"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -383.2138,
+        -10.58152,
+        9683.047
+      ],
+      "worldArrival": [
+        -389.61218,
+        -10.055969,
+        9676.282
+      ],
+      "x": 9683.047,
+      "y": -383.2138,
+      "height": -10.58152,
+      "arrival": {
+        "x": 9676.282,
+        "y": -389.61218,
+        "height": -10.055969
+      }
+    },
+    {
+      "key": "Teyvat:1270",
+      "tpId": 1270,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "涌流地",
+        "溶水域"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2441.562,
+        253.022,
+        8641.33
+      ],
+      "worldArrival": [
+        -2446,
+        253,
+        8638
+      ],
+      "x": 8641.33,
+      "y": -2441.562,
+      "height": 253.022,
+      "arrival": {
+        "x": 8638,
+        "y": -2446,
+        "height": 253
+      }
+    },
+    {
+      "key": "Teyvat:1271",
+      "tpId": 1271,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "踞石山"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2369.447,
+        225.1018,
+        8065.225
+      ],
+      "worldArrival": [
+        -2372.007,
+        225.10176,
+        8059.2373
+      ],
+      "x": 8065.225,
+      "y": -2369.447,
+      "height": 225.1018,
+      "arrival": {
+        "x": 8059.2373,
+        "y": -2372.007,
+        "height": 225.10176
+      }
+    },
+    {
+      "key": "Teyvat:1272",
+      "tpId": 1272,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "涌流地",
+        "溶水域"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -3013.672,
+        206.706,
+        8744.977
+      ],
+      "worldArrival": [
+        -3009,
+        206,
+        8745
+      ],
+      "x": 8744.977,
+      "y": -3013.672,
+      "height": 206.706,
+      "arrival": {
+        "x": 8745,
+        "y": -3009,
+        "height": 206
+      }
+    },
+    {
+      "key": "Teyvat:1273",
+      "tpId": 1273,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "坚岩隘谷"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1218.16,
+        174.45,
+        8396.69
+      ],
+      "worldArrival": [
+        -1220.7604,
+        174.55031,
+        8400.922
+      ],
+      "x": 8396.69,
+      "y": -1218.16,
+      "height": 174.45,
+      "arrival": {
+        "x": 8400.922,
+        "y": -1220.7604,
+        "height": 174.55031
+      }
+    },
+    {
+      "key": "Teyvat:1274",
+      "tpId": 1274,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "万火之瓯"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1631.639,
+        129.609,
+        8906.927
+      ],
+      "worldArrival": [
+        -1638.4421,
+        128.19894,
+        8909.129
+      ],
+      "x": 8906.927,
+      "y": -1631.639,
+      "height": 129.609,
+      "arrival": {
+        "x": 8909.129,
+        "y": -1638.4421,
+        "height": 128.19894
+      }
+    },
+    {
+      "key": "Teyvat:1284",
+      "tpId": 1284,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "翘枝崖",
+        "「花羽会」"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1287.028,
+        300.883,
+        9589.021
+      ],
+      "worldArrival": [
+        -1279.1305,
+        300.96375,
+        9587.416
+      ],
+      "x": 9589.021,
+      "y": -1287.028,
+      "height": 300.883,
+      "arrival": {
+        "x": 9587.416,
+        "y": -1279.1305,
+        "height": 300.96375
+      }
+    },
+    {
+      "key": "Teyvat:1297",
+      "tpId": 1297,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "涌流地",
+        "浮土静界"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -3029.884,
+        378.92,
+        8545.914
+      ],
+      "worldArrival": [
+        -3021.8623,
+        380.2534,
+        8547.802
+      ],
+      "x": 8545.914,
+      "y": -3029.884,
+      "height": 378.92,
+      "arrival": {
+        "x": 8547.802,
+        "y": -3021.8623,
+        "height": 380.2534
+      }
+    },
+    {
+      "key": "Teyvat:1298",
+      "tpId": 1298,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "镜璧山"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1734.098,
+        114.046,
+        9230.613
+      ],
+      "worldArrival": [
+        -1728.9218,
+        114.05119,
+        9229.766
+      ],
+      "x": 9230.613,
+      "y": -1734.098,
+      "height": 114.046,
+      "arrival": {
+        "x": 9229.766,
+        "y": -1728.9218,
+        "height": 114.05119
+      }
+    },
+    {
+      "key": "Teyvat:1299",
+      "tpId": 1299,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "翘枝崖"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1331.759,
+        49.78198,
+        9351.644
+      ],
+      "worldArrival": [
+        -1340.4451,
+        49.883644,
+        9345.223
+      ],
+      "x": 9351.644,
+      "y": -1331.759,
+      "height": 49.78198,
+      "arrival": {
+        "x": 9345.223,
+        "y": -1340.4451,
+        "height": 49.883644
+      }
+    },
+    {
+      "key": "Teyvat:1300",
+      "tpId": 1300,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "镜璧山",
+        "「烟谜主」"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1552.662,
+        254.34,
+        9711.696
+      ],
+      "worldArrival": [
+        -1544.8174,
+        254.07416,
+        9706.777
+      ],
+      "x": 9711.696,
+      "y": -1552.662,
+      "height": 254.34,
+      "arrival": {
+        "x": 9706.777,
+        "y": -1544.8174,
+        "height": 254.07416
+      }
+    },
+    {
+      "key": "Teyvat:1301",
+      "tpId": 1301,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "镜璧山",
+        "「烟谜主」"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1624.362,
+        173.6859,
+        9691.779
+      ],
+      "worldArrival": [
+        -1621.071,
+        172.87312,
+        9685.833
+      ],
+      "x": 9691.779,
+      "y": -1624.362,
+      "height": 173.6859,
+      "arrival": {
+        "x": 9685.833,
+        "y": -1621.071,
+        "height": 172.87312
+      }
+    },
+    {
+      "key": "Teyvat:1302",
+      "tpId": 1302,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "镜璧山"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1604.79,
+        236.6061,
+        9970.278
+      ],
+      "worldArrival": [
+        -1607.1764,
+        235.34894,
+        9989.785
+      ],
+      "x": 9970.278,
+      "y": -1604.79,
+      "height": 236.6061,
+      "arrival": {
+        "x": 9989.785,
+        "y": -1607.1764,
+        "height": 235.34894
+      }
+    },
+    {
+      "key": "Teyvat:1303",
+      "tpId": 1303,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "奥奇卡纳塔"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -338.2855,
+        278.45,
+        10009.45
+      ],
+      "worldArrival": [
+        -337.4656,
+        278.657,
+        10018.984
+      ],
+      "x": 10009.45,
+      "y": -338.2855,
+      "height": 278.45,
+      "arrival": {
+        "x": 10018.984,
+        "y": -337.4656,
+        "height": 278.657
+      }
+    },
+    {
+      "key": "Teyvat:1304",
+      "tpId": 1304,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "坚岩隘谷",
+        "火榴树根系·温热洞窟"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1802.359,
+        -40.67281,
+        8112.86
+      ],
+      "worldArrival": [
+        -1804.9005,
+        -43.132103,
+        8091.222
+      ],
+      "x": 8112.86,
+      "y": -1802.359,
+      "height": -40.67281,
+      "arrival": {
+        "x": 8091.222,
+        "y": -1804.9005,
+        "height": -43.132103
+      }
+    },
+    {
+      "key": "Teyvat:1305",
+      "tpId": 1305,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "奥奇卡纳塔",
+        "空梦的起始"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -133.44,
+        466.9128,
+        10119.52
+      ],
+      "worldArrival": [
+        -139.81319,
+        467.16003,
+        10113.139
+      ],
+      "x": 10119.52,
+      "y": -133.44,
+      "height": 466.9128,
+      "arrival": {
+        "x": 10113.139,
+        "y": -139.81319,
+        "height": 467.16003
+      }
+    },
+    {
+      "key": "Teyvat:1306",
+      "tpId": 1306,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "万火之瓯"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1408.6,
+        30.98356,
+        8709.6
+      ],
+      "worldArrival": [
+        -1429,
+        27,
+        8716
+      ],
+      "x": 8709.6,
+      "y": -1408.6,
+      "height": 30.98356,
+      "arrival": {
+        "x": 8716,
+        "y": -1429,
+        "height": 27
+      }
+    },
+    {
+      "key": "Teyvat:1314",
+      "tpId": 1314,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "奥奇卡纳塔",
+        "？？？"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -311.5359,
+        1247.278,
+        9921.914
+      ],
+      "worldArrival": [
+        -312.26532,
+        1247.4553,
+        9928.044
+      ],
+      "x": 9921.914,
+      "y": -311.5359,
+      "height": 1247.278,
+      "arrival": {
+        "x": 9928.044,
+        "y": -312.26532,
+        "height": 1247.4553
+      }
+    },
+    {
+      "key": "Teyvat:1316",
+      "tpId": 1316,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "奥奇卡纳塔"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -162.2041,
+        302.6147,
+        10032.11
+      ],
+      "worldArrival": [
+        -162.86037,
+        302.4405,
+        10027.448
+      ],
+      "x": 10032.11,
+      "y": -162.2041,
+      "height": 302.6147,
+      "arrival": {
+        "x": 10027.448,
+        "y": -162.86037,
+        "height": 302.4405
+      }
+    },
+    {
+      "key": "Teyvat:1318",
+      "tpId": 1318,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "镜璧山"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1768.635,
+        171.899,
+        9782.574
+      ],
+      "worldArrival": [
+        -1763.9923,
+        171.22182,
+        9782.681
+      ],
+      "x": 9782.574,
+      "y": -1768.635,
+      "height": 171.899,
+      "arrival": {
+        "x": 9782.681,
+        "y": -1763.9923,
+        "height": 171.22182
+      }
+    },
+    {
+      "key": "Teyvat:1319",
+      "tpId": 1319,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "镜璧山"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1668.404,
+        240.749,
+        9469.843
+      ],
+      "worldArrival": [
+        -1672.8666,
+        240.94339,
+        9471.431
+      ],
+      "x": 9469.843,
+      "y": -1668.404,
+      "height": 240.749,
+      "arrival": {
+        "x": 9471.431,
+        "y": -1672.8666,
+        "height": 240.94339
+      }
+    },
+    {
+      "key": "Teyvat:1320",
+      "tpId": 1320,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "奥奇卡纳塔"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -399.5174,
+        202.3148,
+        10163.68
+      ],
+      "worldArrival": [
+        -394.97067,
+        201.72502,
+        10165.994
+      ],
+      "x": 10163.68,
+      "y": -399.5174,
+      "height": 202.3148,
+      "arrival": {
+        "x": 10165.994,
+        "y": -394.97067,
+        "height": 201.72502
+      }
+    },
+    {
+      "key": "Teyvat:1324",
+      "tpId": 1324,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "踞石山",
+        "窃火者密岛"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2752.1,
+        200.076,
+        7877.01
+      ],
+      "worldArrival": [
+        -2751.4236,
+        200.39253,
+        7873.4375
+      ],
+      "x": 7877.01,
+      "y": -2752.1,
+      "height": 200.076,
+      "arrival": {
+        "x": 7873.4375,
+        "y": -2751.4236,
+        "height": 200.39253
+      }
+    },
+    {
+      "key": "Teyvat:1325",
+      "tpId": 1325,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "镜璧山",
+        "？？？"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1380.979,
+        200.106,
+        10731.87
+      ],
+      "worldArrival": [
+        -1379.0127,
+        200.38412,
+        10728.503
+      ],
+      "x": 10731.87,
+      "y": -1380.979,
+      "height": 200.106,
+      "arrival": {
+        "x": 10728.503,
+        "y": -1379.0127,
+        "height": 200.38412
+      }
+    },
+    {
+      "key": "Teyvat:1327",
+      "tpId": 1327,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "踞石山",
+        "燃素开采研究所"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2107.899,
+        110.3287,
+        7657.274
+      ],
+      "worldArrival": [
+        -2113.1445,
+        110.39691,
+        7647.6963
+      ],
+      "x": 7657.274,
+      "y": -2107.899,
+      "height": 110.3287,
+      "arrival": {
+        "x": 7647.6963,
+        "y": -2113.1445,
+        "height": 110.39691
+      }
+    },
+    {
+      "key": "Teyvat:1329",
+      "tpId": 1329,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "翘枝崖"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1421.205,
+        215.7299,
+        9306.155
+      ],
+      "worldArrival": [
+        -1422.5454,
+        214.35924,
+        9311.152
+      ],
+      "x": 9306.155,
+      "y": -1421.205,
+      "height": 215.7299,
+      "arrival": {
+        "x": 9311.152,
+        "y": -1422.5454,
+        "height": 214.35924
+      }
+    },
+    {
+      "key": "Teyvat:1332",
+      "tpId": 1332,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "奥奇卡纳塔",
+        "托佐兹之岛"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        166.9942,
+        243.6284,
+        9673.852
+      ],
+      "worldArrival": [
+        172.00659,
+        243.8894,
+        9670.416
+      ],
+      "x": 9673.852,
+      "y": 166.9942,
+      "height": 243.6284,
+      "arrival": {
+        "x": 9670.416,
+        "y": 172.00659,
+        "height": 243.8894
+      }
+    },
+    {
+      "key": "Teyvat:1333",
+      "tpId": 1333,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "奥奇卡纳塔",
+        "烬火炽燃所"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -576.3449,
+        261.243,
+        9192.097
+      ],
+      "worldArrival": [
+        -572.5,
+        261.04,
+        9202.4
+      ],
+      "x": 9192.097,
+      "y": -576.3449,
+      "height": 261.243,
+      "arrival": {
+        "x": 9202.4,
+        "y": -572.5,
+        "height": 261.04
+      }
+    },
+    {
+      "key": "Teyvat:1334",
+      "tpId": 1334,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "奥奇卡纳塔"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -638.426,
+        290.1856,
+        10033.93
+      ],
+      "worldArrival": [
+        -642.77594,
+        291.17078,
+        10030.678
+      ],
+      "x": 10033.93,
+      "y": -638.426,
+      "height": 290.1856,
+      "arrival": {
+        "x": 10030.678,
+        "y": -642.77594,
+        "height": 291.17078
+      }
+    },
+    {
+      "key": "Teyvat:1336",
+      "tpId": 1336,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "踞石山",
+        "祖遗庙宇"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2119.68,
+        256.88,
+        8061.54
+      ],
+      "worldArrival": [
+        -2121.5378,
+        254.9342,
+        8055.3604
+      ],
+      "x": 8061.54,
+      "y": -2119.68,
+      "height": 256.88,
+      "arrival": {
+        "x": 8055.3604,
+        "y": -2121.5378,
+        "height": 254.9342
+      }
+    },
+    {
+      "key": "Teyvat:1337",
+      "tpId": 1337,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "坚岩隘谷",
+        "众岩之里",
+        "众岩之里"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1354.643,
+        -197.822,
+        8491.05
+      ],
+      "worldArrival": [
+        -1357.511,
+        -198.9265,
+        8501.09
+      ],
+      "x": 8491.05,
+      "y": -1354.643,
+      "height": -197.822,
+      "arrival": {
+        "x": 8501.09,
+        "y": -1357.511,
+        "height": -198.9265
+      }
+    },
+    {
+      "key": "Teyvat:1341",
+      "tpId": 1341,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "踞石山",
+        "彩石顶"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2284.98,
+        353.455,
+        8192.631
+      ],
+      "worldArrival": [
+        -2288.1616,
+        353.8762,
+        8202.225
+      ],
+      "x": 8192.631,
+      "y": -2284.98,
+      "height": 353.455,
+      "arrival": {
+        "x": 8202.225,
+        "y": -2288.1616,
+        "height": 353.8762
+      }
+    },
+    {
+      "key": "Teyvat:1349",
+      "tpId": 1349,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "奥奇卡纳塔"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        20.96,
+        214.66,
+        10074.34
+      ],
+      "worldArrival": [
+        26.205292,
+        213.85999,
+        10070.546
+      ],
+      "x": 10074.34,
+      "y": 20.96,
+      "height": 214.66,
+      "arrival": {
+        "x": 10070.546,
+        "y": 26.205292,
+        "height": 213.85999
+      }
+    },
+    {
+      "key": "Teyvat:1350",
+      "tpId": 1350,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "翘枝崖"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1492.815,
+        22.083,
+        9387.38
+      ],
+      "worldArrival": [
+        -1484.6531,
+        20.769323,
+        9391.633
+      ],
+      "x": 9387.38,
+      "y": -1492.815,
+      "height": 22.083,
+      "arrival": {
+        "x": 9391.633,
+        "y": -1484.6531,
+        "height": 20.769323
+      }
+    },
+    {
+      "key": "Teyvat:1352",
+      "tpId": 1352,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "曜石图腾柱·「悬木人」",
+      "type": "NatlanObsidianTotemPole",
+      "areas": [
+        "踞石山",
+        "「悬木人」"
+      ],
+      "scope": "special",
+      "worldPosition": [
+        -2107.967,
+        252.9204,
+        8429.955
+      ],
+      "worldArrival": [
+        -2106.902,
+        249.41585,
+        8439.628
+      ],
+      "x": 8429.955,
+      "y": -2107.967,
+      "height": 252.9204,
+      "arrival": {
+        "x": 8439.628,
+        "y": -2106.902,
+        "height": 249.41585
+      }
+    },
+    {
+      "key": "Teyvat:1353",
+      "tpId": 1353,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "曜石图腾柱·「流泉之众」",
+      "type": "NatlanObsidianTotemPole",
+      "areas": [
+        "涌流地",
+        "「流泉之众」"
+      ],
+      "scope": "special",
+      "worldPosition": [
+        -2920.337,
+        207.5712,
+        9033.09
+      ],
+      "worldArrival": [
+        -2905.9612,
+        204.73503,
+        9035.856
+      ],
+      "x": 9033.09,
+      "y": -2920.337,
+      "height": 207.5712,
+      "arrival": {
+        "x": 9035.856,
+        "y": -2905.9612,
+        "height": 204.73503
+      }
+    },
+    {
+      "key": "Teyvat:1354",
+      "tpId": 1354,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "曜石图腾柱·「回声之子」",
+      "type": "NatlanObsidianTotemPole",
+      "areas": [
+        "坚岩隘谷",
+        "「回声之子」"
+      ],
+      "scope": "special",
+      "worldPosition": [
+        -1340.781,
+        165.9582,
+        7652.283
+      ],
+      "worldArrival": [
+        -1347.5862,
+        164.51111,
+        7651.569
+      ],
+      "x": 7652.283,
+      "y": -1340.781,
+      "height": 165.9582,
+      "arrival": {
+        "x": 7651.569,
+        "y": -1347.5862,
+        "height": 164.51111
+      }
+    },
+    {
+      "key": "Teyvat:1359",
+      "tpId": 1359,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "七天神像-火",
+      "type": "Goddess",
+      "areas": [
+        "安饶之野"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2610.78,
+        275.1,
+        10027.03
+      ],
+      "worldArrival": [
+        -2615.2393,
+        275.01553,
+        10026.312
+      ],
+      "x": 10027.03,
+      "y": -2610.78,
+      "height": 275.1,
+      "arrival": {
+        "x": 10026.312,
+        "y": -2615.2393,
+        "height": 275.01553
+      }
+    },
+    {
+      "key": "Teyvat:1363",
+      "tpId": 1363,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "奥奇卡纳塔",
+        "噩梦的温床"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        466.216,
+        -609.494,
+        10612.95
+      ],
+      "worldArrival": [
+        486.1188,
+        -614.5815,
+        10605.958
+      ],
+      "x": 10612.95,
+      "y": 466.216,
+      "height": -609.494,
+      "arrival": {
+        "x": 10605.958,
+        "y": 486.1188,
+        "height": -614.5815
+      }
+    },
+    {
+      "key": "Teyvat:1368",
+      "tpId": 1368,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "万火之瓯",
+        "柴薪之丘"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1381.04,
+        243.35,
+        9052.88
+      ],
+      "worldArrival": [
+        -1372.477,
+        239.52103,
+        9033.636
+      ],
+      "x": 9052.88,
+      "y": -1381.04,
+      "height": 243.35,
+      "arrival": {
+        "x": 9033.636,
+        "y": -1372.477,
+        "height": 239.52103
+      }
+    },
+    {
+      "key": "Teyvat:1371",
+      "tpId": 1371,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "安饶之野",
+        "孑遗的留迹"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -3022.117,
+        310.7402,
+        10169.73
+      ],
+      "worldArrival": [
+        -3017,
+        311,
+        10185
+      ],
+      "x": 10169.73,
+      "y": -3022.117,
+      "height": 310.7402,
+      "arrival": {
+        "x": 10185,
+        "y": -3017,
+        "height": 311
+      }
+    },
+    {
+      "key": "Teyvat:1372",
+      "tpId": 1372,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "安饶之野"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2668,
+        277.51,
+        10595.67
+      ],
+      "worldArrival": [
+        -2653.7927,
+        277.78088,
+        10595.603
+      ],
+      "x": 10595.67,
+      "y": -2668,
+      "height": 277.51,
+      "arrival": {
+        "x": 10595.603,
+        "y": -2653.7927,
+        "height": 277.78088
+      }
+    },
+    {
+      "key": "Teyvat:1373",
+      "tpId": 1373,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "安饶之野",
+        "「天火之冠」"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -3126.329,
+        595.7506,
+        10574.54
+      ],
+      "worldArrival": [
+        -3133.614,
+        593.8141,
+        10570.973
+      ],
+      "x": 10574.54,
+      "y": -3126.329,
+      "height": 595.7506,
+      "arrival": {
+        "x": 10570.973,
+        "y": -3133.614,
+        "height": 593.8141
+      }
+    },
+    {
+      "key": "Teyvat:1374",
+      "tpId": 1374,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "安饶之野",
+        "「天火之冠」"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -3110.931,
+        494.4035,
+        10275.19
+      ],
+      "worldArrival": [
+        -3109.7463,
+        495.31046,
+        10279.376
+      ],
+      "x": 10275.19,
+      "y": -3110.931,
+      "height": 494.4035,
+      "arrival": {
+        "x": 10279.376,
+        "y": -3109.7463,
+        "height": 495.31046
+      }
+    },
+    {
+      "key": "Teyvat:1376",
+      "tpId": 1376,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "七天神像-火",
+      "type": "Goddess",
+      "areas": [
+        "悠悠度假村"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -159.3611,
+        200,
+        13595.97
+      ],
+      "worldArrival": [
+        -156.87111,
+        200.79247,
+        13613.719
+      ],
+      "x": 13595.97,
+      "y": -159.3611,
+      "height": 200,
+      "arrival": {
+        "x": 13613.719,
+        "y": -156.87111,
+        "height": 200.79247
+      }
+    },
+    {
+      "key": "Teyvat:1377",
+      "tpId": 1377,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "神庙·煅石之轮",
+      "type": "Other",
+      "areas": [
+        "万火之瓯",
+        "圣火竞技场·帕克斯神庙"
+      ],
+      "scope": "special",
+      "worldPosition": [
+        -1913.72,
+        52.15036,
+        9024.176
+      ],
+      "worldArrival": [
+        -1913.5176,
+        52.67444,
+        9025.569
+      ],
+      "x": 9024.176,
+      "y": -1913.72,
+      "height": 52.15036,
+      "arrival": {
+        "x": 9025.569,
+        "y": -1913.5176,
+        "height": 52.67444
+      }
+    },
+    {
+      "key": "Teyvat:1392",
+      "tpId": 1392,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "安饶之野"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2205.097,
+        215.224,
+        9516.27
+      ],
+      "worldArrival": [
+        -2215.4111,
+        218,
+        9522.617
+      ],
+      "x": 9516.27,
+      "y": -2205.097,
+      "height": 215.224,
+      "arrival": {
+        "x": 9522.617,
+        "y": -2215.4111,
+        "height": 218
+      }
+    },
+    {
+      "key": "Teyvat:1394",
+      "tpId": 1394,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "安饶之野"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2667.96,
+        225.2414,
+        9808.773
+      ],
+      "worldArrival": [
+        -2665,
+        224.22,
+        9796
+      ],
+      "x": 9808.773,
+      "y": -2667.96,
+      "height": 225.2414,
+      "arrival": {
+        "x": 9796,
+        "y": -2665,
+        "height": 224.22
+      }
+    },
+    {
+      "key": "Teyvat:1395",
+      "tpId": 1395,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "安饶之野"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2416.074,
+        235.8288,
+        9709.456
+      ],
+      "worldArrival": [
+        -2419.9058,
+        235,
+        9713.796
+      ],
+      "x": 9709.456,
+      "y": -2416.074,
+      "height": 235.8288,
+      "arrival": {
+        "x": 9713.796,
+        "y": -2419.9058,
+        "height": 235
+      }
+    },
+    {
+      "key": "Teyvat:1396",
+      "tpId": 1396,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "安饶之野"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2357.516,
+        202.9025,
+        9834.555
+      ],
+      "worldArrival": [
+        -2364.5566,
+        202.50456,
+        9838.347
+      ],
+      "x": 9834.555,
+      "y": -2357.516,
+      "height": 202.9025,
+      "arrival": {
+        "x": 9838.347,
+        "y": -2364.5566,
+        "height": 202.50456
+      }
+    },
+    {
+      "key": "Teyvat:1405",
+      "tpId": 1405,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "安饶之野"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2210.011,
+        62.38248,
+        9884.515
+      ],
+      "worldArrival": [
+        -2217,
+        61.330517,
+        9884
+      ],
+      "x": 9884.515,
+      "y": -2210.011,
+      "height": 62.38248,
+      "arrival": {
+        "x": 9884,
+        "y": -2217,
+        "height": 61.330517
+      }
+    },
+    {
+      "key": "Teyvat:1407",
+      "tpId": 1407,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "涌流地"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2520.833,
+        241.1861,
+        8291.754
+      ],
+      "worldArrival": [
+        -2520.7407,
+        241.83414,
+        8286.375
+      ],
+      "x": 8291.754,
+      "y": -2520.833,
+      "height": 241.1861,
+      "arrival": {
+        "x": 8286.375,
+        "y": -2520.7407,
+        "height": 241.83414
+      }
+    },
+    {
+      "key": "Teyvat:1408",
+      "tpId": 1408,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "涌流地"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2670.208,
+        87.34702,
+        8346.955
+      ],
+      "worldArrival": [
+        -2673.4883,
+        87.494484,
+        8346.745
+      ],
+      "x": 8346.955,
+      "y": -2670.208,
+      "height": 87.34702,
+      "arrival": {
+        "x": 8346.745,
+        "y": -2673.4883,
+        "height": 87.494484
+      }
+    },
+    {
+      "key": "Teyvat:1417",
+      "tpId": 1417,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "奥奇卡纳塔",
+        "空梦的起始"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -214.687,
+        472.2694,
+        9954.512
+      ],
+      "worldArrival": [
+        -218.13661,
+        472.50146,
+        9959.698
+      ],
+      "x": 9954.512,
+      "y": -214.687,
+      "height": 472.2694,
+      "arrival": {
+        "x": 9959.698,
+        "y": -218.13661,
+        "height": 472.50146
+      }
+    },
+    {
+      "key": "Teyvat:1418",
+      "tpId": 1418,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "涌流地",
+        "溶水域"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2930.71,
+        252.39,
+        8286.65
+      ],
+      "worldArrival": [
+        -2921.8494,
+        254.61401,
+        8291.868
+      ],
+      "x": 8286.65,
+      "y": -2930.71,
+      "height": 252.39,
+      "arrival": {
+        "x": 8291.868,
+        "y": -2921.8494,
+        "height": 254.61401
+      }
+    },
+    {
+      "key": "Teyvat:1419",
+      "tpId": 1419,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "坚岩隘谷"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1644.21,
+        267.997,
+        7629.26
+      ],
+      "worldArrival": [
+        -1646.1145,
+        268.15186,
+        7634.1357
+      ],
+      "x": 7629.26,
+      "y": -1644.21,
+      "height": 267.997,
+      "arrival": {
+        "x": 7634.1357,
+        "y": -1646.1145,
+        "height": 268.15186
+      }
+    },
+    {
+      "key": "Teyvat:1421",
+      "tpId": 1421,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "奥奇卡纳塔"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        257.8479,
+        681.3299,
+        9966.968
+      ],
+      "worldArrival": [
+        252.81454,
+        682.5233,
+        9968.747
+      ],
+      "x": 9966.968,
+      "y": 257.8479,
+      "height": 681.3299,
+      "arrival": {
+        "x": 9968.747,
+        "y": 252.81454,
+        "height": 682.5233
+      }
+    },
+    {
+      "key": "Teyvat:1422",
+      "tpId": 1422,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "奥奇卡纳塔"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        56.33437,
+        794.5432,
+        9702.383
+      ],
+      "worldArrival": [
+        77.197136,
+        795.00195,
+        9716.512
+      ],
+      "x": 9702.383,
+      "y": 56.33437,
+      "height": 794.5432,
+      "arrival": {
+        "x": 9716.512,
+        "y": 77.197136,
+        "height": 795.00195
+      }
+    },
+    {
+      "key": "Teyvat:1424",
+      "tpId": 1424,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "曜石图腾柱·「花羽会」",
+      "type": "NatlanObsidianTotemPole",
+      "areas": [
+        "翘枝崖",
+        "「花羽会」"
+      ],
+      "scope": "special",
+      "worldPosition": [
+        -1205.289,
+        305.4466,
+        9484.517
+      ],
+      "worldArrival": [
+        -1206.6849,
+        303.6915,
+        9492.087
+      ],
+      "x": 9484.517,
+      "y": -1205.289,
+      "height": 305.4466,
+      "arrival": {
+        "x": 9492.087,
+        "y": -1206.6849,
+        "height": 303.6915
+      }
+    },
+    {
+      "key": "Teyvat:1425",
+      "tpId": 1425,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "曜石图腾柱·「烟谜主」",
+      "type": "NatlanObsidianTotemPole",
+      "areas": [
+        "镜璧山",
+        "谜土祭祀场"
+      ],
+      "scope": "special",
+      "worldPosition": [
+        -1649.9,
+        17.93363,
+        9709.071
+      ],
+      "worldArrival": [
+        -1638.2584,
+        13.47595,
+        9717.155
+      ],
+      "x": 9709.071,
+      "y": -1649.9,
+      "height": 17.93363,
+      "arrival": {
+        "x": 9717.155,
+        "y": -1638.2584,
+        "height": 13.47595
+      }
+    },
+    {
+      "key": "Teyvat:1427",
+      "tpId": 1427,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "镜璧山"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1805.452,
+        117.152,
+        9393.616
+      ],
+      "worldArrival": [
+        -1809.9656,
+        117.48867,
+        9396.815
+      ],
+      "x": 9393.616,
+      "y": -1805.452,
+      "height": 117.152,
+      "arrival": {
+        "x": 9396.815,
+        "y": -1809.9656,
+        "height": 117.48867
+      }
+    },
+    {
+      "key": "Teyvat:1428",
+      "tpId": 1428,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "安饶之野"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2526.788,
+        269.945,
+        10261.62
+      ],
+      "worldArrival": [
+        -2538,
+        269,
+        10261
+      ],
+      "x": 10261.62,
+      "y": -2526.788,
+      "height": 269.945,
+      "arrival": {
+        "x": 10261,
+        "y": -2538,
+        "height": 269
+      }
+    },
+    {
+      "key": "Teyvat:1429",
+      "tpId": 1429,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "七天神像-火",
+      "type": "Goddess",
+      "areas": [
+        "翘枝崖"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1288.161,
+        222.5755,
+        9848.209
+      ],
+      "worldArrival": [
+        -1289.3813,
+        221.11725,
+        9839.808
+      ],
+      "x": 9848.209,
+      "y": -1288.161,
+      "height": 222.5755,
+      "arrival": {
+        "x": 9839.808,
+        "y": -1289.3813,
+        "height": 221.11725
+      }
+    },
+    {
+      "key": "Teyvat:1432",
+      "tpId": 1432,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "镜璧山"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1857.9,
+        151.903,
+        9643.603
+      ],
+      "worldArrival": [
+        -1854.0704,
+        152.35713,
+        9638.349
+      ],
+      "x": 9643.603,
+      "y": -1857.9,
+      "height": 151.903,
+      "arrival": {
+        "x": 9638.349,
+        "y": -1854.0704,
+        "height": 152.35713
+      }
+    },
+    {
+      "key": "Teyvat:1437",
+      "tpId": 1437,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "安饶之野"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -3275.047,
+        200.1083,
+        9917.52
+      ],
+      "worldArrival": [
+        -3277,
+        200.3,
+        9924
+      ],
+      "x": 9917.52,
+      "y": -3275.047,
+      "height": 200.1083,
+      "arrival": {
+        "x": 9924,
+        "y": -3277,
+        "height": 200.3
+      }
+    },
+    {
+      "key": "Teyvat:1438",
+      "tpId": 1438,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "安饶之野"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -3061.37,
+        251.89,
+        10790.36
+      ],
+      "worldArrival": [
+        -3069,
+        252.1,
+        10795
+      ],
+      "x": 10790.36,
+      "y": -3061.37,
+      "height": 251.89,
+      "arrival": {
+        "x": 10795,
+        "y": -3069,
+        "height": 252.1
+      }
+    },
+    {
+      "key": "Teyvat:1439",
+      "tpId": 1439,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "安饶之野"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2847.8,
+        215.99,
+        9807.27
+      ],
+      "worldArrival": [
+        -2852,
+        218,
+        9813
+      ],
+      "x": 9807.27,
+      "y": -2847.8,
+      "height": 215.99,
+      "arrival": {
+        "x": 9813,
+        "y": -2852,
+        "height": 218
+      }
+    },
+    {
+      "key": "Teyvat:1440",
+      "tpId": 1440,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "安饶之野"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2367.56,
+        218.93,
+        10930.36
+      ],
+      "worldArrival": [
+        -2363,
+        218,
+        10926
+      ],
+      "x": 10930.36,
+      "y": -2367.56,
+      "height": 218.93,
+      "arrival": {
+        "x": 10926,
+        "y": -2363,
+        "height": 218
+      }
+    },
+    {
+      "key": "Teyvat:1448",
+      "tpId": 1448,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "安饶之野"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -3754.75,
+        201.29,
+        11013.69
+      ],
+      "worldArrival": [
+        -3753,
+        202.6,
+        11006
+      ],
+      "x": 11013.69,
+      "y": -3754.75,
+      "height": 201.29,
+      "arrival": {
+        "x": 11006,
+        "y": -3753,
+        "height": 202.6
+      }
+    },
+    {
+      "key": "Teyvat:1449",
+      "tpId": 1449,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "奥奇卡纳塔"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -353.789,
+        266.797,
+        9428.969
+      ],
+      "worldArrival": [
+        -354.00165,
+        266.61108,
+        9424.575
+      ],
+      "x": 9428.969,
+      "y": -353.789,
+      "height": 266.797,
+      "arrival": {
+        "x": 9424.575,
+        "y": -354.00165,
+        "height": 266.61108
+      }
+    },
+    {
+      "key": "Teyvat:1465",
+      "tpId": 1465,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "安饶之野"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2157.513,
+        124.2679,
+        9281.525
+      ],
+      "worldArrival": [
+        -2163,
+        125.308075,
+        9283
+      ],
+      "x": 9281.525,
+      "y": -2157.513,
+      "height": 124.2679,
+      "arrival": {
+        "x": 9283,
+        "y": -2163,
+        "height": 125.308075
+      }
+    },
+    {
+      "key": "Teyvat:1473",
+      "tpId": 1473,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "荒废砌造坞",
+      "type": "BlessDomain",
+      "areas": [
+        "安饶之野"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -3381.745,
+        201.9949,
+        10548.22
+      ],
+      "worldArrival": [
+        -3372.4905,
+        201.64879,
+        10548.327
+      ],
+      "x": 10548.22,
+      "y": -3381.745,
+      "height": 201.9949,
+      "arrival": {
+        "x": 10548.327,
+        "y": -3372.4905,
+        "height": 201.64879
+      }
+    },
+    {
+      "key": "Teyvat:1476",
+      "tpId": 1476,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "天蛇船",
+      "type": "Other",
+      "areas": [
+        "奥奇卡纳塔",
+        "？？？"
+      ],
+      "scope": "special",
+      "worldPosition": [
+        -143.3221,
+        1330.067,
+        10073.92
+      ],
+      "worldArrival": [
+        -140.8593,
+        1328.8466,
+        10076.647
+      ],
+      "x": 10073.92,
+      "y": -143.3221,
+      "height": 1330.067,
+      "arrival": {
+        "x": 10076.647,
+        "y": -140.8593,
+        "height": 1328.8466
+      }
+    },
+    {
+      "key": "Teyvat:1477",
+      "tpId": 1477,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "奥奇卡纳塔"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -203.6661,
+        209.059,
+        10276.48
+      ],
+      "worldArrival": [
+        -191.5565,
+        212.39665,
+        10273.902
+      ],
+      "x": 10276.48,
+      "y": -203.6661,
+      "height": 209.059,
+      "arrival": {
+        "x": 10273.902,
+        "y": -191.5565,
+        "height": 212.39665
+      }
+    },
+    {
+      "key": "Teyvat:1479",
+      "tpId": 1479,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "奥奇卡纳塔",
+        "空梦的起始"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -208.0096,
+        643.3099,
+        10077.29
+      ],
+      "worldArrival": [
+        -216.17174,
+        648.9925,
+        10067.737
+      ],
+      "x": 10077.29,
+      "y": -208.0096,
+      "height": 643.3099,
+      "arrival": {
+        "x": 10067.737,
+        "y": -216.17174,
+        "height": 648.9925
+      }
+    },
+    {
+      "key": "Teyvat:1480",
+      "tpId": 1480,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "镜璧山",
+        "漫曛谷"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1852.241,
+        45.703,
+        9605.335
+      ],
+      "worldArrival": [
+        -1858,
+        41,
+        9595
+      ],
+      "x": 9605.335,
+      "y": -1852.241,
+      "height": 45.703,
+      "arrival": {
+        "x": 9595,
+        "y": -1858,
+        "height": 41
+      }
+    },
+    {
+      "key": "Teyvat:1488",
+      "tpId": 1488,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "碑碣的记录",
+      "type": "TrounceDomain",
+      "areas": [
+        "镜璧山"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -1941.126,
+        149.6,
+        9479.65
+      ],
+      "worldArrival": [
+        -1930.8911,
+        149.84552,
+        9481.885
+      ],
+      "x": 9479.65,
+      "y": -1941.126,
+      "height": 149.6,
+      "arrival": {
+        "x": 9481.885,
+        "y": -1930.8911,
+        "height": 149.84552
+      }
+    },
+    {
+      "key": "Teyvat:1490",
+      "tpId": 1490,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "奥奇卡纳塔"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -31.03807,
+        678.696,
+        9183.901
+      ],
+      "worldArrival": [
+        -28.769194,
+        678.85187,
+        9187.884
+      ],
+      "x": 9183.901,
+      "y": -31.03807,
+      "height": 678.696,
+      "arrival": {
+        "x": 9187.884,
+        "y": -28.769194,
+        "height": 678.85187
+      }
+    },
+    {
+      "key": "Teyvat:1518",
+      "tpId": 1518,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "安饶之野"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -3638.83,
+        220.5738,
+        11958.13
+      ],
+      "worldArrival": [
+        -3640.8953,
+        219.65636,
+        11953.496
+      ],
+      "x": 11958.13,
+      "y": -3638.83,
+      "height": 220.5738,
+      "arrival": {
+        "x": 11953.496,
+        "y": -3640.8953,
+        "height": 219.65636
+      }
+    },
+    {
+      "key": "Teyvat:1526",
+      "tpId": 1526,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "安饶之野",
+        "「天火之冠」"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2874.757,
+        743.6335,
+        10382.01
+      ],
+      "worldArrival": [
+        -2866.7922,
+        743.4904,
+        10388.134
+      ],
+      "x": 10382.01,
+      "y": -2874.757,
+      "height": 743.6335,
+      "arrival": {
+        "x": 10388.134,
+        "y": -2866.7922,
+        "height": 743.4904
+      }
+    },
+    {
+      "key": "Teyvat:1529",
+      "tpId": 1529,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "曜石图腾柱·「沃陆之邦」",
+      "type": "NatlanObsidianTotemPole",
+      "areas": [
+        "安饶之野",
+        "「沃陆之邦」"
+      ],
+      "scope": "special",
+      "worldPosition": [
+        -2719.633,
+        328.2586,
+        10264.96
+      ],
+      "worldArrival": [
+        -2711.5808,
+        327.8494,
+        10263.858
+      ],
+      "x": 10264.96,
+      "y": -2719.633,
+      "height": 328.2586,
+      "arrival": {
+        "x": 10263.858,
+        "y": -2711.5808,
+        "height": 327.8494
+      }
+    },
+    {
+      "key": "Teyvat:1535",
+      "tpId": 1535,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "安饶之野",
+        "觐山古道"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -2811.525,
+        113.8755,
+        9649.465
+      ],
+      "worldArrival": [
+        -2804.3494,
+        113.63807,
+        9644.283
+      ],
+      "x": 9649.465,
+      "y": -2811.525,
+      "height": 113.8755,
+      "arrival": {
+        "x": 9644.283,
+        "y": -2804.3494,
+        "height": 113.63807
+      }
+    },
+    {
+      "key": "Teyvat:1542",
+      "tpId": 1542,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "安饶之野"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -3320.487,
+        213.6843,
+        10368.37
+      ],
+      "worldArrival": [
+        -3315.2607,
+        214.57553,
+        10364.039
+      ],
+      "x": 10368.37,
+      "y": -3320.487,
+      "height": 213.6843,
+      "arrival": {
+        "x": 10364.039,
+        "y": -3315.2607,
+        "height": 214.57553
+      }
+    },
+    {
+      "key": "Teyvat:1592",
+      "tpId": 1592,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "悠悠度假村",
+        "悠悠集市"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        386.9469,
+        210.5335,
+        13756.98
+      ],
+      "worldArrival": [
+        380.29648,
+        210.5335,
+        13755.113
+      ],
+      "x": 13756.98,
+      "y": 386.9469,
+      "height": 210.5335,
+      "arrival": {
+        "x": 13755.113,
+        "y": 380.29648,
+        "height": 210.5335
+      }
+    },
+    {
+      "key": "Teyvat:1593",
+      "tpId": 1593,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "悠悠度假村",
+        "悠悠集市"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        466.3426,
+        221.9324,
+        13975.01
+      ],
+      "worldArrival": [
+        470.93094,
+        221.9324,
+        13979.177
+      ],
+      "x": 13975.01,
+      "y": 466.3426,
+      "height": 221.9324,
+      "arrival": {
+        "x": 13979.177,
+        "y": 470.93094,
+        "height": 221.9324
+      }
+    },
+    {
+      "key": "Teyvat:1594",
+      "tpId": 1594,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "悠悠度假村"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        323.4831,
+        234.9312,
+        13915.52
+      ],
+      "worldArrival": [
+        328.2215,
+        232.30417,
+        13905.502
+      ],
+      "x": 13915.52,
+      "y": 323.4831,
+      "height": 234.9312,
+      "arrival": {
+        "x": 13905.502,
+        "y": 328.2215,
+        "height": 232.30417
+      }
+    },
+    {
+      "key": "Teyvat:1595",
+      "tpId": 1595,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "悠悠度假村"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        424.7956,
+        201.0962,
+        14150.75
+      ],
+      "worldArrival": [
+        421.22852,
+        201.146,
+        14154.254
+      ],
+      "x": 14150.75,
+      "y": 424.7956,
+      "height": 201.0962,
+      "arrival": {
+        "x": 14154.254,
+        "y": 421.22852,
+        "height": 201.146
+      }
+    },
+    {
+      "key": "Teyvat:1596",
+      "tpId": 1596,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "悠悠度假村",
+        "呼呼丘"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        764.3457,
+        222.0202,
+        14116.32
+      ],
+      "worldArrival": [
+        766.83514,
+        222.0202,
+        14113.7295
+      ],
+      "x": 14116.32,
+      "y": 764.3457,
+      "height": 222.0202,
+      "arrival": {
+        "x": 14113.7295,
+        "y": 766.83514,
+        "height": 222.0202
+      }
+    },
+    {
+      "key": "Teyvat:1597",
+      "tpId": 1597,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "悠悠度假村",
+        "彩彩崖"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        674.0975,
+        243.3769,
+        13940.52
+      ],
+      "worldArrival": [
+        664.20544,
+        241.54144,
+        13945.703
+      ],
+      "x": 13940.52,
+      "y": 674.0975,
+      "height": 243.3769,
+      "arrival": {
+        "x": 13945.703,
+        "y": 664.20544,
+        "height": 241.54144
+      }
+    },
+    {
+      "key": "Teyvat:1598",
+      "tpId": 1598,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "悠悠度假村",
+        "彩彩崖"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        845.3218,
+        307.6451,
+        13730.35
+      ],
+      "worldArrival": [
+        838.6135,
+        304.3552,
+        13728.322
+      ],
+      "x": 13730.35,
+      "y": 845.3218,
+      "height": 307.6451,
+      "arrival": {
+        "x": 13728.322,
+        "y": 838.6135,
+        "height": 304.3552
+      }
+    },
+    {
+      "key": "Teyvat:1600",
+      "tpId": 1600,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "悠悠度假村"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        380.2944,
+        248.8608,
+        13614.58
+      ],
+      "worldArrival": [
+        379.81302,
+        247.64294,
+        13629.684
+      ],
+      "x": 13614.58,
+      "y": 380.2944,
+      "height": 248.8608,
+      "arrival": {
+        "x": 13629.684,
+        "y": 379.81302,
+        "height": 247.64294
+      }
+    },
+    {
+      "key": "Teyvat:1602",
+      "tpId": 1602,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "悠悠度假村",
+        "浪浪湾"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        802.9026,
+        200.4032,
+        14222.73
+      ],
+      "worldArrival": [
+        807.785,
+        200.49986,
+        14219.249
+      ],
+      "x": 14222.73,
+      "y": 802.9026,
+      "height": 200.4032,
+      "arrival": {
+        "x": 14219.249,
+        "y": 807.785,
+        "height": 200.49986
+      }
+    },
+    {
+      "key": "Teyvat:1603",
+      "tpId": 1603,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "悠悠度假村"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        630.3914,
+        223.5063,
+        14164.6
+      ],
+      "worldArrival": [
+        627.95264,
+        223.61247,
+        14167.1
+      ],
+      "x": 14164.6,
+      "y": 630.3914,
+      "height": 223.5063,
+      "arrival": {
+        "x": 14167.1,
+        "y": 627.95264,
+        "height": 223.61247
+      }
+    },
+    {
+      "key": "Teyvat:1604",
+      "tpId": 1604,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "悠悠度假村",
+        "浪浪湾"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        792.5619,
+        214.7255,
+        14432.49
+      ],
+      "worldArrival": [
+        800.3868,
+        214.681,
+        14436.802
+      ],
+      "x": 14432.49,
+      "y": 792.5619,
+      "height": 214.7255,
+      "arrival": {
+        "x": 14436.802,
+        "y": 800.3868,
+        "height": 214.681
+      }
+    },
+    {
+      "key": "Teyvat:1605",
+      "tpId": 1605,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "悠悠度假村"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        996.5826,
+        297.4729,
+        14641.66
+      ],
+      "worldArrival": [
+        1000.4943,
+        298.03824,
+        14637.196
+      ],
+      "x": 14641.66,
+      "y": 996.5826,
+      "height": 297.4729,
+      "arrival": {
+        "x": 14637.196,
+        "y": 1000.4943,
+        "height": 298.03824
+      }
+    },
+    {
+      "key": "Teyvat:1606",
+      "tpId": 1606,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "悠悠度假村"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        555.6958,
+        258.6392,
+        14651.79
+      ],
+      "worldArrival": [
+        558.76184,
+        258.9349,
+        14654.284
+      ],
+      "x": 14651.79,
+      "y": 555.6958,
+      "height": 258.6392,
+      "arrival": {
+        "x": 14654.284,
+        "y": 558.76184,
+        "height": 258.9349
+      }
+    },
+    {
+      "key": "Teyvat:1607",
+      "tpId": 1607,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "悠悠度假村",
+        "刺梨镇"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        1416.627,
+        66.34088,
+        14227.44
+      ],
+      "worldArrival": [
+        1419.7568,
+        65.44593,
+        14227.67
+      ],
+      "x": 14227.44,
+      "y": 1416.627,
+      "height": 66.34088,
+      "arrival": {
+        "x": 14227.67,
+        "y": 1419.7568,
+        "height": 65.44593
+      }
+    },
+    {
+      "key": "Teyvat:1609",
+      "tpId": 1609,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "悠悠度假村",
+        "刺梨镇"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        1444.299,
+        128.6889,
+        13984.66
+      ],
+      "worldArrival": [
+        1441.9055,
+        128.4382,
+        13982.096
+      ],
+      "x": 13984.66,
+      "y": 1444.299,
+      "height": 128.6889,
+      "arrival": {
+        "x": 13982.096,
+        "y": 1441.9055,
+        "height": 128.4382
+      }
+    },
+    {
+      "key": "Teyvat:1610",
+      "tpId": 1610,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "悠悠度假村",
+        "刺梨镇"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        1531.633,
+        94.35979,
+        13921.42
+      ],
+      "worldArrival": [
+        1525.5068,
+        94.35979,
+        13922.6045
+      ],
+      "x": 13921.42,
+      "y": 1531.633,
+      "height": 94.35979,
+      "arrival": {
+        "x": 13922.6045,
+        "y": 1525.5068,
+        "height": 94.35979
+      }
+    },
+    {
+      "key": "Teyvat:1611",
+      "tpId": 1611,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "悠悠度假村",
+        "刺梨岩"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        1127.966,
+        203.5088,
+        14051.2
+      ],
+      "worldArrival": [
+        1118.8605,
+        203.71324,
+        14047.613
+      ],
+      "x": 14051.2,
+      "y": 1127.966,
+      "height": 203.5088,
+      "arrival": {
+        "x": 14047.613,
+        "y": 1118.8605,
+        "height": 203.71324
+      }
+    },
+    {
+      "key": "Teyvat:1643",
+      "tpId": 1643,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "悠悠度假村",
+        "浪浪湾"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        619.3363,
+        213.6888,
+        14290.73
+      ],
+      "worldArrival": [
+        625.71625,
+        212.84492,
+        14293.378
+      ],
+      "x": 14290.73,
+      "y": 619.3363,
+      "height": 213.6888,
+      "arrival": {
+        "x": 14293.378,
+        "y": 625.71625,
+        "height": 212.84492
+      }
+    },
+    {
+      "key": "Teyvat:1644",
+      "tpId": 1644,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "悠悠度假村"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -334.1664,
+        200.9062,
+        13619.38
+      ],
+      "worldArrival": [
+        -333.40787,
+        200.9062,
+        13615.874
+      ],
+      "x": 13619.38,
+      "y": -334.1664,
+      "height": 200.9062,
+      "arrival": {
+        "x": 13615.874,
+        "y": -333.40787,
+        "height": 200.9062
+      }
+    },
+    {
+      "key": "Teyvat:1645",
+      "tpId": 1645,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "悠悠度假村"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        728.177,
+        269.005,
+        14731.27
+      ],
+      "worldArrival": [
+        724.93787,
+        269.5059,
+        14733.144
+      ],
+      "x": 14731.27,
+      "y": 728.177,
+      "height": 269.005,
+      "arrival": {
+        "x": 14733.144,
+        "y": 724.93787,
+        "height": 269.5059
+      }
+    },
+    {
+      "key": "Teyvat:1646",
+      "tpId": 1646,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "悠悠度假村",
+        "提提岛"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        1345.508,
+        209.922,
+        15033.81
+      ],
+      "worldArrival": [
+        1346.0419,
+        209.47096,
+        15041.78
+      ],
+      "x": 15033.81,
+      "y": 1345.508,
+      "height": 209.922,
+      "arrival": {
+        "x": 15041.78,
+        "y": 1346.0419,
+        "height": 209.47096
+      }
+    },
+    {
+      "key": "Teyvat:1647",
+      "tpId": 1647,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "悠悠度假村",
+        "提提岛"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        1420.771,
+        200.05,
+        15192.22
+      ],
+      "worldArrival": [
+        1418.9392,
+        200.15,
+        15189.479
+      ],
+      "x": 15192.22,
+      "y": 1420.771,
+      "height": 200.05,
+      "arrival": {
+        "x": 15189.479,
+        "y": 1418.9392,
+        "height": 200.15
+      }
+    },
+    {
+      "key": "Teyvat:1649",
+      "tpId": 1649,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "悠悠度假村",
+        "提提岛"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        1603.544,
+        236.038,
+        15051.65
+      ],
+      "worldArrival": [
+        1607.5061,
+        236.10968,
+        15052.073
+      ],
+      "x": 15051.65,
+      "y": 1603.544,
+      "height": 236.038,
+      "arrival": {
+        "x": 15052.073,
+        "y": 1607.5061,
+        "height": 236.10968
+      }
+    },
+    {
+      "key": "Teyvat:1650",
+      "tpId": 1650,
+      "sceneId": 3,
+      "mapName": "Teyvat",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "悠悠度假村",
+        "提提岛"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        1634.135,
+        242.055,
+        15204.18
+      ],
+      "worldArrival": [
+        1630.0214,
+        240.99924,
+        15200.917
+      ],
+      "x": 15204.18,
+      "y": 1634.135,
+      "height": 242.055,
+      "arrival": {
+        "x": 15200.917,
+        "y": 1630.0214,
+        "height": 240.99924
+      }
+    },
+    {
+      "key": "AncientSacredMountain:2",
+      "tpId": 2,
+      "sceneId": 101,
+      "mapName": "AncientSacredMountain",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "远古圣山",
+        "候召的厅堂"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        747.23,
+        857.58,
+        44.91
+      ],
+      "worldArrival": [
+        752.04047,
+        857.8871,
+        40.86717
+      ],
+      "x": 44.91,
+      "y": 747.23,
+      "height": 857.58,
+      "arrival": {
+        "x": 40.86717,
+        "y": 752.04047,
+        "height": 857.8871
+      }
+    },
+    {
+      "key": "AncientSacredMountain:3",
+      "tpId": 3,
+      "sceneId": 101,
+      "mapName": "AncientSacredMountain",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "远古圣山"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        365.439,
+        751.873,
+        -185.486
+      ],
+      "worldArrival": [
+        363.01917,
+        751.1264,
+        -182.49893
+      ],
+      "x": -185.486,
+      "y": 365.439,
+      "height": 751.873,
+      "arrival": {
+        "x": -182.49893,
+        "y": 363.01917,
+        "height": 751.1264
+      }
+    },
+    {
+      "key": "AncientSacredMountain:4",
+      "tpId": 4,
+      "sceneId": 101,
+      "mapName": "AncientSacredMountain",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "远古圣山",
+        "分流识海"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        207.5441,
+        693.96,
+        196.1411
+      ],
+      "worldArrival": [
+        209.92026,
+        694.134,
+        202.46678
+      ],
+      "x": 196.1411,
+      "y": 207.5441,
+      "height": 693.96,
+      "arrival": {
+        "x": 202.46678,
+        "y": 209.92026,
+        "height": 694.134
+      }
+    },
+    {
+      "key": "AncientSacredMountain:5",
+      "tpId": 5,
+      "sceneId": 101,
+      "mapName": "AncientSacredMountain",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "远古圣山"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -42.25665,
+        822.063,
+        193.6675
+      ],
+      "worldArrival": [
+        -42.84648,
+        821.274,
+        185.37282
+      ],
+      "x": 193.6675,
+      "y": -42.25665,
+      "height": 822.063,
+      "arrival": {
+        "x": 185.37282,
+        "y": -42.84648,
+        "height": 821.274
+      }
+    },
+    {
+      "key": "AncientSacredMountain:6",
+      "tpId": 6,
+      "sceneId": 101,
+      "mapName": "AncientSacredMountain",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "远古圣山",
+        "分流识海"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        37.49844,
+        737.135,
+        383.0565
+      ],
+      "worldArrival": [
+        35.7756,
+        736.75525,
+        387.55582
+      ],
+      "x": 383.0565,
+      "y": 37.49844,
+      "height": 737.135,
+      "arrival": {
+        "x": 387.55582,
+        "y": 35.7756,
+        "height": 736.75525
+      }
+    },
+    {
+      "key": "AncientSacredMountain:7",
+      "tpId": 7,
+      "sceneId": 101,
+      "mapName": "AncientSacredMountain",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "远古圣山"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -246.441,
+        831.017,
+        -90.849
+      ],
+      "worldArrival": [
+        -248.21928,
+        828.3109,
+        -80.89331
+      ],
+      "x": -90.849,
+      "y": -246.441,
+      "height": 831.017,
+      "arrival": {
+        "x": -80.89331,
+        "y": -248.21928,
+        "height": 828.3109
+      }
+    },
+    {
+      "key": "AncientSacredMountain:8",
+      "tpId": 8,
+      "sceneId": 101,
+      "mapName": "AncientSacredMountain",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "远古圣山"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        -292.383,
+        885.409,
+        -249.987
+      ],
+      "worldArrival": [
+        -290.66766,
+        885.0531,
+        -245.20038
+      ],
+      "x": -249.987,
+      "y": -292.383,
+      "height": 885.409,
+      "arrival": {
+        "x": -245.20038,
+        "y": -290.66766,
+        "height": 885.0531
+      }
+    },
+    {
+      "key": "AncientSacredMountain:11",
+      "tpId": 11,
+      "sceneId": 101,
+      "mapName": "AncientSacredMountain",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "远古圣山"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        5.254,
+        770.154,
+        -544.8
+      ],
+      "worldArrival": [
+        8.071999,
+        770.3726,
+        -546.2424
+      ],
+      "x": -544.8,
+      "y": 5.254,
+      "height": 770.154,
+      "arrival": {
+        "x": -546.2424,
+        "y": 8.071999,
+        "height": 770.3726
+      }
+    },
+    {
+      "key": "AncientSacredMountain:12",
+      "tpId": 12,
+      "sceneId": 101,
+      "mapName": "AncientSacredMountain",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "远古圣山"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        301.3517,
+        201.98,
+        -158.3329
+      ],
+      "worldArrival": [
+        308.8704,
+        201.54634,
+        -151.29555
+      ],
+      "x": -158.3329,
+      "y": 301.3517,
+      "height": 201.98,
+      "arrival": {
+        "x": -151.29555,
+        "y": 308.8704,
+        "height": 201.54634
+      }
+    },
+    {
+      "key": "AncientSacredMountain:13",
+      "tpId": 13,
+      "sceneId": 101,
+      "mapName": "AncientSacredMountain",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "远古圣山",
+        "衍术阵列"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        100.683,
+        210.202,
+        -143.976
+      ],
+      "worldArrival": [
+        105.01541,
+        210.202,
+        -152.21004
+      ],
+      "x": -143.976,
+      "y": 100.683,
+      "height": 210.202,
+      "arrival": {
+        "x": -152.21004,
+        "y": 105.01541,
+        "height": 210.202
+      }
+    },
+    {
+      "key": "AncientSacredMountain:14",
+      "tpId": 14,
+      "sceneId": 101,
+      "mapName": "AncientSacredMountain",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "远古圣山",
+        "力向逆心"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        305.55,
+        138.782,
+        108.762
+      ],
+      "worldArrival": [
+        312.97974,
+        141.13326,
+        102.69159
+      ],
+      "x": 108.762,
+      "y": 305.55,
+      "height": 138.782,
+      "arrival": {
+        "x": 102.69159,
+        "y": 312.97974,
+        "height": 141.13326
+      }
+    },
+    {
+      "key": "AncientSacredMountain:15",
+      "tpId": 15,
+      "sceneId": 101,
+      "mapName": "AncientSacredMountain",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "远古圣山",
+        "力向逆心"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        345.413,
+        259.0234,
+        264.3909
+      ],
+      "worldArrival": [
+        346.47064,
+        259.45032,
+        270.15018
+      ],
+      "x": 264.3909,
+      "y": 345.413,
+      "height": 259.0234,
+      "arrival": {
+        "x": 270.15018,
+        "y": 346.47064,
+        "height": 259.45032
+      }
+    },
+    {
+      "key": "AncientSacredMountain:16",
+      "tpId": 16,
+      "sceneId": 101,
+      "mapName": "AncientSacredMountain",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "远古圣山"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        512.608,
+        106.953,
+        7.501
+      ],
+      "worldArrival": [
+        508.58472,
+        107.43931,
+        19.718029
+      ],
+      "x": 7.501,
+      "y": 512.608,
+      "height": 106.953,
+      "arrival": {
+        "x": 19.718029,
+        "y": 508.58472,
+        "height": 107.43931
+      }
+    },
+    {
+      "key": "AncientSacredMountain:17",
+      "tpId": 17,
+      "sceneId": 101,
+      "mapName": "AncientSacredMountain",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "远古圣山"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        640.53,
+        89.07455,
+        -89.7999
+      ],
+      "worldArrival": [
+        645.846,
+        88.50239,
+        -85.27797
+      ],
+      "x": -89.7999,
+      "y": 640.53,
+      "height": 89.07455,
+      "arrival": {
+        "x": -85.27797,
+        "y": 645.846,
+        "height": 88.50239
+      }
+    },
+    {
+      "key": "AncientSacredMountain:18",
+      "tpId": 18,
+      "sceneId": 101,
+      "mapName": "AncientSacredMountain",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "远古圣山",
+        "审议之庭"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        261.4832,
+        57.82032,
+        -138.0443
+      ],
+      "worldArrival": [
+        264.99072,
+        57.53672,
+        -152.49945
+      ],
+      "x": -138.0443,
+      "y": 261.4832,
+      "height": 57.82032,
+      "arrival": {
+        "x": -152.49945,
+        "y": 264.99072,
+        "height": 57.53672
+      }
+    },
+    {
+      "key": "AncientSacredMountain:19",
+      "tpId": 19,
+      "sceneId": 101,
+      "mapName": "AncientSacredMountain",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "远古圣山"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        541.595,
+        77.494,
+        -287.768
+      ],
+      "worldArrival": [
+        534.5397,
+        74.56176,
+        -293.87283
+      ],
+      "x": -287.768,
+      "y": 541.595,
+      "height": 77.494,
+      "arrival": {
+        "x": -293.87283,
+        "y": 534.5397,
+        "height": 74.56176
+      }
+    },
+    {
+      "key": "AncientSacredMountain:20",
+      "tpId": 20,
+      "sceneId": 101,
+      "mapName": "AncientSacredMountain",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "远古圣山"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        474.239,
+        115.454,
+        -497.752
+      ],
+      "worldArrival": [
+        469.06088,
+        115.62647,
+        -501.97424
+      ],
+      "x": -497.752,
+      "y": 474.239,
+      "height": 115.454,
+      "arrival": {
+        "x": -501.97424,
+        "y": 469.06088,
+        "height": 115.62647
+      }
+    },
+    {
+      "key": "AncientSacredMountain:21",
+      "tpId": 21,
+      "sceneId": 101,
+      "mapName": "AncientSacredMountain",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "远古圣山"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        251.6618,
+        146.964,
+        -424.2064
+      ],
+      "worldArrival": [
+        253.07848,
+        147.8764,
+        -432.8027
+      ],
+      "x": -424.2064,
+      "y": 251.6618,
+      "height": 146.964,
+      "arrival": {
+        "x": -432.8027,
+        "y": 253.07848,
+        "height": 147.8764
+      }
+    },
+    {
+      "key": "AncientSacredMountain:22",
+      "tpId": 22,
+      "sceneId": 101,
+      "mapName": "AncientSacredMountain",
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "areas": [
+        "远古圣山",
+        "圣山之心"
+      ],
+      "scope": "standard",
+      "worldPosition": [
+        427.1338,
+        -635.1426,
+        -434.3028
+      ],
+      "worldArrival": [
+        450.01736,
+        -635.4016,
+        -424.52426
+      ],
+      "x": -434.3028,
+      "y": 427.1338,
+      "height": -635.1426,
+      "arrival": {
+        "x": -424.52426,
+        "y": 450.01736,
+        "height": -635.4016
+      }
+    }
+  ]
+}

@@ -10,5 +10,6 @@ __pycache__/
 video-study/local/
 bettergi/*/state.json
 bettergi/*/native-check.json
+bettergi/*/unlock-report.json
 bettergi/*/logs/
 dist/

@@ -1,0 +1,32 @@
+[
+  {
+    "name": "mode", "type": "select", "label": "运行模式（首次先做原生定位自检）",
+    "options": ["仅原生定位自检", "仅原生传送测试", "执行已审阅路线", "核验分区已开点"],
+    "default": "仅原生定位自检"
+  },
+  {
+    "name": "routeGroup", "type": "select", "label": "自动路线范围（本版为5.0首批3→6，起点须已开）",
+    "options": ["5.0首批：3→6（回声之子神像已开）", "仅3→4：滑翔至营地", "仅4→5：营地至河谷", "仅5→6：河谷至神像"],
+    "default": "5.0首批：3→6（回声之子神像已开）"
+  },
+  {
+    "name": "teleportTarget", "type": "select", "label": "独立原生传送测试目标（请选自己已点亮的点）",
+    "options": ["Teyvat:1166", "Teyvat:1170", "Teyvat:1167", "Teyvat:1168", "Teyvat:1169", "Teyvat:1232", "Teyvat:1233", "Teyvat:1429", "Teyvat:1359", "Teyvat:1376", "AncientSacredMountain:2"],
+    "default": "Teyvat:1166"
+  },
+  {
+    "name": "diagnosticMap", "type": "select", "label": "自检时角色所在地图（提瓦特 / 远古圣山）",
+    "options": ["Teyvat", "AncientSacredMountain"], "default": "Teyvat"
+  },
+  {
+    "name": "auditArea", "type": "select", "label": "核验分区（会逐点传送，仅检查已开点，不执行开图）",
+    "options": ["坚岩隘谷", "万火之瓯", "踞石山", "涌流地", "镜璧山", "翘枝崖", "奥奇卡纳塔", "安饶之野", "远古圣山", "悠悠度假村"],
+    "default": "坚岩隘谷"
+  },
+  {
+    "name": "storyTimeoutSeconds", "type": "input-text", "label": "交互后等待处理剧情的上限（秒，30至600）", "default": "180"
+  },
+  {
+    "name": "witnessKey", "type": "input-text", "label": "可选：已开核验起点的完整点位键（留空用该地图入口；查阅README）", "default": ""
+  }
+]

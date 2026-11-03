@@ -1,0 +1,11 @@
+{
+  "manifest_version": 1,
+  "name": "纳塔分区开图（视频路线实验版）",
+  "version": "0.1.0",
+  "bgi_version": "0.66.0",
+  "description": "按攻略证据分段执行纳塔开图，使用原生定位、传送和导航，支持逐点核验、断点与失败记录。具体可执行范围见配置和README；未实机验收。",
+  "authors": [{"name": "kuukihitori-svg", "link": "https://github.com/kuukihitori-svg/genshin-kaihatsu"}],
+  "settings_ui": "settings.json",
+  "main": "main.js",
+  "saved_files": ["state.json", "native-check.json", "unlock-report.json", "logs/*"]
+}

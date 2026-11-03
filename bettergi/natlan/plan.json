@@ -1,0 +1,1194 @@
+{
+  "schemaVersion": 1,
+  "packageVersion": "0.1.0-experimental",
+  "source": {
+    "bvid": "BV1xysNe1Ec4",
+    "page": 2,
+    "url": "https://www.bilibili.com/video/BV1xysNe1Ec4/?p=2",
+    "creator": "某橙sama",
+    "title": "纳塔5.0 回声之子1—6号",
+    "sha256": "dff9f9eb1bf34e12425db2dcaaf8c99c415d3b9ea419cab2d9ff1298fe4e93bb",
+    "durationSeconds": 305.536,
+    "frameCount": 9165,
+    "decode": "all-frames",
+    "locatedFrameCount": 4777,
+    "visualReview": "62张5秒采样帧，以及起跳、下降、龙形态、剧情、末段台阶的原分辨率细查",
+    "audio": {
+      "status": "automatic-transcription-reviewed-against-picture",
+      "model": "Systran/faster-whisper-small",
+      "segments": 63,
+      "notice": "转写包含锚点、神像等同音误识，按画面和点位资料核对；未声称逐字人工听校。"
+    },
+    "subtitles": {
+      "platformTrack": "not-acquired-login-required",
+      "burnedText": "sampled-ocr-and-dialogue-checked",
+      "sampleIntervalSeconds": 3,
+      "notice": "可见文本主要为交互、教程和剧情对白；未取得平台完整字幕轨，未声称逐条字幕验收。"
+    }
+  },
+  "groups": [
+    {
+      "id": "p2-03-06",
+      "name": "5.0首批：3→6（回声之子神像已开）",
+      "status": "reviewed-experimental",
+      "stages": [
+        {
+          "target": "Teyvat:1172",
+          "start": "Teyvat:1166",
+          "requires": [],
+          "fragments": [
+            {
+              "id": "03-04-camp",
+              "end": {
+                "x": 7975.659,
+                "y": -1565.583
+              },
+              "tolerance": 7,
+              "positions": [
+                {
+                  "x": 7750.861,
+                  "y": -1394.873,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7760.596,
+                  "y": -1400.761,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7774.249,
+                  "y": -1409.985,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7785.227,
+                  "y": -1417.614,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7796.143,
+                  "y": -1425.458,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7806.898,
+                  "y": -1434.122,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7817.998,
+                  "y": -1443.342,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7828.215,
+                  "y": -1451.817,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7838.643,
+                  "y": -1461.079,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7848.936,
+                  "y": -1470.674,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7858.634,
+                  "y": -1480.106,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7868.818,
+                  "y": -1489.368,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7879.419,
+                  "y": -1498.844,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7889.516,
+                  "y": -1507.733,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7899.741,
+                  "y": -1516.96,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7910.664,
+                  "y": -1524.606,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7921.575,
+                  "y": -1532.593,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7930.528,
+                  "y": -1539.028,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7934.484,
+                  "y": -1542.493,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7944.402,
+                  "y": -1551.251,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7952.423,
+                  "y": -1556.2,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7955.28,
+                  "y": -1557.55,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7958.29,
+                  "y": -1558.12,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7971.811,
+                  "y": -1562.859,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7975.659,
+                  "y": -1565.583,
+                  "move_mode": "walk",
+                  "type": "target",
+                  "action": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "target": "Teyvat:1177",
+          "start": "Teyvat:1172",
+          "requires": [],
+          "fragments": [
+            {
+              "id": "04-05-river",
+              "end": {
+                "x": 8242.47,
+                "y": -1735.36
+              },
+              "tolerance": 7,
+              "positions": [
+                {
+                  "x": 7974.697,
+                  "y": -1560.581,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7988.465,
+                  "y": -1563.65,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8000.911,
+                  "y": -1569.004,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8013.06,
+                  "y": -1572.739,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8024.661,
+                  "y": -1581.352,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8032.236,
+                  "y": -1586.998,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8045.281,
+                  "y": -1595.781,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8056.338,
+                  "y": -1602.762,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8069.635,
+                  "y": -1610.58,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8083.177,
+                  "y": -1622.024,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8095.485,
+                  "y": -1630.965,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8110.269,
+                  "y": -1641.86,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8122.015,
+                  "y": -1651.439,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8134.026,
+                  "y": -1660.93,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8152.474,
+                  "y": -1660.024,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8160.225,
+                  "y": -1665.905,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8168.419,
+                  "y": -1672.296,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8179.918,
+                  "y": -1680.99,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8187.767,
+                  "y": -1689.507,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8198.214,
+                  "y": -1702.118,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8206.186,
+                  "y": -1713.609,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8215.799,
+                  "y": -1720.213,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8230.276,
+                  "y": -1726.988,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8238.249,
+                  "y": -1732.116,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8244.107,
+                  "y": -1735.584,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8242.47,
+                  "y": -1735.36,
+                  "move_mode": "walk",
+                  "type": "target",
+                  "action": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "target": "Teyvat:1167",
+          "start": "Teyvat:1177",
+          "requires": [],
+          "fragments": [
+            {
+              "id": "05-06-statue",
+              "end": {
+                "x": 8598.354,
+                "y": -1934.191
+              },
+              "tolerance": 8,
+              "positions": [
+                {
+                  "x": 8261.814,
+                  "y": -1740.851,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8274.547,
+                  "y": -1747.41,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8286.589,
+                  "y": -1753.316,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8298.757,
+                  "y": -1759.204,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8311.368,
+                  "y": -1765.465,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8323.568,
+                  "y": -1770.472,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8340.08,
+                  "y": -1774.975,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8355.545,
+                  "y": -1778.806,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8372.302,
+                  "y": -1784.836,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8388.936,
+                  "y": -1790.303,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8405.263,
+                  "y": -1795.207,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8420.716,
+                  "y": -1800.548,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8435.573,
+                  "y": -1806.15,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8448.106,
+                  "y": -1811.459,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8464.398,
+                  "y": -1818.282,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8476.939,
+                  "y": -1828.621,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8490.163,
+                  "y": -1835.656,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8500.161,
+                  "y": -1842.314,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8512.263,
+                  "y": -1850.624,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8522.332,
+                  "y": -1859.665,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8530.188,
+                  "y": -1866.866,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8598.354,
+                  "y": -1934.191,
+                  "move_mode": "jump",
+                  "type": "target",
+                  "action": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p2-only-4",
+      "name": "仅3→4：滑翔至营地",
+      "status": "reviewed-experimental",
+      "stages": [
+        {
+          "target": "Teyvat:1172",
+          "start": "Teyvat:1166",
+          "requires": [],
+          "fragments": [
+            {
+              "id": "03-04-camp",
+              "end": {
+                "x": 7975.659,
+                "y": -1565.583
+              },
+              "tolerance": 7,
+              "positions": [
+                {
+                  "x": 7750.861,
+                  "y": -1394.873,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7760.596,
+                  "y": -1400.761,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7774.249,
+                  "y": -1409.985,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7785.227,
+                  "y": -1417.614,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7796.143,
+                  "y": -1425.458,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7806.898,
+                  "y": -1434.122,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7817.998,
+                  "y": -1443.342,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7828.215,
+                  "y": -1451.817,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7838.643,
+                  "y": -1461.079,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7848.936,
+                  "y": -1470.674,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7858.634,
+                  "y": -1480.106,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7868.818,
+                  "y": -1489.368,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7879.419,
+                  "y": -1498.844,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7889.516,
+                  "y": -1507.733,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7899.741,
+                  "y": -1516.96,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7910.664,
+                  "y": -1524.606,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7921.575,
+                  "y": -1532.593,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7930.528,
+                  "y": -1539.028,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7934.484,
+                  "y": -1542.493,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7944.402,
+                  "y": -1551.251,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7952.423,
+                  "y": -1556.2,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7955.28,
+                  "y": -1557.55,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7958.29,
+                  "y": -1558.12,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7971.811,
+                  "y": -1562.859,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7975.659,
+                  "y": -1565.583,
+                  "move_mode": "walk",
+                  "type": "target",
+                  "action": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p2-only-5",
+      "name": "仅4→5：营地至河谷",
+      "status": "reviewed-experimental",
+      "stages": [
+        {
+          "target": "Teyvat:1177",
+          "start": "Teyvat:1172",
+          "requires": [],
+          "fragments": [
+            {
+              "id": "04-05-river",
+              "end": {
+                "x": 8242.47,
+                "y": -1735.36
+              },
+              "tolerance": 7,
+              "positions": [
+                {
+                  "x": 7974.697,
+                  "y": -1560.581,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 7988.465,
+                  "y": -1563.65,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8000.911,
+                  "y": -1569.004,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8013.06,
+                  "y": -1572.739,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8024.661,
+                  "y": -1581.352,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8032.236,
+                  "y": -1586.998,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8045.281,
+                  "y": -1595.781,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8056.338,
+                  "y": -1602.762,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8069.635,
+                  "y": -1610.58,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8083.177,
+                  "y": -1622.024,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8095.485,
+                  "y": -1630.965,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8110.269,
+                  "y": -1641.86,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8122.015,
+                  "y": -1651.439,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8134.026,
+                  "y": -1660.93,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8152.474,
+                  "y": -1660.024,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8160.225,
+                  "y": -1665.905,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8168.419,
+                  "y": -1672.296,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8179.918,
+                  "y": -1680.99,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8187.767,
+                  "y": -1689.507,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8198.214,
+                  "y": -1702.118,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8206.186,
+                  "y": -1713.609,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8215.799,
+                  "y": -1720.213,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8230.276,
+                  "y": -1726.988,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8238.249,
+                  "y": -1732.116,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8244.107,
+                  "y": -1735.584,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8242.47,
+                  "y": -1735.36,
+                  "move_mode": "walk",
+                  "type": "target",
+                  "action": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "p2-only-6",
+      "name": "仅5→6：河谷至神像",
+      "status": "reviewed-experimental",
+      "stages": [
+        {
+          "target": "Teyvat:1167",
+          "start": "Teyvat:1177",
+          "requires": [],
+          "fragments": [
+            {
+              "id": "05-06-statue",
+              "end": {
+                "x": 8598.354,
+                "y": -1934.191
+              },
+              "tolerance": 8,
+              "positions": [
+                {
+                  "x": 8261.814,
+                  "y": -1740.851,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8274.547,
+                  "y": -1747.41,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8286.589,
+                  "y": -1753.316,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8298.757,
+                  "y": -1759.204,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8311.368,
+                  "y": -1765.465,
+                  "move_mode": "fly",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8323.568,
+                  "y": -1770.472,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8340.08,
+                  "y": -1774.975,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8355.545,
+                  "y": -1778.806,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8372.302,
+                  "y": -1784.836,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8388.936,
+                  "y": -1790.303,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8405.263,
+                  "y": -1795.207,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8420.716,
+                  "y": -1800.548,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8435.573,
+                  "y": -1806.15,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8448.106,
+                  "y": -1811.459,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8464.398,
+                  "y": -1818.282,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8476.939,
+                  "y": -1828.621,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8490.163,
+                  "y": -1835.656,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8500.161,
+                  "y": -1842.314,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8512.263,
+                  "y": -1850.624,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8522.332,
+                  "y": -1859.665,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8530.188,
+                  "y": -1866.866,
+                  "move_mode": "walk",
+                  "type": "path",
+                  "action": ""
+                },
+                {
+                  "x": 8598.354,
+                  "y": -1934.191,
+                  "move_mode": "jump",
+                  "type": "target",
+                  "action": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "witnesses": {
+    "Teyvat": [
+      "Teyvat:1170",
+      "Teyvat:1166"
+    ],
+    "AncientSacredMountain": [
+      "AncientSacredMountain:2",
+      "AncientSacredMountain:3"
+    ]
+  },
+  "revision": "7252fe4a18c6b8488aff43c893abada4c9436c31f242fbdc69b932edac263f3d"
+}
