@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>攻略视频 · 路线证据回看</title>
+<style>
+:root{color-scheme:dark;font:15px/1.6 system-ui;background:#0c1420;color:#e4ebf5}*{box-sizing:border-box}body{margin:0}header{padding:24px 4vw;background:#121f31;border-bottom:1px solid #34435a}h1{font-size:26px;margin:0 0 8px}h2{font-size:18px;margin:12px 0}p{margin:8px 0}a{color:#87cee7}main{padding:20px 4vw;display:grid;grid-template-columns:minmax(0,1.6fr) minmax(310px,1fr);gap:24px}section{min-width:0}video{width:100%;max-height:65vh;background:black}button,input,textarea{font:inherit;border:1px solid #435775;border-radius:6px;background:#1a2b43;color:inherit;padding:7px 10px}button{cursor:pointer}button:hover,button:focus-visible{background:#2e496b}button:disabled{opacity:.5;cursor:default}textarea{width:100%;min-height:120px}input[type=file]{max-width:100%}.controls{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0}.muted{color:#a9b7cb}.notice{background:#213347;padding:12px;border-left:3px solid #7dcfe3}.warning{color:#ffd58c}.segment{border:1px solid #34435a;border-radius:8px;padding:14px;margin:12px 0}.segment.active{border-color:#7dcfe3}.segment h3{font-size:16px;margin:0}.evidence{display:flex;flex-wrap:wrap;gap:6px}.thumbs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.thumbs button{padding:0;overflow:hidden}.thumbs img{display:block;width:100%;height:auto}.thumbs span{display:block;font-size:12px;padding:3px}#segments{max-height:80vh;overflow:auto}#status{min-height:24px}#clock{font-variant-numeric:tabular-nums}label{display:block;margin:10px 0}details{margin:16px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere}footer{padding:20px 4vw;border-top:1px solid #34435a}@media(max-width:850px){main{grid-template-columns:1fr}#segments{max-height:none}.thumbs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+</style>
+<header><h1>攻略视频 · 路线证据回看</h1><p id="source"></p><p class="muted" id="summary"></p><div class="notice">画面观察、坐标对齐和实机验收分别记录。采样帧之间仍可能包含剪辑或操作，不能直接推导按键时长。</div></header>
+<main>
+<section aria-label="视频和采样帧">
+<video id="video" controls preload="metadata"></video>
+<p id="media-error" class="warning" hidden>视频无法载入。请保持视频与报告的相对位置，或用下方按钮选择本地视频。</p>
+<label>重新关联本地视频 <input id="media-file" type="file" accept="video/*"></label>
+<div class="controls"><button id="previous">前一帧</button><button id="next">后一帧</button><span id="clock">00:00.000</span><button id="mark">记录此时刻</button></div>
+<label>当前时刻的观察记录（随标注 JSON 导出）<textarea id="note" placeholder="记录可见的地标、交互提示、剪辑或待确认事项"></textarea></label>
+<div class="controls"><button id="save-note">保存观察</button><button id="download">导出标注 JSON</button></div>
+<p id="status" role="status" aria-live="polite"></p>
+<details><summary>采样帧（点击定位到视频时间）</summary><div id="samples" class="thumbs"></div></details>
+<details open><summary>关键片段原帧（原始分辨率、逐帧切换）</summary><div id="clips"></div></details>
+<details><summary>素材校验与分析范围</summary><pre id="provenance"></pre></details>
+</section>
+<section aria-label="路线分段"><h2>分段与证据</h2><p id="route-status" class="warning"></p><label>载入标注 JSON <input id="study-file" type="file" accept=".json,application/json"></label><div id="segments"></div></section>
+</main>
+<footer class="muted">本工具只回看本地素材，不连接游戏。导航导出使用命令行独立校验；存在未确认路线时不会生成可执行路径。</footer>
+<script id="study-data" type="application/json">__STUDY_DATA__</script>
+<script>
+'use strict';
+const data=JSON.parse(document.getElementById('study-data').textContent),manifest=data.manifest;
+let study=data.study,mediaUrl=null,markedTime=null;
+const $=id=>document.getElementById(id),video=$('video');
+const stamp=t=>`${String(Math.floor(t/60)).padStart(2,'0')}:${(t%60).toFixed(3).padStart(6,'0')}`;
+function el(tag,text,cls){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;}
+function seek(t){video.pause();video.currentTime=Math.max(0,Math.min(manifest.durationSeconds-.001,t));$('clock').textContent=stamp(video.currentTime);}
+function validate(candidate){
+ if(candidate.schemaVersion!==1||candidate.source?.bvid!==manifest.source.bvid||candidate.source?.page!==manifest.source.page||!Number.isFinite(candidate.durationSeconds)||Math.abs(candidate.durationSeconds-manifest.durationSeconds)>1||!Array.isArray(candidate.segments))throw Error('标注版本、视频分 P 或时长不匹配');
+ const ids=new Set();let previous=-1;
+ for(const s of candidate.segments){
+  if(typeof s.id!=='string'||!/^[a-zA-Z0-9_-]+$/.test(s.id)||ids.has(s.id)||typeof s.title!=='string'||!s.title.trim()||typeof s.observation!=='string'||!s.observation.trim()||!Number.isFinite(s.startSeconds)||!Number.isFinite(s.endSeconds)||s.startSeconds<0||s.startSeconds<previous||s.endSeconds<=s.startSeconds||s.endSeconds>candidate.durationSeconds+.05||!Array.isArray(s.unknowns)||s.unknowns.some(x=>typeof x!=='string'||!x.trim())||!Array.isArray(s.evidence)||!s.evidence.length)throw Error('分段格式或时间范围无效');
+  ids.add(s.id);previous=s.startSeconds;
+  for(const e of s.evidence)if(!Number.isFinite(e.timeSeconds)||e.timeSeconds<s.startSeconds||e.timeSeconds>s.endSeconds||typeof e.description!=='string'||!e.description.trim())throw Error('证据时间或说明无效');
+ }
+ return candidate;
+}
+function render(){
+ $('segments').replaceChildren();
+ const unresolved=study.segments.filter(s=>s.unknowns.length||s.route?.status!=='reviewed').length;
+ $('route-status').textContent=`${study.segments.length} 个分段；${unresolved} 段待补齐路线或条件。`;
+ for(const s of study.segments){
+  const box=el('article',undefined,'segment');box.dataset.segment=s.id;
+  const title=el('button',`${stamp(s.startSeconds)} — ${s.title}`);title.onclick=()=>seek(s.startSeconds);box.append(title,el('p',s.observation));
+  const evidence=el('div',undefined,'evidence');
+  for(const e of s.evidence){const button=el('button',stamp(e.timeSeconds));button.title=e.description;button.onclick=()=>{seek(e.timeSeconds);$('status').textContent=e.description;};evidence.append(button);}
+  box.append(evidence);
+  if(s.unknowns.length){box.append(el('p','待确认：'+s.unknowns.join('；'),'warning'));}
+  if(s.outcome)box.append(el('p',`结果证据：${s.outcome.description||s.outcome}`,'muted'));
+  $('segments').append(box);
+ }
+}
+function blobDownload(object,name){const url=URL.createObjectURL(new Blob([JSON.stringify(object,null,2)+'\n'],{type:'application/json'}));const a=el('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+$('source').textContent=`${manifest.source.creator||''} · ${manifest.source.title} · P${manifest.source.page}`;
+$('summary').textContent=`${manifest.width}×${manifest.height} · ${manifest.frameRate} fps · ${stamp(manifest.durationSeconds)} · ${manifest.samples.length} 张采样帧`;
+$('provenance').textContent=JSON.stringify({source:manifest.source,sha256:manifest.sha256,subtitleStatus:manifest.subtitleStatus,reviewStatus:manifest.reviewStatus},null,2);
+video.src=manifest.media;
+video.addEventListener('error',()=>$('media-error').hidden=false);
+video.addEventListener('loadedmetadata',()=>$('media-error').hidden=true);
+video.addEventListener('timeupdate',()=>{$('clock').textContent=stamp(video.currentTime);for(const n of $('segments').children){const s=study.segments.find(x=>x.id===n.dataset.segment);n.classList.toggle('active',video.currentTime>=s.startSeconds&&video.currentTime<s.endSeconds);}});
+$('previous').onclick=()=>seek(video.currentTime-1/manifest.frameRate);
+$('next').onclick=()=>seek(video.currentTime+1/manifest.frameRate);
+$('mark').onclick=()=>{markedTime=video.currentTime;$('status').textContent=`已记录 ${stamp(markedTime)}，填写观察后保存。`;};
+$('save-note').onclick=()=>{const text=$('note').value.trim();if(!text){$('status').textContent='请填写观察。';return;}const t=markedTime??video.currentTime;study.reviewNotes??=[];study.reviewNotes.push({timeSeconds:t,description:text});$('note').value='';markedTime=null;$('status').textContent=`已保存 ${stamp(t)} 的观察；请导出 JSON 保留。`;};
+$('download').onclick=()=>blobDownload(study,`${manifest.source.bvid}_p${manifest.source.page}.study.json`);
+$('study-file').onchange=async event=>{try{const file=event.target.files[0];if(!file)return;if(file.size>1048576)throw Error('标注文件超过 1 MiB');const candidate=validate(JSON.parse(await file.text()));study=candidate;render();$('status').textContent='已载入标注。';}catch(error){$('status').textContent='载入失败：'+error.message;}};
+$('media-file').onchange=event=>{const file=event.target.files[0];if(!file)return;if(mediaUrl)URL.revokeObjectURL(mediaUrl);mediaUrl=URL.createObjectURL(file);video.src=mediaUrl;$('status').textContent='已关联本地视频；身份请通过素材 SHA-256 核对。';};
+for(const sample of manifest.samples){const button=el('button'),img=el('img');img.src=sample.file;img.alt=`采样帧 ${stamp(sample.timeSeconds)}`;img.loading='lazy';button.append(img,el('span',stamp(sample.timeSeconds)));button.onclick=()=>seek(sample.timeSeconds);$('samples').append(button);}
+for(const clip of manifest.detailClips||[]){const p=el('p'),a=el('a',`${clip.title} · ${clip.startSeconds}–${clip.endSeconds}s · ${clip.frameCount} 帧`);a.href=clip.gallery;a.target='_blank';a.rel='noopener';p.append(a);$('clips').append(p);}
+validate(study);render();
+</script>
+</html>

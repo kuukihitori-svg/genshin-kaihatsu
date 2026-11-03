@@ -1,0 +1,635 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "bvid": "BV1XSHDzqE2h",
+    "page": 2,
+    "url": "https://www.bilibili.com/video/BV1XSHDzqE2h/?p=2",
+    "title": "【原神】6.0 挪德卡莱 开图攻略 传送锚点/隐藏锚点/七天神像/秘境 细心高效全开启攻略~ p02 1号~10号  伦波岛 那夏镇/叮铃咣啷蛋卷工坊",
+    "creator": "某橙sama",
+    "id": "BV1XSHDzqE2h_p2"
+  },
+  "durationSeconds": 520.405333,
+  "mediaSha256": "1c19533c7177731b8d26f8474d3091c6289effb73313595f9dcd030ef71b1447",
+  "status": "evidence_annotated_routes_unresolved",
+  "reviewScope": {
+    "samples": 105,
+    "sampleIntervalSeconds": 5,
+    "detailFrameCount": 615,
+    "detailRanges": [
+      {
+        "title": "2号锚点交互与变蓝",
+        "startSeconds": 105,
+        "endSeconds": 108,
+        "frameCount": 90,
+        "gallery": "../details/point02/frames.html"
+      },
+      {
+        "title": "升降台上行提示",
+        "startSeconds": 207,
+        "endSeconds": 211,
+        "frameCount": 120,
+        "gallery": "../details/elevator/frames.html"
+      },
+      {
+        "title": "剧情触发与转场",
+        "startSeconds": 302,
+        "endSeconds": 306,
+        "frameCount": 120,
+        "gallery": "../details/story-cut/frames.html"
+      },
+      {
+        "title": "9号秘境门交互",
+        "startSeconds": 472,
+        "endSeconds": 477,
+        "frameCount": 150,
+        "gallery": "../details/domain/frames.html"
+      },
+      {
+        "title": "10号锚点解锁",
+        "startSeconds": 516,
+        "endSeconds": 520.4,
+        "frameCount": 132,
+        "gallery": "../details/point10/frames.html"
+      },
+      {
+        "title": "开头编号地图",
+        "startSeconds": 2,
+        "endSeconds": 2.1,
+        "frameCount": 3,
+        "gallery": "../details/map/frames.html"
+      }
+    ],
+    "notice": "完整时长做5秒采样审阅；关键区间按原帧率抽取，并检查代表帧。未逐一人工查看全部视频帧。"
+  },
+  "segments": [
+    {
+      "id": "point-01",
+      "title": "起点与已解锁的那夏镇锚点",
+      "startSeconds": 0,
+      "endSeconds": 48,
+      "observation": "开头给出1—10号编号路线图；随后在未揭开的地图上选择那夏镇锚点传送。抵达后锚点已呈蓝色，原地停留后开始向镇内走。",
+      "evidence": [
+        {
+          "timeSeconds": 0,
+          "description": "编号路线总览"
+        },
+        {
+          "timeSeconds": 20,
+          "description": "地图选中可传送锚点"
+        },
+        {
+          "timeSeconds": 35,
+          "description": "载入后站在那夏镇街道"
+        },
+        {
+          "timeSeconds": 45,
+          "description": "起点锚点为蓝色"
+        }
+      ],
+      "unknowns": [
+        "起点为何自动可用及账号所需前置未从视频证实；不能把传送写成首次解锁",
+        "视频不含起点首次激活过程"
+      ],
+      "outcome": {
+        "status": "observed_in_video",
+        "description": "可见蓝色锚点与成功传送；仅证明作者账号起点已可用。"
+      },
+      "target": {
+        "videoPointNumber": 1,
+        "tpId": 1681,
+        "name": "传送锚点",
+        "coordinateSystem": "bettergi-pathing-v1",
+        "mapLayer": "Teyvat/surface",
+        "x": 9364.397,
+        "y": 1425.7,
+        "height": 204.3502,
+        "source": "nod-krai-p2.targets.json"
+      },
+      "route": {
+        "status": "unresolved",
+        "positions": []
+      }
+    },
+    {
+      "id": "point-02",
+      "title": "1→2：台阶、街道与镇内锚点",
+      "startSeconds": 48,
+      "endSeconds": 113,
+      "observation": "由起点沿街上行，经过多段台阶，在较高街道转向木制平台；接近红色锚点并交互。105秒附近出现交互提示与解锁环，107秒时锚点已变蓝。",
+      "evidence": [
+        {
+          "timeSeconds": 70,
+          "description": "沿台阶上行"
+        },
+        {
+          "timeSeconds": 90,
+          "description": "较高街道继续前进"
+        },
+        {
+          "timeSeconds": 95,
+          "description": "画面白闪，需独立处理转场"
+        },
+        {
+          "timeSeconds": 105.5,
+          "description": "红色锚点旁出现交互提示"
+        },
+        {
+          "timeSeconds": 107,
+          "description": "锚点已变蓝"
+        }
+      ],
+      "unknowns": [
+        "台阶入口、转角及平台的中间坐标尚未恢复",
+        "95秒附近的画面转变不能当作连续按键时长"
+      ],
+      "outcome": {
+        "status": "observed_in_video",
+        "description": "107秒蓝色锚点可见；目标对应tpId=1730。"
+      },
+      "target": {
+        "videoPointNumber": 2,
+        "tpId": 1730,
+        "name": "传送锚点",
+        "coordinateSystem": "bettergi-pathing-v1",
+        "mapLayer": "Teyvat/surface",
+        "x": 9452.11,
+        "y": 1661.607,
+        "height": 228.067,
+        "source": "nod-krai-p2.targets.json"
+      },
+      "route": {
+        "status": "unresolved",
+        "positions": []
+      }
+    },
+    {
+      "id": "point-03",
+      "title": "2→3：升降台、装置与新月神像",
+      "startSeconds": 113,
+      "endSeconds": 164,
+      "observation": "离开2号点后可见升降台交互，沿高处街道前进；花状装置附近出现移动/弹跳效果，随后抵达新月神像。画面统计由两锚点变为两锚点加一神像，160秒打开已揭开的地图。",
+      "evidence": [
+        {
+          "timeSeconds": 115,
+          "description": "升降台处有上行/下行交互"
+        },
+        {
+          "timeSeconds": 130,
+          "description": "经过高处街道"
+        },
+        {
+          "timeSeconds": 135,
+          "description": "花状装置与蓝色交互效果"
+        },
+        {
+          "timeSeconds": 155,
+          "description": "人物位于新月神像处，统计含一神像"
+        },
+        {
+          "timeSeconds": 160,
+          "description": "地图区域已揭开"
+        }
+      ],
+      "unknowns": [
+        "升降台终点与花状装置的操作规则、前置状态待确认",
+        "弹跳或特殊移动的落点及神像激活检查尚未实现"
+      ],
+      "outcome": {
+        "status": "observed_in_video",
+        "description": "神像与地图揭开画面可见；尚未以实机复现。"
+      },
+      "target": {
+        "videoPointNumber": 3,
+        "tpId": 1516,
+        "name": "新月神像",
+        "coordinateSystem": "bettergi-pathing-v1",
+        "mapLayer": "Teyvat/surface",
+        "x": 9496.254,
+        "y": 1731.14,
+        "height": 226.0192,
+        "source": "nod-krai-p2.targets.json"
+      },
+      "route": {
+        "status": "unresolved",
+        "positions": []
+      }
+    },
+    {
+      "id": "point-04",
+      "title": "3→2→4：回镇与升降台高处锚点",
+      "startSeconds": 164,
+      "endSeconds": 242,
+      "observation": "神像后通过地图返回镇内，再沿街道进入圆形升降设施。210秒有明确的上行/下行提示；等待上升后抵达高处平台，235秒接近4号锚点。不能把神像直接直线连到高处锚点。",
+      "evidence": [
+        {
+          "timeSeconds": 165,
+          "description": "返回镇内"
+        },
+        {
+          "timeSeconds": 185,
+          "description": "圆形设施入口附近"
+        },
+        {
+          "timeSeconds": 200,
+          "description": "站在升降平台上"
+        },
+        {
+          "timeSeconds": 210,
+          "description": "F交互列表含上行和下行"
+        },
+        {
+          "timeSeconds": 230,
+          "description": "平台到达顶部出口"
+        },
+        {
+          "timeSeconds": 235,
+          "description": "接近高处红色锚点"
+        },
+        {
+          "timeSeconds": 240,
+          "description": "打开地图确认位置"
+        }
+      ],
+      "unknowns": [
+        "回镇传送目标与升降台到站判据尚未写入宿主",
+        "需恢复升降台入口、上行选择与出口坐标"
+      ],
+      "outcome": {
+        "status": "observed_in_video",
+        "description": "高处锚点激活及计数变化可见；目标高度约305，与2号点高度约228不同。"
+      },
+      "target": {
+        "videoPointNumber": 4,
+        "tpId": 1682,
+        "name": "传送锚点",
+        "coordinateSystem": "bettergi-pathing-v1",
+        "mapLayer": "Teyvat/surface",
+        "x": 9528.84,
+        "y": 1628.45,
+        "height": 304.981,
+        "source": "nod-krai-p2.targets.json"
+      },
+      "route": {
+        "status": "unresolved",
+        "positions": []
+      }
+    },
+    {
+      "id": "point-05",
+      "title": "4→5：高处滑翔与崖边降落",
+      "startSeconds": 242,
+      "endSeconds": 281,
+      "observation": "从高处平台展开风之翼，飞向城外草地，随后在崖边继续下落，抵达较低处锚点并激活。",
+      "evidence": [
+        {
+          "timeSeconds": 245,
+          "description": "高处出发平台"
+        },
+        {
+          "timeSeconds": 250,
+          "description": "展开风之翼"
+        },
+        {
+          "timeSeconds": 265,
+          "description": "到达崖边草地"
+        },
+        {
+          "timeSeconds": 270,
+          "description": "继续下落"
+        },
+        {
+          "timeSeconds": 275,
+          "description": "红色锚点旁出现解锁提示"
+        },
+        {
+          "timeSeconds": 280,
+          "description": "地图显示已激活点位"
+        }
+      ],
+      "unknowns": [
+        "起飞点、降落点和避开崖壁的中间路线待恢复",
+        "滑翔体力要求尚未验证"
+      ],
+      "outcome": {
+        "status": "observed_in_video",
+        "description": "解锁提示可见；目标对应tpId=1736。"
+      },
+      "target": {
+        "videoPointNumber": 5,
+        "tpId": 1736,
+        "name": "传送锚点",
+        "coordinateSystem": "bettergi-pathing-v1",
+        "mapLayer": "Teyvat/surface",
+        "x": 9658.44,
+        "y": 1729.82,
+        "height": 206.6315,
+        "source": "nod-krai-p2.targets.json"
+      },
+      "route": {
+        "status": "unresolved",
+        "positions": []
+      }
+    },
+    {
+      "id": "point-06",
+      "title": "5→6：特殊装置与剧情过场",
+      "startSeconds": 281,
+      "endSeconds": 361,
+      "observation": "经过发光花状装置后，302秒出现派蒙对白，303秒进入载入画面，随后出现剧情镜头并返回道路。之后前往北方训练场附近锚点；345秒统计增至6，360秒锚点呈蓝色。",
+      "evidence": [
+        {
+          "timeSeconds": 285,
+          "description": "发光装置"
+        },
+        {
+          "timeSeconds": 302,
+          "description": "对白与特殊移动画面"
+        },
+        {
+          "timeSeconds": 303,
+          "description": "载入画面"
+        },
+        {
+          "timeSeconds": 310,
+          "description": "黑屏字幕过场"
+        },
+        {
+          "timeSeconds": 315,
+          "description": "剧情镜头"
+        },
+        {
+          "timeSeconds": 325,
+          "description": "恢复道路移动"
+        },
+        {
+          "timeSeconds": 340,
+          "description": "台阶和平台"
+        },
+        {
+          "timeSeconds": 345,
+          "description": "统计增至6"
+        },
+        {
+          "timeSeconds": 360,
+          "description": "锚点为蓝色"
+        }
+      ],
+      "unknowns": [
+        "触发的剧情/任务名称与账号前置尚未证实",
+        "剧情阻塞、装置交互与特殊移动必须独立处理",
+        "该段不可直接按视频秒数重放移动"
+      ],
+      "outcome": {
+        "status": "observed_in_video",
+        "description": "6号锚点已激活画面可见；剧情兼容性尚未验证。"
+      },
+      "target": {
+        "videoPointNumber": 6,
+        "tpId": 1726,
+        "name": "传送锚点",
+        "coordinateSystem": "bettergi-pathing-v1",
+        "mapLayer": "Teyvat/surface",
+        "x": 9728.011,
+        "y": 1808.961,
+        "height": 256.4443,
+        "source": "nod-krai-p2.targets.json"
+      },
+      "route": {
+        "status": "unresolved",
+        "positions": []
+      }
+    },
+    {
+      "id": "point-07",
+      "title": "6→7：沿草地道路前往起重设备平台",
+      "startSeconds": 361,
+      "endSeconds": 392,
+      "observation": "离开6号锚点，经草地和道路前往起重设备旁的平台。380秒到达红色锚点，385秒出现传送锚点解锁文字与解锁环。",
+      "evidence": [
+        {
+          "timeSeconds": 365,
+          "description": "离开6号点"
+        },
+        {
+          "timeSeconds": 370,
+          "description": "沿草地道路移动"
+        },
+        {
+          "timeSeconds": 375,
+          "description": "接近起重设备平台"
+        },
+        {
+          "timeSeconds": 380,
+          "description": "到达红色锚点"
+        },
+        {
+          "timeSeconds": 385,
+          "description": "传送锚点解锁提示"
+        }
+      ],
+      "unknowns": [
+        "道路转折与平台入口的中间坐标待恢复"
+      ],
+      "outcome": {
+        "status": "observed_in_video",
+        "description": "385秒有明确解锁文字；目标对应tpId=1727。"
+      },
+      "target": {
+        "videoPointNumber": 7,
+        "tpId": 1727,
+        "name": "传送锚点",
+        "coordinateSystem": "bettergi-pathing-v1",
+        "mapLayer": "Teyvat/surface",
+        "x": 9873.979,
+        "y": 1717.405,
+        "height": 261.1723,
+        "source": "nod-krai-p2.targets.json"
+      },
+      "route": {
+        "status": "unresolved",
+        "positions": []
+      }
+    },
+    {
+      "id": "point-08",
+      "title": "7→8：长距离滑翔至蛋卷工坊",
+      "startSeconds": 392,
+      "endSeconds": 438,
+      "observation": "从起重设备平台向较低处展开风之翼，经过峡谷并接近大型机械/工坊道路。430秒接近地面，435秒到达8号锚点并出现解锁文字。",
+      "evidence": [
+        {
+          "timeSeconds": 400,
+          "description": "离开高处并持续滑翔"
+        },
+        {
+          "timeSeconds": 415,
+          "description": "峡谷与工坊方向"
+        },
+        {
+          "timeSeconds": 430,
+          "description": "接近落地道路"
+        },
+        {
+          "timeSeconds": 435,
+          "description": "传送锚点解锁提示"
+        }
+      ],
+      "unknowns": [
+        "长距离滑翔的起落点、碰撞与体力需求待验证",
+        "工坊入口附近可能需要局部避障"
+      ],
+      "outcome": {
+        "status": "observed_in_video",
+        "description": "435秒可见解锁文字；目标对应tpId=1719。"
+      },
+      "target": {
+        "videoPointNumber": 8,
+        "tpId": 1719,
+        "name": "传送锚点",
+        "coordinateSystem": "bettergi-pathing-v1",
+        "mapLayer": "Teyvat/surface",
+        "x": 10021.3,
+        "y": 1538.585,
+        "height": 204.326,
+        "source": "nod-krai-p2.targets.json"
+      },
+      "route": {
+        "status": "unresolved",
+        "positions": []
+      }
+    },
+    {
+      "id": "point-09",
+      "title": "8→9：无光的深都秘境门",
+      "startSeconds": 438,
+      "endSeconds": 490,
+      "observation": "先在地图查看无光的深都，再从工坊平台一侧滑翔至石制秘境门附近。475.5秒出现F交互提示，476秒门纹仍红，476.5秒门纹转蓝。作者叠加计数在实际门交互前已经增加，不能作为成功检测依据。",
+      "evidence": [
+        {
+          "timeSeconds": 440,
+          "description": "地图选中无光的深都"
+        },
+        {
+          "timeSeconds": 450,
+          "description": "从工坊平台出发"
+        },
+        {
+          "timeSeconds": 465,
+          "description": "滑翔接近石制建筑"
+        },
+        {
+          "timeSeconds": 472.5,
+          "description": "尚未交互时叠加计数仍为8"
+        },
+        {
+          "timeSeconds": 473,
+          "description": "叠加计数已变9但仍在滑翔"
+        },
+        {
+          "timeSeconds": 475.5,
+          "description": "门前出现F交互提示"
+        },
+        {
+          "timeSeconds": 476,
+          "description": "秘境门纹为红色"
+        },
+        {
+          "timeSeconds": 476.5,
+          "description": "秘境门纹已变蓝"
+        },
+        {
+          "timeSeconds": 480,
+          "description": "秘境详情面板"
+        }
+      ],
+      "unknowns": [
+        "秘境开放等级与任务要求需要宿主检查",
+        "滑翔落点及门前站位尚未转换成可走路线",
+        "解锁应检测门纹或详情状态，不能依赖视频叠加计数"
+      ],
+      "outcome": {
+        "status": "observed_in_video",
+        "description": "476.5秒秘境门由红变蓝，构成直接画面证据。"
+      },
+      "target": {
+        "videoPointNumber": 9,
+        "tpId": 1690,
+        "name": "无光的深都",
+        "coordinateSystem": "bettergi-pathing-v1",
+        "mapLayer": "Teyvat/surface",
+        "x": 9971.47,
+        "y": 1828.78,
+        "height": 203.31,
+        "source": "nod-krai-p2.targets.json"
+      },
+      "route": {
+        "status": "unresolved",
+        "positions": []
+      }
+    },
+    {
+      "id": "point-10",
+      "title": "9→6→10：返回训练场后上坡与滑翔",
+      "startSeconds": 490,
+      "endSeconds": 520.405333,
+      "observation": "通过地图回到北方训练场附近，再上坡、展开风之翼并落向10号锚点。517秒附近出现传送锚点交互，随后解锁环、解锁文字和蓝色锚点依次出现。",
+      "evidence": [
+        {
+          "timeSeconds": 490,
+          "description": "地图选择训练场附近锚点"
+        },
+        {
+          "timeSeconds": 495,
+          "description": "返回训练场场景"
+        },
+        {
+          "timeSeconds": 500,
+          "description": "上坡"
+        },
+        {
+          "timeSeconds": 510,
+          "description": "滑翔接近目标"
+        },
+        {
+          "timeSeconds": 516.5,
+          "description": "接近红色锚点"
+        },
+        {
+          "timeSeconds": 517,
+          "description": "传送锚点交互提示"
+        },
+        {
+          "timeSeconds": 517.5,
+          "description": "解锁环与文字"
+        },
+        {
+          "timeSeconds": 520,
+          "description": "锚点已蓝"
+        }
+      ],
+      "unknowns": [
+        "回程传送和上坡路径的中间坐标待恢复",
+        "需区分附近敌人/伤害显示与锚点解锁条件"
+      ],
+      "outcome": {
+        "status": "observed_in_video",
+        "description": "520秒锚点蓝色可见；目标对应tpId=1728。"
+      },
+      "target": {
+        "videoPointNumber": 10,
+        "tpId": 1728,
+        "name": "传送锚点",
+        "coordinateSystem": "bettergi-pathing-v1",
+        "mapLayer": "Teyvat/surface",
+        "x": 9745.46,
+        "y": 1912.69,
+        "height": 201.1212,
+        "source": "nod-krai-p2.targets.json"
+      },
+      "route": {
+        "status": "unresolved",
+        "positions": []
+      }
+    }
+  ]
+}

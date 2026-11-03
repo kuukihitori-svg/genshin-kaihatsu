@@ -1,0 +1,11 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>关键片段 · 原始帧回看</title>
+<style>:root{color-scheme:dark;font:16px/1.6 system-ui;background:#0c1420;color:#e4ebf5}body{margin:20px auto;max-width:1400px;padding:0 20px}img{width:100%;height:auto}input{width:100%}button{font:inherit;padding:6px 16px;margin:8px;background:#213347;color:inherit;border:1px solid #607792;border-radius:6px}p{overflow-wrap:anywhere}</style>
+<h1>关键片段 · 原始帧回看</h1><p id="scope"></p><img id="frame" alt="当前视频原始帧"><input type="range" id="index" min="0" value="0" step="1" aria-label="帧序号"><div><button id="prev">上一帧 ←</button><span id="time"></span><button id="next">下一帧 →</button></div><p id="hash"></p>
+<script id="frames-data" type="application/json">__FRAME_DATA__</script><script>
+'use strict';const data=JSON.parse(document.getElementById('frames-data').textContent),slider=document.getElementById('index');slider.max=data.frames.length-1;
+document.getElementById('scope').textContent=`${data.startSeconds}–${data.endSeconds}s · ${data.frames.length} 帧 · 源帧率 ${data.frameRate}fps · 保留原始分辨率。只抽帧不等于每帧已人工审阅。`;
+document.getElementById('hash').textContent='素材 SHA-256: '+data.sourceSha256;
+function show(i){i=Math.max(0,Math.min(data.frames.length-1,i));slider.value=i;const frame=data.frames[i];document.getElementById('frame').src=frame.file;document.getElementById('time').textContent=`${i+1}/${data.frames.length} · ${frame.timeSeconds.toFixed(6)}s`;}
+document.getElementById('prev').onclick=()=>show(Number(slider.value)-1);document.getElementById('next').onclick=()=>show(Number(slider.value)+1);slider.oninput=()=>show(Number(slider.value));document.addEventListener('keydown',event=>{if(event.key==='ArrowLeft'||event.key==='ArrowRight'){event.preventDefault();show(Number(slider.value)+(event.key==='ArrowRight'?1:-1));}});show(0);
+</script></html>
