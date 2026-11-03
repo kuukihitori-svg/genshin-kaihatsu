@@ -13,8 +13,11 @@
   const runId = new Date().toISOString().replace(/[^0-9T]/g, '');
   let stage = 0, lastLeg = '', state = { schemaVersion: 1, sourceSha256: plan.source.sourceSha256, completed: {} };
   const held = new Set();
+  const proofs = new Map();
+  let lastPositionReason = null;
 
   function error(message, code) { const e = new Error(message); e.code = code; return e; }
+  function stopped(e) { return /cancel|取消|中止|ScriptInterrupted/i.test(String(e && (e.message || e))); }
   function release() { for (const key of held) { try { keyUp(key); } catch (_) {} } held.clear(); }
   async function hold(key, ms) {
     held.add(key); keyDown(key);
@@ -33,6 +36,25 @@
     try { return file.writeImageSync(`logs/${runId}-${stage}-${label}.png`, image.srcMat); }
     finally { image.dispose(); }
   }
+  function checkEnvironment() {
+    const gameWidth = Number(genshin.width), gameHeight = Number(genshin.height);
+    const dpi = Number(genshin.screenDpiScale);
+    const environment = { gameWidth, gameHeight, captureWidth: null, captureHeight: null,
+      screenDpiScale: Number.isFinite(dpi) ? dpi : null };
+    if (!Number.isInteger(gameWidth) || !Number.isInteger(gameHeight) || gameWidth <= 0 || gameHeight <= 0) {
+      record('environment', environment);
+      throw error('无法读取 BetterGI 检测到的游戏客户区尺寸，请重新捕获原神窗口。', 'RESOLUTION');
+    }
+    if (gameWidth*9 !== gameHeight*16) {
+      record('environment', environment);
+      throw error(`BetterGI 检测到的游戏客户区为 ${gameWidth}×${gameHeight}，不符合16:9。请调整游戏窗口或重新捕获；1920×1080和2560×1440均可。`, 'RESOLUTION');
+    }
+    const image = captureGameRegion();
+    try { environment.captureWidth = image.width; environment.captureHeight = image.height; }
+    finally { image.dispose(); }
+    record('environment', environment);
+    log.info(`窗口检查通过：${gameWidth}×${gameHeight}；识别截图 ${environment.captureWidth}×${environment.captureHeight}。`);
+  }
   function ocrBox(box) {
     const image = captureGameRegion();
     try {
@@ -50,9 +72,12 @@
   function position() {
     try {
       const point = genshin.getPositionFromMap('Teyvat', 0);
-      if (!point || !Number.isFinite(Number(point.X)) || !Number.isFinite(Number(point.Y)) || (Number(point.X) === 0 && Number(point.Y) === 0)) return null;
+      if (!point || !Number.isFinite(Number(point.X)) || !Number.isFinite(Number(point.Y)) || (Number(point.X) === 0 && Number(point.Y) === 0)) {
+        lastPositionReason = '地图定位返回空值或无效坐标'; return null;
+      }
+      lastPositionReason = null;
       return { x: Number(point.X), y: Number(point.Y) };
-    } catch (_) { return null; }
+    } catch (e) { if (stopped(e)) throw e; lastPositionReason = String(e.message || e); return null; }
   }
   function distance(a, b) { return Math.hypot(a.x-b.x, a.y-b.y); }
   async function stablePosition(expected, tolerance) {
@@ -62,6 +87,7 @@
       if (p && previous && distance(p, previous) <= 8 && (!expected || distance(p, expected) <= tolerance)) return p;
       previous = p; await sleep(300);
     }
+    record('position-verification-failed', { expected, tolerance, lastPosition: previous, reason: lastPositionReason });
     throw error('未取得稳定且符合预期的地图位置，停止移动。', 'GPS');
   }
 
@@ -117,25 +143,50 @@
     release(); const point = target(number);
     record('teleport', { number, tpId: point.tpId });
     await genshin.returnMainUi();
-    await genshin.tp(point.x, point.y, true);
+    // Use the target-aware teleport API, with its icon correction and scaling.
+    // Generic clickMapPoint only projects a world coordinate to a screen point.
+    await genshin.tp(point.x, point.y);
     await sleep(1200);
     return stablePosition(point, 28);
   }
 
+  async function verifyByTeleport(number) {
+    try {
+      const p = await teleport(number);
+      proofs.set(number, 'native-teleport-and-stable-position');
+      record('teleport-verified', { number, position: p });
+      return 'unlocked';
+    } catch (e) {
+      if (stopped(e)) throw e;
+      record('teleport-verification-unknown', { number, reason: String(e.message || e) });
+      throw error(`${number}号点无法通过原生传送和位置核验确认；请检查图标识别、窗口捕获和地图资源，不能据此判定未解锁。原因：${String(e.message || e)}`, 'VERIFY_UNKNOWN');
+    }
+  }
+
   async function mapState(number) {
     release(); const point = target(number);
+    proofs.delete(number);
+    let result = 'unknown';
     try {
       await genshin.clickMapPoint(point.x, point.y);
       await sleep(700);
       const panel = ocrBox([.66, .02, .34, .96]);
       const footer = ocrBox([.70, .75, .30, .25]);
       const titleOk = panel.some(item => number === 9 ? item.text.includes('无光的深都') : number === 3 ? /新月神像|七天神像/.test(item.text) : item.text.includes('传送锚点'));
-      const locked = panel.some(item => /尚未解锁|未解锁|未激活/.test(item.text));
+      const locked = panel.some(item => /尚未解锁|未解锁|未激活|未开启/.test(item.text));
       const button = footer.some(item => item.text === '传送');
-      const result = titleOk && button && !locked ? 'unlocked' : titleOk ? 'locked' : 'unknown';
+      result = titleOk && button && !locked ? 'unlocked' : titleOk && locked ? 'locked' : 'unknown';
       record('map-check', { number, result, panel: panel.map(item => item.text), footer: footer.map(item => item.text) });
-      return result;
+      if (result === 'unlocked') proofs.set(number, 'selected-map-panel-exact-teleport-button');
+    } catch (e) {
+      if (stopped(e)) throw e;
+      record('map-selection-unknown', { number, reason: String(e.message || e) });
     } finally { await genshin.returnMainUi(); await sleep(300); }
+    if (result !== 'unknown') return result;
+    // A custom-pin panel, an overlap list or a missing button is not locked proof.
+    // Let the native teleport flow correct the icon; successful arrival is proof.
+    try { return await verifyByTeleport(number); }
+    catch (e) { if (stopped(e)) throw e; return 'unknown'; }
   }
 
   function interactionRow(pattern) {
@@ -169,7 +220,9 @@
     if (await mapState(number) !== 'unlocked') throw error(`${number}号交互后未确认可传送，未记为完成。`, 'VERIFY');
   }
   async function complete(number) {
-    state.completed[String(number)] = { verifiedAt: new Date().toISOString(), proof: 'selected-map-panel-exact-teleport-button' };
+    const proof = proofs.get(number);
+    if (!proof) throw error(`${number}号缺少本次运行的实际核验结果。`, 'VERIFY');
+    state.completed[String(number)] = { verifiedAt: new Date().toISOString(), proof };
     checkpoint({ lastVerifiedTarget: number }); record('target-verified', number);
     log.info(`${number}号点已核验可传送。`);
   }
@@ -245,9 +298,12 @@
       } catch (_) { /* A malformed checkpoint cannot skip live verification. */ }
     }
     file.createDirectory('logs'); checkpoint({ runId, selectedRange: range, status: 'running' });
-    record('run-start', { version: getVersion(), range, source: plan.source.sourceSha256 });
+    record('run-start', { version: getVersion(), packageVersion: plan.packageVersion, range, source: plan.source.sourceSha256 });
+    checkEnvironment();
     stage = 3;
-    if (await mapState(3) !== 'unlocked') throw error('未核验伦波岛神像已点亮；此版本要求神像已亮并能进行地图定位。', 'PREREQUISITE');
+    // The user confirmed this statue is unlocked. Probe it with icon-aware native
+    // teleport, not a raw map click that can open the custom-pin editor below it.
+    await verifyByTeleport(3);
     await complete(3);
     for (stage = range[0]; stage <= range[1]; stage++) {
       checkpoint();

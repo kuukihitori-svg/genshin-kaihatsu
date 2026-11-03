@@ -26,8 +26,11 @@ function mock(options = {}) {
   const item = (text, y=400) => ({text,x:1000,y,width:150,height:30});
   function recognized(ro) {
     if (mapTarget !== null) {
+      if (mapTarget === 'marker') return [item('标记（点击更改标记名称）',70),item('确认',950)];
       if (ro.box[1] >= 700) return unlocked.has(mapTarget) ? [item(options.badFooter && mapTarget===7 ? '传送锚点' : '传送',950)] : [];
-      return [item(mapTarget===3 ? '新月神像' : mapTarget===9 ? '无光的深都' : '传送锚点',70)];
+      const rows=[item(mapTarget===3 ? '新月神像' : mapTarget===9 ? '无光的深都' : '传送锚点',70)];
+      if (!unlocked.has(mapTarget)) rows.push(item('未解锁',120));
+      return rows;
     }
     if (options.noPrompt) return [item('交谈')];
     if (options.range==='仅4号' && distance(current,plan.special.lift)<4) return [item('上行',400),item('下行',440)];
@@ -64,7 +67,8 @@ function mock(options = {}) {
     },
     moveMouseBy:(dx)=>{heading=(heading+dx/2+360)%360;},
     RecognitionObject:{ocr:(...box)=>({box})},
-    captureGameRegion:()=>({width:1920,height:1080,srcMat:{},dispose(){},findMulti(ro){
+    captureGameRegion:()=>({width:options.captureWidth||1920,height:options.captureHeight||1080,srcMat:{},dispose(){},findMulti(ro){
+      history.push(['ocr',...ro.box]);
       const list=recognized(ro);list.count=list.length;return list;
     }}),
     log:{info:message=>history.push(['info',message]),error:message=>history.push(['error',message])},
@@ -80,9 +84,18 @@ function mock(options = {}) {
       }
     },
     genshin:{
+      width:options.gameWidth||1920,height:options.gameHeight||1080,screenDpiScale:options.dpi||1,
       returnMainUi:async()=>{mapTarget=null;},
-      clickMapPoint:async(x,y)=>{mapTarget=plan.targets.find(p=>distance(p,{x,y})<.01).number;},
-      tp:async(x,y)=>{current={x,y};pointIndices.clear();history.push(['tp',plan.targets.find(p=>distance(p,current)<.01).number]);},
+      clickMapPoint:async(x,y)=>{
+        const n=plan.targets.find(p=>distance(p,{x,y})<.01).number;
+        history.push(['map-click',n]);mapTarget=options.markerFor===n?'marker':n;
+      },
+      tp:async(...args)=>{
+        const [x,y]=args,n=plan.targets.find(p=>distance(p,{x,y})<.01).number;
+        history.push(['tp',n,args.length]);
+        if(options.nativeTpFailureFor===n || !unlocked.has(n)) throw new Error('原生传送无法确认目标');
+        current=options.wrongArrivalFor===n?{...getTarget(1)}:{x,y};pointIndices.clear();
+      },
       getPositionFromMap:()=>{
         if(storyNullReads>0){storyNullReads--;return null;}
         return {X:current.x,Y:current.y};
@@ -119,7 +132,7 @@ async function run(options){const m=mock(options);const task=vm.runInNewContext(
     assert.equal(m.history.filter(e=>e[0]==='press'&&e[1]==='F').length,0);
   });
   await test('传送锚点 text is not mistaken for an exact 传送 button',async()=>{
-    const {m,task}=await run({badFooter:true});await assert.rejects(task,/未确认可传送/);
+    const {m,task}=await run({badFooter:true,nativeTpFailureFor:7});await assert.rejects(task,/未确认可传送/);
     assert.equal(JSON.parse(m.writes.get('state.json')).completed['7'],undefined);
   });
   await test('missing target prompt never presses F on an unrelated NPC',async()=>{
@@ -160,9 +173,45 @@ async function run(options){const m=mock(options);const task=vm.runInNewContext(
   await test('7–10 execution returns to 7 for the domain and 6 for the final descent',async()=>{
     const {m,task}=await run({range:'6—10'});await task;
     const teleports=m.history.filter(e=>e[0]==='tp').map(e=>e[1]);
-    assert.deepEqual(teleports,[6,7,7,6]);
+    assert.deepEqual(teleports,[3,6,7,7,6]);
     const state=JSON.parse(m.writes.get('state.json'));
     for(const n of [7,8,9,10])assert.ok(state.completed[String(n)]);
+  });
+  await test('2560×1440 with 150% DPI uses native statue teleport and normalized OCR',async()=>{
+    const {m,task}=await run({gameWidth:2560,gameHeight:1440,dpi:1.5,markerFor:3});await task;
+    assert.ok(!m.history.some(e=>e[0]==='map-click'&&e[1]===3));
+    assert.deepEqual(m.history.find(e=>e[0]==='tp'),['tp',3,2]);
+    const state=JSON.parse(m.writes.get('state.json'));
+    assert.equal(state.completed['3'].proof,'native-teleport-and-stable-position');
+    for(const [type,x,y,w,h] of m.history.filter(e=>e[0]==='ocr'))assert.ok(x>=0&&y>=0&&x+w<=1920&&y+h<=1080);
+    const events=[...m.writes].filter(([n])=>n.endsWith('.jsonl.txt')).flatMap(([,v])=>v.trim().split('\n').map(JSON.parse));
+    const environment=events.find(e=>e.type==='environment').detail;
+    assert.deepEqual([environment.gameWidth,environment.gameHeight,environment.screenDpiScale],[2560,1440,1.5]);
+  });
+  await test('non-16:9 client is rejected before any map input, even if a capture is 16:9',async()=>{
+    const {m,task}=await run({gameWidth:2560,gameHeight:1600});await assert.rejects(task,/客户区为2560×1600|客户区为 2560×1600/);
+    assert.ok(!m.history.some(e=>['tp','map-click','down','press','path'].includes(e[0])));
+  });
+  await test('a cropped capture cannot override a valid actual game aspect ratio',async()=>{
+    const {m,task}=await run({gameWidth:2560,gameHeight:1440,captureWidth:1912,captureHeight:1080});await task;
+    assert.ok(JSON.parse(m.writes.get('state.json')).completed['7']);
+  });
+  await test('a custom marker editor is unknown, then native teleport can prove unlock',async()=>{
+    const {m,task}=await run({markerFor:7});await task;
+    const state=JSON.parse(m.writes.get('state.json'));
+    assert.equal(state.completed['7'].proof,'native-teleport-and-stable-position');
+    const events=[...m.writes].filter(([n])=>n.endsWith('.jsonl.txt')).flatMap(([,v])=>v.trim().split('\n').map(JSON.parse));
+    assert.ok(events.some(e=>e.type==='map-check'&&e.detail.number===7&&e.detail.result==='unknown'));
+    assert.ok(!events.some(e=>e.type==='map-check'&&e.detail.number===7&&e.detail.result==='locked'));
+  });
+  await test('a statue recognition failure is not reported as an unlit statue',async()=>{
+    const {m,task}=await run({nativeTpFailureFor:3});await assert.rejects(task,/不能据此判定未解锁/);
+    assert.equal(JSON.parse(m.writes.get('state.json')).completed['3'],undefined);
+    assert.ok(!m.history.some(e=>e[0]==='path'));
+  });
+  await test('native teleport to the wrong position cannot prove the statue is unlocked',async()=>{
+    const {m,task}=await run({wrongArrivalFor:3});await assert.rejects(task,/不能据此判定未解锁/);
+    assert.equal(JSON.parse(m.writes.get('state.json')).completed['3'],undefined);
   });
   console.log(`${passed} runner/package checks passed; host mocks are not real-game validation.`);
 })().catch(error=>{console.error(error);process.exitCode=1;});
