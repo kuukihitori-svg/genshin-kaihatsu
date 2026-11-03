@@ -1,0 +1,59 @@
+{
+  "info": {
+    "name": "5号锚点→山谷十字路口（视频恢复，待实机验收）",
+    "type": "collect",
+    "bgi_version": "0.66.0",
+    "map_name": "Teyvat"
+  },
+  "positions": [
+    {
+      "x": 9661.148,
+      "y": 1728.123,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9658.578,
+      "y": 1730.884,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9657.556,
+      "y": 1735.044,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9656.22,
+      "y": 1739.481,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9655.05,
+      "y": 1745.19,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9654.005,
+      "y": 1750.521,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9653.587,
+      "y": 1755.742,
+      "move_mode": "walk",
+      "type": "target",
+      "action": ""
+    }
+  ]
+}

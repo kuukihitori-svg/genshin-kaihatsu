@@ -1,0 +1,59 @@
+{
+  "info": {
+    "name": "6→7 沿道路到起重设备平台（视频恢复，待实机验收）",
+    "type": "collect",
+    "bgi_version": "0.66.0",
+    "map_name": "Teyvat"
+  },
+  "positions": [
+    {
+      "x": 9834.075,
+      "y": 1747.513,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9838.852,
+      "y": 1744.45,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9843.215,
+      "y": 1742.397,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9848.077,
+      "y": 1739.132,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9852.403,
+      "y": 1736.344,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9857.097,
+      "y": 1733.553,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9861.555,
+      "y": 1730.964,
+      "move_mode": "walk",
+      "type": "target",
+      "action": ""
+    }
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "info": {
+    "name": "6.0-21 伦波岛（视频恢复，未实机验收）",
+    "type": "collect",
+    "bgi_version": "0.66.0",
+    "map_name": "Teyvat"
+  },
+  "positions": [
+    {
+      "x": 9184.978,
+      "y": 2522.567,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9182.515,
+      "y": 2522.037,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9178.271,
+      "y": 2521.919,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9173.068,
+      "y": 2521.848,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9167.896,
+      "y": 2521.973,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9162.947,
+      "y": 2522.131,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9157.876,
+      "y": 2522.333,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9153.764,
+      "y": 2522.506,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9147.822,
+      "y": 2522.619,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9143.025,
+      "y": 2522.845,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9137.132,
+      "y": 2522.998,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9131.165,
+      "y": 2523.045,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9126.487,
+      "y": 2523.09,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9122.1,
+      "y": 2523.486,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9116.694,
+      "y": 2524.281,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9111.581,
+      "y": 2524.82,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9105.676,
+      "y": 2525.5,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9102.068,
+      "y": 2525.901,
+      "move_mode": "fly",
+      "type": "target",
+      "action": "stop_flying"
+    },
+    {
+      "x": 9100.646,
+      "y": 2525.891,
+      "move_mode": "walk",
+      "type": "target",
+      "action": ""
+    }
+  ]
+}

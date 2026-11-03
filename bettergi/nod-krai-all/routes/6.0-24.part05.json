@@ -1,0 +1,66 @@
+{
+  "info": {
+    "name": "6.0-24 希汐岛（视频恢复，未实机验收）",
+    "type": "collect",
+    "bgi_version": "0.66.0",
+    "map_name": "Teyvat"
+  },
+  "positions": [
+    {
+      "x": 10406.177,
+      "y": 1774.612,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 10405.578,
+      "y": 1779.565,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 10405.093,
+      "y": 1784.437,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 10404.815,
+      "y": 1787.177,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 10404.425,
+      "y": 1790.694,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 10403.962,
+      "y": 1794.892,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 10404.561,
+      "y": 1798.987,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 10404.11,
+      "y": 1803.94,
+      "move_mode": "walk",
+      "type": "target",
+      "action": ""
+    }
+  ]
+}

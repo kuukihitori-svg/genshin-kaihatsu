@@ -1,0 +1,24 @@
+{
+  "info": {
+    "name": "1→2 那夏镇台阶与街道（视频恢复，待实机验收）",
+    "type": "collect",
+    "bgi_version": "0.66.0",
+    "map_name": "Teyvat"
+  },
+  "positions": [
+    {
+      "x": 9362.625,
+      "y": 1458.673,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9359.275,
+      "y": 1487.479,
+      "move_mode": "walk",
+      "type": "target",
+      "action": ""
+    }
+  ]
+}

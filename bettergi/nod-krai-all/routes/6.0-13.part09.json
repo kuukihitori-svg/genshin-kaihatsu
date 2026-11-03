@@ -1,0 +1,38 @@
+{
+  "info": {
+    "name": "6.0-13 伦波岛（视频恢复，未实机验收）",
+    "type": "collect",
+    "bgi_version": "0.66.0",
+    "map_name": "Teyvat"
+  },
+  "positions": [
+    {
+      "x": 9346.314,
+      "y": 2103.75,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9350.505,
+      "y": 2107.119,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9354.793,
+      "y": 2110.348,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9356.546,
+      "y": 2111.615,
+      "move_mode": "walk",
+      "type": "target",
+      "action": ""
+    }
+  ]
+}

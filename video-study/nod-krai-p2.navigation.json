@@ -1,21 +1,30 @@
 {
   "schemaVersion": 1,
-  "packageVersion": "0.2.3-experimental",
+  "packageVersion": "0.2.4-experimental",
   "source": {
     "sourceSha256": "1c19533c7177731b8d26f8474d3091c6289effb73313595f9dcd030ef71b1447",
     "frameCount": 15612,
     "decodedEveryFrame": true,
     "fps": 30,
-    "framesWithPose": 7544,
-    "absoluteMatchFrames": 256,
-    "method": "All frames decoded; SIFT/RANSAC absolute anchors plus adjacent-frame Lucas–Kanade tracking; north-up reference map calibrated from sourced teleport IDs.",
-    "humanReview": "路线连续性联系表、关键区间代表原帧和自动转写交叉核对；不声称人工逐一看完15612帧。",
+    "framesWithPose": 8282,
+    "absoluteMatchFrames": 301,
+    "method": "Sequential full-frame decode; SIFT/RANSAC against the native 1024 map (origin 16384,12288), bounded optical flow, and temporally constrained local SIFT only within three seconds of a strong anchor. No new flight interpolation.",
+    "humanReview": "关键动作原帧、连续联系表与自动语音转写交叉核对；没有声称人工逐一看完15612帧或逐句亲耳听完。",
     "limitations": [
       "黑图原录的1→2仅能用编号图人工量点；用户已确认自己账号神像已亮，运行时必须能地图定位。",
-      "7→8滑翔中段有绝对定位缺口，连续飞行插值已标明。",
       "用户已确认3号神像点亮，运行时跳过其强制选点与传送，不新增核验记录，也不重放原录绕行。",
-      "剧情首次触发可能比剪辑后的录像长，超时停止并保留恢复点。"
-    ]
+      "剧情首次触发可能比剪辑后的录像长，超时停止并保留恢复点。",
+      "5→6使用连续斜坡步行变体，未完成实机验证；首段1→2仍为人工量图，不能标作精确恢复。"
+    ],
+    "nativeAtlas": {
+      "repository": "huiyadanli/bettergi-map",
+      "path": "public/1024_map.jpg",
+      "gitBlobSha": "b6631e1e4c723ecafa2be7a67f2b0ed3c19623e1",
+      "worldOrigin": [
+        16384,
+        12288
+      ]
+    }
   },
   "accountPrerequisite": {
     "lunboStatueLit": true,
@@ -212,174 +221,340 @@
       ],
       "points": [
         {
-          "x": 9458.792,
-          "y": 1659.259,
+          "x": 9459.182,
+          "y": 1661.663,
           "move_mode": "walk",
-          "timeSeconds": 165,
-          "origin": "sift",
-          "inliers": 12
+          "timeSeconds": 165.0,
+          "sourceFrame": 4950,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 4950,
+          "anchorRmseGameUnits": 0.2657
         },
         {
-          "x": 9463.214,
-          "y": 1656.904,
+          "x": 9463.484,
+          "y": 1659.315,
           "move_mode": "walk",
-          "timeSeconds": 169,
-          "origin": "sift",
-          "inliers": 10
+          "timeSeconds": 169.033333,
+          "sourceFrame": 5071,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 5070,
+          "anchorRmseGameUnits": 0.2369
         },
         {
-          "x": 9474.143,
-          "y": 1646.265,
+          "x": 9468.43,
+          "y": 1655.96,
           "move_mode": "walk",
-          "timeSeconds": 172,
-          "origin": "sift",
-          "inliers": 8
+          "timeSeconds": 170.833333,
+          "sourceFrame": 5125,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 5100,
+          "anchorRmseGameUnits": 0.2282
         },
         {
-          "x": 9480.13,
-          "y": 1641.84,
+          "x": 9470.952,
+          "y": 1652.599,
           "move_mode": "walk",
-          "timeSeconds": 173,
-          "origin": "sift",
-          "inliers": 13
+          "timeSeconds": 171.5,
+          "sourceFrame": 5145,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 5130,
+          "anchorRmseGameUnits": 0.2293
         },
         {
-          "x": 9480.854,
-          "y": 1636.953,
+          "x": 9473.562,
+          "y": 1649.066,
           "move_mode": "walk",
-          "timeSeconds": 174,
-          "origin": "sift",
-          "inliers": 11
+          "timeSeconds": 171.933333,
+          "sourceFrame": 5158,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 5130,
+          "anchorRmseGameUnits": 0.2293
         },
         {
-          "x": 9483.618,
-          "y": 1627.386,
+          "x": 9477.782,
+          "y": 1646.011,
           "move_mode": "walk",
-          "timeSeconds": 175,
-          "origin": "sift",
-          "inliers": 19
+          "timeSeconds": 172.6,
+          "sourceFrame": 5178,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 5160,
+          "anchorRmseGameUnits": 0.2918
         },
         {
-          "x": 9485.547,
-          "y": 1623.309,
+          "x": 9480.542,
+          "y": 1643.02,
           "move_mode": "walk",
-          "timeSeconds": 175.333,
-          "origin": "sift",
-          "inliers": 18
+          "timeSeconds": 173.333333,
+          "sourceFrame": 5200,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 5190,
+          "anchorRmseGameUnits": 0.2256
         },
         {
-          "x": 9486.59,
-          "y": 1618.14,
+          "x": 9481.115,
+          "y": 1639.248,
+          "move_mode": "walk",
+          "timeSeconds": 174.0,
+          "sourceFrame": 5220,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 5220,
+          "anchorRmseGameUnits": 0.3929
+        },
+        {
+          "x": 9482.222,
+          "y": 1634.323,
+          "move_mode": "walk",
+          "timeSeconds": 174.433333,
+          "sourceFrame": 5233,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 5220,
+          "anchorRmseGameUnits": 0.3929
+        },
+        {
+          "x": 9483.421,
+          "y": 1631.059,
+          "move_mode": "walk",
+          "timeSeconds": 174.866667,
+          "sourceFrame": 5246,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 5220,
+          "anchorRmseGameUnits": 0.3929
+        },
+        {
+          "x": 9485.453,
+          "y": 1626.016,
+          "move_mode": "walk",
+          "timeSeconds": 175.3,
+          "sourceFrame": 5259,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 5250,
+          "anchorRmseGameUnits": 0.3054
+        },
+        {
+          "x": 9486.686,
+          "y": 1620.608,
           "move_mode": "walk",
           "timeSeconds": 176.0,
-          "origin": "sift",
-          "inliers": 18
+          "sourceFrame": 5280,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 5280,
+          "anchorRmseGameUnits": 0.2512
         },
         {
-          "x": 9489.267,
-          "y": 1613.3,
+          "x": 9488.593,
+          "y": 1617.576,
           "move_mode": "walk",
-          "timeSeconds": 177.0,
-          "origin": "sift",
-          "inliers": 24
+          "timeSeconds": 176.666667,
+          "sourceFrame": 5300,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 5280,
+          "anchorRmseGameUnits": 0.2512
         },
         {
-          "x": 9493.025,
-          "y": 1604.81,
+          "x": 9490.335,
+          "y": 1614.336,
           "move_mode": "walk",
-          "timeSeconds": 178.0,
-          "origin": "sift",
-          "inliers": 25
+          "timeSeconds": 177.1,
+          "sourceFrame": 5313,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 5310,
+          "anchorRmseGameUnits": 0.4294
         },
         {
-          "x": 9495.105,
-          "y": 1600.34,
+          "x": 9491.699,
+          "y": 1610.1,
           "move_mode": "walk",
-          "timeSeconds": 179.0,
-          "origin": "sift",
-          "inliers": 29
+          "timeSeconds": 177.533333,
+          "sourceFrame": 5326,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 5310,
+          "anchorRmseGameUnits": 0.4294
         },
         {
-          "x": 9499.948,
-          "y": 1600.112,
+          "x": 9494.253,
+          "y": 1604.673,
+          "move_mode": "walk",
+          "timeSeconds": 178.466667,
+          "sourceFrame": 5354,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 5340,
+          "anchorRmseGameUnits": 0.5119
+        },
+        {
+          "x": 9496.394,
+          "y": 1602.104,
+          "move_mode": "walk",
+          "timeSeconds": 179.333333,
+          "sourceFrame": 5380,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 5370,
+          "anchorRmseGameUnits": 0.1649
+        },
+        {
+          "x": 9500.122,
+          "y": 1602.697,
           "move_mode": "walk",
           "timeSeconds": 180.0,
-          "origin": "sift",
-          "inliers": 28
+          "sourceFrame": 5400,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 5400,
+          "anchorRmseGameUnits": 0.3201
         },
         {
-          "x": 9506.347,
-          "y": 1602.833,
+          "x": 9505.572,
+          "y": 1604.935,
           "move_mode": "walk",
-          "timeSeconds": 181.0,
-          "origin": "sift",
-          "inliers": 26
+          "timeSeconds": 180.666667,
+          "sourceFrame": 5420,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 5400,
+          "anchorRmseGameUnits": 0.3201
         },
         {
-          "x": 9513.728,
-          "y": 1606.408,
+          "x": 9510.457,
+          "y": 1606.905,
           "move_mode": "walk",
-          "timeSeconds": 182.0,
-          "origin": "sift",
-          "inliers": 25
+          "timeSeconds": 181.533333,
+          "sourceFrame": 5446,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 5430,
+          "anchorRmseGameUnits": 0.2948
         },
         {
-          "x": 9516.958,
-          "y": 1610.943,
+          "x": 9514.68,
+          "y": 1609.989,
           "move_mode": "walk",
-          "timeSeconds": 183.0,
-          "origin": "sift",
-          "inliers": 20
+          "timeSeconds": 182.233333,
+          "sourceFrame": 5467,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 5460,
+          "anchorRmseGameUnits": 0.3352
         },
         {
-          "x": 9515.139,
-          "y": 1615.21,
+          "x": 9516.938,
+          "y": 1613.361,
           "move_mode": "walk",
-          "timeSeconds": 192.0,
-          "origin": "sift",
-          "inliers": 19
+          "timeSeconds": 182.866667,
+          "sourceFrame": 5486,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 5460,
+          "anchorRmseGameUnits": 0.3352
         },
         {
-          "x": 9517.41,
-          "y": 1619.598,
+          "x": 9517.715,
+          "y": 1612.37,
           "move_mode": "walk",
-          "timeSeconds": 193.0,
-          "origin": "sift",
-          "inliers": 22
+          "timeSeconds": 183.566667,
+          "sourceFrame": 5507,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 5490,
+          "anchorRmseGameUnits": 0.3617
         },
         {
-          "x": 9521.067,
-          "y": 1626.257,
+          "x": 9516.9,
+          "y": 1611.741,
           "move_mode": "walk",
-          "timeSeconds": 195.0,
-          "origin": "sift",
-          "inliers": 16
+          "timeSeconds": 184.266667,
+          "sourceFrame": 5528,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 5520,
+          "anchorRmseGameUnits": 0.3812
         },
         {
-          "x": 9523.956,
-          "y": 1631.063,
+          "x": 9515.259,
+          "y": 1617.391,
           "move_mode": "walk",
-          "timeSeconds": 196.0,
-          "origin": "sift",
-          "inliers": 25
+          "timeSeconds": 191.933333,
+          "sourceFrame": 5758,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 5730,
+          "anchorRmseGameUnits": 0.4265
         },
         {
-          "x": 9527.788,
-          "y": 1638.603,
+          "x": 9516.368,
+          "y": 1620.623,
           "move_mode": "walk",
-          "timeSeconds": 197.0,
-          "origin": "sift",
-          "inliers": 22
+          "timeSeconds": 192.6,
+          "sourceFrame": 5778,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 5760,
+          "anchorRmseGameUnits": 0.3014
         },
         {
-          "x": 9530.857,
-          "y": 1642.495,
+          "x": 9519.614,
+          "y": 1625.603,
           "move_mode": "walk",
-          "timeSeconds": 198.0,
-          "origin": "sift",
-          "inliers": 31
+          "timeSeconds": 194.366667,
+          "sourceFrame": 5831,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 5820,
+          "anchorRmseGameUnits": 0.2884
+        },
+        {
+          "x": 9521.943,
+          "y": 1629.91,
+          "move_mode": "walk",
+          "timeSeconds": 195.266667,
+          "sourceFrame": 5858,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 5850,
+          "anchorRmseGameUnits": 0.2244
+        },
+        {
+          "x": 9524.478,
+          "y": 1634.286,
+          "move_mode": "walk",
+          "timeSeconds": 196.166667,
+          "sourceFrame": 5885,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 5880,
+          "anchorRmseGameUnits": 0.338
+        },
+        {
+          "x": 9526.609,
+          "y": 1638.554,
+          "move_mode": "walk",
+          "timeSeconds": 196.8,
+          "sourceFrame": 5904,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 5880,
+          "anchorRmseGameUnits": 0.338
+        },
+        {
+          "x": 9529.44,
+          "y": 1643.268,
+          "move_mode": "walk",
+          "timeSeconds": 197.266667,
+          "sourceFrame": 5918,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 5910,
+          "anchorRmseGameUnits": 0.2889
+        },
+        {
+          "x": 9532.851,
+          "y": 1646.049,
+          "move_mode": "walk",
+          "timeSeconds": 199.0,
+          "sourceFrame": 5970,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 5970,
+          "anchorRmseGameUnits": 0.2471
         }
-      ]
+      ],
+      "quality": "native-atlas-observed",
+      "coordinateEvidence": {
+        "sourceSha256": "1c19533c7177731b8d26f8474d3091c6289effb73313595f9dcd030ef71b1447",
+        "mapName": "Teyvat",
+        "sourceRange": [
+          165,
+          199
+        ],
+        "decodedFrames": 15612,
+        "posesInInterval": 1021,
+        "maxUnlocalizedGapSeconds": 0.0333,
+        "atlasCoordinateSystem": "native-1024-map-origin-minus-pixel",
+        "reviewStatus": "coordinates_recovered_requires_movement_and_mechanism_review"
+      }
     },
     {
       "id": "05-glide",
@@ -390,166 +565,300 @@
       ],
       "points": [
         {
-          "x": 9538.577,
-          "y": 1636.015,
+          "x": 9538.55,
+          "y": 1638.331,
           "move_mode": "walk",
           "timeSeconds": 243.0,
-          "origin": "sift",
-          "inliers": 24
+          "sourceFrame": 7290,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 7290,
+          "anchorRmseGameUnits": 0.28
         },
         {
-          "x": 9541.762,
-          "y": 1639.26,
+          "x": 9541.896,
+          "y": 1641.831,
           "move_mode": "walk",
-          "timeSeconds": 245.0,
-          "origin": "sift",
-          "inliers": 25
+          "timeSeconds": 245.033333,
+          "sourceFrame": 7351,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 7350,
+          "anchorRmseGameUnits": 0.2286
         },
         {
-          "x": 9545.908,
-          "y": 1643.325,
+          "x": 9545.418,
+          "y": 1645.236,
+          "move_mode": "walk",
+          "timeSeconds": 245.933333,
+          "sourceFrame": 7378,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 7350,
+          "anchorRmseGameUnits": 0.2286
+        },
+        {
+          "x": 9546.382,
+          "y": 1646.114,
           "move_mode": "fly",
-          "timeSeconds": 246.0,
-          "origin": "sift",
-          "inliers": 23
+          "timeSeconds": 246.166667,
+          "sourceFrame": 7385,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 7380,
+          "anchorRmseGameUnits": 0.2642
         },
         {
-          "x": 9550.412,
-          "y": 1647.191,
+          "x": 9550.327,
+          "y": 1649.561,
           "move_mode": "fly",
-          "timeSeconds": 247.0,
-          "origin": "sift",
-          "inliers": 26
+          "timeSeconds": 247.033333,
+          "sourceFrame": 7411,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 7410,
+          "anchorRmseGameUnits": 0.2304
         },
         {
-          "x": 9554.952,
-          "y": 1651.032,
+          "x": 9554.337,
+          "y": 1653.066,
           "move_mode": "fly",
-          "timeSeconds": 248.0,
-          "origin": "sift",
-          "inliers": 25
+          "timeSeconds": 247.933333,
+          "sourceFrame": 7438,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 7410,
+          "anchorRmseGameUnits": 0.2304
         },
         {
-          "x": 9559.484,
-          "y": 1654.862,
+          "x": 9558.338,
+          "y": 1656.364,
           "move_mode": "fly",
-          "timeSeconds": 249.0,
-          "origin": "sift",
-          "inliers": 30
+          "timeSeconds": 248.8,
+          "sourceFrame": 7464,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 7440,
+          "anchorRmseGameUnits": 0.1963
         },
         {
-          "x": 9564.027,
-          "y": 1658.757,
+          "x": 9562.765,
+          "y": 1660.055,
           "move_mode": "fly",
-          "timeSeconds": 250.0,
-          "origin": "sift",
-          "inliers": 42
+          "timeSeconds": 249.733333,
+          "sourceFrame": 7492,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 7470,
+          "anchorRmseGameUnits": 0.2425
         },
         {
-          "x": 9568.471,
-          "y": 1662.819,
+          "x": 9566.498,
+          "y": 1663.357,
           "move_mode": "fly",
-          "timeSeconds": 251.0,
-          "origin": "sift",
-          "inliers": 49
+          "timeSeconds": 250.6,
+          "sourceFrame": 7518,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 7500,
+          "anchorRmseGameUnits": 0.2359
         },
         {
-          "x": 9572.756,
-          "y": 1666.918,
+          "x": 9570.727,
+          "y": 1667.312,
           "move_mode": "fly",
-          "timeSeconds": 252.0,
-          "origin": "sift",
-          "inliers": 47
+          "timeSeconds": 251.5,
+          "sourceFrame": 7545,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 7530,
+          "anchorRmseGameUnits": 0.2097
         },
         {
-          "x": 9577.203,
-          "y": 1670.973,
+          "x": 9574.326,
+          "y": 1670.928,
           "move_mode": "fly",
-          "timeSeconds": 253.0,
-          "origin": "sift",
-          "inliers": 51
+          "timeSeconds": 252.366667,
+          "sourceFrame": 7571,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 7560,
+          "anchorRmseGameUnits": 0.1913
         },
         {
-          "x": 9581.833,
-          "y": 1674.792,
+          "x": 9578.299,
+          "y": 1674.249,
           "move_mode": "fly",
-          "timeSeconds": 254.0,
-          "origin": "sift",
-          "inliers": 42
+          "timeSeconds": 253.266667,
+          "sourceFrame": 7598,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 7590,
+          "anchorRmseGameUnits": 0.1493
         },
         {
-          "x": 9586.569,
-          "y": 1678.469,
+          "x": 9582.848,
+          "y": 1677.948,
           "move_mode": "fly",
-          "timeSeconds": 255.0,
-          "origin": "sift",
-          "inliers": 39
+          "timeSeconds": 254.233333,
+          "sourceFrame": 7627,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 7620,
+          "anchorRmseGameUnits": 0.196
         },
         {
-          "x": 9591.542,
-          "y": 1682.347,
+          "x": 9586.849,
+          "y": 1681.079,
           "move_mode": "fly",
-          "timeSeconds": 256.0,
-          "origin": "sift",
-          "inliers": 31
+          "timeSeconds": 255.133333,
+          "sourceFrame": 7654,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 7650,
+          "anchorRmseGameUnits": 0.2204
         },
         {
-          "x": 9596.239,
-          "y": 1685.979,
+          "x": 9591.48,
+          "y": 1684.758,
           "move_mode": "fly",
-          "timeSeconds": 257.0,
-          "origin": "sift",
-          "inliers": 16
+          "timeSeconds": 256.1,
+          "sourceFrame": 7683,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 7680,
+          "anchorRmseGameUnits": 0.2439
         },
         {
-          "x": 9600.958,
-          "y": 1689.658,
+          "x": 9596.041,
+          "y": 1688.291,
+          "move_mode": "fly",
+          "timeSeconds": 257.033333,
+          "sourceFrame": 7711,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 7710,
+          "anchorRmseGameUnits": 0.2221
+        },
+        {
+          "x": 9600.737,
+          "y": 1691.898,
           "move_mode": "fly",
           "timeSeconds": 258.0,
-          "origin": "sift",
-          "inliers": 22
+          "sourceFrame": 7740,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 7740,
+          "anchorRmseGameUnits": 0.2615
         },
         {
-          "x": 9605.208,
-          "y": 1693.189,
+          "x": 9605.213,
+          "y": 1695.458,
           "move_mode": "fly",
           "timeSeconds": 260.0,
-          "origin": "sift",
-          "inliers": 17
+          "sourceFrame": 7800,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 7800,
+          "anchorRmseGameUnits": 0.1809
         },
         {
-          "x": 9610.204,
-          "y": 1697.363,
-          "move_mode": "walk",
-          "timeSeconds": 261.0,
-          "origin": "sift",
-          "inliers": 16
+          "x": 9607.351,
+          "y": 1697.592,
+          "move_mode": "fly",
+          "timeSeconds": 260.866667,
+          "sourceFrame": 7826,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 7800,
+          "anchorRmseGameUnits": 0.1809
         },
         {
-          "x": 9623.596,
-          "y": 1708.362,
+          "x": 9610.533,
+          "y": 1699.866,
           "move_mode": "walk",
-          "timeSeconds": 262.667,
-          "origin": "sift",
-          "inliers": 65
+          "timeSeconds": 261.1,
+          "sourceFrame": 7833,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 7830,
+          "anchorRmseGameUnits": 0.1971
         },
         {
-          "x": 9633.553,
-          "y": 1714.46,
+          "x": 9613.897,
+          "y": 1703.323,
           "move_mode": "walk",
-          "timeSeconds": 264.0,
-          "origin": "sift",
-          "inliers": 77
+          "timeSeconds": 261.766667,
+          "sourceFrame": 7853,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 7830,
+          "anchorRmseGameUnits": 0.1971
         },
         {
-          "x": 9639.143,
-          "y": 1717.606,
+          "x": 9618.087,
+          "y": 1706.268,
           "move_mode": "walk",
-          "timeSeconds": 265.0,
-          "origin": "sift",
-          "inliers": 70
+          "timeSeconds": 262.0,
+          "sourceFrame": 7860,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 7860,
+          "anchorRmseGameUnits": 0.3316
+        },
+        {
+          "x": 9621.071,
+          "y": 1708.753,
+          "move_mode": "walk",
+          "timeSeconds": 262.4,
+          "sourceFrame": 7872,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 7872,
+          "anchorRmseGameUnits": 0.5081
+        },
+        {
+          "x": 9625.201,
+          "y": 1711.886,
+          "move_mode": "walk",
+          "timeSeconds": 263.033333,
+          "sourceFrame": 7891,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 7890,
+          "anchorRmseGameUnits": 0.4808
+        },
+        {
+          "x": 9629.43,
+          "y": 1714.496,
+          "move_mode": "walk",
+          "timeSeconds": 263.5,
+          "sourceFrame": 7905,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 7890,
+          "anchorRmseGameUnits": 0.4808
+        },
+        {
+          "x": 9634.143,
+          "y": 1717.346,
+          "move_mode": "walk",
+          "timeSeconds": 264.166667,
+          "sourceFrame": 7925,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 7920,
+          "anchorRmseGameUnits": 0.4735
+        },
+        {
+          "x": 9638.617,
+          "y": 1719.672,
+          "move_mode": "walk",
+          "timeSeconds": 264.866667,
+          "sourceFrame": 7946,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 7920,
+          "anchorRmseGameUnits": 0.4735
+        },
+        {
+          "x": 9643.764,
+          "y": 1721.814,
+          "move_mode": "walk",
+          "timeSeconds": 267.0,
+          "sourceFrame": 8010,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 8010,
+          "anchorRmseGameUnits": 0.487
         }
-      ]
+      ],
+      "quality": "native-atlas-observed",
+      "coordinateEvidence": {
+        "sourceSha256": "1c19533c7177731b8d26f8474d3091c6289effb73313595f9dcd030ef71b1447",
+        "mapName": "Teyvat",
+        "sourceRange": [
+          243,
+          267
+        ],
+        "decodedFrames": 15612,
+        "posesInInterval": 702,
+        "maxUnlocalizedGapSeconds": 0.2,
+        "atlasCoordinateSystem": "native-1024-map-origin-minus-pixel",
+        "reviewStatus": "coordinates_recovered_requires_movement_and_mechanism_review"
+      }
     },
     {
       "id": "06-valley",
@@ -560,86 +869,190 @@
       ],
       "points": [
         {
-          "x": 9661.441,
-          "y": 1725.845,
+          "x": 9661.148,
+          "y": 1728.123,
           "move_mode": "walk",
           "timeSeconds": 320.0,
-          "origin": "sift",
-          "inliers": 54
+          "sourceFrame": 9600,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 9600,
+          "anchorRmseGameUnits": 0.471
         },
         {
-          "x": 9658.27,
-          "y": 1731.117,
+          "x": 9658.578,
+          "y": 1730.884,
           "move_mode": "walk",
-          "timeSeconds": 322.0,
-          "origin": "sift",
-          "inliers": 48
+          "timeSeconds": 321.8,
+          "sourceFrame": 9654,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 9630,
+          "anchorRmseGameUnits": 0.5519
         },
         {
-          "x": 9655.618,
-          "y": 1740.597,
+          "x": 9657.556,
+          "y": 1735.044,
           "move_mode": "walk",
-          "timeSeconds": 323.0,
-          "origin": "sift",
-          "inliers": 34
+          "timeSeconds": 322.266667,
+          "sourceFrame": 9668,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 9660,
+          "anchorRmseGameUnits": 0.5712
         },
         {
-          "x": 9654.325,
-          "y": 1747.225,
+          "x": 9656.22,
+          "y": 1739.481,
           "move_mode": "walk",
-          "timeSeconds": 324.0,
-          "origin": "sift",
-          "inliers": 45
+          "timeSeconds": 322.733333,
+          "sourceFrame": 9682,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 9660,
+          "anchorRmseGameUnits": 0.5712
         },
         {
-          "x": 9653.925,
-          "y": 1755.922,
+          "x": 9655.05,
+          "y": 1745.19,
           "move_mode": "walk",
-          "timeSeconds": 325.0,
-          "origin": "sift",
-          "inliers": 42
+          "timeSeconds": 323.4,
+          "sourceFrame": 9702,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 9690,
+          "anchorRmseGameUnits": 0.553
         },
         {
-          "x": 9652.742,
-          "y": 1765.514,
+          "x": 9654.005,
+          "y": 1750.521,
           "move_mode": "walk",
-          "timeSeconds": 326.0,
-          "origin": "sift",
-          "inliers": 43
+          "timeSeconds": 324.3,
+          "sourceFrame": 9729,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 9720,
+          "anchorRmseGameUnits": 0.5627
         },
         {
-          "x": 9649.739,
-          "y": 1770.23,
+          "x": 9653.587,
+          "y": 1755.742,
           "move_mode": "walk",
-          "timeSeconds": 327.0,
-          "origin": "sift",
-          "inliers": 48
+          "timeSeconds": 324.766667,
+          "sourceFrame": 9743,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 9720,
+          "anchorRmseGameUnits": 0.5627
         },
         {
-          "x": 9644.93,
-          "y": 1779.275,
+          "x": 9653.692,
+          "y": 1760.769,
           "move_mode": "walk",
-          "timeSeconds": 328.0,
-          "origin": "sift",
-          "inliers": 57
+          "timeSeconds": 325.233333,
+          "sourceFrame": 9757,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 9750,
+          "anchorRmseGameUnits": 0.5144
         },
         {
-          "x": 9641.914,
-          "y": 1787.172,
+          "x": 9652.855,
+          "y": 1766.081,
           "move_mode": "walk",
-          "timeSeconds": 329.0,
-          "origin": "sift",
-          "inliers": 58
+          "timeSeconds": 325.9,
+          "sourceFrame": 9777,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 9750,
+          "anchorRmseGameUnits": 0.5144
         },
         {
-          "x": 9639.953,
-          "y": 1791.9,
+          "x": 9651.026,
+          "y": 1770.039,
           "move_mode": "walk",
-          "timeSeconds": 330.0,
-          "origin": "sift",
-          "inliers": 43
+          "timeSeconds": 326.6,
+          "sourceFrame": 9798,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 9780,
+          "anchorRmseGameUnits": 0.5236
+        },
+        {
+          "x": 9647.688,
+          "y": 1774.839,
+          "move_mode": "walk",
+          "timeSeconds": 327.266667,
+          "sourceFrame": 9818,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 9810,
+          "anchorRmseGameUnits": 0.5382
+        },
+        {
+          "x": 9646.307,
+          "y": 1777.896,
+          "move_mode": "walk",
+          "timeSeconds": 327.733333,
+          "sourceFrame": 9832,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 9810,
+          "anchorRmseGameUnits": 0.5382
+        },
+        {
+          "x": 9643.998,
+          "y": 1783.253,
+          "move_mode": "walk",
+          "timeSeconds": 328.166667,
+          "sourceFrame": 9845,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 9840,
+          "anchorRmseGameUnits": 0.5004
+        },
+        {
+          "x": 9642.067,
+          "y": 1787.988,
+          "move_mode": "walk",
+          "timeSeconds": 328.833333,
+          "sourceFrame": 9865,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 9840,
+          "anchorRmseGameUnits": 0.5004
+        },
+        {
+          "x": 9640.637,
+          "y": 1792.17,
+          "move_mode": "walk",
+          "timeSeconds": 329.533333,
+          "sourceFrame": 9886,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 9870,
+          "anchorRmseGameUnits": 0.4353
+        },
+        {
+          "x": 9638.768,
+          "y": 1795.872,
+          "move_mode": "walk",
+          "timeSeconds": 330.333333,
+          "sourceFrame": 9910,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 9900,
+          "anchorRmseGameUnits": 0.5112
+        },
+        {
+          "x": 9638.416,
+          "y": 1801.309,
+          "move_mode": "walk",
+          "timeSeconds": 331.0,
+          "sourceFrame": 9930,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 9930,
+          "anchorRmseGameUnits": 0.5467
         }
-      ]
+      ],
+      "quality": "native-atlas-observed",
+      "coordinateEvidence": {
+        "sourceSha256": "1c19533c7177731b8d26f8474d3091c6289effb73313595f9dcd030ef71b1447",
+        "mapName": "Teyvat",
+        "sourceRange": [
+          320,
+          331
+        ],
+        "decodedFrames": 15612,
+        "posesInInterval": 331,
+        "maxUnlocalizedGapSeconds": 0.0333,
+        "atlasCoordinateSystem": "native-1024-map-origin-minus-pixel",
+        "reviewStatus": "coordinates_recovered_requires_movement_and_mechanism_review"
+      }
     },
     {
       "id": "06-spirit-approach",
@@ -650,746 +1063,1617 @@
       ],
       "points": [
         {
-          "x": 9638.766,
-          "y": 1799.294,
+          "x": 9638.416,
+          "y": 1801.309,
           "move_mode": "walk",
           "timeSeconds": 331.0,
-          "origin": "sift",
-          "inliers": 56
+          "sourceFrame": 9930,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 9930,
+          "anchorRmseGameUnits": 0.5467
         },
         {
-          "x": 9642.969,
-          "y": 1805.491,
+          "x": 9638.948,
+          "y": 1805.177,
           "move_mode": "walk",
-          "timeSeconds": 332.0,
-          "origin": "sift",
-          "inliers": 47
+          "timeSeconds": 331.466667,
+          "sourceFrame": 9944,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 9930,
+          "anchorRmseGameUnits": 0.5467
         },
         {
-          "x": 9650.945,
-          "y": 1808.317,
+          "x": 9644.122,
+          "y": 1808.084,
           "move_mode": "walk",
-          "timeSeconds": 333.0,
-          "origin": "sift",
-          "inliers": 46
+          "timeSeconds": 332.333333,
+          "sourceFrame": 9970,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 9960,
+          "anchorRmseGameUnits": 0.5501
         },
         {
-          "x": 9663.713,
-          "y": 1813.411,
+          "x": 9648.557,
+          "y": 1809.828,
+          "move_mode": "walk",
+          "timeSeconds": 332.766667,
+          "sourceFrame": 9983,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 9960,
+          "anchorRmseGameUnits": 0.5501
+        },
+        {
+          "x": 9653.572,
+          "y": 1811.068,
+          "move_mode": "walk",
+          "timeSeconds": 333.466667,
+          "sourceFrame": 10004,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 9990,
+          "anchorRmseGameUnits": 0.5658
+        },
+        {
+          "x": 9657.321,
+          "y": 1813.512,
+          "move_mode": "walk",
+          "timeSeconds": 334.4,
+          "sourceFrame": 10032,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 10020,
+          "anchorRmseGameUnits": 0.56
+        },
+        {
+          "x": 9661.257,
+          "y": 1814.538,
+          "move_mode": "walk",
+          "timeSeconds": 334.833333,
+          "sourceFrame": 10045,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 10020,
+          "anchorRmseGameUnits": 0.56
+        },
+        {
+          "x": 9663.501,
+          "y": 1815.389,
           "move_mode": "walk",
           "timeSeconds": 335.0,
-          "origin": "sift",
-          "inliers": 41
+          "sourceFrame": 10050,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 10050,
+          "anchorRmseGameUnits": 0.5678
         }
-      ]
+      ],
+      "quality": "native-atlas-observed",
+      "coordinateEvidence": {
+        "sourceSha256": "1c19533c7177731b8d26f8474d3091c6289effb73313595f9dcd030ef71b1447",
+        "mapName": "Teyvat",
+        "sourceRange": [
+          331,
+          335
+        ],
+        "decodedFrames": 15612,
+        "posesInInterval": 121,
+        "maxUnlocalizedGapSeconds": 0.0333,
+        "atlasCoordinateSystem": "native-1024-map-origin-minus-pixel",
+        "reviewStatus": "coordinates_recovered_requires_movement_and_mechanism_review"
+      }
     },
     {
       "id": "06-platform",
-      "name": "特殊移动后→训练场锚点",
+      "name": "6号台阶下方→连续斜坡与台阶（步行变体，待实机验收）",
       "sourceRange": [
-        340,
-        347
+        335,
+        348
       ],
       "points": [
         {
-          "x": 9675.828,
-          "y": 1816.019,
-          "move_mode": "climb",
-          "timeSeconds": 340.0,
-          "origin": "sift",
-          "inliers": 36
+          "x": 9663.501,
+          "y": 1815.389,
+          "move_mode": "walk",
+          "timeSeconds": 335.0,
+          "sourceFrame": 10050,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 10050,
+          "anchorRmseGameUnits": 0.5678
         },
         {
-          "x": 9685.54,
-          "y": 1816.714,
-          "move_mode": "climb",
-          "timeSeconds": 341.0,
-          "origin": "sift",
-          "inliers": 41
+          "x": 9676.779,
+          "y": 1818.076,
+          "move_mode": "walk",
+          "timeSeconds": 340.166667,
+          "sourceFrame": 10205,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 10200,
+          "anchorRmseGameUnits": 0.5858
         },
         {
-          "x": 9693.316,
-          "y": 1815.555,
-          "move_mode": "climb",
-          "timeSeconds": 342.0,
-          "origin": "sift",
-          "inliers": 41
+          "x": 9682.689,
+          "y": 1818.26,
+          "move_mode": "walk",
+          "timeSeconds": 340.833333,
+          "sourceFrame": 10225,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 10200,
+          "anchorRmseGameUnits": 0.5858
         },
         {
-          "x": 9698.578,
-          "y": 1813.943,
-          "move_mode": "climb",
-          "timeSeconds": 343.0,
-          "origin": "sift",
-          "inliers": 42
+          "x": 9687.6,
+          "y": 1818.585,
+          "move_mode": "walk",
+          "timeSeconds": 341.266667,
+          "sourceFrame": 10238,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 10230,
+          "anchorRmseGameUnits": 0.5186
         },
         {
-          "x": 9706.989,
-          "y": 1811.239,
-          "move_mode": "climb",
-          "timeSeconds": 345.0,
-          "origin": "sift",
-          "inliers": 39
+          "x": 9692.346,
+          "y": 1817.571,
+          "move_mode": "walk",
+          "timeSeconds": 341.966667,
+          "sourceFrame": 10259,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 10230,
+          "anchorRmseGameUnits": 0.5186
         },
         {
-          "x": 9715.793,
-          "y": 1810.248,
-          "move_mode": "climb",
+          "x": 9696.944,
+          "y": 1816.005,
+          "move_mode": "walk",
+          "timeSeconds": 342.833333,
+          "sourceFrame": 10285,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 10260,
+          "anchorRmseGameUnits": 0.5127
+        },
+        {
+          "x": 9702.281,
+          "y": 1815.436,
+          "move_mode": "walk",
+          "timeSeconds": 344.233333,
+          "sourceFrame": 10327,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 10320,
+          "anchorRmseGameUnits": 0.5641
+        },
+        {
+          "x": 9705.34,
+          "y": 1813.43,
+          "move_mode": "walk",
+          "timeSeconds": 344.666667,
+          "sourceFrame": 10340,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 10320,
+          "anchorRmseGameUnits": 0.5641
+        },
+        {
+          "x": 9710.647,
+          "y": 1812.624,
+          "move_mode": "walk",
+          "timeSeconds": 345.533333,
+          "sourceFrame": 10366,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 10350,
+          "anchorRmseGameUnits": 0.5944
+        },
+        {
+          "x": 9715.379,
+          "y": 1812.286,
+          "move_mode": "walk",
           "timeSeconds": 346.0,
-          "origin": "sift",
-          "inliers": 35
+          "sourceFrame": 10380,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 10380,
+          "anchorRmseGameUnits": 0.5888
         },
         {
-          "x": 9728.011,
-          "y": 1808.961,
-          "move_mode": "climb",
-          "timeSeconds": 347,
-          "origin": "source-tp"
+          "x": 9721.098,
+          "y": 1812.554,
+          "move_mode": "walk",
+          "timeSeconds": 347.0,
+          "sourceFrame": 10410,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 10410,
+          "anchorRmseGameUnits": 0.5387
+        },
+        {
+          "x": 9724.419,
+          "y": 1812.396,
+          "move_mode": "walk",
+          "timeSeconds": 347.533333,
+          "sourceFrame": 10426,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 10410,
+          "anchorRmseGameUnits": 0.5387
+        },
+        {
+          "x": 9728.907,
+          "y": 1812.015,
+          "move_mode": "walk",
+          "timeSeconds": 348.0,
+          "sourceFrame": 10440,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 10440,
+          "anchorRmseGameUnits": 0.4819
         }
-      ]
+      ],
+      "quality": "native-atlas-observed",
+      "coordinateEvidence": {
+        "sourceSha256": "1c19533c7177731b8d26f8474d3091c6289effb73313595f9dcd030ef71b1447",
+        "mapName": "Teyvat",
+        "sourceRange": [
+          335,
+          348
+        ],
+        "decodedFrames": 15612,
+        "posesInInterval": 391,
+        "maxUnlocalizedGapSeconds": 0.0333,
+        "atlasCoordinateSystem": "native-1024-map-origin-minus-pixel",
+        "reviewStatus": "coordinates_recovered_requires_movement_and_mechanism_review"
+      },
+      "notice": "原录335–343秒切换形态前进并在上层退出；本变体沿同一连续斜坡步行，取消盲按T/SPACE和错误的climb模式。尚未实机确认可全程步行。"
     },
     {
       "id": "07-road",
       "name": "6→7 沿道路到起重设备平台",
       "sourceRange": [
         360,
-        385
+        384
       ],
       "points": [
         {
-          "x": 9731.011,
-          "y": 1810.07,
-          "move_mode": "run",
+          "x": 9730.588,
+          "y": 1812.005,
+          "move_mode": "walk",
           "timeSeconds": 360.0,
-          "origin": "sift",
-          "inliers": 49
+          "sourceFrame": 10800,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 10800,
+          "anchorRmseGameUnits": 0.475
         },
         {
-          "x": 9735.599,
-          "y": 1806.613,
-          "move_mode": "run",
-          "timeSeconds": 363.0,
-          "origin": "sift",
-          "inliers": 40
+          "x": 9731.761,
+          "y": 1810.287,
+          "move_mode": "walk",
+          "timeSeconds": 362.5,
+          "sourceFrame": 10875,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 10860,
+          "anchorRmseGameUnits": 0.5378
         },
         {
-          "x": 9743.636,
-          "y": 1801.734,
-          "move_mode": "run",
-          "timeSeconds": 364.0,
-          "origin": "sift",
-          "inliers": 33
+          "x": 9736.537,
+          "y": 1807.832,
+          "move_mode": "walk",
+          "timeSeconds": 363.166667,
+          "sourceFrame": 10895,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 10890,
+          "anchorRmseGameUnits": 0.5694
         },
         {
-          "x": 9750.242,
-          "y": 1797.491,
-          "move_mode": "run",
-          "timeSeconds": 365.0,
-          "origin": "sift",
-          "inliers": 37
+          "x": 9740.168,
+          "y": 1805.594,
+          "move_mode": "walk",
+          "timeSeconds": 363.666667,
+          "sourceFrame": 10910,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 10890,
+          "anchorRmseGameUnits": 0.5694
         },
         {
-          "x": 9759.152,
-          "y": 1792.112,
-          "move_mode": "run",
-          "timeSeconds": 366.0,
-          "origin": "sift",
-          "inliers": 44
+          "x": 9744.23,
+          "y": 1803.034,
+          "move_mode": "walk",
+          "timeSeconds": 364.1,
+          "sourceFrame": 10923,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 10920,
+          "anchorRmseGameUnits": 0.4526
         },
         {
-          "x": 9766.688,
-          "y": 1787.282,
-          "move_mode": "run",
-          "timeSeconds": 367.0,
-          "origin": "sift",
-          "inliers": 53
+          "x": 9748.381,
+          "y": 1800.559,
+          "move_mode": "walk",
+          "timeSeconds": 364.866667,
+          "sourceFrame": 10946,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 10920,
+          "anchorRmseGameUnits": 0.4526
         },
         {
-          "x": 9776.198,
-          "y": 1781.76,
-          "move_mode": "run",
-          "timeSeconds": 368.0,
-          "origin": "sift",
-          "inliers": 28
+          "x": 9752.633,
+          "y": 1797.769,
+          "move_mode": "walk",
+          "timeSeconds": 365.333333,
+          "sourceFrame": 10960,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 10950,
+          "anchorRmseGameUnits": 0.542
         },
         {
-          "x": 9783.338,
-          "y": 1777.151,
-          "move_mode": "run",
-          "timeSeconds": 369.0,
-          "origin": "sift",
-          "inliers": 43
+          "x": 9755.73,
+          "y": 1795.931,
+          "move_mode": "walk",
+          "timeSeconds": 365.766667,
+          "sourceFrame": 10973,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 10950,
+          "anchorRmseGameUnits": 0.542
         },
         {
-          "x": 9791.819,
-          "y": 1771.827,
-          "move_mode": "run",
-          "timeSeconds": 370.0,
-          "origin": "sift",
-          "inliers": 37
+          "x": 9760.635,
+          "y": 1792.736,
+          "move_mode": "walk",
+          "timeSeconds": 366.233333,
+          "sourceFrame": 10987,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 10980,
+          "anchorRmseGameUnits": 0.4983
         },
         {
-          "x": 9798.517,
-          "y": 1767.667,
-          "move_mode": "run",
-          "timeSeconds": 371.0,
-          "origin": "sift",
-          "inliers": 43
+          "x": 9764.961,
+          "y": 1790.065,
+          "move_mode": "walk",
+          "timeSeconds": 366.933333,
+          "sourceFrame": 11008,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 10980,
+          "anchorRmseGameUnits": 0.4983
         },
         {
-          "x": 9807.025,
-          "y": 1762.396,
-          "move_mode": "run",
-          "timeSeconds": 372.0,
-          "origin": "sift",
-          "inliers": 40
+          "x": 9769.566,
+          "y": 1787.285,
+          "move_mode": "walk",
+          "timeSeconds": 367.4,
+          "sourceFrame": 11022,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 11010,
+          "anchorRmseGameUnits": 0.4647
         },
         {
-          "x": 9811.381,
-          "y": 1759.634,
-          "move_mode": "run",
-          "timeSeconds": 373.0,
-          "origin": "sift",
-          "inliers": 53
+          "x": 9773.12,
+          "y": 1785.255,
+          "move_mode": "walk",
+          "timeSeconds": 367.833333,
+          "sourceFrame": 11035,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 11010,
+          "anchorRmseGameUnits": 0.4647
         },
         {
-          "x": 9816.696,
-          "y": 1756.428,
-          "move_mode": "run",
-          "timeSeconds": 374.0,
-          "origin": "sift",
-          "inliers": 47
+          "x": 9777.544,
+          "y": 1782.593,
+          "move_mode": "walk",
+          "timeSeconds": 368.266667,
+          "sourceFrame": 11048,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 11040,
+          "anchorRmseGameUnits": 0.5486
         },
         {
-          "x": 9823.292,
-          "y": 1752.224,
-          "move_mode": "run",
-          "timeSeconds": 375.0,
-          "origin": "sift",
-          "inliers": 55
+          "x": 9782.457,
+          "y": 1779.429,
+          "move_mode": "walk",
+          "timeSeconds": 368.966667,
+          "sourceFrame": 11069,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 11040,
+          "anchorRmseGameUnits": 0.5486
         },
         {
-          "x": 9829.856,
-          "y": 1748.329,
-          "move_mode": "run",
+          "x": 9787.372,
+          "y": 1776.123,
+          "move_mode": "walk",
+          "timeSeconds": 369.6,
+          "sourceFrame": 11088,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 11070,
+          "anchorRmseGameUnits": 0.5251
+        },
+        {
+          "x": 9791.233,
+          "y": 1773.844,
+          "move_mode": "walk",
+          "timeSeconds": 370.033333,
+          "sourceFrame": 11101,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 11100,
+          "anchorRmseGameUnits": 0.5171
+        },
+        {
+          "x": 9795.881,
+          "y": 1771.004,
+          "move_mode": "walk",
+          "timeSeconds": 370.733333,
+          "sourceFrame": 11122,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 11100,
+          "anchorRmseGameUnits": 0.5171
+        },
+        {
+          "x": 9799.709,
+          "y": 1768.675,
+          "move_mode": "walk",
+          "timeSeconds": 371.166667,
+          "sourceFrame": 11135,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 11130,
+          "anchorRmseGameUnits": 0.5565
+        },
+        {
+          "x": 9803.429,
+          "y": 1766.382,
+          "move_mode": "walk",
+          "timeSeconds": 371.6,
+          "sourceFrame": 11148,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 11130,
+          "anchorRmseGameUnits": 0.5565
+        },
+        {
+          "x": 9808.066,
+          "y": 1763.332,
+          "move_mode": "walk",
+          "timeSeconds": 372.333333,
+          "sourceFrame": 11170,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 11160,
+          "anchorRmseGameUnits": 0.5499
+        },
+        {
+          "x": 9811.65,
+          "y": 1761.231,
+          "move_mode": "walk",
+          "timeSeconds": 373.1,
+          "sourceFrame": 11193,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 11190,
+          "anchorRmseGameUnits": 0.4802
+        },
+        {
+          "x": 9816.099,
+          "y": 1758.519,
+          "move_mode": "walk",
+          "timeSeconds": 374.033333,
+          "sourceFrame": 11221,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 11220,
+          "anchorRmseGameUnits": 0.4439
+        },
+        {
+          "x": 9819.861,
+          "y": 1756.175,
+          "move_mode": "walk",
+          "timeSeconds": 374.8,
+          "sourceFrame": 11244,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 11220,
+          "anchorRmseGameUnits": 0.4439
+        },
+        {
+          "x": 9824.615,
+          "y": 1753.203,
+          "move_mode": "walk",
+          "timeSeconds": 375.266667,
+          "sourceFrame": 11258,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 11250,
+          "anchorRmseGameUnits": 0.583
+        },
+        {
+          "x": 9829.237,
+          "y": 1750.433,
+          "move_mode": "walk",
           "timeSeconds": 376.0,
-          "origin": "sift",
-          "inliers": 59
+          "sourceFrame": 11280,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 11280,
+          "anchorRmseGameUnits": 0.4839
         },
         {
-          "x": 9834.002,
-          "y": 1745.693,
-          "move_mode": "run",
-          "timeSeconds": 377.0,
-          "origin": "sift",
-          "inliers": 48
+          "x": 9834.075,
+          "y": 1747.513,
+          "move_mode": "walk",
+          "timeSeconds": 377.1,
+          "sourceFrame": 11313,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 11310,
+          "anchorRmseGameUnits": 0.6682
         },
         {
-          "x": 9838.0,
-          "y": 1743.097,
-          "move_mode": "run",
-          "timeSeconds": 378.0,
-          "origin": "sift",
-          "inliers": 53
+          "x": 9838.852,
+          "y": 1744.45,
+          "move_mode": "walk",
+          "timeSeconds": 378.466667,
+          "sourceFrame": 11354,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 11340,
+          "anchorRmseGameUnits": 0.4835
         },
         {
-          "x": 9842.229,
-          "y": 1741.195,
-          "move_mode": "run",
-          "timeSeconds": 379.0,
-          "origin": "sift",
-          "inliers": 50
+          "x": 9843.215,
+          "y": 1742.397,
+          "move_mode": "walk",
+          "timeSeconds": 379.3,
+          "sourceFrame": 11379,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 11370,
+          "anchorRmseGameUnits": 0.5009
         },
         {
-          "x": 9847.365,
-          "y": 1738.022,
-          "move_mode": "run",
-          "timeSeconds": 380.0,
-          "origin": "sift",
-          "inliers": 51
+          "x": 9848.077,
+          "y": 1739.132,
+          "move_mode": "walk",
+          "timeSeconds": 380.333333,
+          "sourceFrame": 11410,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 11400,
+          "anchorRmseGameUnits": 0.447
         },
         {
-          "x": 9854.343,
-          "y": 1733.571,
-          "move_mode": "run",
-          "timeSeconds": 381.0,
-          "origin": "sift",
-          "inliers": 59
+          "x": 9852.403,
+          "y": 1736.344,
+          "move_mode": "walk",
+          "timeSeconds": 380.766667,
+          "sourceFrame": 11423,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 11400,
+          "anchorRmseGameUnits": 0.447
         },
         {
-          "x": 9860.748,
-          "y": 1729.792,
-          "move_mode": "run",
-          "timeSeconds": 382.0,
-          "origin": "sift",
-          "inliers": 46
+          "x": 9857.097,
+          "y": 1733.553,
+          "move_mode": "walk",
+          "timeSeconds": 381.466667,
+          "sourceFrame": 11444,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 11430,
+          "anchorRmseGameUnits": 0.5228
         },
         {
-          "x": 9867.081,
-          "y": 1725.859,
-          "move_mode": "run",
-          "timeSeconds": 383.0,
-          "origin": "sift",
-          "inliers": 58
+          "x": 9861.555,
+          "y": 1730.964,
+          "move_mode": "walk",
+          "timeSeconds": 382.366667,
+          "sourceFrame": 11471,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 11460,
+          "anchorRmseGameUnits": 0.5123
         },
         {
-          "x": 9873.994,
-          "y": 1721.589,
-          "move_mode": "run",
+          "x": 9866.001,
+          "y": 1728.355,
+          "move_mode": "walk",
+          "timeSeconds": 382.966667,
+          "sourceFrame": 11489,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 11460,
+          "anchorRmseGameUnits": 0.5123
+        },
+        {
+          "x": 9869.909,
+          "y": 1726.008,
+          "move_mode": "walk",
+          "timeSeconds": 383.4,
+          "sourceFrame": 11502,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 11490,
+          "anchorRmseGameUnits": 0.532
+        },
+        {
+          "x": 9873.185,
+          "y": 1723.832,
+          "move_mode": "walk",
           "timeSeconds": 384.0,
-          "origin": "sift",
-          "inliers": 56
-        },
-        {
-          "x": 9873.979,
-          "y": 1717.405,
-          "move_mode": "run",
-          "timeSeconds": 385,
-          "origin": "source-tp"
+          "sourceFrame": 11520,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 11520,
+          "anchorRmseGameUnits": 0.5133
         }
-      ]
+      ],
+      "quality": "native-atlas-observed",
+      "coordinateEvidence": {
+        "sourceSha256": "1c19533c7177731b8d26f8474d3091c6289effb73313595f9dcd030ef71b1447",
+        "mapName": "Teyvat",
+        "sourceRange": [
+          360,
+          384
+        ],
+        "decodedFrames": 15612,
+        "posesInInterval": 721,
+        "maxUnlocalizedGapSeconds": 0.0333,
+        "atlasCoordinateSystem": "native-1024-map-origin-minus-pixel",
+        "reviewStatus": "coordinates_recovered_requires_movement_and_mechanism_review"
+      }
     },
     {
       "id": "08-ledge",
       "name": "7号锚点→起飞边缘",
       "sourceRange": [
         394,
-        398
+        399
       ],
       "points": [
         {
-          "x": 9880.881,
-          "y": 1717.402,
+          "x": 9880.197,
+          "y": 1719.602,
           "move_mode": "walk",
           "timeSeconds": 394.0,
-          "origin": "sift",
-          "inliers": 59
+          "sourceFrame": 11820,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 11820,
+          "anchorRmseGameUnits": 0.4727
         },
         {
-          "x": 9880.046,
-          "y": 1711.315,
+          "x": 9879.546,
+          "y": 1714.712,
           "move_mode": "walk",
-          "timeSeconds": 395.0,
-          "origin": "sift",
-          "inliers": 56
+          "timeSeconds": 394.833333,
+          "sourceFrame": 11845,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 11820,
+          "anchorRmseGameUnits": 0.4727
+        },
+        {
+          "x": 9878.821,
+          "y": 1710.491,
+          "move_mode": "walk",
+          "timeSeconds": 397.0,
+          "sourceFrame": 11910,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 11910,
+          "anchorRmseGameUnits": 0.498
+        },
+        {
+          "x": 9881.435,
+          "y": 1707.756,
+          "move_mode": "walk",
+          "timeSeconds": 399.0,
+          "sourceFrame": 11970,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 11970,
+          "anchorRmseGameUnits": 0.4888
         }
-      ]
+      ],
+      "quality": "native-atlas-observed",
+      "coordinateEvidence": {
+        "sourceSha256": "1c19533c7177731b8d26f8474d3091c6289effb73313595f9dcd030ef71b1447",
+        "mapName": "Teyvat",
+        "sourceRange": [
+          394,
+          399
+        ],
+        "decodedFrames": 15612,
+        "posesInInterval": 151,
+        "maxUnlocalizedGapSeconds": 0.0333,
+        "atlasCoordinateSystem": "native-1024-map-origin-minus-pixel",
+        "reviewStatus": "coordinates_recovered_requires_movement_and_mechanism_review"
+      }
     },
     {
       "id": "08-flight",
       "name": "平台滑翔→工坊门前",
       "sourceRange": [
-        400,
+        399,
         434
       ],
       "points": [
         {
-          "x": 9886.388,
-          "y": 1701.17,
+          "x": 9881.435,
+          "y": 1707.756,
           "move_mode": "fly",
-          "timeSeconds": 400.0,
-          "origin": "sift",
-          "inliers": 51
+          "timeSeconds": 399.0,
+          "sourceFrame": 11970,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 11970,
+          "anchorRmseGameUnits": 0.4888
         },
         {
-          "x": 9890.398,
-          "y": 1696.916,
+          "x": 9885.206,
+          "y": 1703.745,
           "move_mode": "fly",
-          "timeSeconds": 401.0,
-          "origin": "sift",
-          "inliers": 68
+          "timeSeconds": 399.966667,
+          "sourceFrame": 11999,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 11970,
+          "anchorRmseGameUnits": 0.4888
         },
         {
-          "x": 9894.566,
-          "y": 1692.43,
+          "x": 9888.691,
+          "y": 1700.053,
           "move_mode": "fly",
-          "timeSeconds": 402.0,
-          "origin": "sift",
-          "inliers": 57
+          "timeSeconds": 400.766667,
+          "sourceFrame": 12023,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12000,
+          "anchorRmseGameUnits": 0.5697
         },
         {
-          "x": 9898.746,
-          "y": 1688.048,
+          "x": 9892.168,
+          "y": 1696.363,
           "move_mode": "fly",
-          "timeSeconds": 403.0,
-          "origin": "sift",
-          "inliers": 67
+          "timeSeconds": 401.6,
+          "sourceFrame": 12048,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12030,
+          "anchorRmseGameUnits": 0.5742
         },
         {
-          "x": 9902.811,
-          "y": 1683.71,
+          "x": 9895.469,
+          "y": 1692.499,
           "move_mode": "fly",
-          "timeSeconds": 404.0,
-          "origin": "sift",
-          "inliers": 57
+          "timeSeconds": 402.466667,
+          "sourceFrame": 12074,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12060,
+          "anchorRmseGameUnits": 0.541
         },
         {
-          "x": 9906.904,
-          "y": 1679.393,
+          "x": 9899.139,
+          "y": 1688.952,
+          "move_mode": "fly",
+          "timeSeconds": 403.266667,
+          "sourceFrame": 12098,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12090,
+          "anchorRmseGameUnits": 0.5205
+        },
+        {
+          "x": 9902.55,
+          "y": 1685.421,
+          "move_mode": "fly",
+          "timeSeconds": 404.166667,
+          "sourceFrame": 12125,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12120,
+          "anchorRmseGameUnits": 0.5785
+        },
+        {
+          "x": 9906.086,
+          "y": 1681.622,
           "move_mode": "fly",
           "timeSeconds": 405.0,
-          "origin": "sift",
-          "inliers": 56
+          "sourceFrame": 12150,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 12150,
+          "anchorRmseGameUnits": 0.5136
         },
         {
-          "x": 9910.955,
-          "y": 1674.99,
+          "x": 9909.863,
+          "y": 1677.588,
           "move_mode": "fly",
-          "timeSeconds": 406.0,
-          "origin": "sift",
-          "inliers": 58
+          "timeSeconds": 405.933333,
+          "sourceFrame": 12178,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12150,
+          "anchorRmseGameUnits": 0.5136
         },
         {
-          "x": 9915.106,
-          "y": 1670.67,
+          "x": 9913.215,
+          "y": 1673.963,
           "move_mode": "fly",
-          "timeSeconds": 407.0,
-          "origin": "sift",
-          "inliers": 50
+          "timeSeconds": 406.766667,
+          "sourceFrame": 12203,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12180,
+          "anchorRmseGameUnits": 0.5434
         },
         {
-          "x": 9921.271,
-          "y": 1660.981,
+          "x": 9916.719,
+          "y": 1670.263,
           "move_mode": "fly",
-          "timeSeconds": 408.834,
-          "origin": "sift",
-          "inliers": 10
+          "timeSeconds": 407.6,
+          "sourceFrame": 12228,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12210,
+          "anchorRmseGameUnits": 0.4751
         },
         {
-          "x": 9930.971,
-          "y": 1652.805,
+          "x": 9918.621,
+          "y": 1665.188,
           "move_mode": "fly",
-          "timeSeconds": 411,
-          "origin": "continuous-flight"
+          "timeSeconds": 408.4,
+          "sourceFrame": 12252,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 12252,
+          "anchorRmseGameUnits": 0.4319
         },
         {
-          "x": 9942.846,
-          "y": 1639.272,
+          "x": 9922.195,
+          "y": 1662.162,
           "move_mode": "fly",
-          "timeSeconds": 414,
-          "origin": "continuous-flight"
+          "timeSeconds": 409.266667,
+          "sourceFrame": 12278,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12270,
+          "anchorRmseGameUnits": 0.2698
         },
         {
-          "x": 9954.721,
-          "y": 1625.74,
+          "x": 9926.911,
+          "y": 1659.346,
           "move_mode": "fly",
-          "timeSeconds": 417,
-          "origin": "continuous-flight"
+          "timeSeconds": 410.166667,
+          "sourceFrame": 12305,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12300,
+          "anchorRmseGameUnits": 0.4111
         },
         {
-          "x": 9966.596,
-          "y": 1612.208,
+          "x": 9930.998,
+          "y": 1655.94,
           "move_mode": "fly",
-          "timeSeconds": 420,
-          "origin": "continuous-flight"
+          "timeSeconds": 411.033333,
+          "sourceFrame": 12331,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12330,
+          "anchorRmseGameUnits": 0.2393
         },
         {
-          "x": 9978.471,
-          "y": 1598.676,
+          "x": 9934.617,
+          "y": 1651.861,
           "move_mode": "fly",
-          "timeSeconds": 423,
-          "origin": "continuous-flight"
+          "timeSeconds": 411.966667,
+          "sourceFrame": 12359,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12330,
+          "anchorRmseGameUnits": 0.2393
         },
         {
-          "x": 9990.346,
-          "y": 1585.143,
+          "x": 9937.744,
+          "y": 1648.128,
           "move_mode": "fly",
-          "timeSeconds": 426,
-          "origin": "continuous-flight"
+          "timeSeconds": 412.833333,
+          "sourceFrame": 12385,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12360,
+          "anchorRmseGameUnits": 0.3043
         },
         {
-          "x": 10002.222,
-          "y": 1571.611,
+          "x": 9941.744,
+          "y": 1645.381,
           "move_mode": "fly",
-          "timeSeconds": 429,
-          "origin": "continuous-flight"
+          "timeSeconds": 413.766667,
+          "sourceFrame": 12413,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12390,
+          "anchorRmseGameUnits": 0.3131
         },
         {
-          "x": 10006.181,
-          "y": 1567.099,
+          "x": 9944.373,
+          "y": 1640.735,
           "move_mode": "fly",
-          "timeSeconds": 430.0,
-          "origin": "sift",
-          "inliers": 9
+          "timeSeconds": 414.466667,
+          "sourceFrame": 12434,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12420,
+          "anchorRmseGameUnits": 0.205
         },
         {
-          "x": 10011.192,
-          "y": 1559.387,
+          "x": 9947.931,
+          "y": 1637.108,
           "move_mode": "fly",
-          "timeSeconds": 431.0,
-          "origin": "sift",
-          "inliers": 9
+          "timeSeconds": 415.333333,
+          "sourceFrame": 12460,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12450,
+          "anchorRmseGameUnits": 0.2923
         },
         {
-          "x": 10015.678,
-          "y": 1550.37,
+          "x": 9950.798,
+          "y": 1633.159,
           "move_mode": "fly",
-          "timeSeconds": 432.0,
-          "origin": "sift",
-          "inliers": 11
+          "timeSeconds": 416.1,
+          "sourceFrame": 12483,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12480,
+          "anchorRmseGameUnits": 0.2816
         },
         {
-          "x": 10021.3,
-          "y": 1538.585,
+          "x": 9954.737,
+          "y": 1628.791,
           "move_mode": "fly",
-          "timeSeconds": 434,
-          "origin": "source-tp",
+          "timeSeconds": 417.1,
+          "sourceFrame": 12513,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12510,
+          "anchorRmseGameUnits": 0.2911
+        },
+        {
+          "x": 9958.428,
+          "y": 1624.352,
+          "move_mode": "fly",
+          "timeSeconds": 418.0,
+          "sourceFrame": 12540,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 12540,
+          "anchorRmseGameUnits": 0.2604
+        },
+        {
+          "x": 9960.864,
+          "y": 1622.065,
+          "move_mode": "fly",
+          "timeSeconds": 418.766667,
+          "sourceFrame": 12563,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12540,
+          "anchorRmseGameUnits": 0.2604
+        },
+        {
+          "x": 9964.127,
+          "y": 1617.8,
+          "move_mode": "fly",
+          "timeSeconds": 419.466667,
+          "sourceFrame": 12584,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12570,
+          "anchorRmseGameUnits": 0.1846
+        },
+        {
+          "x": 9968.06,
+          "y": 1613.318,
+          "move_mode": "fly",
+          "timeSeconds": 420.5,
+          "sourceFrame": 12615,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12600,
+          "anchorRmseGameUnits": 0.2563
+        },
+        {
+          "x": 9971.494,
+          "y": 1609.532,
+          "move_mode": "fly",
+          "timeSeconds": 421.433333,
+          "sourceFrame": 12643,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12630,
+          "anchorRmseGameUnits": 0.3295
+        },
+        {
+          "x": 9974.938,
+          "y": 1605.518,
+          "move_mode": "fly",
+          "timeSeconds": 422.233333,
+          "sourceFrame": 12667,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12660,
+          "anchorRmseGameUnits": 0.3444
+        },
+        {
+          "x": 9978.12,
+          "y": 1601.606,
+          "move_mode": "fly",
+          "timeSeconds": 423.033333,
+          "sourceFrame": 12691,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12690,
+          "anchorRmseGameUnits": 0.2969
+        },
+        {
+          "x": 9981.905,
+          "y": 1597.238,
+          "move_mode": "fly",
+          "timeSeconds": 424.0,
+          "sourceFrame": 12720,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 12720,
+          "anchorRmseGameUnits": 0.3569
+        },
+        {
+          "x": 9983.675,
+          "y": 1595.497,
+          "move_mode": "fly",
+          "timeSeconds": 424.833333,
+          "sourceFrame": 12745,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12720,
+          "anchorRmseGameUnits": 0.3569
+        },
+        {
+          "x": 9987.559,
+          "y": 1591.264,
+          "move_mode": "fly",
+          "timeSeconds": 425.766667,
+          "sourceFrame": 12773,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12750,
+          "anchorRmseGameUnits": 0.379
+        },
+        {
+          "x": 9990.349,
+          "y": 1587.471,
+          "move_mode": "fly",
+          "timeSeconds": 426.566667,
+          "sourceFrame": 12797,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12780,
+          "anchorRmseGameUnits": 0.2657
+        },
+        {
+          "x": 9993.503,
+          "y": 1583.67,
+          "move_mode": "fly",
+          "timeSeconds": 427.0,
+          "sourceFrame": 12810,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 12810,
+          "anchorRmseGameUnits": 0.321
+        },
+        {
+          "x": 9995.394,
+          "y": 1581.005,
+          "move_mode": "fly",
+          "timeSeconds": 427.966667,
+          "sourceFrame": 12839,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12810,
+          "anchorRmseGameUnits": 0.321
+        },
+        {
+          "x": 9999.086,
+          "y": 1576.474,
+          "move_mode": "fly",
+          "timeSeconds": 428.666667,
+          "sourceFrame": 12860,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12840,
+          "anchorRmseGameUnits": 0.2434
+        },
+        {
+          "x": 10003.266,
+          "y": 1572.206,
+          "move_mode": "fly",
+          "timeSeconds": 429.6,
+          "sourceFrame": 12888,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12870,
+          "anchorRmseGameUnits": 0.2332
+        },
+        {
+          "x": 10005.882,
+          "y": 1568.386,
+          "move_mode": "fly",
+          "timeSeconds": 430.333333,
+          "sourceFrame": 12910,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12900,
+          "anchorRmseGameUnits": 0.2607
+        },
+        {
+          "x": 10008.489,
+          "y": 1564.415,
+          "move_mode": "fly",
+          "timeSeconds": 430.766667,
+          "sourceFrame": 12923,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12900,
+          "anchorRmseGameUnits": 0.2607
+        },
+        {
+          "x": 10010.625,
+          "y": 1560.599,
+          "move_mode": "fly",
+          "timeSeconds": 431.233333,
+          "sourceFrame": 12937,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12930,
+          "anchorRmseGameUnits": 0.2514
+        },
+        {
+          "x": 10012.453,
+          "y": 1556.027,
+          "move_mode": "fly",
+          "timeSeconds": 431.9,
+          "sourceFrame": 12957,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12930,
+          "anchorRmseGameUnits": 0.2514
+        },
+        {
+          "x": 10014.943,
+          "y": 1551.733,
+          "move_mode": "fly",
+          "timeSeconds": 432.333333,
+          "sourceFrame": 12970,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12960,
+          "anchorRmseGameUnits": 0.2702
+        },
+        {
+          "x": 10017.77,
+          "y": 1546.624,
+          "move_mode": "fly",
+          "timeSeconds": 433.1,
+          "sourceFrame": 12993,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 12990,
+          "anchorRmseGameUnits": 0.3876
+        },
+        {
+          "x": 10020.203,
+          "y": 1542.799,
+          "move_mode": "fly",
+          "timeSeconds": 434.0,
+          "sourceFrame": 13020,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 13020,
+          "anchorRmseGameUnits": 0.142,
           "action": "stop_flying"
         }
       ],
-      "notice": "412–430秒缺少可靠绝对匹配；插值仅用于逐帧确认无剪辑、方向连续的滑翔区间，须实机检查体力和碰撞。"
+      "notice": "末端复用 BetterGI 原生 stop_flying 下落攻击处理；二维坐标到达仍不代表已落地，必须出现锚点交互并通过原生传送核验。",
+      "quality": "native-atlas-observed",
+      "coordinateEvidence": {
+        "sourceSha256": "1c19533c7177731b8d26f8474d3091c6289effb73313595f9dcd030ef71b1447",
+        "mapName": "Teyvat",
+        "sourceRange": [
+          399,
+          434
+        ],
+        "decodedFrames": 15612,
+        "posesInInterval": 1033,
+        "maxUnlocalizedGapSeconds": 0.2,
+        "atlasCoordinateSystem": "native-1024-map-origin-minus-pixel",
+        "reviewStatus": "coordinates_recovered_requires_movement_and_mechanism_review"
+      }
     },
     {
       "id": "09-domain",
       "name": "返回7号高处平台→无光的深都",
       "sourceRange": [
         450,
-        476
+        475
       ],
       "points": [
         {
-          "x": 9889.656,
-          "y": 1719.575,
+          "x": 9888.867,
+          "y": 1721.836,
           "move_mode": "walk",
           "timeSeconds": 450.0,
-          "origin": "sift",
-          "inliers": 50
+          "sourceFrame": 13500,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 13500,
+          "anchorRmseGameUnits": 0.5324
         },
         {
-          "x": 9896.554,
-          "y": 1725.926,
-          "move_mode": "fly",
+          "x": 9888.064,
+          "y": 1722.579,
+          "move_mode": "walk",
+          "timeSeconds": 450.4,
+          "sourceFrame": 13512,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 13500,
+          "anchorRmseGameUnits": 0.5324
+        },
+        {
+          "x": 9891.522,
+          "y": 1725.783,
+          "move_mode": "walk",
+          "timeSeconds": 452.166667,
+          "sourceFrame": 13565,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 13560,
+          "anchorRmseGameUnits": 0.5944
+        },
+        {
+          "x": 9895.806,
+          "y": 1728.253,
+          "move_mode": "walk",
           "timeSeconds": 453.0,
-          "origin": "sift",
-          "inliers": 60
+          "sourceFrame": 13590,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 13590,
+          "anchorRmseGameUnits": 0.4845
         },
         {
-          "x": 9901.298,
-          "y": 1729.513,
-          "move_mode": "fly",
-          "timeSeconds": 454.0,
-          "origin": "sift",
-          "inliers": 60
+          "x": 9900.523,
+          "y": 1731.725,
+          "move_mode": "walk",
+          "timeSeconds": 454.033333,
+          "sourceFrame": 13621,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 13620,
+          "anchorRmseGameUnits": 0.5303
         },
         {
-          "x": 9906.883,
-          "y": 1736.05,
-          "move_mode": "fly",
-          "timeSeconds": 455.0,
-          "origin": "sift",
-          "inliers": 59
+          "x": 9902.606,
+          "y": 1733.94,
+          "move_mode": "walk",
+          "timeSeconds": 454.6,
+          "sourceFrame": 13638,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 13620,
+          "anchorRmseGameUnits": 0.5303
         },
         {
-          "x": 9910.316,
-          "y": 1740.855,
-          "move_mode": "fly",
-          "timeSeconds": 456.0,
-          "origin": "sift",
-          "inliers": 57
+          "x": 9906.055,
+          "y": 1738.238,
+          "move_mode": "walk",
+          "timeSeconds": 455.033333,
+          "sourceFrame": 13651,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 13650,
+          "anchorRmseGameUnits": 0.5069
         },
         {
-          "x": 9913.87,
-          "y": 1745.727,
-          "move_mode": "fly",
-          "timeSeconds": 457.0,
-          "origin": "sift",
-          "inliers": 66
+          "x": 9908.851,
+          "y": 1742.021,
+          "move_mode": "walk",
+          "timeSeconds": 455.866667,
+          "sourceFrame": 13676,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 13650,
+          "anchorRmseGameUnits": 0.5069
         },
         {
-          "x": 9917.131,
-          "y": 1750.677,
-          "move_mode": "fly",
-          "timeSeconds": 458.0,
-          "origin": "sift",
-          "inliers": 49
+          "x": 9912.041,
+          "y": 1746.941,
+          "move_mode": "walk",
+          "timeSeconds": 456.766667,
+          "sourceFrame": 13703,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 13680,
+          "anchorRmseGameUnits": 0.5514
         },
         {
-          "x": 9920.532,
-          "y": 1755.658,
-          "move_mode": "fly",
-          "timeSeconds": 459.0,
-          "origin": "sift",
-          "inliers": 65
+          "x": 9915.043,
+          "y": 1750.985,
+          "move_mode": "walk",
+          "timeSeconds": 457.6,
+          "sourceFrame": 13728,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 13710,
+          "anchorRmseGameUnits": 0.5456
         },
         {
-          "x": 9923.941,
-          "y": 1760.575,
-          "move_mode": "fly",
-          "timeSeconds": 460.0,
-          "origin": "sift",
-          "inliers": 55
+          "x": 9917.816,
+          "y": 1755.194,
+          "move_mode": "walk",
+          "timeSeconds": 458.4,
+          "sourceFrame": 13752,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 13740,
+          "anchorRmseGameUnits": 0.4804
         },
         {
-          "x": 9927.208,
-          "y": 1765.576,
-          "move_mode": "fly",
+          "x": 9920.68,
+          "y": 1759.312,
+          "move_mode": "walk",
+          "timeSeconds": 459.233333,
+          "sourceFrame": 13777,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 13770,
+          "anchorRmseGameUnits": 0.4619
+        },
+        {
+          "x": 9923.492,
+          "y": 1763.422,
+          "move_mode": "walk",
+          "timeSeconds": 460.1,
+          "sourceFrame": 13803,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 13800,
+          "anchorRmseGameUnits": 0.5108
+        },
+        {
+          "x": 9926.359,
+          "y": 1767.589,
+          "move_mode": "walk",
           "timeSeconds": 461.0,
-          "origin": "sift",
-          "inliers": 68
+          "sourceFrame": 13830,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 13830,
+          "anchorRmseGameUnits": 0.4437
         },
         {
-          "x": 9930.759,
-          "y": 1770.461,
-          "move_mode": "fly",
-          "timeSeconds": 462.0,
-          "origin": "sift",
-          "inliers": 59
+          "x": 9929.553,
+          "y": 1772.212,
+          "move_mode": "walk",
+          "timeSeconds": 461.9,
+          "sourceFrame": 13857,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 13830,
+          "anchorRmseGameUnits": 0.4437
         },
         {
-          "x": 9932.861,
-          "y": 1774.936,
-          "move_mode": "fly",
-          "timeSeconds": 463.167,
-          "origin": "sift",
-          "inliers": 11
+          "x": 9931.551,
+          "y": 1776.671,
+          "move_mode": "walk",
+          "timeSeconds": 463.033333,
+          "sourceFrame": 13891,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 13890,
+          "anchorRmseGameUnits": 0.2604
         },
         {
-          "x": 9935.698,
-          "y": 1779.109,
-          "move_mode": "fly",
-          "timeSeconds": 464.0,
-          "origin": "sift",
-          "inliers": 11
+          "x": 9932.326,
+          "y": 1778.752,
+          "move_mode": "walk",
+          "timeSeconds": 463.533333,
+          "sourceFrame": 13906,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 13890,
+          "anchorRmseGameUnits": 0.2604
         },
         {
-          "x": 9939.169,
-          "y": 1783.999,
-          "move_mode": "fly",
-          "timeSeconds": 465.0,
-          "origin": "sift",
-          "inliers": 12
+          "x": 9936.585,
+          "y": 1782.595,
+          "move_mode": "walk",
+          "timeSeconds": 464.666667,
+          "sourceFrame": 13940,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 13920,
+          "anchorRmseGameUnits": 0.1676
         },
         {
-          "x": 9942.601,
-          "y": 1788.866,
+          "x": 9939.855,
+          "y": 1787.434,
+          "move_mode": "walk",
+          "timeSeconds": 465.666667,
+          "sourceFrame": 13970,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 13950,
+          "anchorRmseGameUnits": 0.1837
+        },
+        {
+          "x": 9941.526,
+          "y": 1791.005,
           "move_mode": "fly",
           "timeSeconds": 466.0,
-          "origin": "sift",
-          "inliers": 10
+          "sourceFrame": 13980,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 13980,
+          "anchorRmseGameUnits": 0.2867
         },
         {
-          "x": 9944.965,
-          "y": 1794.324,
+          "x": 9944.02,
+          "y": 1796.449,
           "move_mode": "fly",
-          "timeSeconds": 467.0,
-          "origin": "sift",
-          "inliers": 10
+          "timeSeconds": 467.1,
+          "sourceFrame": 14013,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 14010,
+          "anchorRmseGameUnits": 0.279
         },
         {
-          "x": 9951.58,
-          "y": 1804.003,
+          "x": 9947.207,
+          "y": 1801.016,
           "move_mode": "fly",
-          "timeSeconds": 469.0,
-          "origin": "sift",
-          "inliers": 12
+          "timeSeconds": 468.0,
+          "sourceFrame": 14040,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 14040,
+          "anchorRmseGameUnits": 0.2707
         },
         {
-          "x": 9955.358,
-          "y": 1808.387,
+          "x": 9950.23,
+          "y": 1805.467,
           "move_mode": "fly",
+          "timeSeconds": 468.9,
+          "sourceFrame": 14067,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 14040,
+          "anchorRmseGameUnits": 0.2707
+        },
+        {
+          "x": 9953.625,
+          "y": 1809.173,
+          "move_mode": "fly",
+          "timeSeconds": 469.766667,
+          "sourceFrame": 14093,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 14070,
+          "anchorRmseGameUnits": 0.2287
+        },
+        {
+          "x": 9954.367,
+          "y": 1810.222,
+          "move_mode": "walk",
           "timeSeconds": 470.0,
-          "origin": "sift",
-          "inliers": 8
+          "sourceFrame": 14100,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 14100,
+          "anchorRmseGameUnits": 0.3198
         },
         {
-          "x": 9957.928,
-          "y": 1811.98,
-          "move_mode": "fly",
-          "timeSeconds": 472.0,
-          "origin": "sift",
-          "inliers": 10
+          "x": 9957.214,
+          "y": 1814.447,
+          "move_mode": "walk",
+          "timeSeconds": 472.166667,
+          "sourceFrame": 14165,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 14160,
+          "anchorRmseGameUnits": 0.3206
         },
         {
-          "x": 9964.36,
-          "y": 1821.787,
-          "move_mode": "fly",
+          "x": 9960.109,
+          "y": 1818.666,
+          "move_mode": "walk",
+          "timeSeconds": 473.033333,
+          "sourceFrame": 14191,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 14190,
+          "anchorRmseGameUnits": 0.2422
+        },
+        {
+          "x": 9963.312,
+          "y": 1823.64,
+          "move_mode": "walk",
           "timeSeconds": 474.0,
-          "origin": "sift",
-          "inliers": 12
+          "sourceFrame": 14220,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 14220,
+          "anchorRmseGameUnits": 0.2119
         },
         {
-          "x": 9970.716,
-          "y": 1829.168,
-          "move_mode": "fly",
-          "timeSeconds": 475.167,
-          "origin": "sift",
-          "inliers": 50
+          "x": 9966.595,
+          "y": 1828.031,
+          "move_mode": "walk",
+          "timeSeconds": 474.8,
+          "sourceFrame": 14244,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 14244,
+          "anchorRmseGameUnits": 0.3625
         },
         {
-          "x": 9971.47,
-          "y": 1828.78,
-          "move_mode": "fly",
-          "timeSeconds": 476,
-          "origin": "source-tp",
-          "action": "stop_flying"
+          "x": 9968.181,
+          "y": 1829.601,
+          "move_mode": "walk",
+          "timeSeconds": 475.0,
+          "sourceFrame": 14250,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 14250,
+          "anchorRmseGameUnits": 0.3883
         }
-      ]
+      ],
+      "quality": "native-atlas-observed",
+      "coordinateEvidence": {
+        "sourceSha256": "1c19533c7177731b8d26f8474d3091c6289effb73313595f9dcd030ef71b1447",
+        "mapName": "Teyvat",
+        "sourceRange": [
+          450,
+          475
+        ],
+        "decodedFrames": 15612,
+        "posesInInterval": 724,
+        "maxUnlocalizedGapSeconds": 0.2,
+        "atlasCoordinateSystem": "native-1024-map-origin-minus-pixel",
+        "reviewStatus": "coordinates_recovered_requires_movement_and_mechanism_review"
+      }
     },
     {
       "id": "10-uphill",
       "name": "返回6号→上坡至崖边",
       "sourceRange": [
-        494,
+        495.4,
         502
       ],
       "points": [
         {
-          "x": 9714.742,
-          "y": 1805.182,
+          "x": 9714.651,
+          "y": 1807.059,
           "move_mode": "walk",
-          "timeSeconds": 494.167,
-          "origin": "sift",
-          "inliers": 20
+          "timeSeconds": 495.4,
+          "sourceFrame": 14862,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 14850,
+          "anchorRmseGameUnits": 0.5514
         },
         {
-          "x": 9716.613,
-          "y": 1814.315,
+          "x": 9715.377,
+          "y": 1811.958,
           "move_mode": "walk",
-          "timeSeconds": 497.0,
-          "origin": "sift",
-          "inliers": 45
+          "timeSeconds": 496.533333,
+          "sourceFrame": 14896,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 14880,
+          "anchorRmseGameUnits": 0.5734
         },
         {
-          "x": 9717.691,
-          "y": 1818.849,
+          "x": 9716.489,
+          "y": 1817.339,
           "move_mode": "walk",
-          "timeSeconds": 498.0,
-          "origin": "sift",
-          "inliers": 48
+          "timeSeconds": 497.233333,
+          "sourceFrame": 14917,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 14910,
+          "anchorRmseGameUnits": 0.4998
         },
         {
-          "x": 9719.784,
-          "y": 1829.187,
+          "x": 9717.356,
+          "y": 1820.749,
           "move_mode": "walk",
-          "timeSeconds": 499.0,
-          "origin": "sift",
-          "inliers": 43
+          "timeSeconds": 498.033333,
+          "sourceFrame": 14941,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 14940,
+          "anchorRmseGameUnits": 0.5813
         },
         {
-          "x": 9720.72,
-          "y": 1835.932,
+          "x": 9718.47,
+          "y": 1825.742,
           "move_mode": "walk",
-          "timeSeconds": 500.0,
-          "origin": "sift",
-          "inliers": 52
+          "timeSeconds": 498.5,
+          "sourceFrame": 14955,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 14940,
+          "anchorRmseGameUnits": 0.5813
         },
         {
-          "x": 9722.943,
-          "y": 1844.548,
+          "x": 9719.162,
+          "y": 1829.333,
           "move_mode": "walk",
-          "timeSeconds": 501.0,
-          "origin": "sift",
-          "inliers": 48
+          "timeSeconds": 498.966667,
+          "sourceFrame": 14969,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 14940,
+          "anchorRmseGameUnits": 0.5813
         },
         {
-          "x": 9725.427,
-          "y": 1852.28,
+          "x": 9719.722,
+          "y": 1834.709,
+          "move_mode": "walk",
+          "timeSeconds": 499.4,
+          "sourceFrame": 14982,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 14970,
+          "anchorRmseGameUnits": 0.5892
+        },
+        {
+          "x": 9720.738,
+          "y": 1840.083,
+          "move_mode": "walk",
+          "timeSeconds": 500.233333,
+          "sourceFrame": 15007,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 15000,
+          "anchorRmseGameUnits": 0.4578
+        },
+        {
+          "x": 9721.848,
+          "y": 1844.07,
+          "move_mode": "walk",
+          "timeSeconds": 500.7,
+          "sourceFrame": 15021,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 15000,
+          "anchorRmseGameUnits": 0.4578
+        },
+        {
+          "x": 9723.518,
+          "y": 1849.271,
+          "move_mode": "walk",
+          "timeSeconds": 501.4,
+          "sourceFrame": 15042,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 15030,
+          "anchorRmseGameUnits": 0.5288
+        },
+        {
+          "x": 9724.961,
+          "y": 1854.207,
           "move_mode": "walk",
           "timeSeconds": 502.0,
-          "origin": "sift",
-          "inliers": 54
+          "sourceFrame": 15060,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 15060,
+          "anchorRmseGameUnits": 0.4746
         }
-      ]
+      ],
+      "quality": "native-atlas-observed",
+      "coordinateEvidence": {
+        "sourceSha256": "1c19533c7177731b8d26f8474d3091c6289effb73313595f9dcd030ef71b1447",
+        "mapName": "Teyvat",
+        "sourceRange": [
+          495.4,
+          502
+        ],
+        "decodedFrames": 15612,
+        "posesInInterval": 199,
+        "maxUnlocalizedGapSeconds": 0.0333,
+        "atlasCoordinateSystem": "native-1024-map-origin-minus-pixel",
+        "reviewStatus": "coordinates_recovered_requires_movement_and_mechanism_review"
+      }
     },
     {
       "id": "10-drop",
@@ -1400,118 +2684,178 @@
       ],
       "points": [
         {
-          "x": 9727.891,
-          "y": 1860.193,
+          "x": 9727.488,
+          "y": 1861.984,
           "move_mode": "fly",
           "timeSeconds": 503.0,
-          "origin": "sift",
-          "inliers": 54
+          "sourceFrame": 15090,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 15090,
+          "anchorRmseGameUnits": 0.5242
         },
         {
-          "x": 9731.68,
-          "y": 1868.777,
+          "x": 9729.298,
+          "y": 1865.985,
           "move_mode": "fly",
-          "timeSeconds": 505.0,
-          "origin": "sift",
-          "inliers": 51
+          "timeSeconds": 504.166667,
+          "sourceFrame": 15125,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 15120,
+          "anchorRmseGameUnits": 0.4834
         },
         {
-          "x": 9734.213,
-          "y": 1874.365,
+          "x": 9731.273,
+          "y": 1870.478,
           "move_mode": "fly",
-          "timeSeconds": 506.0,
-          "origin": "sift",
-          "inliers": 69
+          "timeSeconds": 505.033333,
+          "sourceFrame": 15151,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 15150,
+          "anchorRmseGameUnits": 0.4746
         },
         {
-          "x": 9736.557,
-          "y": 1879.867,
+          "x": 9732.824,
+          "y": 1874.1,
           "move_mode": "fly",
-          "timeSeconds": 507.0,
-          "origin": "sift",
-          "inliers": 69
+          "timeSeconds": 505.666667,
+          "sourceFrame": 15170,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 15150,
+          "anchorRmseGameUnits": 0.4746
         },
         {
-          "x": 9738.678,
-          "y": 1885.511,
+          "x": 9734.483,
+          "y": 1877.858,
           "move_mode": "fly",
-          "timeSeconds": 508.0,
-          "origin": "sift",
-          "inliers": 72
+          "timeSeconds": 506.333333,
+          "sourceFrame": 15190,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 15180,
+          "anchorRmseGameUnits": 0.4318
         },
         {
-          "x": 9740.643,
-          "y": 1891.029,
+          "x": 9736.771,
+          "y": 1883.401,
           "move_mode": "fly",
-          "timeSeconds": 509.0,
-          "origin": "sift",
-          "inliers": 67
+          "timeSeconds": 507.333333,
+          "sourceFrame": 15220,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 15210,
+          "anchorRmseGameUnits": 0.4496
         },
         {
-          "x": 9742.222,
-          "y": 1896.079,
+          "x": 9738.75,
+          "y": 1888.864,
           "move_mode": "fly",
-          "timeSeconds": 510.0,
-          "origin": "sift",
-          "inliers": 64
+          "timeSeconds": 508.333333,
+          "sourceFrame": 15250,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 15240,
+          "anchorRmseGameUnits": 0.4354
         },
         {
-          "x": 9741.513,
-          "y": 1902.71,
+          "x": 9740.535,
+          "y": 1894.022,
+          "move_mode": "fly",
+          "timeSeconds": 509.266667,
+          "sourceFrame": 15278,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 15270,
+          "anchorRmseGameUnits": 0.4375
+        },
+        {
+          "x": 9741.789,
+          "y": 1897.578,
+          "move_mode": "fly",
+          "timeSeconds": 509.866667,
+          "sourceFrame": 15296,
+          "origin": "native-atlas-flow",
+          "absoluteFrame": 15270,
+          "anchorRmseGameUnits": 0.4375
+        },
+        {
+          "x": 9738.582,
+          "y": 1899.941,
+          "move_mode": "fly",
+          "timeSeconds": 513.0,
+          "sourceFrame": 15390,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 15390,
+          "anchorRmseGameUnits": 0.4501
+        },
+        {
+          "x": 9741.054,
+          "y": 1904.397,
           "move_mode": "fly",
           "timeSeconds": 514.0,
-          "origin": "sift",
-          "inliers": 82
+          "sourceFrame": 15420,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 15420,
+          "anchorRmseGameUnits": 0.4447
         },
         {
-          "x": 9744.919,
-          "y": 1907.576,
+          "x": 9744.454,
+          "y": 1909.274,
           "move_mode": "fly",
           "timeSeconds": 515.0,
-          "origin": "sift",
-          "inliers": 49
+          "sourceFrame": 15450,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 15450,
+          "anchorRmseGameUnits": 0.4779
         },
         {
-          "x": 9747.427,
-          "y": 1911.868,
+          "x": 9747.402,
+          "y": 1914.353,
           "move_mode": "fly",
-          "timeSeconds": 516.0,
-          "origin": "sift",
-          "inliers": 61
-        },
-        {
-          "x": 9745.46,
-          "y": 1912.69,
-          "move_mode": "fly",
-          "timeSeconds": 517,
-          "origin": "source-tp",
+          "timeSeconds": 517.0,
+          "sourceFrame": 15510,
+          "origin": "native-atlas-absolute",
+          "absoluteFrame": 15510,
+          "anchorRmseGameUnits": 0.4453,
           "action": "stop_flying"
         }
-      ]
+      ],
+      "quality": "native-atlas-observed",
+      "coordinateEvidence": {
+        "sourceSha256": "1c19533c7177731b8d26f8474d3091c6289effb73313595f9dcd030ef71b1447",
+        "mapName": "Teyvat",
+        "sourceRange": [
+          503,
+          517
+        ],
+        "decodedFrames": 15612,
+        "posesInInterval": 421,
+        "maxUnlocalizedGapSeconds": 0.0333,
+        "atlasCoordinateSystem": "native-1024-map-origin-minus-pixel",
+        "reviewStatus": "coordinates_recovered_requires_movement_and_mechanism_review"
+      },
+      "notice": "末端复用 BetterGI 原生 stop_flying 下落攻击处理；二维坐标到达仍不代表已落地，必须出现锚点交互并通过原生传送核验。"
     }
   ],
   "special": {
     "lift": {
-      "x": 9532.8,
-      "y": 1644.1,
+      "x": 9532.86,
+      "y": 1646.47,
       "sourceSeconds": [
         199,
         210,
         231
       ],
-      "upPresses": 2
-    },
-    "spiritKey": {
-      "key": "T",
-      "sourceSeconds": [
-        126.9,
-        283.2,
-        335
-      ]
+      "upPresses": 2,
+      "activationToast": "升降机已启动",
+      "secondRequestRequiresPrompt": true
     },
     "domainStartTarget": 7,
     "finalStartTarget": 6,
-    "initialStatueTarget": 3
+    "initialStatueTarget": 3,
+    "ramp": {
+      "sourceRange": [
+        335,
+        348
+      ],
+      "variant": "walk_continuous_ramp",
+      "gameValidated": false
+    }
   },
   "verification": "Exact 传送 button in the selected map panel; no success from pathing return or author overlay count."
 }

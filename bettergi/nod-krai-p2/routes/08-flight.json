@@ -2,145 +2,314 @@
   "info": {
     "name": "平台滑翔→工坊门前（视频恢复，待实机验收）",
     "type": "collect",
-    "bgi_version": "0.66.0"
+    "bgi_version": "0.66.0",
+    "map_name": "Teyvat"
   },
   "positions": [
     {
-      "x": 9886.388,
-      "y": 1701.17,
+      "x": 9881.435,
+      "y": 1707.756,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 9890.398,
-      "y": 1696.916,
+      "x": 9885.206,
+      "y": 1703.745,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 9894.566,
-      "y": 1692.43,
+      "x": 9888.691,
+      "y": 1700.053,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 9898.746,
-      "y": 1688.048,
+      "x": 9892.168,
+      "y": 1696.363,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 9902.811,
-      "y": 1683.71,
+      "x": 9895.469,
+      "y": 1692.499,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 9906.904,
-      "y": 1679.393,
+      "x": 9899.139,
+      "y": 1688.952,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 9910.955,
-      "y": 1674.99,
+      "x": 9902.55,
+      "y": 1685.421,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 9915.106,
-      "y": 1670.67,
+      "x": 9906.086,
+      "y": 1681.622,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 9921.271,
-      "y": 1660.981,
+      "x": 9909.863,
+      "y": 1677.588,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 9930.971,
-      "y": 1652.805,
+      "x": 9913.215,
+      "y": 1673.963,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 9942.846,
-      "y": 1639.272,
+      "x": 9916.719,
+      "y": 1670.263,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 9954.721,
-      "y": 1625.74,
+      "x": 9918.621,
+      "y": 1665.188,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 9966.596,
-      "y": 1612.208,
+      "x": 9922.195,
+      "y": 1662.162,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 9978.471,
-      "y": 1598.676,
+      "x": 9926.911,
+      "y": 1659.346,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 9990.346,
-      "y": 1585.143,
+      "x": 9930.998,
+      "y": 1655.94,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 10002.222,
-      "y": 1571.611,
+      "x": 9934.617,
+      "y": 1651.861,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 10006.181,
-      "y": 1567.099,
+      "x": 9937.744,
+      "y": 1648.128,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 10011.192,
-      "y": 1559.387,
+      "x": 9941.744,
+      "y": 1645.381,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 10015.678,
-      "y": 1550.37,
+      "x": 9944.373,
+      "y": 1640.735,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 10021.3,
-      "y": 1538.585,
+      "x": 9947.931,
+      "y": 1637.108,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9950.798,
+      "y": 1633.159,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9954.737,
+      "y": 1628.791,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9958.428,
+      "y": 1624.352,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9960.864,
+      "y": 1622.065,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9964.127,
+      "y": 1617.8,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9968.06,
+      "y": 1613.318,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9971.494,
+      "y": 1609.532,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9974.938,
+      "y": 1605.518,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9978.12,
+      "y": 1601.606,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9981.905,
+      "y": 1597.238,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9983.675,
+      "y": 1595.497,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9987.559,
+      "y": 1591.264,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9990.349,
+      "y": 1587.471,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9993.503,
+      "y": 1583.67,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9995.394,
+      "y": 1581.005,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9999.086,
+      "y": 1576.474,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 10003.266,
+      "y": 1572.206,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 10005.882,
+      "y": 1568.386,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 10008.489,
+      "y": 1564.415,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 10010.625,
+      "y": 1560.599,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 10012.453,
+      "y": 1556.027,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 10014.943,
+      "y": 1551.733,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 10017.77,
+      "y": 1546.624,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 10020.203,
+      "y": 1542.799,
       "move_mode": "fly",
       "type": "target",
       "action": "stop_flying"

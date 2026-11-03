@@ -1,0 +1,241 @@
+{
+  "info": {
+    "name": "6.0-22 伦波岛（视频恢复，未实机验收）",
+    "type": "collect",
+    "bgi_version": "0.66.0",
+    "map_name": "Teyvat"
+  },
+  "positions": [
+    {
+      "x": 8994.472,
+      "y": 2255.236,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8993.08,
+      "y": 2255.067,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8988.059,
+      "y": 2254.664,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8982.462,
+      "y": 2253.772,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8977.552,
+      "y": 2252.746,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8973.493,
+      "y": 2251.759,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8968.515,
+      "y": 2250.711,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8963.754,
+      "y": 2249.542,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8957.894,
+      "y": 2248.282,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8952.409,
+      "y": 2247.016,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8947.613,
+      "y": 2245.789,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8943.554,
+      "y": 2244.908,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8938.653,
+      "y": 2243.736,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8933.722,
+      "y": 2242.676,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8928.878,
+      "y": 2241.495,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8923.567,
+      "y": 2240.079,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8918.873,
+      "y": 2238.257,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8914.223,
+      "y": 2236.182,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8909.428,
+      "y": 2234.299,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8903.957,
+      "y": 2231.98,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8899.384,
+      "y": 2230.168,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8894.683,
+      "y": 2228.163,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8890.039,
+      "y": 2226.315,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8884.882,
+      "y": 2224.23,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8880.116,
+      "y": 2222.248,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8875.547,
+      "y": 2220.48,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8870.908,
+      "y": 2218.505,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8866.228,
+      "y": 2216.727,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8861.573,
+      "y": 2214.692,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8856.779,
+      "y": 2213.546,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8851.398,
+      "y": 2212.157,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8846.463,
+      "y": 2210.155,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 8843.846,
+      "y": 2211.164,
+      "move_mode": "fly",
+      "type": "target",
+      "action": "stop_flying"
+    }
+  ]
+}

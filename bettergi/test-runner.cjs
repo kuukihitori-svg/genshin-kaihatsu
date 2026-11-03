@@ -8,7 +8,7 @@ const plan = JSON.parse(fs.readFileSync(path.join(root, 'plan.json'), 'utf8'));
 
 function mock(options = {}) {
   let time = Date.UTC(2026, 10, 3), current = {...(options.initialPosition||plan.targets.find(p=>p.number===3))}, heading = 0;
-  let upCount = 0, ghostKeyCount = 0, storyTriggered = false, storyNullReads = 0;
+  let upCount = 0, ghostKeyCount = 0, storyTriggered = false, storyNullReads = 0, liftStartedAt = -Infinity;
   const unlocked = new Set([1, 2, 3, 5, 6]), held = new Set(), history = [], writes = new Map();
   if (options.range === '仅5→6') unlocked.delete(6);
   for(const n of options.initialLocked||[])unlocked.delete(n);
@@ -27,7 +27,12 @@ function mock(options = {}) {
   const item = (text, y=400) => ({text,x:1000,y,width:150,height:30});
   function recognized(ro) {
     if (options.noPrompt) return [item('交谈')];
-    if (options.range==='仅4号' && distance(current,plan.special.lift)<4) return [item('上行',400),item('下行',440)];
+    if (options.range==='仅4号' && distance(current,plan.special.lift)<4) {
+      const elapsed=time-liftStartedAt;
+      if(elapsed>=500&&elapsed<3000&&!options.noLiftActivation)return [item('升降机已启动')];
+      if(upCount&&elapsed<10000)return [];
+      return [item('上行',400),item('下行',440)];
+    }
     const near = plan.targets.find(p=>p.number!==3 && !unlocked.has(p.number) && distance(current,p)<9);
     if (near && options.npcAbove) return [item('塔尔诺',365),item('传送锚点',400)];
     return near ? [item(near.number===9?'无光的深都':'传送锚点')] : [];
@@ -50,7 +55,7 @@ function mock(options = {}) {
       history.push(['press',key]);
       if(key==='T')ghostKeyCount++;
       if(key==='F') {
-        if(options.range==='仅4号'&&distance(current,plan.special.lift)<4) upCount++;
+        if(options.range==='仅4号'&&distance(current,plan.special.lift)<4) {upCount++;liftStartedAt=time;}
         else {
           const near=plan.targets.find(p=>p.number!==3&&!unlocked.has(p.number)&&distance(current,p)<10);
           if(near)unlocked.add(near.number);
@@ -150,7 +155,7 @@ async function run(options){const m=mock(options);const task=vm.runInNewContext(
     const {m,task}=await run({range:'仅5→6',story:true});await task;
     assert.equal(m.history.filter(e=>e[0]==='tp'&&e[1]===5).length,2);
     assert.ok(JSON.parse(m.writes.get('state.json')).completed['6']);
-    assert.equal(m.ghostKeyCount,1);assert.equal(m.held.size,0);
+    assert.equal(m.ghostKeyCount,0);assert.equal(m.held.size,0);
     for(const id of ['06-valley','06-spirit-approach'])assert.ok(m.history.some(e=>e[0]==='path'&&e[1].includes(id)));
     assert.ok(!m.history.some(e=>e[0]==='down'));
   });
@@ -163,13 +168,20 @@ async function run(options){const m=mock(options);const task=vm.runInNewContext(
   await test('source origin and real teleport start for 9 are preserved',async()=>{
     assert.equal(plan.source.frameCount,15612);assert.equal(plan.special.domainStartTarget,7);
     assert.ok(plan.legs.find(l=>l.id==='02-town').points.some(p=>p.origin==='guide-map'));
-    assert.ok(plan.legs.find(l=>l.id==='08-flight').points.some(p=>p.origin==='continuous-flight'));
+    assert.ok(plan.legs.find(l=>l.id==='08-flight').points.every(p=>p.origin.startsWith('native-atlas-')));
+    assert.ok(plan.legs.find(l=>l.id==='06-platform').points.every(p=>p.move_mode==='walk'));
+    assert.equal(plan.legs.find(l=>l.id==='08-flight').points.at(-1).action,'stop_flying');
     for(const leg of plan.legs){
       const native=JSON.parse(fs.readFileSync(path.join(root,'routes',leg.id+'.json'),'utf8'));
       assert.equal(native.positions.length,leg.points.length);
       assert.equal(native.positions.at(-1).type,'target');
       assert.ok(native.positions.every(p=>Number.isFinite(p.x)&&Number.isFinite(p.y)));
+      for(const chunk of leg.nativeChunks)assert.ok(fs.existsSync(path.join(root,chunk.file)));
     }
+  });
+  await test('lift without an activation toast cannot issue a second request or mark the roof complete',async()=>{
+    const {m,task}=await run({range:'仅4号',noLiftActivation:true});await assert.rejects(task,/升降机已启动/);
+    assert.equal(m.upCount,1);assert.equal(JSON.parse(m.writes.get('state.json')).completed['4'],undefined);
   });
   await test('7–10 execution returns to 7 for the domain and 6 for the final descent',async()=>{
     const {m,task}=await run({range:'6—10'});await task;

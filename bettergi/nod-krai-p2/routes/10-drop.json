@@ -2,82 +2,97 @@
   "info": {
     "name": "崖边滑翔→10号锚点（视频恢复，待实机验收）",
     "type": "collect",
-    "bgi_version": "0.66.0"
+    "bgi_version": "0.66.0",
+    "map_name": "Teyvat"
   },
   "positions": [
     {
-      "x": 9727.891,
-      "y": 1860.193,
+      "x": 9727.488,
+      "y": 1861.984,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 9731.68,
-      "y": 1868.777,
+      "x": 9729.298,
+      "y": 1865.985,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 9734.213,
-      "y": 1874.365,
+      "x": 9731.273,
+      "y": 1870.478,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 9736.557,
-      "y": 1879.867,
+      "x": 9732.824,
+      "y": 1874.1,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 9738.678,
-      "y": 1885.511,
+      "x": 9734.483,
+      "y": 1877.858,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 9740.643,
-      "y": 1891.029,
+      "x": 9736.771,
+      "y": 1883.401,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 9742.222,
-      "y": 1896.079,
+      "x": 9738.75,
+      "y": 1888.864,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 9741.513,
-      "y": 1902.71,
+      "x": 9740.535,
+      "y": 1894.022,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 9744.919,
-      "y": 1907.576,
+      "x": 9741.789,
+      "y": 1897.578,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 9747.427,
-      "y": 1911.868,
+      "x": 9738.582,
+      "y": 1899.941,
       "move_mode": "fly",
       "type": "path",
       "action": ""
     },
     {
-      "x": 9745.46,
-      "y": 1912.69,
+      "x": 9741.054,
+      "y": 1904.397,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9744.454,
+      "y": 1909.274,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9747.402,
+      "y": 1914.353,
       "move_mode": "fly",
       "type": "target",
       "action": "stop_flying"

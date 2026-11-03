@@ -1,0 +1,31 @@
+{
+  "info": {
+    "name": "4号高处→镇外草地→崖边（视频恢复，待实机验收）",
+    "type": "collect",
+    "bgi_version": "0.66.0",
+    "map_name": "Teyvat"
+  },
+  "positions": [
+    {
+      "x": 9538.55,
+      "y": 1638.331,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9541.896,
+      "y": 1641.831,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9545.418,
+      "y": 1645.236,
+      "move_mode": "walk",
+      "type": "target",
+      "action": ""
+    }
+  ]
+}

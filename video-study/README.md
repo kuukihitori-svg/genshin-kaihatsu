@@ -1,8 +1,8 @@
-# 攻略视频到 BetterGI 路线：伦波岛 P2
+# 攻略视频到 BetterGI 路线：研究工具与分区工程
 
-已生成 [BetterGI 开图脚本实验版](../bettergi/nod-krai-p2/README.md)，包含 12 个路线片段、159 个途经/目标点和执行 JS，按用户确认的“神像已亮、相关剧情未完成”状态处理。可导入运行，尚未做实机验收。2 号途经点为编号图人工量取，7→8 部分滑翔为连续区间插值，来源均保留；不是全部坐标都由绝对匹配得到。
+已生成[P2 0.2.4实验版](../bettergi/nod-krai-p2/README.md)，含12段、246点；1→2仍为人工量图，7→8已改为原生地图观测点，5→6为未实测的斜坡步行变体。按用户确认的“神像已亮、剧情未完成”状态处理；原生传送测试已成功，实机导航尚未验收。新增[全挪德卡莱分区工程](../bettergi/nod-krai-all/README.md)：145点清单、21段可单测路线，完整全图仍未完成。
 
-原视频全体 15,612 帧已解码，SIFT/RANSAC 与相邻帧光流获得 7,544 帧位置估计。其余包含黑图、菜单、剧情和定位不足的帧；关键操作、连续性联系表和自动转写做了交叉核对，不声称人工逐一看完所有帧。现有二维沙盘继续用于合成任务规则测试。
+原视频全体 15,612 帧已解码，SIFT/RANSAC 与相邻帧光流本次获得8,282帧位置估计。其余包含黑图、菜单、剧情和定位不足的帧；关键操作、连续性联系表和自动转写做了交叉核对，不声称人工逐一看完所有帧。现有二维沙盘继续用于合成任务规则测试。
 
 ## 已取得的素材与结果
 
@@ -46,7 +46,7 @@ python3 -m http.server 8001 --bind 127.0.0.1 --directory /workspace/genshin-vide
 - `nod-krai-p2.anchors.json`：来源版本、文件哈希、原始三维坐标、人工量取的地图像素、控制点标记。
 - `nod-krai-p2.targets.json`：按上述轴规则转换的目标坐标、地图变换与各点残差；不是导航文件。
 - `nod-krai-p2.study.json`：10 段时间轴、画面观察、证据时间戳、目标和待实机确认项。
-- `nod-krai-p2.navigation.json`：脚本使用的路线证据、每点来源与时间、目标和特殊交互信息。可用 `python3 tools/build_open_map.py --zip dist/伦波岛开图P2-0.2.3.zip` 复建导入包。
+- `nod-krai-p2.navigation.json`：脚本使用的路线证据、每点来源与时间、目标和特殊交互信息。可用 `python3 tools/build_open_map.py --zip dist/伦波岛开图P2-0.2.4.zip` 复建导入包。
 
 ## 对脚本实现有影响的观察
 
@@ -102,7 +102,7 @@ python3 tools/video_study.py export --study video-study/nod-krai-p2.study.json \
   --segment point-07 --out /tmp/point-07.json
 ```
 
-原研究工具的 `export` 仍只接受完整核对过的纯导航标注。新的实验脚本由 `build_open_map.py` 从 `nod-krai-p2.navigation.json` 构建；它保留近似点和飞行插值的标记，并使用实际位置、OCR 交互和地图面板检查结果。两种输出的验收状态不能混淆。
+原研究工具的 `export` 仍只接受完整核对过的纯导航标注。新的实验脚本由 `build_open_map.py` 从 `nod-krai-p2.navigation.json` 构建；当前P2保留1→2近似点的标记，7→8已移除飞行插值；使用实际位置、目标OCR交互和原生传送返回结果核验。两种输出的验收状态不能混淆。
 
 逐帧研究可用单独的分析依赖复现（Windows 执行 BetterGI 脚本不需要这些依赖）：
 
@@ -113,9 +113,9 @@ python3 tools/video_study.py export --study video-study/nod-krai-p2.study.json \
   --out ../genshin-video-study/reproduced-audit --samples
 ```
 
-该追踪器仅适配这条素材的分辨率、小地图布局和 SHA-256；不会把陌生视频套用同一标定。输出每帧状态、绝对匹配数、光流状态和位置估计，素材/原始审阅图不入 Git。绝对匹配缺口没有自动填成“已观测”位置。
+上面的 `track_nod_krai.py` 是最初P2研究的历史追踪器；当前路线通过 `audit_guide.py`、`extract_native_route.py` 和原生1024地图恢复，见[全图开发记录](nod-krai-progress.md)。历史追踪器仅适配这条素材的分辨率、小地图布局和 SHA-256；不会把陌生视频套用同一标定。输出每帧状态、绝对匹配数、光流状态和位置估计，素材/原始审阅图不入 Git。绝对匹配缺口没有自动填成“已观测”位置。
 
-[BetterGI 路线格式](https://www.bettergi.com/dev/pathing-dev.html)、[脚本目录格式](https://www.bettergi.com/dev/js/create.html)、[OCR接口](https://www.bettergi.com/dev/js/rec.html)及0.66.0的 `Genshin`、`LimitedFile`、`CameraRotateTask` 源码已核对。[AutoPathingScript](https://github.com/babalae/better-genshin-impact/blob/0.66.0/BetterGenshinImpact/Core/Script/Dependence/AutoPathingScript.cs) 有捕获异常仅记录日志的路径，执行JS在每个路线片段后重新验证实际位置。0.2.3移除通用地图点选和地图面板OCR，直接通过 `genshin.tp()` 复用 `TpTask` 的图标校正、候选选择、传送确认，执行模式核对实际到达后才确认解锁。用户已确认神像点亮，开图仍跳过其选点与传送；仅1号平地起点允许在连续稳定定位后复用站位，不能作为完成证明。包含无输入的定位自检与独立原生传送测试，转向使用原生 `orientation`，山谷也交给原生导航。原生传送沿用 BetterGI 全局地图匹配设置；用户报告的点击偏下与图像越界仍需实机完整日志定位。没有连接真实原神或声称实机成功。
+[BetterGI 路线格式](https://www.bettergi.com/dev/pathing-dev.html)、[脚本目录格式](https://www.bettergi.com/dev/js/create.html)、[OCR接口](https://www.bettergi.com/dev/js/rec.html)及0.66.0的 `Genshin`、`LimitedFile`、`CameraRotateTask` 源码已核对。[AutoPathingScript](https://github.com/babalae/better-genshin-impact/blob/0.66.0/BetterGenshinImpact/Core/Script/Dependence/AutoPathingScript.cs) 有捕获异常仅记录日志的路径，执行JS在每个路线片段后重新验证实际位置。0.2.3移除通用地图点选和地图面板OCR，直接通过 `genshin.tp()` 复用 `TpTask` 的图标校正、候选选择、传送确认，执行模式核对实际到达后才确认解锁。用户已确认神像点亮，开图仍跳过其选点与传送；仅1号平地起点允许在连续稳定定位后复用站位，不能作为完成证明。包含无输入的定位自检与独立原生传送测试，转向使用原生 `orientation`，山谷也交给原生导航。原生传送沿用 BetterGI 全局地图匹配设置；用户已确认独立原生传送测试成功，当前继续修正走位、降落、升降台和剧情／机关步骤。没有连接真实原神或声称实机成功。
 
 ## 验证
 
@@ -124,7 +124,8 @@ npm test                         # 17组现有引擎规则测试
 npm run test:video               # 13组新测试，包括实际FFmpeg合成媒体抽帧
 npm run test:browser             # 原沙盘Chromium交互回归
 npm run test:study-browser -- /workspace/genshin-video-study/review/review.html
-npm run test:bettergi             # 29组宿主模拟/包结构检查
+npm run test:bettergi             # 30组P2宿主模拟/包结构检查
+npm run test:campaign             # 11组证据检查、13组分区宿主模拟
 ```
 
 Python 测试涵盖分 P 校验、时间戳、坐标重排、地图残差、无效输入、缺失路线拒绝导出与 JSON 嵌入转义。合成测试视频仅用于抽帧合同校验，不代表真实路线成功。

@@ -151,9 +151,17 @@
     release(); lastLeg = id; checkpoint(); record('navigate-start', id);
     const data = leg(id);
     if (!data || !data.points.length) throw error('缺少路线片段：' + id, 'DATA');
-    await pathingScript.runFile(`routes/${id}.json`);
-    release(); await sleep(500);
-    const p = await stablePosition(data.points[data.points.length-1], tolerance || 10);
+    const before = await stablePosition(null, 0);
+    if (distance(before,data.points[0]) > 35) throw error(`路线${id}起点相差超过35，停止接线。`, 'NAV');
+    const chunks = data.nativeChunks || [{ file: `routes/${id}.json`, end: data.points[data.points.length-1] }];
+    let p;
+    for (let i = 0; i < chunks.length; i++) {
+      record('navigate-chunk-start', { index: i+1, total: chunks.length, file: chunks[i].file });
+      await pathingScript.runFile(chunks[i].file);
+      release(); await sleep(250);
+      p = await stablePosition(chunks[i].end, Math.min(tolerance || 6, 6));
+      record('navigate-chunk-arrived', { index: i+1, position: p });
+    }
     record('navigate-arrived', p);
     return p;
   }
@@ -289,10 +297,18 @@
   async function liftToRoof() {
     await navigate('04-lift-approach', 8);
     for (let floor = 0; floor < 2; floor++) {
-      if (!await pressWhenVisible(/^上行$/, 6000)) throw error('升降台未出现上行选项。', 'LIFT');
-      // Source has two separate upper-floor requests, not one 30s blind wait.
-      await sleep(floor === 0 ? 7000 : 22000);
+      if (!await pressWhenVisible(/^上行$/, floor === 0 ? 6000 : 20000)) throw error('升降台未出现上行选项，未继续按F。', 'LIFT');
+      let activated = false;
+      const began = Date.now();
+      while (Date.now()-began < 4000) {
+        if (ocrBox([.32,.16,.40,.30]).some(item => /升降机已启动/.test(item.text))) { activated = true; break; }
+        await sleep(200);
+      }
+      if (!activated) throw error('未识别到“升降机已启动”，不能确认上行交互生效。', 'LIFT');
       record('lift-up', { floor: floor+1 });
+      // The next request is gated by the reappearing 上行 option. The final
+      // source-observed ride still has a settling bound; it does not prove Z.
+      if (floor === 1) await sleep(22000);
     }
     await stablePosition(plan.special.lift, 10);
     await faceTo(target(4));
@@ -337,8 +353,9 @@
       for (let attempt = 0; attempt < 2; attempt++) {
         try {
           await navigate('06-valley', 6); await navigate('06-spirit-approach', 2.5);
-          // The source explicitly uses T for 空月之灵; this is not a character skill.
-          keyPress('T'); await sleep(600); keyPress('SPACE'); await sleep(500);
+          // The source changes to 空月之灵 here, then returns to a character on
+          // the upper steps. This variant follows the same ramp on foot. Do not
+          // toggle an unknown current form, or call the ramp a climbing wall.
           await navigate('06-platform', 10); return;
         } catch (e) {
           release();

@@ -1,0 +1,24 @@
+{
+  "info": {
+    "name": "路口左转→空月之灵与攀升装置（视频恢复，待实机验收）",
+    "type": "collect",
+    "bgi_version": "0.66.0",
+    "map_name": "Teyvat"
+  },
+  "positions": [
+    {
+      "x": 9661.257,
+      "y": 1814.538,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9663.501,
+      "y": 1815.389,
+      "move_mode": "walk",
+      "type": "target",
+      "action": ""
+    }
+  ]
+}

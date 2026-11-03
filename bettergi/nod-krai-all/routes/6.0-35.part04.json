@@ -1,0 +1,38 @@
+{
+  "info": {
+    "name": "6.0-35 帕哈岛（视频恢复，未实机验收）",
+    "type": "collect",
+    "bgi_version": "0.66.0",
+    "map_name": "Teyvat"
+  },
+  "positions": [
+    {
+      "x": 9323.619,
+      "y": 3226.914,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9323.922,
+      "y": 3231.272,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9321.847,
+      "y": 3236.02,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9319.795,
+      "y": 3239.278,
+      "move_mode": "walk",
+      "type": "target",
+      "action": ""
+    }
+  ]
+}

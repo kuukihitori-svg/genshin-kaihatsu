@@ -2,6 +2,7 @@
 """Build the importable BetterGI package from the committed navigation evidence."""
 import argparse
 import json
+import math
 from pathlib import Path
 import zipfile
 
@@ -22,13 +23,33 @@ def build(archive=None):
             raise ValueError(f"Empty leg: {leg['id']}")
         points = []
         for i, p in enumerate(leg["points"]):
-            if p["origin"] not in ("sift", "source-tp", "guide-map", "continuous-flight"):
+            if p["origin"] not in ("sift", "source-tp", "guide-map", "continuous-flight", "native-atlas-absolute", "native-atlas-flow"):
                 raise ValueError("An unsourced coordinate cannot enter a route")
             point = {k: p[k] for k in ("x", "y", "move_mode")}
             point.update({"type": "target" if i == len(leg["points"])-1 else "path", "action": p.get("action", "")})
+            if p['move_mode']=='fly' and i<len(leg['points'])-1 and leg['points'][i+1]['move_mode']!='fly':
+                point.update({'type':'target','action':'stop_flying'})
             points.append(point)
-        native = {"info": {"name": leg["name"] + "（视频恢复，待实机验收）", "type": "collect", "bgi_version": "0.66.0"}, "positions": points}
+        native = {"info": {"name": leg["name"] + "（视频恢复，待实机验收）", "type": "collect", "bgi_version": "0.66.0", "map_name": "Teyvat"}, "positions": points}
         (routes / (leg["id"]+".json")).write_text(json.dumps(native, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
+        leg['nativeChunks'] = []
+        start, length = 0, 0
+        for i, point in enumerate(points):
+            if i:
+                length += math.hypot(point['x']-points[i-1]['x'],point['y']-points[i-1]['y'])
+            last = i == len(points)-1
+            # Preserve continuous glides and vertical climbs. Pausing them for
+            # GPS checks would change altitude/stamina and invalidate the video.
+            ground = point['move_mode'] in ('walk','run')
+            next_mode = points[i+1]['move_mode'] if not last else None
+            if not last and not (ground and i>start and (length>=28 or next_mode!=point['move_mode'])):
+                continue
+            part = [dict(p) for p in points[start:i+1]]
+            if ground or last: part[-1]['type'] = 'target'
+            filename = f"routes/{leg['id']}.part{len(leg['nativeChunks'])+1:02d}.json"
+            (PACKAGE/filename).write_text(json.dumps({'info':native['info'],'positions':part},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+            leg['nativeChunks'].append({'file':filename,'end':{'x':point['x'],'y':point['y']},'firstIndex':start,'lastIndex':i})
+            start, length = i, 0
     (PACKAGE / "plan.json").write_text(json.dumps(data, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
     if archive:
         archive = Path(archive).resolve()
