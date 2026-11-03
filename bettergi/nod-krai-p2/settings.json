@@ -3,8 +3,15 @@
     "name": "mode",
     "type": "select",
     "label": "运行模式（先保持静止做自检）",
-    "options": ["仅原生定位自检", "执行开图路线"],
+    "options": ["仅原生定位自检", "仅原生传送测试", "执行开图路线"],
     "default": "仅原生定位自检"
+  },
+  {
+    "name": "teleportTarget",
+    "type": "select",
+    "label": "原生传送测试目标（1号起点，3号神像）",
+    "options": ["1", "3"],
+    "default": "1"
   },
   {
     "name": "range",

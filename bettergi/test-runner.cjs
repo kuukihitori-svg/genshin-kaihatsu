@@ -7,10 +7,11 @@ const source = fs.readFileSync(path.join(root, 'main.js'), 'utf8');
 const plan = JSON.parse(fs.readFileSync(path.join(root, 'plan.json'), 'utf8'));
 
 function mock(options = {}) {
-  let time = Date.UTC(2026, 10, 3), mapTarget = null, current = {...plan.targets.find(p=>p.number===3)}, heading = 0;
+  let time = Date.UTC(2026, 10, 3), current = {...(options.initialPosition||plan.targets.find(p=>p.number===3))}, heading = 0;
   let upCount = 0, ghostKeyCount = 0, storyTriggered = false, storyNullReads = 0;
   const unlocked = new Set([1, 2, 3, 5, 6]), held = new Set(), history = [], writes = new Map();
   if (options.range === '仅5→6') unlocked.delete(6);
+  for(const n of options.initialLocked||[])unlocked.delete(n);
   const distance = (a,b) => Math.hypot(a.x-b.x,a.y-b.y);
   const getTarget = n => plan.targets.find(p=>p.number===n);
   const polar = (from,to) => (Math.atan2(-(to.y-from.y),-(to.x-from.x))*180/Math.PI+360)%360;
@@ -25,13 +26,6 @@ function mock(options = {}) {
   }
   const item = (text, y=400) => ({text,x:1000,y,width:150,height:30});
   function recognized(ro) {
-    if (mapTarget !== null) {
-      if (mapTarget === 'marker') return [item('标记（点击更改标记名称）',70),item('确认',950)];
-      if (ro.box[1] >= 700) return unlocked.has(mapTarget) ? [item(options.badFooter && mapTarget===7 ? '传送锚点' : '传送',950)] : [];
-      const rows=[item(mapTarget===3 ? '新月神像' : mapTarget===9 ? '无光的深都' : '传送锚点',70)];
-      if (!unlocked.has(mapTarget)) rows.push(item('未解锁',120));
-      return rows;
-    }
     if (options.noPrompt) return [item('交谈')];
     if (options.range==='仅4号' && distance(current,plan.special.lift)<4) return [item('上行',400),item('下行',440)];
     const near = plan.targets.find(p=>p.number!==3 && !unlocked.has(p.number) && distance(current,p)<9);
@@ -39,7 +33,7 @@ function mock(options = {}) {
     return near ? [item(near.number===9?'无光的深都':'传送锚点')] : [];
   }
   const host = {
-    settings: {mode:options.mode===undefined?'执行开图路线':options.mode,range:options.range||'仅6→7',storyTimeoutSeconds:'30'},
+    settings: {mode:options.mode===undefined?'执行开图路线':options.mode,range:options.range||'仅6→7',storyTimeoutSeconds:'30',teleportTarget:options.teleportTarget||'1'},
     getVersion:()=> '0.66.0',
     Date: class extends Date { constructor(...args){super(args.length?args[0]:time);} static now(){return time;} },
     sleep: async ms => {
@@ -82,15 +76,12 @@ function mock(options = {}) {
     },
     genshin:{
       width:options.gameWidth||1920,height:options.gameHeight||1080,screenDpiScale:options.dpi||1,
-      returnMainUi:async()=>{mapTarget=null;},
-      clickMapPoint:async(x,y)=>{
-        const n=plan.targets.find(p=>distance(p,{x,y})<.01).number;
-        history.push(['map-click',n]);mapTarget=options.markerFor===n?'marker':n;
-      },
+      returnMainUi:async()=>{history.push(['return-main-ui']);},
+      clickMapPoint:async()=>{throw new Error('Generic map clicking must not be used; delegate to native TpTask');},
       tp:async(...args)=>{
         const [x,y]=args,n=plan.targets.find(p=>distance(p,{x,y})<.01).number;
         history.push(['tp',n,args.length]);
-        if(options.nativeTpFailureFor===n || !unlocked.has(n)) throw new Error('原生传送无法确认目标');
+        if(options.nativeTpFailureFor===n || !unlocked.has(n)) throw new Error(options.nativeTpError||'原生传送无法确认目标');
         current=options.wrongArrivalFor===n?{...getTarget(1)}:{x,y};
       },
       getPositionFromMap:(...args)=>nativeReading('default',args),
@@ -105,6 +96,7 @@ function mock(options = {}) {
       },
       runFile:async name=>{
         history.push(['path',name]);
+        if(options.cancelAtPath && name.includes(options.cancelAtPath)) throw new Error('cancelled');
         if(options.cancelNativePath && name.includes('06-valley')) throw new Error('cancelled');
         if(options.story && name.includes('06-valley') && !storyTriggered){storyTriggered=true;storyNullReads=6;return;}
         if(!options.silentPathFailure){const native=JSON.parse(fs.readFileSync(path.join(root,name),'utf8'));current={...native.positions.at(-1)};}
@@ -118,11 +110,12 @@ async function run(options){const m=mock(options);const task=vm.runInNewContext(
 (async()=>{
   let passed=0;
   async function test(name,fn){await fn();console.log('PASS '+name);passed++;}
-  await test('only a positively verified map teleport button records completion',async()=>{
+  await test('unlock verification directly reuses native teleport and verifies arrival',async()=>{
     const {m,task}=await run();await task;
     const state=JSON.parse(m.writes.get('state.json'));
-    assert.equal(state.completed['7'].proof,'selected-map-panel-exact-teleport-button');
+    assert.equal(state.completed['7'].proof,'native-teleport-and-stable-position');
     assert.ok(m.history.some(e=>e[0]==='path'&&e[1].includes('07-road')));
+    assert.ok(!source.includes('genshin.clickMapPoint('));
   });
   await test('native navigation that logs failure and returns cannot advance',async()=>{
     const {m,task}=await run({silentPathFailure:true});await assert.rejects(task,/稳定/);
@@ -130,8 +123,8 @@ async function run(options){const m=mock(options);const task=vm.runInNewContext(
     assert.equal(state.completed['7'],undefined);assert.equal(state.status,'stopped');
     assert.equal(m.history.filter(e=>e[0]==='press'&&e[1]==='F').length,0);
   });
-  await test('传送锚点 text is not mistaken for an exact 传送 button',async()=>{
-    const {m,task}=await run({badFooter:true,nativeTpFailureFor:7});await assert.rejects(task,/未确认可传送/);
+  await test('pressing F without successful native teleport does not prove unlock',async()=>{
+    const {m,task}=await run({nativeTpFailureFor:7});await assert.rejects(task,/未确认到达/);
     assert.equal(JSON.parse(m.writes.get('state.json')).completed['7'],undefined);
   });
   await test('missing target prompt never presses F on an unrelated NPC',async()=>{
@@ -180,15 +173,18 @@ async function run(options){const m=mock(options);const task=vm.runInNewContext(
   });
   await test('7–10 execution returns to 7 for the domain and 6 for the final descent',async()=>{
     const {m,task}=await run({range:'6—10'});await task;
-    const teleports=m.history.filter(e=>e[0]==='tp').map(e=>e[1]);
-    assert.deepEqual(teleports,[6,7,7,6]);
+    const starts=['07-road','08-ledge','09-domain','10-uphill'].map(id=>{
+      const index=m.history.findIndex(e=>e[0]==='path'&&e[1].includes(id));
+      return m.history.slice(0,index).filter(e=>e[0]==='tp').at(-1)[1];
+    });
+    assert.deepEqual(starts,[6,7,7,6]);
     const state=JSON.parse(m.writes.get('state.json'));
     for(const n of [7,8,9,10])assert.ok(state.completed[String(n)]);
   });
   await test('2560×1440 with 150% DPI skips statue selection and uses normalized OCR',async()=>{
     const {m,task}=await run({gameWidth:2560,gameHeight:1440,dpi:1.5,markerFor:3});await task;
     assert.ok(!m.history.some(e=>e[0]==='map-click'&&e[1]===3));
-    assert.deepEqual(m.history.find(e=>e[0]==='tp'),['tp',6,2]);
+    assert.deepEqual(m.history.find(e=>e[0]==='tp'),['tp',7,2]);
     const state=JSON.parse(m.writes.get('state.json'));
     assert.equal(state.completed['3'],undefined);
     for(const [type,x,y,w,h] of m.history.filter(e=>e[0]==='ocr'))assert.ok(x>=0&&y>=0&&x+w<=1920&&y+h<=1080);
@@ -204,13 +200,13 @@ async function run(options){const m=mock(options);const task=vm.runInNewContext(
     const {m,task}=await run({gameWidth:2560,gameHeight:1440,captureWidth:1912,captureHeight:1080});await task;
     assert.ok(JSON.parse(m.writes.get('state.json')).completed['7']);
   });
-  await test('a custom marker editor is unknown, then native teleport can prove unlock',async()=>{
-    const {m,task}=await run({markerFor:7});await task;
+  await test('generic map projection and map-panel OCR are absent from verification',async()=>{
+    const {m,task}=await run();await task;
     const state=JSON.parse(m.writes.get('state.json'));
     assert.equal(state.completed['7'].proof,'native-teleport-and-stable-position');
     const events=[...m.writes].filter(([n])=>n.endsWith('.jsonl.txt')).flatMap(([,v])=>v.trim().split('\n').map(JSON.parse));
-    assert.ok(events.some(e=>e.type==='map-check'&&e.detail.number===7&&e.detail.result==='unknown'));
-    assert.ok(!events.some(e=>e.type==='map-check'&&e.detail.number===7&&e.detail.result==='locked'));
+    assert.ok(events.some(e=>e.type==='native-unlock-probe-unknown'&&e.detail.number===7));
+    assert.ok(!events.some(e=>e.type==='map-check'));
   });
   await test('a broken statue selector is never invoked and does not block the chosen route',async()=>{
     const {m,task}=await run({nativeTpFailureFor:3,markerFor:3});await task;
@@ -266,6 +262,38 @@ async function run(options){const m=mock(options);const task=vm.runInNewContext(
   await test('native coordinate aliases support PascalCase-only hosts as well',async()=>{
     const {m,task}=await run({mode:'仅原生定位自检',pascalCaseOnly:true});await task;
     assert.equal(JSON.parse(m.writes.get('native-check.json')).summary.defaultStable,true);
+  });
+  await test('standalone native teleport test calls the public Tp wrapper with exact world coordinates',async()=>{
+    const {m,task}=await run({mode:'仅原生传送测试'});await task;
+    assert.deepEqual(m.history.filter(e=>e[0]==='tp'),[['tp',1,2]]);
+    assert.ok(!m.history.some(e=>['ocr','position-read','path','native-run','down','press'].includes(e[0])));
+    assert.equal(m.writes.get('state.json'),undefined);
+    assert.equal(m.writes.get('native-check.json'),undefined);
+  });
+  await test('standalone native teleport test preserves the native failure instead of guessing an offset',async()=>{
+    const {m,task}=await run({mode:'仅原生传送测试',nativeTpFailureFor:1,nativeTpError:'0 <= _rowRange.start && _rowRange.end <= m.rows'});
+    await assert.rejects(task,/_rowRange/);
+    assert.equal(m.history.filter(e=>e[0]==='tp').length,1);
+    assert.ok(!m.history.some(e=>['ocr','position-read','path','native-run','down','press'].includes(e[0])));
+    assert.equal(m.writes.get('state.json'),undefined);
+  });
+  await test('standalone native teleport test can request the user-confirmed statue directly',async()=>{
+    const {m,task}=await run({mode:'仅原生传送测试',teleportTarget:'3'});await task;
+    assert.deepEqual(m.history.filter(e=>e[0]==='tp'),[['tp',3,2]]);
+  });
+  await test('standing near the initial dock skips redundant native teleport without unlock proof',async()=>{
+    const first=plan.targets.find(p=>p.number===1);
+    const {m,task}=await run({range:'2—10',initialPosition:{x:first.x+4,y:first.y+14},initialLocked:[2],nativeTpFailureFor:1,cancelAtPath:'02-town'});
+    await assert.rejects(task,/cancelled/);
+    assert.ok(m.history.some(e=>e[0]==='path'&&e[1].includes('02-town')));
+    assert.ok(!m.history.some(e=>e[0]==='tp'&&e[1]===1));
+    const completed=JSON.parse(m.writes.get('state.json')).completed;
+    assert.equal(completed['1'],undefined);assert.equal(completed['2'],undefined);
+  });
+  await test('a distant initial dock still requires actual native teleport before navigation',async()=>{
+    const {m,task}=await run({range:'2—10',initialLocked:[2],cancelAtPath:'02-town'});
+    await assert.rejects(task,/cancelled/);
+    assert.ok(m.history.some(e=>e[0]==='tp'&&e[1]===1));
   });
   console.log(`${passed} runner/package checks passed; host mocks are not real-game validation.`);
 })().catch(error=>{console.error(error);process.exitCode=1;});

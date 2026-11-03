@@ -5,8 +5,8 @@
   const target = number => plan.targets.find(item => item.number === number);
   const leg = id => plan.legs.find(item => item.id === id);
   const mode = settings.mode || '仅原生定位自检';
-  if (!['仅原生定位自检', '执行开图路线'].includes(mode)) throw new Error('运行模式无效。');
-  const diagnostic = mode === '仅原生定位自检';
+  if (!['仅原生定位自检', '仅原生传送测试', '执行开图路线'].includes(mode)) throw new Error('运行模式无效。');
+  const diagnostic = mode !== '执行开图路线';
   const ranges = { '2—10': [2, 10], '4—10': [4, 10], '6—10': [6, 10], '仅6→7': [7, 7], '仅4号': [4, 4], '仅5→6': [6, 6] };
   const range = ranges[settings.range || '2—10'];
   if (!range || plan.schemaVersion !== 1) throw new Error('执行范围或路线版本无效。');
@@ -193,6 +193,34 @@
     return stablePosition(point, 28);
   }
 
+  async function startAtOne() {
+    release(); await genshin.returnMainUi();
+    // This flat initial dock is the only start that may be reused. Do not use
+    // 2D proximity to skip roof/cave return teleports, or as unlock evidence.
+    const first = position();
+    if (first && distance(first, target(1)) <= 20) {
+      const p = await stablePosition(target(1), 20);
+      record('reuse-current-start', { number: 1, position: p });
+      log.info('已在1号起点附近，直接开始1→2，不重复打开地图传送。');
+      return p;
+    }
+    return teleport(1);
+  }
+
+  async function nativeTeleportTest() {
+    const number = Number(settings.teleportTarget || '1');
+    if (![1, 3].includes(number)) throw error('原生传送测试只支持已确认开放的1号或3号点。', 'DATA');
+    const point = target(number); stage = number;
+    record('native-teleport-test-start', { number, x: point.x, y: point.y });
+    log.info(`直接调用 BetterGI 原生 genshin.tp(${point.x}, ${point.y})；目标${number}号。本模式不运行脚本的地图点选、OCR或路线。`);
+    await genshin.returnMainUi();
+    // Genshin.Tp directly awaits new TpTask(token).Tp(x, y). Keep this probe
+    // independent of script GPS postconditions and all custom map UI logic.
+    await genshin.tp(point.x, point.y);
+    record('native-teleport-test-returned', { number });
+    log.info('BetterGI 原生传送接口已返回；测试结束，未写开图完成记录。');
+  }
+
   async function verifyByTeleport(number) {
     try {
       const p = await teleport(number);
@@ -206,30 +234,18 @@
     }
   }
 
-  async function mapState(number) {
-    release(); const point = target(number);
+  async function probeUnlock(number) {
+    release();
     proofs.delete(number);
-    let result = 'unknown';
     try {
-      await genshin.clickMapPoint(point.x, point.y);
-      await sleep(700);
-      const panel = ocrBox([.66, .02, .34, .96]);
-      const footer = ocrBox([.70, .75, .30, .25]);
-      const titleOk = panel.some(item => number === 9 ? item.text.includes('无光的深都') : number === 3 ? /新月神像|七天神像/.test(item.text) : item.text.includes('传送锚点'));
-      const locked = panel.some(item => /尚未解锁|未解锁|未激活|未开启/.test(item.text));
-      const button = footer.some(item => item.text === '传送');
-      result = titleOk && button && !locked ? 'unlocked' : titleOk && locked ? 'locked' : 'unknown';
-      record('map-check', { number, result, panel: panel.map(item => item.text), footer: footer.map(item => item.text) });
-      if (result === 'unlocked') proofs.set(number, 'selected-map-panel-exact-teleport-button');
+      // Delegate map projection, icon alignment, candidate selection and confirm
+      // to TpTask through its public JS wrapper. No generic map clicks or OCR.
+      return await verifyByTeleport(number);
     } catch (e) {
       if (stopped(e)) throw e;
-      record('map-selection-unknown', { number, reason: String(e.message || e) });
+      record('native-unlock-probe-unknown', { number, reason: String(e.message || e) });
+      return 'unknown';
     } finally { await genshin.returnMainUi(); await sleep(300); }
-    if (result !== 'unknown') return result;
-    // A custom-pin panel, an overlap list or a missing button is not locked proof.
-    // Let the native teleport flow correct the icon; successful arrival is proof.
-    try { return await verifyByTeleport(number); }
-    catch (e) { if (stopped(e)) throw e; return 'unknown'; }
   }
 
   function interactionRow(pattern) {
@@ -256,11 +272,11 @@
     const expected = number === 9 ? /无光的深都/ : /传送锚点/;
     if (!await pressWhenVisible(expected, 5000)) {
       // A point may have opened while approaching; still require fresh map proof.
-      if (await mapState(number) === 'unlocked') return;
+      if (await probeUnlock(number) === 'unlocked') return;
       throw error(`${number}号点未出现正确交互提示。`, 'INTERACTION');
     }
     await sleep(1300);
-    if (await mapState(number) !== 'unlocked') throw error(`${number}号交互后未确认可传送，未记为完成。`, 'VERIFY');
+    if (await probeUnlock(number) !== 'unlocked') throw error(`${number}号交互后原生传送未确认到达，未记为完成。请查看 BetterGI 日志中的原生传送异常与调用栈。`, 'VERIFY');
   }
   async function complete(number) {
     const proof = proofs.get(number);
@@ -344,7 +360,8 @@
     record('run-start', { version: getVersion(), packageVersion: plan.packageVersion, mode, range, source: plan.source.sourceSha256 });
     log.info(`伦波岛开图 P2 ${plan.packageVersion}；${mode}。`);
     const environment = checkEnvironment();
-    if (diagnostic) { await checkNativePosition(environment); return; }
+    if (mode === '仅原生定位自检') { await checkNativePosition(environment); return; }
+    if (mode === '仅原生传送测试') { await nativeTeleportTest(); return; }
     checkpoint({ runId, selectedRange: range, status: 'running' });
     // The user confirmed that the statue is lit. Opening its map panel is not a
     // prerequisite for native minimap localization or for the selected leg.
@@ -355,8 +372,8 @@
     for (stage = range[0]; stage <= range[1]; stage++) {
       checkpoint();
       if (stage === 3) continue;
-      if (await mapState(stage) === 'unlocked') { await complete(stage); continue; }
-      if (stage === 2) { await teleport(1); await navigate('02-town', 9); }
+      if (await probeUnlock(stage) === 'unlocked') { await complete(stage); continue; }
+      if (stage === 2) { await startAtOne(); await navigate('02-town', 9); }
       else if (stage === 4) { await teleport(2); await liftToRoof(); }
       else if (stage === 5) { await teleport(4); await dropToFive(); }
       else if (stage === 6) { await teleport(5); await valleyToSix(); }
@@ -375,7 +392,7 @@
       try { checkpoint({ status: 'stopped', lastError: String(e.message || e) }); } catch (_) {}
     }
     try { record('stopped', String(e.message || e)); } catch (_) {}
-    log.error((diagnostic ? '原生自检停止：' : '开图停止：') + String(e.message || e));
+    log.error(`${mode}停止：` + String(e.message || e));
     throw e;
   } finally { release(); }
 })();
