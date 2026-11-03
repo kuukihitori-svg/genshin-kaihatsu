@@ -1,5 +1,12 @@
 [
   {
+    "name": "mode",
+    "type": "select",
+    "label": "运行模式（先保持静止做自检）",
+    "options": ["仅原生定位自检", "执行开图路线"],
+    "default": "仅原生定位自检"
+  },
+  {
     "name": "range",
     "type": "select",
     "label": "执行范围（神像须已点亮）",

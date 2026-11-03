@@ -7,21 +7,21 @@ const source = fs.readFileSync(path.join(root, 'main.js'), 'utf8');
 const plan = JSON.parse(fs.readFileSync(path.join(root, 'plan.json'), 'utf8'));
 
 function mock(options = {}) {
-  let time = Date.UTC(2026, 10, 3), mapTarget = null, current = {x:0,y:0}, lastLeg = '', heading = 0;
+  let time = Date.UTC(2026, 10, 3), mapTarget = null, current = {...plan.targets.find(p=>p.number===3)}, heading = 0;
   let upCount = 0, ghostKeyCount = 0, storyTriggered = false, storyNullReads = 0;
   const unlocked = new Set([1, 2, 3, 5, 6]), held = new Set(), history = [], writes = new Map();
   if (options.range === '仅5→6') unlocked.delete(6);
   const distance = (a,b) => Math.hypot(a.x-b.x,a.y-b.y);
   const getTarget = n => plan.targets.find(p=>p.number===n);
   const polar = (from,to) => (Math.atan2(-(to.y-from.y),-(to.x-from.x))*180/Math.PI+360)%360;
-  const pointIndices = new Map();
-  function walkingPoint() {
-    const leg = plan.legs.find(l=>l.id===lastLeg);
-    if (!leg) return null;
-    let i = pointIndices.get(lastLeg)||0;
-    const tolerance=lastLeg==='06-spirit-approach'?2.5:6;
-    while(i<leg.points.length-1 && distance(current,leg.points[i])<=tolerance)i++;
-    pointIndices.set(lastLeg,i); return leg.points[i];
+  function nativeReading(method, args) {
+    history.push(['position-read',method,...args]);
+    if (options.positionError || (method==='default' && options.defaultPositionError)) throw new Error('原生地图特征匹配失败');
+    if (options.zeroPosition) return {x:0,y:0};
+    if (options.nullPosition) return null;
+    if(storyNullReads>0){storyNullReads--;return null;}
+    const dx=method==='sift'&&options.siftOffset?100:0;
+    return options.pascalCaseOnly?{X:current.x+dx,Y:current.y}:{x:current.x+dx,y:current.y};
   }
   const item = (text, y=400) => ({text,x:1000,y,width:150,height:30});
   function recognized(ro) {
@@ -39,15 +39,13 @@ function mock(options = {}) {
     return near ? [item(near.number===9?'无光的深都':'传送锚点')] : [];
   }
   const host = {
-    settings: {range:options.range||'仅6→7',storyTimeoutSeconds:'30'},
+    settings: {mode:options.mode===undefined?'执行开图路线':options.mode,range:options.range||'仅6→7',storyTimeoutSeconds:'30'},
     getVersion:()=> '0.66.0',
     Date: class extends Date { constructor(...args){super(args.length?args[0]:time);} static now(){return time;} },
     sleep: async ms => {
       time += ms;
       if (held.has('W')) {
         if(options.cancelWhileMoving) throw new Error('cancelled');
-        if(options.story && !storyTriggered) { storyTriggered=true;storyNullReads=3; }
-        if(options.range==='仅4号') heading=polar(current,getTarget(4));
         const step=ms/1000*6;
         current={x:current.x-Math.cos(heading*Math.PI/180)*step,y:current.y-Math.sin(heading*Math.PI/180)*step};
       }
@@ -65,7 +63,7 @@ function mock(options = {}) {
         }
       }
     },
-    moveMouseBy:(dx)=>{heading=(heading+dx/2+360)%360;},
+    moveMouseBy:()=>{throw new Error('The script must delegate camera control to native orientation points');},
     RecognitionObject:{ocr:(...box)=>({box})},
     captureGameRegion:()=>({width:options.captureWidth||1920,height:options.captureHeight||1080,srcMat:{},dispose(){},findMulti(ro){
       history.push(['ocr',...ro.box]);
@@ -79,7 +77,6 @@ function mock(options = {}) {
       isExists:name=>writes.has(name),createDirectory:()=>true,writeImageSync:()=>true,
       writeTextSync:(name,text,append=false)=>{
         writes.set(name,append?(writes.get(name)||'')+text:text);
-        if(name==='state.json')lastLeg=JSON.parse(text).lastLeg;
         return true;
       }
     },
@@ -94,23 +91,25 @@ function mock(options = {}) {
         const [x,y]=args,n=plan.targets.find(p=>distance(p,{x,y})<.01).number;
         history.push(['tp',n,args.length]);
         if(options.nativeTpFailureFor===n || !unlocked.has(n)) throw new Error('原生传送无法确认目标');
-        current=options.wrongArrivalFor===n?{...getTarget(1)}:{x,y};pointIndices.clear();
+        current=options.wrongArrivalFor===n?{...getTarget(1)}:{x,y};
       },
-      getPositionFromMap:()=>{
-        if(storyNullReads>0){storyNullReads--;return null;}
-        return {X:current.x,Y:current.y};
-      },
-      getCameraOrientation:()=>{
-        const p=walkingPoint();
-        if(options.range==='仅4号')heading=polar(current,getTarget(4));
-        else if(p)heading=polar(current,p);
-        return heading;
-      }
+      getPositionFromMap:(...args)=>nativeReading('default',args),
+      getPositionFromMapWithMatchingMethod:(...args)=>nativeReading('sift',args),
+      getCameraOrientation:()=>options.invalidOrientation?null:heading
     },
-    pathingScript:{runFile:async name=>{
-      history.push(['path',name]);
-      if(!options.silentPathFailure){const native=JSON.parse(fs.readFileSync(path.join(root,name),'utf8'));current={...native.positions.at(-1)};}
-    }}
+    pathingScript:{
+      run:async json=>{
+        const native=JSON.parse(json);history.push(['native-run',native]);
+        assert.equal(native.positions.length,1);assert.equal(native.positions[0].type,'orientation');
+        heading=polar(current,native.positions[0])+(options.silentOrientationFailure?90:0);
+      },
+      runFile:async name=>{
+        history.push(['path',name]);
+        if(options.cancelNativePath && name.includes('06-valley')) throw new Error('cancelled');
+        if(options.story && name.includes('06-valley') && !storyTriggered){storyTriggered=true;storyNullReads=6;return;}
+        if(!options.silentPathFailure){const native=JSON.parse(fs.readFileSync(path.join(root,name),'utf8'));current={...native.positions.at(-1)};}
+      }
+    }
   };
   return {host,history,held,writes,get upCount(){return upCount;},get ghostKeyCount(){return ghostKeyCount;}};
 }
@@ -143,10 +142,15 @@ async function run(options){const m=mock(options);const task=vm.runInNewContext(
     const {m,task}=await run({npcAbove:true});await assert.rejects(task,/正确交互提示/);
     assert.equal(m.history.filter(e=>e[0]==='press'&&e[1]==='F').length,0);
   });
-  await test('cancelled foreground movement releases W and clears the owned story timer',async()=>{
-    const {m,task}=await run({range:'仅5→6',cancelWhileMoving:true});await assert.rejects(task,/cancelled/);
+  await test('cancelling a short interaction approach releases the script-owned W key',async()=>{
+    const {m,task}=await run({range:'仅4号',cancelWhileMoving:true});await assert.rejects(task,/cancelled/);
     assert.equal(m.held.size,0);assert.ok(m.history.some(e=>e[0]==='down'&&e[1]==='W'));
-    assert.ok(m.history.some(e=>e[0]==='up'&&e[1]==='W'));assert.ok(m.history.some(e=>e[0]==='clear-timer'));
+    assert.ok(m.history.some(e=>e[0]==='up'&&e[1]==='W'));
+    assert.equal(JSON.parse(m.writes.get('state.json')).completed['4'],undefined);
+  });
+  await test('native valley cancellation clears the owned story timer',async()=>{
+    const {m,task}=await run({range:'仅5→6',cancelNativePath:true});await assert.rejects(task,/cancelled/);
+    assert.ok(m.history.some(e=>e[0]==='clear-timer'));
     assert.equal(JSON.parse(m.writes.get('state.json')).completed['6'],undefined);
   });
   await test('story interruption waits, returns to 5, retries once, then verifies 6',async()=>{
@@ -154,10 +158,14 @@ async function run(options){const m=mock(options);const task=vm.runInNewContext(
     assert.equal(m.history.filter(e=>e[0]==='tp'&&e[1]===5).length,2);
     assert.ok(JSON.parse(m.writes.get('state.json')).completed['6']);
     assert.equal(m.ghostKeyCount,1);assert.equal(m.held.size,0);
+    for(const id of ['06-valley','06-spirit-approach'])assert.ok(m.history.some(e=>e[0]==='path'&&e[1].includes(id)));
+    assert.ok(!m.history.some(e=>e[0]==='down'));
   });
   await test('roof route uses two distinct 上行 interactions before the waypoint',async()=>{
     const {m,task}=await run({range:'仅4号'});await task;
     assert.equal(m.upCount,2);assert.ok(JSON.parse(m.writes.get('state.json')).completed['4']);
+    const orientation=m.history.find(e=>e[0]==='native-run')[1].positions[0];
+    assert.equal(orientation.x,plan.targets.find(p=>p.number===4).x);
   });
   await test('source origin and real teleport start for 9 are preserved',async()=>{
     assert.equal(plan.source.frameCount,15612);assert.equal(plan.special.domainStartTarget,7);
@@ -173,16 +181,16 @@ async function run(options){const m=mock(options);const task=vm.runInNewContext(
   await test('7–10 execution returns to 7 for the domain and 6 for the final descent',async()=>{
     const {m,task}=await run({range:'6—10'});await task;
     const teleports=m.history.filter(e=>e[0]==='tp').map(e=>e[1]);
-    assert.deepEqual(teleports,[3,6,7,7,6]);
+    assert.deepEqual(teleports,[6,7,7,6]);
     const state=JSON.parse(m.writes.get('state.json'));
     for(const n of [7,8,9,10])assert.ok(state.completed[String(n)]);
   });
-  await test('2560×1440 with 150% DPI uses native statue teleport and normalized OCR',async()=>{
+  await test('2560×1440 with 150% DPI skips statue selection and uses normalized OCR',async()=>{
     const {m,task}=await run({gameWidth:2560,gameHeight:1440,dpi:1.5,markerFor:3});await task;
     assert.ok(!m.history.some(e=>e[0]==='map-click'&&e[1]===3));
-    assert.deepEqual(m.history.find(e=>e[0]==='tp'),['tp',3,2]);
+    assert.deepEqual(m.history.find(e=>e[0]==='tp'),['tp',6,2]);
     const state=JSON.parse(m.writes.get('state.json'));
-    assert.equal(state.completed['3'].proof,'native-teleport-and-stable-position');
+    assert.equal(state.completed['3'],undefined);
     for(const [type,x,y,w,h] of m.history.filter(e=>e[0]==='ocr'))assert.ok(x>=0&&y>=0&&x+w<=1920&&y+h<=1080);
     const events=[...m.writes].filter(([n])=>n.endsWith('.jsonl.txt')).flatMap(([,v])=>v.trim().split('\n').map(JSON.parse));
     const environment=events.find(e=>e.type==='environment').detail;
@@ -204,14 +212,60 @@ async function run(options){const m=mock(options);const task=vm.runInNewContext(
     assert.ok(events.some(e=>e.type==='map-check'&&e.detail.number===7&&e.detail.result==='unknown'));
     assert.ok(!events.some(e=>e.type==='map-check'&&e.detail.number===7&&e.detail.result==='locked'));
   });
-  await test('a statue recognition failure is not reported as an unlit statue',async()=>{
-    const {m,task}=await run({nativeTpFailureFor:3});await assert.rejects(task,/不能据此判定未解锁/);
+  await test('a broken statue selector is never invoked and does not block the chosen route',async()=>{
+    const {m,task}=await run({nativeTpFailureFor:3,markerFor:3});await task;
     assert.equal(JSON.parse(m.writes.get('state.json')).completed['3'],undefined);
+    assert.ok(JSON.parse(m.writes.get('state.json')).completed['7']);
+    assert.ok(!m.history.some(e=>['tp','map-click'].includes(e[0])&&e[1]===3));
+  });
+  await test('native teleport to the wrong starting position cannot advance into navigation',async()=>{
+    const {m,task}=await run({wrongArrivalFor:6});await assert.rejects(task,/稳定/);
+    assert.equal(JSON.parse(m.writes.get('state.json')).completed['7'],undefined);
     assert.ok(!m.history.some(e=>e[0]==='path'));
   });
-  await test('native teleport to the wrong position cannot prove the statue is unlocked',async()=>{
-    const {m,task}=await run({wrongArrivalFor:3});await assert.rejects(task,/不能据此判定未解锁/);
-    assert.equal(JSON.parse(m.writes.get('state.json')).completed['3'],undefined);
+  await test('a silent native orientation failure prevents forward input at the lift exit',async()=>{
+    const {m,task}=await run({range:'仅4号',silentOrientationFailure:true});await assert.rejects(task,/原生方位点/);
+    assert.ok(m.history.some(e=>e[0]==='native-run'));
+    assert.ok(!m.history.some(e=>e[0]==='down'));
+    assert.equal(JSON.parse(m.writes.get('state.json')).completed['4'],undefined);
+  });
+  await test('new installations default to native self-check with no map or movement input',async()=>{
+    const {m,task}=await run({mode:''});await task;
+    const report=JSON.parse(m.writes.get('native-check.json'));
+    assert.equal(report.samples.length,4);
+    assert.deepEqual(report.summary,{defaultStable:true,siftStable:true,orientationReadable:true,matchersAgree:true});
+    assert.ok(!m.history.some(e=>['tp','map-click','path','native-run','down','press'].includes(e[0])));
+    assert.equal(m.writes.get('state.json'),undefined);
+    for(const e of m.history.filter(e=>e[0]==='position-read'))assert.equal(e.at(-1),0);
+  });
+  await test('native self-check distinguishes default matcher failure from successful SIFT',async()=>{
+    const {m,task}=await run({mode:'仅原生定位自检',defaultPositionError:true});await task;
+    const report=JSON.parse(m.writes.get('native-check.json'));
+    assert.equal(report.summary.defaultStable,false);assert.equal(report.summary.siftStable,true);
+    assert.match(report.samples[0].default.reason,/原生地图特征/);
+    assert.ok(m.history.some(e=>e[0]==='info'&&e[1].includes('地图追踪设置中选择 SIFT')));
+  });
+  await test('native API exceptions are recorded without claiming position recognition succeeded',async()=>{
+    const {m,task}=await run({mode:'仅原生定位自检',positionError:true});await task;
+    const report=JSON.parse(m.writes.get('native-check.json'));
+    assert.equal(report.summary.defaultStable,false);assert.equal(report.summary.siftStable,false);
+    assert.ok(!m.history.some(e=>['tp','map-click','path','native-run'].includes(e[0])));
+  });
+  await test('disagreeing native matchers are reported instead of proving an absolute position',async()=>{
+    const {m,task}=await run({mode:'仅原生定位自检',siftOffset:true});await task;
+    const report=JSON.parse(m.writes.get('native-check.json'));
+    assert.equal(report.summary.defaultStable,true);assert.equal(report.summary.siftStable,true);
+    assert.equal(report.summary.matchersAgree,false);
+  });
+  await test('zero coordinates and null orientation are invalid native readings',async()=>{
+    const {m,task}=await run({mode:'仅原生定位自检',zeroPosition:true,invalidOrientation:true});await task;
+    const report=JSON.parse(m.writes.get('native-check.json'));
+    assert.equal(report.summary.defaultStable,false);assert.equal(report.summary.siftStable,false);
+    assert.equal(report.summary.orientationReadable,false);
+  });
+  await test('native coordinate aliases support PascalCase-only hosts as well',async()=>{
+    const {m,task}=await run({mode:'仅原生定位自检',pascalCaseOnly:true});await task;
+    assert.equal(JSON.parse(m.writes.get('native-check.json')).summary.defaultStable,true);
   });
   console.log(`${passed} runner/package checks passed; host mocks are not real-game validation.`);
 })().catch(error=>{console.error(error);process.exitCode=1;});

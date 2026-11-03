@@ -46,7 +46,7 @@ python3 -m http.server 8001 --bind 127.0.0.1 --directory /workspace/genshin-vide
 - `nod-krai-p2.anchors.json`：来源版本、文件哈希、原始三维坐标、人工量取的地图像素、控制点标记。
 - `nod-krai-p2.targets.json`：按上述轴规则转换的目标坐标、地图变换与各点残差；不是导航文件。
 - `nod-krai-p2.study.json`：10 段时间轴、画面观察、证据时间戳、目标和待实机确认项。
-- `nod-krai-p2.navigation.json`：脚本使用的路线证据、每点来源与时间、目标和特殊交互信息。可用 `python3 tools/build_open_map.py --zip dist/伦波岛开图P2-0.2.1.zip` 复建导入包。
+- `nod-krai-p2.navigation.json`：脚本使用的路线证据、每点来源与时间、目标和特殊交互信息。可用 `python3 tools/build_open_map.py --zip dist/伦波岛开图P2-0.2.2.zip` 复建导入包。
 
 ## 对脚本实现有影响的观察
 
@@ -115,7 +115,7 @@ python3 tools/video_study.py export --study video-study/nod-krai-p2.study.json \
 
 该追踪器仅适配这条素材的分辨率、小地图布局和 SHA-256；不会把陌生视频套用同一标定。输出每帧状态、绝对匹配数、光流状态和位置估计，素材/原始审阅图不入 Git。绝对匹配缺口没有自动填成“已观测”位置。
 
-[BetterGI 路线格式](https://www.bettergi.com/dev/pathing-dev.html)、[脚本目录格式](https://www.bettergi.com/dev/js/create.html)、[OCR接口](https://www.bettergi.com/dev/js/rec.html)及 0.66.0 的 `Genshin`、`LimitedFile`、`CameraRotateTask` 接口源码已核对。[AutoPathingScript](https://github.com/babalae/better-genshin-impact/blob/0.66.0/BetterGenshinImpact/Core/Script/Dependence/AutoPathingScript.cs) 有捕获异常仅记录日志的路径，执行 JS 在每个路线片段后重新验证实际位置。目标解锁证据为对应面板的精确“传送”按钮，或原生传送成功并确认到达位置；0.2.1 改用后者预检神像，避免通用点选误开标记面板。没有连接真实原神或声称实机成功。
+[BetterGI 路线格式](https://www.bettergi.com/dev/pathing-dev.html)、[脚本目录格式](https://www.bettergi.com/dev/js/create.html)、[OCR接口](https://www.bettergi.com/dev/js/rec.html)及 0.66.0 的 `Genshin`、`LimitedFile`、`CameraRotateTask` 接口源码已核对。[AutoPathingScript](https://github.com/babalae/better-genshin-impact/blob/0.66.0/BetterGenshinImpact/Core/Script/Dependence/AutoPathingScript.cs) 有捕获异常仅记录日志的路径，执行JS在每个路线片段后重新验证实际位置。目标解锁证据为对应面板的精确“传送”按钮，或原生传送成功并确认到达位置。0.2.2 根据用户已确认神像点亮的前提跳过神像选点与传送，不新增其完成证明；新增无游戏输入的原生定位自检，转向使用原生 `orientation`，山谷也交给原生导航。原生传送仍沿用 BetterGI 的全局地图匹配设置。没有连接真实原神或声称实机成功。
 
 ## 验证
 
@@ -124,7 +124,7 @@ npm test                         # 17组现有引擎规则测试
 npm run test:video               # 13组新测试，包括实际FFmpeg合成媒体抽帧
 npm run test:browser             # 原沙盘Chromium交互回归
 npm run test:study-browser -- /workspace/genshin-video-study/review/review.html
-npm run test:bettergi             # 16组宿主模拟/包结构检查
+npm run test:bettergi             # 24组宿主模拟/包结构检查
 ```
 
 Python 测试涵盖分 P 校验、时间戳、坐标重排、地图残差、无效输入、缺失路线拒绝导出与 JSON 嵌入转义。合成测试视频仅用于抽帧合同校验，不代表真实路线成功。

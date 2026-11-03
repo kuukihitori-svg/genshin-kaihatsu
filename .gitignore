@@ -9,5 +9,6 @@ __pycache__/
 .venv*/
 video-study/local/
 bettergi/*/state.json
+bettergi/*/native-check.json
 bettergi/*/logs/
 dist/

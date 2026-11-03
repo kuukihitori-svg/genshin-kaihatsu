@@ -35,7 +35,7 @@ def build(archive=None):
         archive.parent.mkdir(parents=True, exist_ok=True)
         with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_DEFLATED) as zipped:
             for path in sorted(PACKAGE.rglob("*")):
-                if path.is_file() and not any(part in ("logs", "state.json") for part in path.relative_to(PACKAGE).parts):
+                if path.is_file() and not any(part in ("logs", "state.json", "native-check.json") for part in path.relative_to(PACKAGE).parts):
                     zipped.write(path, Path("伦波岛开图P2") / path.relative_to(PACKAGE))
         print(archive)
     print(f"Built {len(data['legs'])} BetterGI route fragments")

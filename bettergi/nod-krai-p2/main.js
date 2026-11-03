@@ -4,6 +4,9 @@
   const plan = JSON.parse(file.readTextSync('plan.json'));
   const target = number => plan.targets.find(item => item.number === number);
   const leg = id => plan.legs.find(item => item.id === id);
+  const mode = settings.mode || '仅原生定位自检';
+  if (!['仅原生定位自检', '执行开图路线'].includes(mode)) throw new Error('运行模式无效。');
+  const diagnostic = mode === '仅原生定位自检';
   const ranges = { '2—10': [2, 10], '4—10': [4, 10], '6—10': [6, 10], '仅6→7': [7, 7], '仅4号': [4, 4], '仅5→6': [6, 6] };
   const range = ranges[settings.range || '2—10'];
   if (!range || plan.schemaVersion !== 1) throw new Error('执行范围或路线版本无效。');
@@ -54,6 +57,7 @@
     finally { image.dispose(); }
     record('environment', environment);
     log.info(`窗口检查通过：${gameWidth}×${gameHeight}；识别截图 ${environment.captureWidth}×${environment.captureHeight}。`);
+    return environment;
   }
   function ocrBox(box) {
     const image = captureGameRegion();
@@ -69,17 +73,67 @@
       return items;
     } finally { image.dispose(); }
   }
+  function nativePoint(point) {
+    // Both aliases are exposed by BetterGI; prefer the script repository's x/y.
+    const x = point && (point.x === undefined ? point.X : point.x);
+    const y = point && (point.y === undefined ? point.Y : point.y);
+    if (x == null || y == null || !Number.isFinite(Number(x)) || !Number.isFinite(Number(y)) || (Number(x) === 0 && Number(y) === 0)) return null;
+    return { x: Number(x), y: Number(y) };
+  }
   function position() {
     try {
-      const point = genshin.getPositionFromMap('Teyvat', 0);
-      if (!point || !Number.isFinite(Number(point.X)) || !Number.isFinite(Number(point.Y)) || (Number(point.X) === 0 && Number(point.Y) === 0)) {
+      const point = nativePoint(genshin.getPositionFromMap('Teyvat', 0));
+      if (!point) {
         lastPositionReason = '地图定位返回空值或无效坐标'; return null;
       }
       lastPositionReason = null;
-      return { x: Number(point.X), y: Number(point.Y) };
+      return point;
     } catch (e) { if (stopped(e)) throw e; lastPositionReason = String(e.message || e); return null; }
   }
   function distance(a, b) { return Math.hypot(a.x-b.x, a.y-b.y); }
+  async function checkNativePosition(environment) {
+    const report = { schemaVersion: 1, checkedAt: new Date().toISOString(), bgiVersion: getVersion(), environment, samples: [], summary: null };
+    const read = fn => {
+      try {
+        const value = fn();
+        if (value == null) return { ok: false, reason: '原生接口返回空值或无效值' };
+        return { ok: true, value };
+      } catch (e) { if (stopped(e)) throw e; return { ok: false, reason: String(e.message || e) }; }
+    };
+    function stable(method) {
+      // Repeated native readings can establish consistency, not absolute accuracy.
+      return report.samples.length === 4 && report.samples.every((sample, i, list) =>
+        sample[method].ok && (!i || distance(sample[method].value, list[i-1][method].value) <= 8));
+    }
+    const describe = result => result.ok ? `(${result.value.x.toFixed(2)}, ${result.value.y.toFixed(2)})` : result.reason;
+    try {
+      log.info('仅原生定位自检：请保持角色静止、停留在游戏主界面。');
+      for (let i = 0; i < 4; i++) {
+        const sample = {
+          default: read(() => nativePoint(genshin.getPositionFromMap('Teyvat', 0))),
+          sift: read(() => nativePoint(genshin.getPositionFromMapWithMatchingMethod('Teyvat', 'SIFT', 0))),
+          orientation: read(() => {
+            const angle = genshin.getCameraOrientation();
+            return typeof angle === 'number' && Number.isFinite(angle) && angle >= 0 && angle < 360 ? angle : null;
+          })
+        };
+        report.samples.push(sample); record('native-check-sample', sample);
+        log.info(`原生自检 ${i+1}/4：默认=${describe(sample.default)}；SIFT=${describe(sample.sift)}；朝向=${sample.orientation.ok ? sample.orientation.value.toFixed(1)+'°' : sample.orientation.reason}`);
+        if (i < 3) await sleep(350);
+      }
+      const defaultStable = stable('default'), siftStable = stable('sift');
+      const orientationReadable = report.samples.every(sample => sample.orientation.ok);
+      const matchersAgree = defaultStable && siftStable && report.samples.every(sample => distance(sample.default.value, sample.sift.value) <= 8);
+      report.summary = { defaultStable, siftStable, orientationReadable, matchersAgree };
+      log.info(`原生自检结果：默认定位=${defaultStable ? '连续稳定' : '失败或不稳定'}；SIFT=${siftStable ? '连续稳定' : '失败或不稳定'}；朝向=${orientationReadable ? '可读取' : '读取失败'}。`);
+      if (defaultStable && siftStable && !matchersAgree) log.info('两种匹配得到的位置不一致，请核对实际站位和地图资源后再执行开图。');
+      if (!defaultStable && siftStable) log.info('SIFT 连续定位成功：请在 BetterGI 的地图追踪设置中选择 SIFT，再运行自检。脚本不会修改你的全局配置。');
+      if (!defaultStable && !siftStable) log.info('BetterGI 原生定位未得到连续稳定结果，请先检查游戏主界面、小地图方向、捕获窗口与地图资源。');
+    } finally {
+      if (!file.writeTextSync('native-check.json', JSON.stringify(report, null, 2))) throw error('无法保存原生自检报告。', 'IO');
+    }
+    log.info('原生自检结束，报告保存在脚本文件夹 native-check.json；此模式不会传送或执行路线。');
+  }
   async function stablePosition(expected, tolerance) {
     let previous = null;
     for (let i = 0; i < 6; i++) {
@@ -104,38 +158,27 @@
     return p;
   }
 
-  async function rotate(degrees) {
-    for (let attempt = 0; attempt < 35; attempt++) {
-      const current = Number(genshin.getCameraOrientation());
-      if (!Number.isFinite(current)) throw error('无法识别镜头朝向。', 'GPS');
-      const difference = ((current-degrees+540)%360)-180;
-      if (Math.abs(difference) <= 5) return;
-      const gain = Math.abs(difference)>90 ? 4 : Math.abs(difference)>30 ? 3 : 2;
-      moveMouseBy(Math.round(-gain*difference), 0); await sleep(80);
-    }
-    throw error('镜头转向未达到要求。', 'NAV');
-  }
   function bearing(from, to) {
-    // Route X increases west, Y north. CameraOrientation uses screen axes.
+    // Only a postcondition, never a mouse controller. Native orientation points
+    // perform the actual conversion, recognition, DPI scaling and camera motion.
     return (Math.atan2(-(to.y-from.y), -(to.x-from.x))*180/Math.PI+360)%360;
   }
-
-  // Short foreground movement for the story-sensitive valley. Each key burst is
-  // released before OCR/GPS polling, so dialogue immediately stops movement.
-  async function walkForeground(id, tolerance) {
-    release(); lastLeg = id; checkpoint();
-    for (const point of leg(id).points) {
-      const began = Date.now(); let best = Infinity, progressed = began;
-      while (true) {
-        const p = position();
-        if (!p) throw error('剧情或地图识别中断。', 'GPS');
-        const d = distance(p, point);
-        if (d <= (tolerance || 6)) break;
-        if (d > 100) throw error('当前位置偏离当前路线片段。', 'NAV');
-        if (d < best-1) { best = d; progressed = Date.now(); }
-        if (Date.now()-began > 45000 || Date.now()-progressed > 9000) throw error('山谷路段没有取得进展。', 'NAV');
-        await rotate(bearing(p, point)); await hold('W', 250);
-      }
+  async function faceTo(point) {
+    release();
+    const before = await stablePosition(null, 0);
+    await pathingScript.run(JSON.stringify({
+      info: { name: '原生方位点', type: 'collect', bgi_version: '0.66.0', map_name: 'Teyvat' },
+      positions: [{ x: point.x, y: point.y, type: 'orientation', move_mode: 'walk', action: '' }]
+    }));
+    // Native tasks may log a failure and return. Do not walk forward unless the
+    // camera really faces the target and the character stayed in place.
+    const after = await stablePosition(before, 8);
+    const angle = genshin.getCameraOrientation();
+    const expected = bearing(after, point);
+    const difference = Math.abs(((angle-expected+540)%360)-180);
+    record('native-orientation', { target: { x: point.x, y: point.y }, angle, expected, difference });
+    if (typeof angle !== 'number' || !Number.isFinite(angle) || distance(after, point) < 1 || difference > 8) {
+      throw error('BetterGI 原生方位点未通过朝向核验，停止向前移动。', 'NAV');
     }
   }
 
@@ -235,8 +278,8 @@
       await sleep(floor === 0 ? 7000 : 22000);
       record('lift-up', { floor: floor+1 });
     }
-    const p = await stablePosition(plan.special.lift, 10);
-    await rotate(bearing(p, target(4)));
+    await stablePosition(plan.special.lift, 10);
+    await faceTo(target(4));
     for (let i = 0; i < 20; i++) {
       if (interactionRow(/传送锚点/)) return;
       await hold('W', 200);
@@ -247,7 +290,7 @@
   async function dropToFive() {
     const p = await navigate('05-glide', 12);
     if (distance(p, target(5)) > 30) throw error('未抵达5号点上方崖边。', 'NAV');
-    await rotate(bearing(p, target(5)));
+    await faceTo(target(5));
     // The final short descent can enter an unrevealed cave minimap. Keep it
     // bounded and require the actual waypoint F prompt before declaring arrival.
     for (let i = 0; i < 20; i++) {
@@ -277,7 +320,7 @@
     try {
       for (let attempt = 0; attempt < 2; attempt++) {
         try {
-          await walkForeground('06-valley'); await walkForeground('06-spirit-approach', 2.5);
+          await navigate('06-valley', 6); await navigate('06-spirit-approach', 2.5);
           // The source explicitly uses T for 空月之灵; this is not a character skill.
           keyPress('T'); await sleep(600); keyPress('SPACE'); await sleep(500);
           await navigate('06-platform', 10); return;
@@ -291,20 +334,24 @@
   }
 
   try {
-    if (file.isExists('state.json')) {
+    if (!diagnostic && file.isExists('state.json')) {
       try {
         const previous = JSON.parse(file.readTextSync('state.json'));
         if (previous.schemaVersion === 1 && previous.sourceSha256 === state.sourceSha256 && previous.completed && typeof previous.completed === 'object') state = previous;
       } catch (_) { /* A malformed checkpoint cannot skip live verification. */ }
     }
-    file.createDirectory('logs'); checkpoint({ runId, selectedRange: range, status: 'running' });
-    record('run-start', { version: getVersion(), packageVersion: plan.packageVersion, range, source: plan.source.sourceSha256 });
-    checkEnvironment();
-    stage = 3;
-    // The user confirmed this statue is unlocked. Probe it with icon-aware native
-    // teleport, not a raw map click that can open the custom-pin editor below it.
-    await verifyByTeleport(3);
-    await complete(3);
+    file.createDirectory('logs');
+    record('run-start', { version: getVersion(), packageVersion: plan.packageVersion, mode, range, source: plan.source.sourceSha256 });
+    log.info(`伦波岛开图 P2 ${plan.packageVersion}；${mode}。`);
+    const environment = checkEnvironment();
+    if (diagnostic) { await checkNativePosition(environment); return; }
+    checkpoint({ runId, selectedRange: range, status: 'running' });
+    // The user confirmed that the statue is lit. Opening its map panel is not a
+    // prerequisite for native minimap localization or for the selected leg.
+    // Do not manufacture a live completion proof for this skipped prerequisite.
+    await genshin.returnMainUi();
+    record('native-initial-position', await stablePosition(null, 0));
+    log.info('按账号前提跳过3号神像点选与传送；从所选路段开始，不新增神像核验记录。');
     for (stage = range[0]; stage <= range[1]; stage++) {
       checkpoint();
       if (stage === 3) continue;
@@ -323,9 +370,12 @@
     log.info('本次选择范围内的目标已逐点核验可传送。');
   } catch (e) {
     release();
-    try { snapshot('failed'); } catch (_) {}
-    try { checkpoint({ status: 'stopped', lastError: String(e.message || e) }); record('stopped', String(e.message || e)); } catch (_) {}
-    log.error('开图停止：' + String(e.message || e));
+    if (!diagnostic) {
+      try { snapshot('failed'); } catch (_) {}
+      try { checkpoint({ status: 'stopped', lastError: String(e.message || e) }); } catch (_) {}
+    }
+    try { record('stopped', String(e.message || e)); } catch (_) {}
+    log.error((diagnostic ? '原生自检停止：' : '开图停止：') + String(e.message || e));
     throw e;
   } finally { release(); }
 })();
