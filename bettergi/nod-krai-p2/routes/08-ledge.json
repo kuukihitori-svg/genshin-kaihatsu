@@ -1,0 +1,23 @@
+{
+  "info": {
+    "name": "7号锚点→起飞边缘（视频恢复，待实机验收）",
+    "type": "collect",
+    "bgi_version": "0.66.0"
+  },
+  "positions": [
+    {
+      "x": 9880.881,
+      "y": 1717.402,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9880.046,
+      "y": 1711.315,
+      "move_mode": "walk",
+      "type": "target",
+      "action": ""
+    }
+  ]
+}

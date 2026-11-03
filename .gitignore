@@ -8,3 +8,6 @@ Thumbs.db
 __pycache__/
 .venv*/
 video-study/local/
+bettergi/*/state.json
+bettergi/*/logs/
+dist/

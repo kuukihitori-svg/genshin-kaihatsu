@@ -1,0 +1,11 @@
+{
+  "manifest_version": 1,
+  "name": "伦波岛开图 P2（视频路线实验版）",
+  "version": "0.2.0",
+  "bgi_version": "0.66.0",
+  "description": "根据 BV1XSHDzqE2h P2 恢复的伦波岛锚点路线。适用于神像已点亮、起点可传送的账号；支持升降台、剧情恢复、逐点核验与断点记录，尚待实机验收。",
+  "authors": [{"name": "kuukihitori-svg", "link": "https://github.com/kuukihitori-svg/genshin-kaihatsu"}],
+  "settings_ui": "settings.json",
+  "main": "main.js",
+  "saved_files": ["state.json", "logs/*"]
+}

@@ -1,0 +1,15 @@
+[
+  {
+    "name": "range",
+    "type": "select",
+    "label": "执行范围（神像须已点亮）",
+    "options": ["2—10", "4—10", "6—10", "仅6→7", "仅4号", "仅5→6"],
+    "default": "2—10"
+  },
+  {
+    "name": "storyTimeoutSeconds",
+    "type": "input-text",
+    "label": "剧情等待上限（秒，30至600）",
+    "default": "180"
+  }
+]

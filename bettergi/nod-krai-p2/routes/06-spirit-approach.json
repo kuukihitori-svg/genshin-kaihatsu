@@ -1,0 +1,37 @@
+{
+  "info": {
+    "name": "路口左转→空月之灵与攀升装置（视频恢复，待实机验收）",
+    "type": "collect",
+    "bgi_version": "0.66.0"
+  },
+  "positions": [
+    {
+      "x": 9638.766,
+      "y": 1799.294,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9642.969,
+      "y": 1805.491,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9650.945,
+      "y": 1808.317,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9663.713,
+      "y": 1813.411,
+      "move_mode": "walk",
+      "type": "target",
+      "action": ""
+    }
+  ]
+}

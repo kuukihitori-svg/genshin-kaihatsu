@@ -1,0 +1,149 @@
+{
+  "info": {
+    "name": "4号高处→镇外草地→崖边（视频恢复，待实机验收）",
+    "type": "collect",
+    "bgi_version": "0.66.0"
+  },
+  "positions": [
+    {
+      "x": 9538.577,
+      "y": 1636.015,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9541.762,
+      "y": 1639.26,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9545.908,
+      "y": 1643.325,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9550.412,
+      "y": 1647.191,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9554.952,
+      "y": 1651.032,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9559.484,
+      "y": 1654.862,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9564.027,
+      "y": 1658.757,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9568.471,
+      "y": 1662.819,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9572.756,
+      "y": 1666.918,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9577.203,
+      "y": 1670.973,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9581.833,
+      "y": 1674.792,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9586.569,
+      "y": 1678.469,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9591.542,
+      "y": 1682.347,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9596.239,
+      "y": 1685.979,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9600.958,
+      "y": 1689.658,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9605.208,
+      "y": 1693.189,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9610.204,
+      "y": 1697.363,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9623.596,
+      "y": 1708.362,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9633.553,
+      "y": 1714.46,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9639.143,
+      "y": 1717.606,
+      "move_mode": "walk",
+      "type": "target",
+      "action": ""
+    }
+  ]
+}

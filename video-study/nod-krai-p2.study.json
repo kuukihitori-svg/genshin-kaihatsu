@@ -10,7 +10,7 @@
   },
   "durationSeconds": 520.405333,
   "mediaSha256": "1c19533c7177731b8d26f8474d3091c6289effb73313595f9dcd030ef71b1447",
-  "status": "evidence_annotated_routes_unresolved",
+  "status": "script_experimental_ready_for_game_validation",
   "reviewScope": {
     "samples": 105,
     "sampleIntervalSeconds": 5,
@@ -59,7 +59,9 @@
         "gallery": "../details/map/frames.html"
       }
     ],
-    "notice": "完整时长做5秒采样审阅；关键区间按原帧率抽取，并检查代表帧。未逐一人工查看全部视频帧。"
+    "notice": "完整时长做5秒采样审阅；关键区间按原帧率抽取，并检查代表帧。未逐一人工查看全部视频帧。",
+    "decodedFrameCount": 15612,
+    "framesWithPositionEstimate": 7544
   },
   "segments": [
     {
@@ -139,8 +141,7 @@
         }
       ],
       "unknowns": [
-        "台阶入口、转角及平台的中间坐标尚未恢复",
-        "95秒附近的画面转变不能当作连续按键时长"
+        "原录小地图未揭开，街道中间点从编号图人工量取，需首轮实机校准"
       ],
       "outcome": {
         "status": "observed_in_video",
@@ -191,8 +192,7 @@
         }
       ],
       "unknowns": [
-        "升降台终点与花状装置的操作规则、前置状态待确认",
-        "弹跳或特殊移动的落点及神像激活检查尚未实现"
+        "用户已确认神像点亮；执行脚本只核验已有解锁，不重放此绕行"
       ],
       "outcome": {
         "status": "observed_in_video",
@@ -251,8 +251,7 @@
         }
       ],
       "unknowns": [
-        "回镇传送目标与升降台到站判据尚未写入宿主",
-        "需恢复升降台入口、上行选择与出口坐标"
+        "中间路线已据视频恢复，三维碰撞、站位和交互仍待实机验证"
       ],
       "outcome": {
         "status": "observed_in_video",
@@ -270,7 +269,9 @@
         "source": "nod-krai-p2.targets.json"
       },
       "route": {
-        "status": "unresolved",
+        "status": "reconstructed_not_game_validated",
+        "package": "bettergi/nod-krai-p2",
+        "coordinateSystem": "bettergi-pathing-v1",
         "positions": []
       }
     },
@@ -307,8 +308,7 @@
         }
       ],
       "unknowns": [
-        "起飞点、降落点和避开崖壁的中间路线待恢复",
-        "滑翔体力要求尚未验证"
+        "中间路线已据视频恢复，三维碰撞、站位和交互仍待实机验证"
       ],
       "outcome": {
         "status": "observed_in_video",
@@ -326,7 +326,9 @@
         "source": "nod-krai-p2.targets.json"
       },
       "route": {
-        "status": "unresolved",
+        "status": "reconstructed_not_game_validated",
+        "package": "bettergi/nod-krai-p2",
+        "coordinateSystem": "bettergi-pathing-v1",
         "positions": []
       }
     },
@@ -375,9 +377,8 @@
         }
       ],
       "unknowns": [
-        "触发的剧情/任务名称与账号前置尚未证实",
-        "剧情阻塞、装置交互与特殊移动必须独立处理",
-        "该段不可直接按视频秒数重放移动"
+        "中间路线已据视频恢复，三维碰撞、站位和交互仍待实机验证",
+        "剧情等待与返回5号恢复逻辑已实现，但当前账号的实际剧情时长尚未实测"
       ],
       "outcome": {
         "status": "observed_in_video",
@@ -395,7 +396,9 @@
         "source": "nod-krai-p2.targets.json"
       },
       "route": {
-        "status": "unresolved",
+        "status": "reconstructed_not_game_validated",
+        "package": "bettergi/nod-krai-p2",
+        "coordinateSystem": "bettergi-pathing-v1",
         "positions": []
       }
     },
@@ -428,7 +431,7 @@
         }
       ],
       "unknowns": [
-        "道路转折与平台入口的中间坐标待恢复"
+        "中间路线已据视频恢复，三维碰撞、站位和交互仍待实机验证"
       ],
       "outcome": {
         "status": "observed_in_video",
@@ -446,7 +449,9 @@
         "source": "nod-krai-p2.targets.json"
       },
       "route": {
-        "status": "unresolved",
+        "status": "reconstructed_not_game_validated",
+        "package": "bettergi/nod-krai-p2",
+        "coordinateSystem": "bettergi-pathing-v1",
         "positions": []
       }
     },
@@ -475,8 +480,8 @@
         }
       ],
       "unknowns": [
-        "长距离滑翔的起落点、碰撞与体力需求待验证",
-        "工坊入口附近可能需要局部避障"
+        "中间路线已据视频恢复，三维碰撞、站位和交互仍待实机验证",
+        "412—430秒缺少可靠绝对位置；仅对已检查连续性的滑翔做插值"
       ],
       "outcome": {
         "status": "observed_in_video",
@@ -494,16 +499,18 @@
         "source": "nod-krai-p2.targets.json"
       },
       "route": {
-        "status": "unresolved",
+        "status": "reconstructed_not_game_validated",
+        "package": "bettergi/nod-krai-p2",
+        "coordinateSystem": "bettergi-pathing-v1",
         "positions": []
       }
     },
     {
       "id": "point-09",
-      "title": "8→9：无光的深都秘境门",
+      "title": "8→7→9：返回高处后前往无光的深都",
       "startSeconds": 438,
       "endSeconds": 490,
-      "observation": "先在地图查看无光的深都，再从工坊平台一侧滑翔至石制秘境门附近。475.5秒出现F交互提示，476秒门纹仍红，476.5秒门纹转蓝。作者叠加计数在实际门交互前已经增加，不能作为成功检测依据。",
+      "observation": "开完8号后先在地图查看无光的深都，然后传回7号高处平台，从该平台滑翔至秘境。475.5秒出现F提示，476秒门纹仍红，476.5秒门纹转蓝；作者叠加计数提前增加，不能作为成功检测。",
       "evidence": [
         {
           "timeSeconds": 440,
@@ -511,7 +518,7 @@
         },
         {
           "timeSeconds": 450,
-          "description": "从工坊平台出发"
+          "description": "已传回7号高处平台，从高处出发"
         },
         {
           "timeSeconds": 465,
@@ -543,9 +550,7 @@
         }
       ],
       "unknowns": [
-        "秘境开放等级与任务要求需要宿主检查",
-        "滑翔落点及门前站位尚未转换成可走路线",
-        "解锁应检测门纹或详情状态，不能依赖视频叠加计数"
+        "中间路线已据视频恢复，三维碰撞、站位和交互仍待实机验证"
       ],
       "outcome": {
         "status": "observed_in_video",
@@ -563,7 +568,9 @@
         "source": "nod-krai-p2.targets.json"
       },
       "route": {
-        "status": "unresolved",
+        "status": "reconstructed_not_game_validated",
+        "package": "bettergi/nod-krai-p2",
+        "coordinateSystem": "bettergi-pathing-v1",
         "positions": []
       }
     },
@@ -608,8 +615,7 @@
         }
       ],
       "unknowns": [
-        "回程传送和上坡路径的中间坐标待恢复",
-        "需区分附近敌人/伤害显示与锚点解锁条件"
+        "中间路线已据视频恢复，三维碰撞、站位和交互仍待实机验证"
       ],
       "outcome": {
         "status": "observed_in_video",
@@ -627,7 +633,9 @@
         "source": "nod-krai-p2.targets.json"
       },
       "route": {
-        "status": "unresolved",
+        "status": "reconstructed_not_game_validated",
+        "package": "bettergi/nod-krai-p2",
+        "coordinateSystem": "bettergi-pathing-v1",
         "positions": []
       }
     }

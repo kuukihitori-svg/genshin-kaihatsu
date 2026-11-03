@@ -1,0 +1,177 @@
+{
+  "info": {
+    "name": "6→7 沿道路到起重设备平台（视频恢复，待实机验收）",
+    "type": "collect",
+    "bgi_version": "0.66.0"
+  },
+  "positions": [
+    {
+      "x": 9731.011,
+      "y": 1810.07,
+      "move_mode": "run",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9735.599,
+      "y": 1806.613,
+      "move_mode": "run",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9743.636,
+      "y": 1801.734,
+      "move_mode": "run",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9750.242,
+      "y": 1797.491,
+      "move_mode": "run",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9759.152,
+      "y": 1792.112,
+      "move_mode": "run",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9766.688,
+      "y": 1787.282,
+      "move_mode": "run",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9776.198,
+      "y": 1781.76,
+      "move_mode": "run",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9783.338,
+      "y": 1777.151,
+      "move_mode": "run",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9791.819,
+      "y": 1771.827,
+      "move_mode": "run",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9798.517,
+      "y": 1767.667,
+      "move_mode": "run",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9807.025,
+      "y": 1762.396,
+      "move_mode": "run",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9811.381,
+      "y": 1759.634,
+      "move_mode": "run",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9816.696,
+      "y": 1756.428,
+      "move_mode": "run",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9823.292,
+      "y": 1752.224,
+      "move_mode": "run",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9829.856,
+      "y": 1748.329,
+      "move_mode": "run",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9834.002,
+      "y": 1745.693,
+      "move_mode": "run",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9838.0,
+      "y": 1743.097,
+      "move_mode": "run",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9842.229,
+      "y": 1741.195,
+      "move_mode": "run",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9847.365,
+      "y": 1738.022,
+      "move_mode": "run",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9854.343,
+      "y": 1733.571,
+      "move_mode": "run",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9860.748,
+      "y": 1729.792,
+      "move_mode": "run",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9867.081,
+      "y": 1725.859,
+      "move_mode": "run",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9873.994,
+      "y": 1721.589,
+      "move_mode": "run",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9873.979,
+      "y": 1717.405,
+      "move_mode": "run",
+      "type": "target",
+      "action": ""
+    }
+  ]
+}

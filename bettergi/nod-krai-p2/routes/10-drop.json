@@ -1,0 +1,86 @@
+{
+  "info": {
+    "name": "崖边滑翔→10号锚点（视频恢复，待实机验收）",
+    "type": "collect",
+    "bgi_version": "0.66.0"
+  },
+  "positions": [
+    {
+      "x": 9727.891,
+      "y": 1860.193,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9731.68,
+      "y": 1868.777,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9734.213,
+      "y": 1874.365,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9736.557,
+      "y": 1879.867,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9738.678,
+      "y": 1885.511,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9740.643,
+      "y": 1891.029,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9742.222,
+      "y": 1896.079,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9741.513,
+      "y": 1902.71,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9744.919,
+      "y": 1907.576,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9747.427,
+      "y": 1911.868,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9745.46,
+      "y": 1912.69,
+      "move_mode": "fly",
+      "type": "target",
+      "action": "stop_flying"
+    }
+  ]
+}

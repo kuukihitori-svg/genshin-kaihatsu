@@ -1,0 +1,1517 @@
+{
+  "schemaVersion": 1,
+  "packageVersion": "0.2.0-experimental",
+  "source": {
+    "sourceSha256": "1c19533c7177731b8d26f8474d3091c6289effb73313595f9dcd030ef71b1447",
+    "frameCount": 15612,
+    "decodedEveryFrame": true,
+    "fps": 30,
+    "framesWithPose": 7544,
+    "absoluteMatchFrames": 256,
+    "method": "All frames decoded; SIFT/RANSAC absolute anchors plus adjacent-frame Lucas–Kanade tracking; north-up reference map calibrated from sourced teleport IDs.",
+    "humanReview": "路线连续性联系表、关键区间代表原帧和自动转写交叉核对；不声称人工逐一看完15612帧。",
+    "limitations": [
+      "黑图原录的1→2仅能用编号图人工量点；用户已确认自己账号神像已亮，运行时必须能地图定位。",
+      "7→8滑翔中段有绝对定位缺口，连续飞行插值已标明。",
+      "3号已亮，直接核验，不重放原录的升降台与空月之灵绕行。",
+      "剧情首次触发可能比剪辑后的录像长，超时停止并保留恢复点。"
+    ]
+  },
+  "accountPrerequisite": {
+    "lunboStatueLit": true,
+    "introQuestMayBeIncomplete": true
+  },
+  "targets": [
+    {
+      "number": 1,
+      "tpId": 1681,
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "x": 9364.397,
+      "y": 1425.7,
+      "height": 204.3502
+    },
+    {
+      "number": 2,
+      "tpId": 1730,
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "x": 9452.11,
+      "y": 1661.607,
+      "height": 228.067
+    },
+    {
+      "number": 3,
+      "tpId": 1516,
+      "name": "新月神像",
+      "type": "Goddess",
+      "x": 9496.254,
+      "y": 1731.14,
+      "height": 226.0192
+    },
+    {
+      "number": 4,
+      "tpId": 1682,
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "x": 9528.84,
+      "y": 1628.45,
+      "height": 304.981
+    },
+    {
+      "number": 5,
+      "tpId": 1736,
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "x": 9658.44,
+      "y": 1729.82,
+      "height": 206.6315
+    },
+    {
+      "number": 6,
+      "tpId": 1726,
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "x": 9728.011,
+      "y": 1808.961,
+      "height": 256.4443
+    },
+    {
+      "number": 7,
+      "tpId": 1727,
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "x": 9873.979,
+      "y": 1717.405,
+      "height": 261.1723
+    },
+    {
+      "number": 8,
+      "tpId": 1719,
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "x": 10021.3,
+      "y": 1538.585,
+      "height": 204.326
+    },
+    {
+      "number": 9,
+      "tpId": 1690,
+      "name": "无光的深都",
+      "type": "MasteryDomain",
+      "x": 9971.47,
+      "y": 1828.78,
+      "height": 203.31
+    },
+    {
+      "number": 10,
+      "tpId": 1728,
+      "name": "传送锚点",
+      "type": "TeleportWaypoint",
+      "x": 9745.46,
+      "y": 1912.69,
+      "height": 201.1212
+    }
+  ],
+  "legs": [
+    {
+      "id": "02-town",
+      "name": "1→2 那夏镇台阶与街道",
+      "sourceRange": [
+        49,
+        107
+      ],
+      "quality": "approximate-guide-map",
+      "notice": "录像小地图未揭开，中间点人工量取自编号图，须首次实机调试。观景点为可选内容，脚本不交互。",
+      "points": [
+        {
+          "x": 9363.294,
+          "y": 1427.859,
+          "move_mode": "walk",
+          "timeSeconds": 2,
+          "origin": "guide-map"
+        },
+        {
+          "x": 9362.625,
+          "y": 1458.673,
+          "move_mode": "walk",
+          "timeSeconds": 2,
+          "origin": "guide-map"
+        },
+        {
+          "x": 9359.275,
+          "y": 1487.479,
+          "move_mode": "walk",
+          "timeSeconds": 2,
+          "origin": "guide-map"
+        },
+        {
+          "x": 9361.955,
+          "y": 1514.944,
+          "move_mode": "walk",
+          "timeSeconds": 2,
+          "origin": "guide-map"
+        },
+        {
+          "x": 9369.993,
+          "y": 1543.08,
+          "move_mode": "walk",
+          "timeSeconds": 2,
+          "origin": "guide-map"
+        },
+        {
+          "x": 9382.721,
+          "y": 1570.545,
+          "move_mode": "walk",
+          "timeSeconds": 2,
+          "origin": "guide-map"
+        },
+        {
+          "x": 9396.119,
+          "y": 1594.661,
+          "move_mode": "walk",
+          "timeSeconds": 2,
+          "origin": "guide-map"
+        },
+        {
+          "x": 9410.187,
+          "y": 1613.418,
+          "move_mode": "walk",
+          "timeSeconds": 2,
+          "origin": "guide-map"
+        },
+        {
+          "x": 9429.613,
+          "y": 1629.495,
+          "move_mode": "walk",
+          "timeSeconds": 2,
+          "origin": "guide-map"
+        },
+        {
+          "x": 9447.701,
+          "y": 1640.883,
+          "move_mode": "walk",
+          "timeSeconds": 2,
+          "origin": "guide-map"
+        },
+        {
+          "x": 9452.11,
+          "y": 1661.607,
+          "move_mode": "walk",
+          "timeSeconds": 107,
+          "origin": "source-tp"
+        }
+      ]
+    },
+    {
+      "id": "04-lift-approach",
+      "name": "2号锚点→商店右侧→升降台",
+      "sourceRange": [
+        165,
+        199
+      ],
+      "points": [
+        {
+          "x": 9458.792,
+          "y": 1659.259,
+          "move_mode": "walk",
+          "timeSeconds": 165,
+          "origin": "sift",
+          "inliers": 12
+        },
+        {
+          "x": 9463.214,
+          "y": 1656.904,
+          "move_mode": "walk",
+          "timeSeconds": 169,
+          "origin": "sift",
+          "inliers": 10
+        },
+        {
+          "x": 9474.143,
+          "y": 1646.265,
+          "move_mode": "walk",
+          "timeSeconds": 172,
+          "origin": "sift",
+          "inliers": 8
+        },
+        {
+          "x": 9480.13,
+          "y": 1641.84,
+          "move_mode": "walk",
+          "timeSeconds": 173,
+          "origin": "sift",
+          "inliers": 13
+        },
+        {
+          "x": 9480.854,
+          "y": 1636.953,
+          "move_mode": "walk",
+          "timeSeconds": 174,
+          "origin": "sift",
+          "inliers": 11
+        },
+        {
+          "x": 9483.618,
+          "y": 1627.386,
+          "move_mode": "walk",
+          "timeSeconds": 175,
+          "origin": "sift",
+          "inliers": 19
+        },
+        {
+          "x": 9485.547,
+          "y": 1623.309,
+          "move_mode": "walk",
+          "timeSeconds": 175.333,
+          "origin": "sift",
+          "inliers": 18
+        },
+        {
+          "x": 9486.59,
+          "y": 1618.14,
+          "move_mode": "walk",
+          "timeSeconds": 176.0,
+          "origin": "sift",
+          "inliers": 18
+        },
+        {
+          "x": 9489.267,
+          "y": 1613.3,
+          "move_mode": "walk",
+          "timeSeconds": 177.0,
+          "origin": "sift",
+          "inliers": 24
+        },
+        {
+          "x": 9493.025,
+          "y": 1604.81,
+          "move_mode": "walk",
+          "timeSeconds": 178.0,
+          "origin": "sift",
+          "inliers": 25
+        },
+        {
+          "x": 9495.105,
+          "y": 1600.34,
+          "move_mode": "walk",
+          "timeSeconds": 179.0,
+          "origin": "sift",
+          "inliers": 29
+        },
+        {
+          "x": 9499.948,
+          "y": 1600.112,
+          "move_mode": "walk",
+          "timeSeconds": 180.0,
+          "origin": "sift",
+          "inliers": 28
+        },
+        {
+          "x": 9506.347,
+          "y": 1602.833,
+          "move_mode": "walk",
+          "timeSeconds": 181.0,
+          "origin": "sift",
+          "inliers": 26
+        },
+        {
+          "x": 9513.728,
+          "y": 1606.408,
+          "move_mode": "walk",
+          "timeSeconds": 182.0,
+          "origin": "sift",
+          "inliers": 25
+        },
+        {
+          "x": 9516.958,
+          "y": 1610.943,
+          "move_mode": "walk",
+          "timeSeconds": 183.0,
+          "origin": "sift",
+          "inliers": 20
+        },
+        {
+          "x": 9515.139,
+          "y": 1615.21,
+          "move_mode": "walk",
+          "timeSeconds": 192.0,
+          "origin": "sift",
+          "inliers": 19
+        },
+        {
+          "x": 9517.41,
+          "y": 1619.598,
+          "move_mode": "walk",
+          "timeSeconds": 193.0,
+          "origin": "sift",
+          "inliers": 22
+        },
+        {
+          "x": 9521.067,
+          "y": 1626.257,
+          "move_mode": "walk",
+          "timeSeconds": 195.0,
+          "origin": "sift",
+          "inliers": 16
+        },
+        {
+          "x": 9523.956,
+          "y": 1631.063,
+          "move_mode": "walk",
+          "timeSeconds": 196.0,
+          "origin": "sift",
+          "inliers": 25
+        },
+        {
+          "x": 9527.788,
+          "y": 1638.603,
+          "move_mode": "walk",
+          "timeSeconds": 197.0,
+          "origin": "sift",
+          "inliers": 22
+        },
+        {
+          "x": 9530.857,
+          "y": 1642.495,
+          "move_mode": "walk",
+          "timeSeconds": 198.0,
+          "origin": "sift",
+          "inliers": 31
+        }
+      ]
+    },
+    {
+      "id": "05-glide",
+      "name": "4号高处→镇外草地→崖边",
+      "sourceRange": [
+        243,
+        267
+      ],
+      "points": [
+        {
+          "x": 9538.577,
+          "y": 1636.015,
+          "move_mode": "walk",
+          "timeSeconds": 243.0,
+          "origin": "sift",
+          "inliers": 24
+        },
+        {
+          "x": 9541.762,
+          "y": 1639.26,
+          "move_mode": "walk",
+          "timeSeconds": 245.0,
+          "origin": "sift",
+          "inliers": 25
+        },
+        {
+          "x": 9545.908,
+          "y": 1643.325,
+          "move_mode": "fly",
+          "timeSeconds": 246.0,
+          "origin": "sift",
+          "inliers": 23
+        },
+        {
+          "x": 9550.412,
+          "y": 1647.191,
+          "move_mode": "fly",
+          "timeSeconds": 247.0,
+          "origin": "sift",
+          "inliers": 26
+        },
+        {
+          "x": 9554.952,
+          "y": 1651.032,
+          "move_mode": "fly",
+          "timeSeconds": 248.0,
+          "origin": "sift",
+          "inliers": 25
+        },
+        {
+          "x": 9559.484,
+          "y": 1654.862,
+          "move_mode": "fly",
+          "timeSeconds": 249.0,
+          "origin": "sift",
+          "inliers": 30
+        },
+        {
+          "x": 9564.027,
+          "y": 1658.757,
+          "move_mode": "fly",
+          "timeSeconds": 250.0,
+          "origin": "sift",
+          "inliers": 42
+        },
+        {
+          "x": 9568.471,
+          "y": 1662.819,
+          "move_mode": "fly",
+          "timeSeconds": 251.0,
+          "origin": "sift",
+          "inliers": 49
+        },
+        {
+          "x": 9572.756,
+          "y": 1666.918,
+          "move_mode": "fly",
+          "timeSeconds": 252.0,
+          "origin": "sift",
+          "inliers": 47
+        },
+        {
+          "x": 9577.203,
+          "y": 1670.973,
+          "move_mode": "fly",
+          "timeSeconds": 253.0,
+          "origin": "sift",
+          "inliers": 51
+        },
+        {
+          "x": 9581.833,
+          "y": 1674.792,
+          "move_mode": "fly",
+          "timeSeconds": 254.0,
+          "origin": "sift",
+          "inliers": 42
+        },
+        {
+          "x": 9586.569,
+          "y": 1678.469,
+          "move_mode": "fly",
+          "timeSeconds": 255.0,
+          "origin": "sift",
+          "inliers": 39
+        },
+        {
+          "x": 9591.542,
+          "y": 1682.347,
+          "move_mode": "fly",
+          "timeSeconds": 256.0,
+          "origin": "sift",
+          "inliers": 31
+        },
+        {
+          "x": 9596.239,
+          "y": 1685.979,
+          "move_mode": "fly",
+          "timeSeconds": 257.0,
+          "origin": "sift",
+          "inliers": 16
+        },
+        {
+          "x": 9600.958,
+          "y": 1689.658,
+          "move_mode": "fly",
+          "timeSeconds": 258.0,
+          "origin": "sift",
+          "inliers": 22
+        },
+        {
+          "x": 9605.208,
+          "y": 1693.189,
+          "move_mode": "fly",
+          "timeSeconds": 260.0,
+          "origin": "sift",
+          "inliers": 17
+        },
+        {
+          "x": 9610.204,
+          "y": 1697.363,
+          "move_mode": "walk",
+          "timeSeconds": 261.0,
+          "origin": "sift",
+          "inliers": 16
+        },
+        {
+          "x": 9623.596,
+          "y": 1708.362,
+          "move_mode": "walk",
+          "timeSeconds": 262.667,
+          "origin": "sift",
+          "inliers": 65
+        },
+        {
+          "x": 9633.553,
+          "y": 1714.46,
+          "move_mode": "walk",
+          "timeSeconds": 264.0,
+          "origin": "sift",
+          "inliers": 77
+        },
+        {
+          "x": 9639.143,
+          "y": 1717.606,
+          "move_mode": "walk",
+          "timeSeconds": 265.0,
+          "origin": "sift",
+          "inliers": 70
+        }
+      ]
+    },
+    {
+      "id": "06-valley",
+      "name": "5号锚点→山谷十字路口",
+      "sourceRange": [
+        320,
+        331
+      ],
+      "points": [
+        {
+          "x": 9661.441,
+          "y": 1725.845,
+          "move_mode": "walk",
+          "timeSeconds": 320.0,
+          "origin": "sift",
+          "inliers": 54
+        },
+        {
+          "x": 9658.27,
+          "y": 1731.117,
+          "move_mode": "walk",
+          "timeSeconds": 322.0,
+          "origin": "sift",
+          "inliers": 48
+        },
+        {
+          "x": 9655.618,
+          "y": 1740.597,
+          "move_mode": "walk",
+          "timeSeconds": 323.0,
+          "origin": "sift",
+          "inliers": 34
+        },
+        {
+          "x": 9654.325,
+          "y": 1747.225,
+          "move_mode": "walk",
+          "timeSeconds": 324.0,
+          "origin": "sift",
+          "inliers": 45
+        },
+        {
+          "x": 9653.925,
+          "y": 1755.922,
+          "move_mode": "walk",
+          "timeSeconds": 325.0,
+          "origin": "sift",
+          "inliers": 42
+        },
+        {
+          "x": 9652.742,
+          "y": 1765.514,
+          "move_mode": "walk",
+          "timeSeconds": 326.0,
+          "origin": "sift",
+          "inliers": 43
+        },
+        {
+          "x": 9649.739,
+          "y": 1770.23,
+          "move_mode": "walk",
+          "timeSeconds": 327.0,
+          "origin": "sift",
+          "inliers": 48
+        },
+        {
+          "x": 9644.93,
+          "y": 1779.275,
+          "move_mode": "walk",
+          "timeSeconds": 328.0,
+          "origin": "sift",
+          "inliers": 57
+        },
+        {
+          "x": 9641.914,
+          "y": 1787.172,
+          "move_mode": "walk",
+          "timeSeconds": 329.0,
+          "origin": "sift",
+          "inliers": 58
+        },
+        {
+          "x": 9639.953,
+          "y": 1791.9,
+          "move_mode": "walk",
+          "timeSeconds": 330.0,
+          "origin": "sift",
+          "inliers": 43
+        }
+      ]
+    },
+    {
+      "id": "06-spirit-approach",
+      "name": "路口左转→空月之灵与攀升装置",
+      "sourceRange": [
+        331,
+        335
+      ],
+      "points": [
+        {
+          "x": 9638.766,
+          "y": 1799.294,
+          "move_mode": "walk",
+          "timeSeconds": 331.0,
+          "origin": "sift",
+          "inliers": 56
+        },
+        {
+          "x": 9642.969,
+          "y": 1805.491,
+          "move_mode": "walk",
+          "timeSeconds": 332.0,
+          "origin": "sift",
+          "inliers": 47
+        },
+        {
+          "x": 9650.945,
+          "y": 1808.317,
+          "move_mode": "walk",
+          "timeSeconds": 333.0,
+          "origin": "sift",
+          "inliers": 46
+        },
+        {
+          "x": 9663.713,
+          "y": 1813.411,
+          "move_mode": "walk",
+          "timeSeconds": 335.0,
+          "origin": "sift",
+          "inliers": 41
+        }
+      ]
+    },
+    {
+      "id": "06-platform",
+      "name": "特殊移动后→训练场锚点",
+      "sourceRange": [
+        340,
+        347
+      ],
+      "points": [
+        {
+          "x": 9675.828,
+          "y": 1816.019,
+          "move_mode": "climb",
+          "timeSeconds": 340.0,
+          "origin": "sift",
+          "inliers": 36
+        },
+        {
+          "x": 9685.54,
+          "y": 1816.714,
+          "move_mode": "climb",
+          "timeSeconds": 341.0,
+          "origin": "sift",
+          "inliers": 41
+        },
+        {
+          "x": 9693.316,
+          "y": 1815.555,
+          "move_mode": "climb",
+          "timeSeconds": 342.0,
+          "origin": "sift",
+          "inliers": 41
+        },
+        {
+          "x": 9698.578,
+          "y": 1813.943,
+          "move_mode": "climb",
+          "timeSeconds": 343.0,
+          "origin": "sift",
+          "inliers": 42
+        },
+        {
+          "x": 9706.989,
+          "y": 1811.239,
+          "move_mode": "climb",
+          "timeSeconds": 345.0,
+          "origin": "sift",
+          "inliers": 39
+        },
+        {
+          "x": 9715.793,
+          "y": 1810.248,
+          "move_mode": "climb",
+          "timeSeconds": 346.0,
+          "origin": "sift",
+          "inliers": 35
+        },
+        {
+          "x": 9728.011,
+          "y": 1808.961,
+          "move_mode": "climb",
+          "timeSeconds": 347,
+          "origin": "source-tp"
+        }
+      ]
+    },
+    {
+      "id": "07-road",
+      "name": "6→7 沿道路到起重设备平台",
+      "sourceRange": [
+        360,
+        385
+      ],
+      "points": [
+        {
+          "x": 9731.011,
+          "y": 1810.07,
+          "move_mode": "run",
+          "timeSeconds": 360.0,
+          "origin": "sift",
+          "inliers": 49
+        },
+        {
+          "x": 9735.599,
+          "y": 1806.613,
+          "move_mode": "run",
+          "timeSeconds": 363.0,
+          "origin": "sift",
+          "inliers": 40
+        },
+        {
+          "x": 9743.636,
+          "y": 1801.734,
+          "move_mode": "run",
+          "timeSeconds": 364.0,
+          "origin": "sift",
+          "inliers": 33
+        },
+        {
+          "x": 9750.242,
+          "y": 1797.491,
+          "move_mode": "run",
+          "timeSeconds": 365.0,
+          "origin": "sift",
+          "inliers": 37
+        },
+        {
+          "x": 9759.152,
+          "y": 1792.112,
+          "move_mode": "run",
+          "timeSeconds": 366.0,
+          "origin": "sift",
+          "inliers": 44
+        },
+        {
+          "x": 9766.688,
+          "y": 1787.282,
+          "move_mode": "run",
+          "timeSeconds": 367.0,
+          "origin": "sift",
+          "inliers": 53
+        },
+        {
+          "x": 9776.198,
+          "y": 1781.76,
+          "move_mode": "run",
+          "timeSeconds": 368.0,
+          "origin": "sift",
+          "inliers": 28
+        },
+        {
+          "x": 9783.338,
+          "y": 1777.151,
+          "move_mode": "run",
+          "timeSeconds": 369.0,
+          "origin": "sift",
+          "inliers": 43
+        },
+        {
+          "x": 9791.819,
+          "y": 1771.827,
+          "move_mode": "run",
+          "timeSeconds": 370.0,
+          "origin": "sift",
+          "inliers": 37
+        },
+        {
+          "x": 9798.517,
+          "y": 1767.667,
+          "move_mode": "run",
+          "timeSeconds": 371.0,
+          "origin": "sift",
+          "inliers": 43
+        },
+        {
+          "x": 9807.025,
+          "y": 1762.396,
+          "move_mode": "run",
+          "timeSeconds": 372.0,
+          "origin": "sift",
+          "inliers": 40
+        },
+        {
+          "x": 9811.381,
+          "y": 1759.634,
+          "move_mode": "run",
+          "timeSeconds": 373.0,
+          "origin": "sift",
+          "inliers": 53
+        },
+        {
+          "x": 9816.696,
+          "y": 1756.428,
+          "move_mode": "run",
+          "timeSeconds": 374.0,
+          "origin": "sift",
+          "inliers": 47
+        },
+        {
+          "x": 9823.292,
+          "y": 1752.224,
+          "move_mode": "run",
+          "timeSeconds": 375.0,
+          "origin": "sift",
+          "inliers": 55
+        },
+        {
+          "x": 9829.856,
+          "y": 1748.329,
+          "move_mode": "run",
+          "timeSeconds": 376.0,
+          "origin": "sift",
+          "inliers": 59
+        },
+        {
+          "x": 9834.002,
+          "y": 1745.693,
+          "move_mode": "run",
+          "timeSeconds": 377.0,
+          "origin": "sift",
+          "inliers": 48
+        },
+        {
+          "x": 9838.0,
+          "y": 1743.097,
+          "move_mode": "run",
+          "timeSeconds": 378.0,
+          "origin": "sift",
+          "inliers": 53
+        },
+        {
+          "x": 9842.229,
+          "y": 1741.195,
+          "move_mode": "run",
+          "timeSeconds": 379.0,
+          "origin": "sift",
+          "inliers": 50
+        },
+        {
+          "x": 9847.365,
+          "y": 1738.022,
+          "move_mode": "run",
+          "timeSeconds": 380.0,
+          "origin": "sift",
+          "inliers": 51
+        },
+        {
+          "x": 9854.343,
+          "y": 1733.571,
+          "move_mode": "run",
+          "timeSeconds": 381.0,
+          "origin": "sift",
+          "inliers": 59
+        },
+        {
+          "x": 9860.748,
+          "y": 1729.792,
+          "move_mode": "run",
+          "timeSeconds": 382.0,
+          "origin": "sift",
+          "inliers": 46
+        },
+        {
+          "x": 9867.081,
+          "y": 1725.859,
+          "move_mode": "run",
+          "timeSeconds": 383.0,
+          "origin": "sift",
+          "inliers": 58
+        },
+        {
+          "x": 9873.994,
+          "y": 1721.589,
+          "move_mode": "run",
+          "timeSeconds": 384.0,
+          "origin": "sift",
+          "inliers": 56
+        },
+        {
+          "x": 9873.979,
+          "y": 1717.405,
+          "move_mode": "run",
+          "timeSeconds": 385,
+          "origin": "source-tp"
+        }
+      ]
+    },
+    {
+      "id": "08-ledge",
+      "name": "7号锚点→起飞边缘",
+      "sourceRange": [
+        394,
+        398
+      ],
+      "points": [
+        {
+          "x": 9880.881,
+          "y": 1717.402,
+          "move_mode": "walk",
+          "timeSeconds": 394.0,
+          "origin": "sift",
+          "inliers": 59
+        },
+        {
+          "x": 9880.046,
+          "y": 1711.315,
+          "move_mode": "walk",
+          "timeSeconds": 395.0,
+          "origin": "sift",
+          "inliers": 56
+        }
+      ]
+    },
+    {
+      "id": "08-flight",
+      "name": "平台滑翔→工坊门前",
+      "sourceRange": [
+        400,
+        434
+      ],
+      "points": [
+        {
+          "x": 9886.388,
+          "y": 1701.17,
+          "move_mode": "fly",
+          "timeSeconds": 400.0,
+          "origin": "sift",
+          "inliers": 51
+        },
+        {
+          "x": 9890.398,
+          "y": 1696.916,
+          "move_mode": "fly",
+          "timeSeconds": 401.0,
+          "origin": "sift",
+          "inliers": 68
+        },
+        {
+          "x": 9894.566,
+          "y": 1692.43,
+          "move_mode": "fly",
+          "timeSeconds": 402.0,
+          "origin": "sift",
+          "inliers": 57
+        },
+        {
+          "x": 9898.746,
+          "y": 1688.048,
+          "move_mode": "fly",
+          "timeSeconds": 403.0,
+          "origin": "sift",
+          "inliers": 67
+        },
+        {
+          "x": 9902.811,
+          "y": 1683.71,
+          "move_mode": "fly",
+          "timeSeconds": 404.0,
+          "origin": "sift",
+          "inliers": 57
+        },
+        {
+          "x": 9906.904,
+          "y": 1679.393,
+          "move_mode": "fly",
+          "timeSeconds": 405.0,
+          "origin": "sift",
+          "inliers": 56
+        },
+        {
+          "x": 9910.955,
+          "y": 1674.99,
+          "move_mode": "fly",
+          "timeSeconds": 406.0,
+          "origin": "sift",
+          "inliers": 58
+        },
+        {
+          "x": 9915.106,
+          "y": 1670.67,
+          "move_mode": "fly",
+          "timeSeconds": 407.0,
+          "origin": "sift",
+          "inliers": 50
+        },
+        {
+          "x": 9921.271,
+          "y": 1660.981,
+          "move_mode": "fly",
+          "timeSeconds": 408.834,
+          "origin": "sift",
+          "inliers": 10
+        },
+        {
+          "x": 9930.971,
+          "y": 1652.805,
+          "move_mode": "fly",
+          "timeSeconds": 411,
+          "origin": "continuous-flight"
+        },
+        {
+          "x": 9942.846,
+          "y": 1639.272,
+          "move_mode": "fly",
+          "timeSeconds": 414,
+          "origin": "continuous-flight"
+        },
+        {
+          "x": 9954.721,
+          "y": 1625.74,
+          "move_mode": "fly",
+          "timeSeconds": 417,
+          "origin": "continuous-flight"
+        },
+        {
+          "x": 9966.596,
+          "y": 1612.208,
+          "move_mode": "fly",
+          "timeSeconds": 420,
+          "origin": "continuous-flight"
+        },
+        {
+          "x": 9978.471,
+          "y": 1598.676,
+          "move_mode": "fly",
+          "timeSeconds": 423,
+          "origin": "continuous-flight"
+        },
+        {
+          "x": 9990.346,
+          "y": 1585.143,
+          "move_mode": "fly",
+          "timeSeconds": 426,
+          "origin": "continuous-flight"
+        },
+        {
+          "x": 10002.222,
+          "y": 1571.611,
+          "move_mode": "fly",
+          "timeSeconds": 429,
+          "origin": "continuous-flight"
+        },
+        {
+          "x": 10006.181,
+          "y": 1567.099,
+          "move_mode": "fly",
+          "timeSeconds": 430.0,
+          "origin": "sift",
+          "inliers": 9
+        },
+        {
+          "x": 10011.192,
+          "y": 1559.387,
+          "move_mode": "fly",
+          "timeSeconds": 431.0,
+          "origin": "sift",
+          "inliers": 9
+        },
+        {
+          "x": 10015.678,
+          "y": 1550.37,
+          "move_mode": "fly",
+          "timeSeconds": 432.0,
+          "origin": "sift",
+          "inliers": 11
+        },
+        {
+          "x": 10021.3,
+          "y": 1538.585,
+          "move_mode": "fly",
+          "timeSeconds": 434,
+          "origin": "source-tp",
+          "action": "stop_flying"
+        }
+      ],
+      "notice": "412–430秒缺少可靠绝对匹配；插值仅用于逐帧确认无剪辑、方向连续的滑翔区间，须实机检查体力和碰撞。"
+    },
+    {
+      "id": "09-domain",
+      "name": "返回7号高处平台→无光的深都",
+      "sourceRange": [
+        450,
+        476
+      ],
+      "points": [
+        {
+          "x": 9889.656,
+          "y": 1719.575,
+          "move_mode": "walk",
+          "timeSeconds": 450.0,
+          "origin": "sift",
+          "inliers": 50
+        },
+        {
+          "x": 9896.554,
+          "y": 1725.926,
+          "move_mode": "fly",
+          "timeSeconds": 453.0,
+          "origin": "sift",
+          "inliers": 60
+        },
+        {
+          "x": 9901.298,
+          "y": 1729.513,
+          "move_mode": "fly",
+          "timeSeconds": 454.0,
+          "origin": "sift",
+          "inliers": 60
+        },
+        {
+          "x": 9906.883,
+          "y": 1736.05,
+          "move_mode": "fly",
+          "timeSeconds": 455.0,
+          "origin": "sift",
+          "inliers": 59
+        },
+        {
+          "x": 9910.316,
+          "y": 1740.855,
+          "move_mode": "fly",
+          "timeSeconds": 456.0,
+          "origin": "sift",
+          "inliers": 57
+        },
+        {
+          "x": 9913.87,
+          "y": 1745.727,
+          "move_mode": "fly",
+          "timeSeconds": 457.0,
+          "origin": "sift",
+          "inliers": 66
+        },
+        {
+          "x": 9917.131,
+          "y": 1750.677,
+          "move_mode": "fly",
+          "timeSeconds": 458.0,
+          "origin": "sift",
+          "inliers": 49
+        },
+        {
+          "x": 9920.532,
+          "y": 1755.658,
+          "move_mode": "fly",
+          "timeSeconds": 459.0,
+          "origin": "sift",
+          "inliers": 65
+        },
+        {
+          "x": 9923.941,
+          "y": 1760.575,
+          "move_mode": "fly",
+          "timeSeconds": 460.0,
+          "origin": "sift",
+          "inliers": 55
+        },
+        {
+          "x": 9927.208,
+          "y": 1765.576,
+          "move_mode": "fly",
+          "timeSeconds": 461.0,
+          "origin": "sift",
+          "inliers": 68
+        },
+        {
+          "x": 9930.759,
+          "y": 1770.461,
+          "move_mode": "fly",
+          "timeSeconds": 462.0,
+          "origin": "sift",
+          "inliers": 59
+        },
+        {
+          "x": 9932.861,
+          "y": 1774.936,
+          "move_mode": "fly",
+          "timeSeconds": 463.167,
+          "origin": "sift",
+          "inliers": 11
+        },
+        {
+          "x": 9935.698,
+          "y": 1779.109,
+          "move_mode": "fly",
+          "timeSeconds": 464.0,
+          "origin": "sift",
+          "inliers": 11
+        },
+        {
+          "x": 9939.169,
+          "y": 1783.999,
+          "move_mode": "fly",
+          "timeSeconds": 465.0,
+          "origin": "sift",
+          "inliers": 12
+        },
+        {
+          "x": 9942.601,
+          "y": 1788.866,
+          "move_mode": "fly",
+          "timeSeconds": 466.0,
+          "origin": "sift",
+          "inliers": 10
+        },
+        {
+          "x": 9944.965,
+          "y": 1794.324,
+          "move_mode": "fly",
+          "timeSeconds": 467.0,
+          "origin": "sift",
+          "inliers": 10
+        },
+        {
+          "x": 9951.58,
+          "y": 1804.003,
+          "move_mode": "fly",
+          "timeSeconds": 469.0,
+          "origin": "sift",
+          "inliers": 12
+        },
+        {
+          "x": 9955.358,
+          "y": 1808.387,
+          "move_mode": "fly",
+          "timeSeconds": 470.0,
+          "origin": "sift",
+          "inliers": 8
+        },
+        {
+          "x": 9957.928,
+          "y": 1811.98,
+          "move_mode": "fly",
+          "timeSeconds": 472.0,
+          "origin": "sift",
+          "inliers": 10
+        },
+        {
+          "x": 9964.36,
+          "y": 1821.787,
+          "move_mode": "fly",
+          "timeSeconds": 474.0,
+          "origin": "sift",
+          "inliers": 12
+        },
+        {
+          "x": 9970.716,
+          "y": 1829.168,
+          "move_mode": "fly",
+          "timeSeconds": 475.167,
+          "origin": "sift",
+          "inliers": 50
+        },
+        {
+          "x": 9971.47,
+          "y": 1828.78,
+          "move_mode": "fly",
+          "timeSeconds": 476,
+          "origin": "source-tp",
+          "action": "stop_flying"
+        }
+      ]
+    },
+    {
+      "id": "10-uphill",
+      "name": "返回6号→上坡至崖边",
+      "sourceRange": [
+        494,
+        502
+      ],
+      "points": [
+        {
+          "x": 9714.742,
+          "y": 1805.182,
+          "move_mode": "walk",
+          "timeSeconds": 494.167,
+          "origin": "sift",
+          "inliers": 20
+        },
+        {
+          "x": 9716.613,
+          "y": 1814.315,
+          "move_mode": "walk",
+          "timeSeconds": 497.0,
+          "origin": "sift",
+          "inliers": 45
+        },
+        {
+          "x": 9717.691,
+          "y": 1818.849,
+          "move_mode": "walk",
+          "timeSeconds": 498.0,
+          "origin": "sift",
+          "inliers": 48
+        },
+        {
+          "x": 9719.784,
+          "y": 1829.187,
+          "move_mode": "walk",
+          "timeSeconds": 499.0,
+          "origin": "sift",
+          "inliers": 43
+        },
+        {
+          "x": 9720.72,
+          "y": 1835.932,
+          "move_mode": "walk",
+          "timeSeconds": 500.0,
+          "origin": "sift",
+          "inliers": 52
+        },
+        {
+          "x": 9722.943,
+          "y": 1844.548,
+          "move_mode": "walk",
+          "timeSeconds": 501.0,
+          "origin": "sift",
+          "inliers": 48
+        },
+        {
+          "x": 9725.427,
+          "y": 1852.28,
+          "move_mode": "walk",
+          "timeSeconds": 502.0,
+          "origin": "sift",
+          "inliers": 54
+        }
+      ]
+    },
+    {
+      "id": "10-drop",
+      "name": "崖边滑翔→10号锚点",
+      "sourceRange": [
+        503,
+        517
+      ],
+      "points": [
+        {
+          "x": 9727.891,
+          "y": 1860.193,
+          "move_mode": "fly",
+          "timeSeconds": 503.0,
+          "origin": "sift",
+          "inliers": 54
+        },
+        {
+          "x": 9731.68,
+          "y": 1868.777,
+          "move_mode": "fly",
+          "timeSeconds": 505.0,
+          "origin": "sift",
+          "inliers": 51
+        },
+        {
+          "x": 9734.213,
+          "y": 1874.365,
+          "move_mode": "fly",
+          "timeSeconds": 506.0,
+          "origin": "sift",
+          "inliers": 69
+        },
+        {
+          "x": 9736.557,
+          "y": 1879.867,
+          "move_mode": "fly",
+          "timeSeconds": 507.0,
+          "origin": "sift",
+          "inliers": 69
+        },
+        {
+          "x": 9738.678,
+          "y": 1885.511,
+          "move_mode": "fly",
+          "timeSeconds": 508.0,
+          "origin": "sift",
+          "inliers": 72
+        },
+        {
+          "x": 9740.643,
+          "y": 1891.029,
+          "move_mode": "fly",
+          "timeSeconds": 509.0,
+          "origin": "sift",
+          "inliers": 67
+        },
+        {
+          "x": 9742.222,
+          "y": 1896.079,
+          "move_mode": "fly",
+          "timeSeconds": 510.0,
+          "origin": "sift",
+          "inliers": 64
+        },
+        {
+          "x": 9741.513,
+          "y": 1902.71,
+          "move_mode": "fly",
+          "timeSeconds": 514.0,
+          "origin": "sift",
+          "inliers": 82
+        },
+        {
+          "x": 9744.919,
+          "y": 1907.576,
+          "move_mode": "fly",
+          "timeSeconds": 515.0,
+          "origin": "sift",
+          "inliers": 49
+        },
+        {
+          "x": 9747.427,
+          "y": 1911.868,
+          "move_mode": "fly",
+          "timeSeconds": 516.0,
+          "origin": "sift",
+          "inliers": 61
+        },
+        {
+          "x": 9745.46,
+          "y": 1912.69,
+          "move_mode": "fly",
+          "timeSeconds": 517,
+          "origin": "source-tp",
+          "action": "stop_flying"
+        }
+      ]
+    }
+  ],
+  "special": {
+    "lift": {
+      "x": 9532.8,
+      "y": 1644.1,
+      "sourceSeconds": [
+        199,
+        210,
+        231
+      ],
+      "upPresses": 2
+    },
+    "spiritKey": {
+      "key": "T",
+      "sourceSeconds": [
+        126.9,
+        283.2,
+        335
+      ]
+    },
+    "domainStartTarget": 7,
+    "finalStartTarget": 6,
+    "initialStatueTarget": 3
+  },
+  "verification": "Exact 传送 button in the selected map panel; no success from pathing return or author overlay count."
+}

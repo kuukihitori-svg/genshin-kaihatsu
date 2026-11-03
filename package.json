@@ -10,7 +10,9 @@
     "test:browser": "node sandbox/test-browser.cjs",
     "test:video": "python3 tools/test_video_study.py",
     "test:study-browser": "node video-study/test-browser.cjs",
-    "study": "python3 tools/video_study.py"
+    "study": "python3 tools/video_study.py",
+    "build:bettergi": "python3 tools/build_open_map.py",
+    "test:bettergi": "node bettergi/test-runner.cjs"
   },
   "engines": {
     "node": ">=18"

@@ -1,0 +1,79 @@
+{
+  "info": {
+    "name": "5号锚点→山谷十字路口（视频恢复，待实机验收）",
+    "type": "collect",
+    "bgi_version": "0.66.0"
+  },
+  "positions": [
+    {
+      "x": 9661.441,
+      "y": 1725.845,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9658.27,
+      "y": 1731.117,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9655.618,
+      "y": 1740.597,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9654.325,
+      "y": 1747.225,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9653.925,
+      "y": 1755.922,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9652.742,
+      "y": 1765.514,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9649.739,
+      "y": 1770.23,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9644.93,
+      "y": 1779.275,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9641.914,
+      "y": 1787.172,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9639.953,
+      "y": 1791.9,
+      "move_mode": "walk",
+      "type": "target",
+      "action": ""
+    }
+  ]
+}

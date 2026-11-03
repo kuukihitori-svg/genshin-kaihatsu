@@ -45,7 +45,7 @@ function validate(candidate){
 function render(){
  $('segments').replaceChildren();
  const unresolved=study.segments.filter(s=>s.unknowns.length||s.route?.status!=='reviewed').length;
- $('route-status').textContent=`${study.segments.length} 个分段；${unresolved} 段待补齐路线或条件。`;
+ $('route-status').textContent=`${study.segments.length} 个分段；${unresolved} 段存在待确认项。`;
  for(const s of study.segments){
   const box=el('article',undefined,'segment');box.dataset.segment=s.id;
   const title=el('button',`${stamp(s.startSeconds)} — ${s.title}`);title.onclick=()=>seek(s.startSeconds);box.append(title,el('p',s.observation));
