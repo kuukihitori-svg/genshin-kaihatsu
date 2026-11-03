@@ -1,0 +1,59 @@
+{
+  "info": {
+    "name": "6号台阶下方→连续斜坡与台阶（步行变体，待实机验收）（视频恢复，待实机验收）",
+    "type": "collect",
+    "bgi_version": "0.66.0",
+    "map_name": "Teyvat"
+  },
+  "positions": [
+    {
+      "x": 9692.346,
+      "y": 1817.571,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9696.944,
+      "y": 1816.005,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9702.281,
+      "y": 1815.436,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9705.34,
+      "y": 1813.43,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9710.647,
+      "y": 1812.624,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9715.379,
+      "y": 1812.286,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9721.098,
+      "y": 1812.554,
+      "move_mode": "walk",
+      "type": "target",
+      "action": ""
+    }
+  ]
+}

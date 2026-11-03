@@ -1,0 +1,292 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "bvid": "BV1XSHDzqE2h",
+    "page": 2,
+    "url": "https://www.bilibili.com/video/BV1XSHDzqE2h/?p=2"
+  },
+  "reference": {
+    "repository": "babalae/better-genshin-impact",
+    "ref": "0.66.0",
+    "path": "BetterGenshinImpact/GameTask/AutoTrackPath/Assets/tp.json",
+    "dataVersion": "d8ab29ce843fe7f2a41aa63458fd020a9da130ff",
+    "sha256": "e5060e56ba27ec31d2dc89afc9262914cf6682774dea3a3587d421c213665149",
+    "axesSource": "https://github.com/babalae/better-genshin-impact/blob/0.66.0/BetterGenshinImpact/GameTask/AutoTrackPath/Model/GiWorldPosition.cs",
+    "axesSourceBlobSha": "bb1611580bbd032abc10e78769434ccbc08cab1a"
+  },
+  "frame": {
+    "timeSeconds": 2,
+    "width": 1920,
+    "height": 1080,
+    "measurement": "编号静态地图上的白色标记中心；人工从960×540预览量取后乘2，约2–4px测量误差"
+  },
+  "coordinateSystem": "bettergi-pathing-v1",
+  "mapLayer": "Teyvat/surface",
+  "status": "targets_aligned_only",
+  "notice": "目标对应关系已按地图核对；不包含中间可走路线、碰撞和交互验证。",
+  "transform": {
+    "pixelsPerGameUnit": 1.4927831646226815,
+    "originPixelX": 15409.368276388024,
+    "originPixelY": 3043.483200402044,
+    "formula": "pixelX=originPixelX-scale*pathingX; pixelY=originPixelY-scale*pathingY"
+  },
+  "maxResidualPixels": 4.2438,
+  "points": [
+    {
+      "videoPointNumber": 1,
+      "tpId": 1681,
+      "type": "TeleportWaypoint",
+      "name": "传送锚点",
+      "areas": [
+        "伦波岛",
+        "那夏镇"
+      ],
+      "worldPosition": [
+        1425.7,
+        204.3502,
+        9364.397
+      ],
+      "pixel": {
+        "x": 1432,
+        "y": 912
+      },
+      "control": true,
+      "pathing": {
+        "x": 9364.397,
+        "y": 1425.7,
+        "height": 204.3502
+      },
+      "residualPixels": 3.6183
+    },
+    {
+      "videoPointNumber": 2,
+      "tpId": 1730,
+      "type": "TeleportWaypoint",
+      "name": "传送锚点",
+      "areas": [
+        "伦波岛",
+        "那夏镇"
+      ],
+      "worldPosition": [
+        1661.607,
+        228.067,
+        9452.11
+      ],
+      "pixel": {
+        "x": 1300,
+        "y": 564
+      },
+      "control": false,
+      "pathing": {
+        "x": 9452.11,
+        "y": 1661.607,
+        "height": 228.067
+      },
+      "residualPixels": 1.1022
+    },
+    {
+      "videoPointNumber": 3,
+      "tpId": 1516,
+      "type": "Goddess",
+      "name": "新月神像",
+      "areas": [
+        "伦波岛"
+      ],
+      "worldPosition": [
+        1731.14,
+        226.0192,
+        9496.254
+      ],
+      "pixel": {
+        "x": 1234,
+        "y": 460
+      },
+      "control": true,
+      "pathing": {
+        "x": 9496.254,
+        "y": 1731.14,
+        "height": 226.0192
+      },
+      "residualPixels": 0.8765
+    },
+    {
+      "videoPointNumber": 4,
+      "tpId": 1682,
+      "type": "TeleportWaypoint",
+      "name": "传送锚点",
+      "areas": [
+        "伦波岛",
+        "那夏镇"
+      ],
+      "worldPosition": [
+        1628.45,
+        304.981,
+        9528.84
+      ],
+      "pixel": {
+        "x": 1184,
+        "y": 616
+      },
+      "control": false,
+      "pathing": {
+        "x": 9528.84,
+        "y": 1628.45,
+        "height": 304.981
+      },
+      "residualPixels": 3.5494
+    },
+    {
+      "videoPointNumber": 5,
+      "tpId": 1736,
+      "type": "TeleportWaypoint",
+      "name": "传送锚点",
+      "areas": [
+        "伦波岛"
+      ],
+      "worldPosition": [
+        1729.82,
+        206.6315,
+        9658.44
+      ],
+      "pixel": {
+        "x": 990,
+        "y": 460
+      },
+      "control": false,
+      "pathing": {
+        "x": 9658.44,
+        "y": 1729.82,
+        "height": 206.6315
+      },
+      "residualPixels": 1.877
+    },
+    {
+      "videoPointNumber": 6,
+      "tpId": 1726,
+      "type": "TeleportWaypoint",
+      "name": "传送锚点",
+      "areas": [
+        "伦波岛",
+        "北方训练场"
+      ],
+      "worldPosition": [
+        1808.961,
+        256.4443,
+        9728.011
+      ],
+      "pixel": {
+        "x": 888,
+        "y": 340
+      },
+      "control": false,
+      "pathing": {
+        "x": 9728.011,
+        "y": 1808.961,
+        "height": 256.4443
+      },
+      "residualPixels": 3.1282
+    },
+    {
+      "videoPointNumber": 7,
+      "tpId": 1727,
+      "type": "TeleportWaypoint",
+      "name": "传送锚点",
+      "areas": [
+        "伦波岛",
+        "北方训练场"
+      ],
+      "worldPosition": [
+        1717.405,
+        261.1723,
+        9873.979
+      ],
+      "pixel": {
+        "x": 670,
+        "y": 484
+      },
+      "control": false,
+      "pathing": {
+        "x": 9873.979,
+        "y": 1717.405,
+        "height": 261.1723
+      },
+      "residualPixels": 4.2438
+    },
+    {
+      "videoPointNumber": 8,
+      "tpId": 1719,
+      "type": "TeleportWaypoint",
+      "name": "传送锚点",
+      "areas": [
+        "伦波岛",
+        "叮铃哐啷蛋卷工坊"
+      ],
+      "worldPosition": [
+        1538.585,
+        204.326,
+        10021.3
+      ],
+      "pixel": {
+        "x": 448,
+        "y": 750
+      },
+      "control": false,
+      "pathing": {
+        "x": 10021.3,
+        "y": 1538.585,
+        "height": 204.326
+      },
+      "residualPixels": 3.7225
+    },
+    {
+      "videoPointNumber": 9,
+      "tpId": 1690,
+      "type": "MasteryDomain",
+      "name": "无光的深都",
+      "areas": [
+        "伦波岛"
+      ],
+      "worldPosition": [
+        1828.78,
+        203.31,
+        9971.47
+      ],
+      "pixel": {
+        "x": 522,
+        "y": 316
+      },
+      "control": true,
+      "pathing": {
+        "x": 9971.47,
+        "y": 1828.78,
+        "height": 203.31
+      },
+      "residualPixels": 3.273
+    },
+    {
+      "videoPointNumber": 10,
+      "tpId": 1728,
+      "type": "TeleportWaypoint",
+      "name": "传送锚点",
+      "areas": [
+        "伦波岛"
+      ],
+      "worldPosition": [
+        1912.69,
+        201.1212,
+        9745.46
+      ],
+      "pixel": {
+        "x": 862,
+        "y": 188
+      },
+      "control": false,
+      "pathing": {
+        "x": 9745.46,
+        "y": 1912.69,
+        "height": 201.1212
+      },
+      "residualPixels": 0.5512
+    }
+  ]
+}

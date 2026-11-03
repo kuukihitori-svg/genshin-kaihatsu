@@ -1,0 +1,59 @@
+{
+  "info": {
+    "name": "返回7号高处平台→无光的深都（视频恢复，待实机验收）",
+    "type": "collect",
+    "bgi_version": "0.66.0",
+    "map_name": "Teyvat"
+  },
+  "positions": [
+    {
+      "x": 9908.851,
+      "y": 1742.021,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9912.041,
+      "y": 1746.941,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9915.043,
+      "y": 1750.985,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9917.816,
+      "y": 1755.194,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9920.68,
+      "y": 1759.312,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9923.492,
+      "y": 1763.422,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9926.359,
+      "y": 1767.589,
+      "move_mode": "walk",
+      "type": "target",
+      "action": ""
+    }
+  ]
+}

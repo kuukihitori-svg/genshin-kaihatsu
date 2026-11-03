@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "bvid": "BV1XSHDzqE2h",
+    "page": 2,
+    "url": "https://www.bilibili.com/video/BV1XSHDzqE2h/?p=2"
+  },
+  "frame": {
+    "timeSeconds": 2,
+    "width": 1920,
+    "height": 1080,
+    "measurement": "编号静态地图上的白色标记中心；人工从960×540预览量取后乘2，约2–4px测量误差"
+  },
+  "orientation": "north-up",
+  "mapLayer": "Teyvat/surface",
+  "maxResidualPixels": 8,
+  "reference": {
+    "repository": "babalae/better-genshin-impact",
+    "ref": "0.66.0",
+    "path": "BetterGenshinImpact/GameTask/AutoTrackPath/Assets/tp.json",
+    "dataVersion": "d8ab29ce843fe7f2a41aa63458fd020a9da130ff",
+    "sha256": "e5060e56ba27ec31d2dc89afc9262914cf6682774dea3a3587d421c213665149",
+    "axesSource": "https://github.com/babalae/better-genshin-impact/blob/0.66.0/BetterGenshinImpact/GameTask/AutoTrackPath/Model/GiWorldPosition.cs",
+    "axesSourceBlobSha": "bb1611580bbd032abc10e78769434ccbc08cab1a"
+  },
+  "points": [
+    {
+      "videoPointNumber": 1,
+      "tpId": 1681,
+      "type": "TeleportWaypoint",
+      "name": "传送锚点",
+      "areas": [
+        "伦波岛",
+        "那夏镇"
+      ],
+      "worldPosition": [
+        1425.7,
+        204.3502,
+        9364.397
+      ],
+      "pixel": {
+        "x": 1432,
+        "y": 912
+      },
+      "control": true
+    },
+    {
+      "videoPointNumber": 2,
+      "tpId": 1730,
+      "type": "TeleportWaypoint",
+      "name": "传送锚点",
+      "areas": [
+        "伦波岛",
+        "那夏镇"
+      ],
+      "worldPosition": [
+        1661.607,
+        228.067,
+        9452.11
+      ],
+      "pixel": {
+        "x": 1300,
+        "y": 564
+      },
+      "control": false
+    },
+    {
+      "videoPointNumber": 3,
+      "tpId": 1516,
+      "type": "Goddess",
+      "name": "新月神像",
+      "areas": [
+        "伦波岛"
+      ],
+      "worldPosition": [
+        1731.14,
+        226.0192,
+        9496.254
+      ],
+      "pixel": {
+        "x": 1234,
+        "y": 460
+      },
+      "control": true
+    },
+    {
+      "videoPointNumber": 4,
+      "tpId": 1682,
+      "type": "TeleportWaypoint",
+      "name": "传送锚点",
+      "areas": [
+        "伦波岛",
+        "那夏镇"
+      ],
+      "worldPosition": [
+        1628.45,
+        304.981,
+        9528.84
+      ],
+      "pixel": {
+        "x": 1184,
+        "y": 616
+      },
+      "control": false
+    },
+    {
+      "videoPointNumber": 5,
+      "tpId": 1736,
+      "type": "TeleportWaypoint",
+      "name": "传送锚点",
+      "areas": [
+        "伦波岛"
+      ],
+      "worldPosition": [
+        1729.82,
+        206.6315,
+        9658.44
+      ],
+      "pixel": {
+        "x": 990,
+        "y": 460
+      },
+      "control": false
+    },
+    {
+      "videoPointNumber": 6,
+      "tpId": 1726,
+      "type": "TeleportWaypoint",
+      "name": "传送锚点",
+      "areas": [
+        "伦波岛",
+        "北方训练场"
+      ],
+      "worldPosition": [
+        1808.961,
+        256.4443,
+        9728.011
+      ],
+      "pixel": {
+        "x": 888,
+        "y": 340
+      },
+      "control": false
+    },
+    {
+      "videoPointNumber": 7,
+      "tpId": 1727,
+      "type": "TeleportWaypoint",
+      "name": "传送锚点",
+      "areas": [
+        "伦波岛",
+        "北方训练场"
+      ],
+      "worldPosition": [
+        1717.405,
+        261.1723,
+        9873.979
+      ],
+      "pixel": {
+        "x": 670,
+        "y": 484
+      },
+      "control": false
+    },
+    {
+      "videoPointNumber": 8,
+      "tpId": 1719,
+      "type": "TeleportWaypoint",
+      "name": "传送锚点",
+      "areas": [
+        "伦波岛",
+        "叮铃哐啷蛋卷工坊"
+      ],
+      "worldPosition": [
+        1538.585,
+        204.326,
+        10021.3
+      ],
+      "pixel": {
+        "x": 448,
+        "y": 750
+      },
+      "control": false
+    },
+    {
+      "videoPointNumber": 9,
+      "tpId": 1690,
+      "type": "MasteryDomain",
+      "name": "无光的深都",
+      "areas": [
+        "伦波岛"
+      ],
+      "worldPosition": [
+        1828.78,
+        203.31,
+        9971.47
+      ],
+      "pixel": {
+        "x": 522,
+        "y": 316
+      },
+      "control": true
+    },
+    {
+      "videoPointNumber": 10,
+      "tpId": 1728,
+      "type": "TeleportWaypoint",
+      "name": "传送锚点",
+      "areas": [
+        "伦波岛"
+      ],
+      "worldPosition": [
+        1912.69,
+        201.1212,
+        9745.46
+      ],
+      "pixel": {
+        "x": 862,
+        "y": 188
+      },
+      "control": false
+    }
+  ]
+}

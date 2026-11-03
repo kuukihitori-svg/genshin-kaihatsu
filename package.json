@@ -4,7 +4,17 @@
   "private": true,
   "description": "Lightweight task, combat trigger and chest rule sandbox",
   "scripts": {
-    "test": "node sandbox/test-world.cjs"
+    "test": "node sandbox/test-world.cjs",
+    "build": "node sandbox/build.cjs",
+    "start": "python3 -m http.server 8000 --bind 0.0.0.0 --directory sandbox",
+    "test:browser": "node sandbox/test-browser.cjs",
+    "test:video": "python3 tools/test_video_study.py",
+    "test:study-browser": "node video-study/test-browser.cjs",
+    "study": "python3 tools/video_study.py",
+    "build:bettergi": "python3 tools/build_open_map.py",
+    "test:bettergi": "node bettergi/test-runner.cjs",
+    "build:campaign": "python3 tools/build_campaign.py",
+    "test:campaign": "python3 tools/test_campaign.py && node bettergi/test-campaign.cjs"
   },
   "engines": {
     "node": ">=18"

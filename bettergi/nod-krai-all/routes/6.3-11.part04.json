@@ -1,0 +1,52 @@
+{
+  "info": {
+    "name": "6.3-11 逐浪野（视频恢复，未实机验收）",
+    "type": "collect",
+    "bgi_version": "0.66.0",
+    "map_name": "Teyvat"
+  },
+  "positions": [
+    {
+      "x": 9767.873,
+      "y": 5524.334,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9769.298,
+      "y": 5529.205,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9770.49,
+      "y": 5534.452,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9771.359,
+      "y": 5539.869,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9773.045,
+      "y": 5545.61,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9773.15,
+      "y": 5545.655,
+      "move_mode": "walk",
+      "type": "target",
+      "action": ""
+    }
+  ]
+}

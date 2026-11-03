@@ -1,0 +1,122 @@
+{
+  "info": {
+    "name": "6.3-29 烟硌山峰（视频恢复，未实机验收）",
+    "type": "collect",
+    "bgi_version": "0.66.0",
+    "map_name": "Teyvat"
+  },
+  "positions": [
+    {
+      "x": 9700.332,
+      "y": 6229.969,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9697.835,
+      "y": 6230.602,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9691.987,
+      "y": 6231.559,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9686.253,
+      "y": 6232.758,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9682.92,
+      "y": 6233.319,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9677.751,
+      "y": 6234.689,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9673.316,
+      "y": 6236.924,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9668.959,
+      "y": 6238.746,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9663.99,
+      "y": 6239.675,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9658.853,
+      "y": 6240.485,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9653.569,
+      "y": 6241.377,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9648.842,
+      "y": 6240.523,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9644.03,
+      "y": 6241.228,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9639.13,
+      "y": 6242.476,
+      "move_mode": "fly",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9635.681,
+      "y": 6243.241,
+      "move_mode": "fly",
+      "type": "target",
+      "action": "stop_flying"
+    },
+    {
+      "x": 9634.364,
+      "y": 6243.471,
+      "move_mode": "walk",
+      "type": "target",
+      "action": ""
+    }
+  ]
+}

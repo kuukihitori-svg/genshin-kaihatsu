@@ -1,0 +1,59 @@
+{
+  "info": {
+    "name": "6.3-29 烟硌山峰（视频恢复，未实机验收）",
+    "type": "collect",
+    "bgi_version": "0.66.0",
+    "map_name": "Teyvat"
+  },
+  "positions": [
+    {
+      "x": 9779.622,
+      "y": 6220.09,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9773.776,
+      "y": 6220.699,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9768.198,
+      "y": 6221.283,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9763.566,
+      "y": 6221.756,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9759.621,
+      "y": 6222.055,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9753.95,
+      "y": 6222.605,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9748.883,
+      "y": 6223.002,
+      "move_mode": "walk",
+      "type": "target",
+      "action": ""
+    }
+  ]
+}

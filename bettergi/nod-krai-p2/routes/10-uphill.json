@@ -1,0 +1,87 @@
+{
+  "info": {
+    "name": "返回6号→上坡至崖边（视频恢复，待实机验收）",
+    "type": "collect",
+    "bgi_version": "0.66.0",
+    "map_name": "Teyvat"
+  },
+  "positions": [
+    {
+      "x": 9714.651,
+      "y": 1807.059,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9715.377,
+      "y": 1811.958,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9716.489,
+      "y": 1817.339,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9717.356,
+      "y": 1820.749,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9718.47,
+      "y": 1825.742,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9719.162,
+      "y": 1829.333,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9719.722,
+      "y": 1834.709,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9720.738,
+      "y": 1840.083,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9721.848,
+      "y": 1844.07,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9723.518,
+      "y": 1849.271,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9724.961,
+      "y": 1854.207,
+      "move_mode": "walk",
+      "type": "target",
+      "action": ""
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "info": {
+    "name": "返回6号→上坡至崖边（视频恢复，待实机验收）",
+    "type": "collect",
+    "bgi_version": "0.66.0",
+    "map_name": "Teyvat"
+  },
+  "positions": [
+    {
+      "x": 9719.722,
+      "y": 1834.709,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9720.738,
+      "y": 1840.083,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9721.848,
+      "y": 1844.07,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9723.518,
+      "y": 1849.271,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9724.961,
+      "y": 1854.207,
+      "move_mode": "walk",
+      "type": "target",
+      "action": ""
+    }
+  ]
+}

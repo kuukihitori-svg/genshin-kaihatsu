@@ -1,0 +1,52 @@
+{
+  "info": {
+    "name": "6.3-06 虚海望（视频恢复，未实机验收）",
+    "type": "collect",
+    "bgi_version": "0.66.0",
+    "map_name": "Teyvat"
+  },
+  "positions": [
+    {
+      "x": 9550.391,
+      "y": 5393.119,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9550.949,
+      "y": 5398.346,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9551.584,
+      "y": 5404.249,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9552.111,
+      "y": 5409.882,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9552.833,
+      "y": 5414.558,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9553.514,
+      "y": 5418.493,
+      "move_mode": "walk",
+      "type": "target",
+      "action": ""
+    }
+  ]
+}

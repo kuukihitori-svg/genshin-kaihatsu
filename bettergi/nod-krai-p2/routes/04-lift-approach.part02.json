@@ -1,0 +1,66 @@
+{
+  "info": {
+    "name": "2号锚点→商店右侧→升降台（视频恢复，待实机验收）",
+    "type": "collect",
+    "bgi_version": "0.66.0",
+    "map_name": "Teyvat"
+  },
+  "positions": [
+    {
+      "x": 9480.542,
+      "y": 1643.02,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9481.115,
+      "y": 1639.248,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9482.222,
+      "y": 1634.323,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9483.421,
+      "y": 1631.059,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9485.453,
+      "y": 1626.016,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9486.686,
+      "y": 1620.608,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9488.593,
+      "y": 1617.576,
+      "move_mode": "walk",
+      "type": "path",
+      "action": ""
+    },
+    {
+      "x": 9490.335,
+      "y": 1614.336,
+      "move_mode": "walk",
+      "type": "target",
+      "action": ""
+    }
+  ]
+}

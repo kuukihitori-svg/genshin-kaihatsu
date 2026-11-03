@@ -1,0 +1,20 @@
+{
+  "manifest_version": 1,
+  "name": "挪德卡莱分区开图（开发版，尚未完成全图）",
+  "version": "0.3.0",
+  "bgi_version": "0.66.0",
+  "description": "145个原生点位清单，部分分区实验路线。默认仅生成覆盖报告；世界任务、月球机关等缺失模块会停止，不会记作完成。",
+  "authors": [
+    {
+      "name": "kuukihitori-svg",
+      "link": "https://github.com/kuukihitori-svg/genshin-kaihatsu"
+    }
+  ],
+  "settings_ui": "settings.json",
+  "main": "main.js",
+  "saved_files": [
+    "state.json",
+    "coverage-report.json",
+    "logs/*"
+  ]
+}

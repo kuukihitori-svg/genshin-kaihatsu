@@ -278,4 +278,17 @@ test("browser UMD export works without require or dependencies", () => {
     assert.equal(world.dispatch({ type: "move", x: 54, y: 44 }).ok, true);
 });
 
+test("unsupported fields and unadapted coordinates fail closed", () => {
+    for (const mutate of [
+        s => { s.chest.unlockCondition = {type: "script"}; },
+        s => { s.quest.steps[0].condition.extra = true; },
+        s => { s.combat.criticalChance = 1; },
+        s => { s.provenance.coordinateSystem = "game-map"; },
+        s => { delete s.provenance.mapLayer; }
+    ]) {
+        const invalid = clone(scene); mutate(invalid);
+        assert.throws(() => new World(invalid), /场景无效/);
+    }
+});
+
 process.stdout.write("\n" + passed + " tests passed. No game process or real input was used.\n");

@@ -1,0 +1,4307 @@
+{
+  "schemaVersion": 1,
+  "scope": "All native 挪德卡莱 points in BetterGI 0.66.0, including MoonCanon and meeting points",
+  "status": "inventory_and_evidence_collection",
+  "source": {
+    "url": "https://github.com/babalae/better-genshin-impact/blob/0.66.0/BetterGenshinImpact/GameTask/AutoTrackPath/Assets/tp.json",
+    "gitBlobSha": "f0cc04464dfa28511b383ada32a1422cb665ceb8",
+    "sha256": "e5060e56ba27ec31d2dc89afc9262914cf6682774dea3a3587d421c213665149",
+    "nativeDataVersion": "d8ab29ce843fe7f2a41aa63458fd020a9da130ff"
+  },
+  "counts": {
+    "total": 145,
+    "regions": 10,
+    "byKind": {
+      "BlessDomain": 2,
+      "ForgeryDomain": 1,
+      "Goddess": 7,
+      "MasteryDomain": 1,
+      "NodKraiMeetingPoint": 8,
+      "TeleportWaypoint": 125,
+      "TrounceDomain": 1
+    }
+  },
+  "regions": [
+    {
+      "id": "伦波岛",
+      "mapName": "Teyvat",
+      "introducedIn": "6.0",
+      "targetIds": [
+        "Teyvat:1516",
+        "Teyvat:1579",
+        "Teyvat:1580",
+        "Teyvat:1581",
+        "Teyvat:1582",
+        "Teyvat:1583",
+        "Teyvat:1584",
+        "Teyvat:1585",
+        "Teyvat:1586",
+        "Teyvat:1681",
+        "Teyvat:1682",
+        "Teyvat:1690",
+        "Teyvat:1710",
+        "Teyvat:1712",
+        "Teyvat:1719",
+        "Teyvat:1726",
+        "Teyvat:1727",
+        "Teyvat:1728",
+        "Teyvat:1729",
+        "Teyvat:1730",
+        "Teyvat:1731",
+        "Teyvat:1732",
+        "Teyvat:1733",
+        "Teyvat:1735",
+        "Teyvat:1736"
+      ],
+      "coverage": {
+        "total": 25,
+        "implemented": 0,
+        "gameValidated": 0
+      }
+    },
+    {
+      "id": "希汐岛",
+      "mapName": "Teyvat",
+      "introducedIn": "6.0",
+      "targetIds": [
+        "Teyvat:1517",
+        "Teyvat:1545",
+        "Teyvat:1546",
+        "Teyvat:1547",
+        "Teyvat:1548",
+        "Teyvat:1549",
+        "Teyvat:1565",
+        "Teyvat:1571",
+        "Teyvat:1572",
+        "Teyvat:1694",
+        "Teyvat:1709",
+        "Teyvat:1724",
+        "Teyvat:1725"
+      ],
+      "coverage": {
+        "total": 13,
+        "implemented": 0,
+        "gameValidated": 0
+      }
+    },
+    {
+      "id": "帕哈岛",
+      "mapName": "Teyvat",
+      "introducedIn": "6.0",
+      "targetIds": [
+        "Teyvat:1515",
+        "Teyvat:1555",
+        "Teyvat:1556",
+        "Teyvat:1557",
+        "Teyvat:1558",
+        "Teyvat:1559",
+        "Teyvat:1560",
+        "Teyvat:1561",
+        "Teyvat:1562",
+        "Teyvat:1563",
+        "Teyvat:1568",
+        "Teyvat:1578",
+        "Teyvat:1587",
+        "Teyvat:1588",
+        "Teyvat:1589",
+        "Teyvat:1590",
+        "Teyvat:1692",
+        "Teyvat:1708",
+        "Teyvat:1734",
+        "Teyvat:1866"
+      ],
+      "coverage": {
+        "total": 20,
+        "implemented": 0,
+        "gameValidated": 0
+      }
+    },
+    {
+      "id": "虚海望",
+      "mapName": "Teyvat",
+      "introducedIn": "6.3",
+      "targetIds": [
+        "Teyvat:1613",
+        "Teyvat:1665",
+        "Teyvat:1666",
+        "Teyvat:1667",
+        "Teyvat:1668",
+        "Teyvat:1669",
+        "Teyvat:1670",
+        "Teyvat:1749",
+        "Teyvat:1803",
+        "Teyvat:1831",
+        "Teyvat:1954"
+      ],
+      "coverage": {
+        "total": 11,
+        "implemented": 0,
+        "gameValidated": 0
+      }
+    },
+    {
+      "id": "逐浪野",
+      "mapName": "Teyvat",
+      "introducedIn": "6.3",
+      "targetIds": [
+        "Teyvat:1614",
+        "Teyvat:1671",
+        "Teyvat:1672",
+        "Teyvat:1673",
+        "Teyvat:1675",
+        "Teyvat:1679",
+        "Teyvat:1698",
+        "Teyvat:1707",
+        "Teyvat:1748",
+        "Teyvat:1829",
+        "Teyvat:1830",
+        "Teyvat:1873",
+        "Teyvat:1956",
+        "Teyvat:1957",
+        "Teyvat:1960"
+      ],
+      "coverage": {
+        "total": 15,
+        "implemented": 0,
+        "gameValidated": 0
+      }
+    },
+    {
+      "id": "烟硌山峰",
+      "mapName": "Teyvat",
+      "introducedIn": "6.3",
+      "targetIds": [
+        "Teyvat:1615",
+        "Teyvat:1674",
+        "Teyvat:1676",
+        "Teyvat:1677",
+        "Teyvat:1678",
+        "Teyvat:1680",
+        "Teyvat:1742",
+        "Teyvat:1747",
+        "Teyvat:1811",
+        "Teyvat:1919",
+        "Teyvat:1953"
+      ],
+      "coverage": {
+        "total": 11,
+        "implemented": 0,
+        "gameValidated": 0
+      }
+    },
+    {
+      "id": "杜南纳深坑",
+      "mapName": "Teyvat",
+      "introducedIn": "6.7",
+      "targetIds": [
+        "Teyvat:1752",
+        "Teyvat:1770",
+        "Teyvat:1771",
+        "Teyvat:1772",
+        "Teyvat:1886",
+        "Teyvat:2155"
+      ],
+      "coverage": {
+        "total": 6,
+        "implemented": 0,
+        "gameValidated": 0
+      }
+    },
+    {
+      "id": "月之高地",
+      "mapName": "MoonCanon",
+      "introducedIn": "6.7",
+      "targetIds": [
+        "MoonCanon:2",
+        "MoonCanon:3",
+        "MoonCanon:4",
+        "MoonCanon:5",
+        "MoonCanon:6",
+        "MoonCanon:7",
+        "MoonCanon:8",
+        "MoonCanon:9",
+        "MoonCanon:11",
+        "MoonCanon:14",
+        "MoonCanon:15",
+        "MoonCanon:16",
+        "MoonCanon:17",
+        "MoonCanon:20",
+        "MoonCanon:23",
+        "MoonCanon:27",
+        "MoonCanon:28",
+        "MoonCanon:29",
+        "MoonCanon:30",
+        "MoonCanon:31",
+        "MoonCanon:36",
+        "MoonCanon:37",
+        "MoonCanon:45",
+        "MoonCanon:46",
+        "MoonCanon:47",
+        "MoonCanon:48",
+        "MoonCanon:49",
+        "MoonCanon:54",
+        "MoonCanon:56",
+        "MoonCanon:57"
+      ],
+      "coverage": {
+        "total": 30,
+        "implemented": 0,
+        "gameValidated": 0
+      }
+    },
+    {
+      "id": "月荡海",
+      "mapName": "MoonCanon",
+      "introducedIn": "6.7",
+      "targetIds": [
+        "MoonCanon:18",
+        "MoonCanon:19",
+        "MoonCanon:34",
+        "MoonCanon:39",
+        "MoonCanon:43",
+        "MoonCanon:50",
+        "MoonCanon:55",
+        "MoonCanon:58",
+        "MoonCanon:62"
+      ],
+      "coverage": {
+        "total": 9,
+        "implemented": 0,
+        "gameValidated": 0
+      }
+    },
+    {
+      "id": "月之暗面",
+      "mapName": "MoonCanon",
+      "introducedIn": "6.7",
+      "targetIds": [
+        "MoonCanon:24",
+        "MoonCanon:25",
+        "MoonCanon:32",
+        "MoonCanon:33",
+        "MoonCanon:51"
+      ],
+      "coverage": {
+        "total": 5,
+        "implemented": 0,
+        "gameValidated": 0
+      }
+    }
+  ],
+  "targets": [
+    {
+      "id": "Teyvat:1515",
+      "nativeId": 1515,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "新月神像",
+      "kind": "Goddess",
+      "areas": [
+        "帕哈岛",
+        "绯沙盐沼"
+      ],
+      "region": "帕哈岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9430.01,
+        "y": 3043.37,
+        "height": 206.43
+      },
+      "arrival": {
+        "x": 9426.417,
+        "y": 3051.805,
+        "height": 207.66693
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1516",
+      "nativeId": 1516,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "新月神像",
+      "kind": "Goddess",
+      "areas": [
+        "伦波岛"
+      ],
+      "region": "伦波岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9496.254,
+        "y": 1731.14,
+        "height": 226.0192
+      },
+      "arrival": {
+        "x": 9485.894,
+        "y": 1738.8058,
+        "height": 226
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1517",
+      "nativeId": 1517,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "新月神像",
+      "kind": "Goddess",
+      "areas": [
+        "希汐岛"
+      ],
+      "region": "希汐岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 10407.87,
+        "y": 1652.94,
+        "height": 221.11
+      },
+      "arrival": {
+        "x": 10416.74,
+        "y": 1657.698,
+        "height": 222.117
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1545",
+      "nativeId": 1545,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "希汐岛",
+        "霜月之坊"
+      ],
+      "region": "希汐岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 10385.63,
+        "y": 1855.08,
+        "height": 238.0072
+      },
+      "arrival": {
+        "x": 10391.68,
+        "y": 1854.637,
+        "height": 236.456
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1546",
+      "nativeId": 1546,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "希汐岛",
+        "沐光之台"
+      ],
+      "region": "希汐岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 10526.08,
+        "y": 1919.26,
+        "height": 235.626
+      },
+      "arrival": {
+        "x": 10524.88,
+        "y": 1932.039,
+        "height": 236.706
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1547",
+      "nativeId": 1547,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "希汐岛",
+        "守誓者的圣所"
+      ],
+      "region": "希汐岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 10756.4,
+        "y": 2054.931,
+        "height": 303.51
+      },
+      "arrival": {
+        "x": 10754.36,
+        "y": 2061.511,
+        "height": 302.136
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1548",
+      "nativeId": 1548,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "希汐岛",
+        "雷图礁"
+      ],
+      "region": "希汐岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 10960.44,
+        "y": 1692.412,
+        "height": 202.0686
+      },
+      "arrival": {
+        "x": 10973.54,
+        "y": 1682.762,
+        "height": 201.991
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1549",
+      "nativeId": 1549,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "希汐岛"
+      ],
+      "region": "希汐岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 10552.35,
+        "y": 1782.91,
+        "height": 205.298
+      },
+      "arrival": {
+        "x": 10553.25,
+        "y": 1794.11,
+        "height": 202.437
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1555",
+      "nativeId": 1555,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "帕哈岛",
+        "月矩力试验设计局"
+      ],
+      "region": "帕哈岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9551.998,
+        "y": 3090.347,
+        "height": 205.245
+      },
+      "arrival": {
+        "x": 9551,
+        "y": 3105,
+        "height": 205.3
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1556",
+      "nativeId": 1556,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "帕哈岛",
+        "月矩力试验设计局"
+      ],
+      "region": "帕哈岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9704.494,
+        "y": 3130.644,
+        "height": 203.5946
+      },
+      "arrival": {
+        "x": 9701.8,
+        "y": 3144.8,
+        "height": 203.1
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1557",
+      "nativeId": 1557,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "帕哈岛",
+        "南港"
+      ],
+      "region": "帕哈岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9822.223,
+        "y": 3025.407,
+        "height": 203.636
+      },
+      "arrival": {
+        "x": 9825.504,
+        "y": 3032.911,
+        "height": 204
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1558",
+      "nativeId": 1558,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "帕哈岛",
+        "南港"
+      ],
+      "region": "帕哈岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9899.796,
+        "y": 2828.321,
+        "height": 201.4488
+      },
+      "arrival": {
+        "x": 9900,
+        "y": 2833,
+        "height": 201.8
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1559",
+      "nativeId": 1559,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "帕哈岛",
+        "月矩力试验设计局"
+      ],
+      "region": "帕哈岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 10107.66,
+        "y": 3140.14,
+        "height": 203.104
+      },
+      "arrival": {
+        "x": 10103.243,
+        "y": 3142.518,
+        "height": 204.02625
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1560",
+      "nativeId": 1560,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "帕哈岛",
+        "月矩力试验设计局"
+      ],
+      "region": "帕哈岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 10180.2,
+        "y": 3279.768,
+        "height": 153.01
+      },
+      "arrival": {
+        "x": 10170.7,
+        "y": 3269,
+        "height": 153.2
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1561",
+      "nativeId": 1561,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "帕哈岛",
+        "月矩力试验设计局"
+      ],
+      "region": "帕哈岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 10203.59,
+        "y": 3322.311,
+        "height": 93.29301
+      },
+      "arrival": {
+        "x": 10188,
+        "y": 3316,
+        "height": 93.5
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1562",
+      "nativeId": 1562,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "帕哈岛",
+        "月矩力试验设计局"
+      ],
+      "region": "帕哈岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9595.604,
+        "y": 3398.056,
+        "height": 231.0979
+      },
+      "arrival": {
+        "x": 9590.75,
+        "y": 3399.7437,
+        "height": 230.69937
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1563",
+      "nativeId": 1563,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "帕哈岛",
+        "北港"
+      ],
+      "region": "帕哈岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9873.603,
+        "y": 3595.183,
+        "height": 236.7222
+      },
+      "arrival": {
+        "x": 9874.753,
+        "y": 3589.517,
+        "height": 237.01862
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1565",
+      "nativeId": 1565,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "希汐岛",
+        "银月之庭"
+      ],
+      "region": "希汐岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 11163.35,
+        "y": 2016.75,
+        "height": 113.75
+      },
+      "arrival": {
+        "x": 11168.34,
+        "y": 2020.465,
+        "height": 112.693
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1568",
+      "nativeId": 1568,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "帕哈岛",
+        "绯沙盐沼"
+      ],
+      "region": "帕哈岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9309.71,
+        "y": 3544.39,
+        "height": 200.62
+      },
+      "arrival": {
+        "x": 9315.396,
+        "y": 3544.182,
+        "height": 200.111
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1571",
+      "nativeId": 1571,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "希汐岛",
+        "「蟹之主的宫殿」"
+      ],
+      "region": "希汐岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 10461.87,
+        "y": 1897.519,
+        "height": 139.4784
+      },
+      "arrival": {
+        "x": 10463.94,
+        "y": 1894.393,
+        "height": 140.214
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1572",
+      "nativeId": 1572,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "希汐岛"
+      ],
+      "region": "希汐岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 10792.44,
+        "y": 2277.52,
+        "height": 201.13
+      },
+      "arrival": {
+        "x": 10789,
+        "y": 2278,
+        "height": 201
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1578",
+      "nativeId": 1578,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "帕哈岛",
+        "月矩力试验设计局"
+      ],
+      "region": "帕哈岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9735.111,
+        "y": 3287.457,
+        "height": 379.5744
+      },
+      "arrival": {
+        "x": 9738.432,
+        "y": 3287.0889,
+        "height": 379.80457
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1579",
+      "nativeId": 1579,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "伦波岛",
+        "苔骨荒原"
+      ],
+      "region": "伦波岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9358.34,
+        "y": 1856.564,
+        "height": 238.9585
+      },
+      "arrival": {
+        "x": 9370.366,
+        "y": 1865.792,
+        "height": 238.077
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1580",
+      "nativeId": 1580,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "伦波岛",
+        "苔骨荒原"
+      ],
+      "region": "伦波岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9265.548,
+        "y": 2479.2,
+        "height": 195.8266
+      },
+      "arrival": {
+        "x": 9268.315,
+        "y": 2478.515,
+        "height": 195.386
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1581",
+      "nativeId": 1581,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "伦波岛",
+        "蓝珀湖"
+      ],
+      "region": "伦波岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9229.606,
+        "y": 2239.141,
+        "height": 267.8532
+      },
+      "arrival": {
+        "x": 9224.756,
+        "y": 2247.0317,
+        "height": 270.12338
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1582",
+      "nativeId": 1582,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "伦波岛",
+        "空寂走廊"
+      ],
+      "region": "伦波岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9187.729,
+        "y": 2846.734,
+        "height": 225.609
+      },
+      "arrival": {
+        "x": 9191.604,
+        "y": 2852.4631,
+        "height": 226.64731
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1583",
+      "nativeId": 1583,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "伦波岛"
+      ],
+      "region": "伦波岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9251.749,
+        "y": 2349.449,
+        "height": 212.5428
+      },
+      "arrival": {
+        "x": 9248.236,
+        "y": 2350.604,
+        "height": 213.524
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1584",
+      "nativeId": 1584,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "伦波岛",
+        "苔骨荒原"
+      ],
+      "region": "伦波岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9212.717,
+        "y": 2521.92,
+        "height": 340.584
+      },
+      "arrival": {
+        "x": 9208.158,
+        "y": 2526.63,
+        "height": 341.90985
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1585",
+      "nativeId": 1585,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "伦波岛",
+        "刻拉蒂之眼"
+      ],
+      "region": "伦波岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 8838.03,
+        "y": 2208.05,
+        "height": 204.19
+      },
+      "arrival": {
+        "x": 8834,
+        "y": 2204,
+        "height": 204
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1586",
+      "nativeId": 1586,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "伦波岛"
+      ],
+      "region": "伦波岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9012.594,
+        "y": 2137.506,
+        "height": -154.8541
+      },
+      "arrival": {
+        "x": 9021,
+        "y": 2137,
+        "height": -154
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1587",
+      "nativeId": 1587,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "帕哈岛",
+        "月矩力试验设计局"
+      ],
+      "region": "帕哈岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9911.894,
+        "y": 3132.753,
+        "height": 357.2729
+      },
+      "arrival": {
+        "x": 9905,
+        "y": 3132.5,
+        "height": 357.6
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1588",
+      "nativeId": 1588,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "帕哈岛",
+        "月矩力试验设计局"
+      ],
+      "region": "帕哈岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9842.378,
+        "y": 3206.805,
+        "height": 351.162
+      },
+      "arrival": {
+        "x": 9843.704,
+        "y": 3209.8215,
+        "height": 351.8063
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1589",
+      "nativeId": 1589,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "帕哈岛",
+        "月矩力试验设计局"
+      ],
+      "region": "帕哈岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9931.328,
+        "y": 3231.504,
+        "height": 377.61
+      },
+      "arrival": {
+        "x": 9929.026,
+        "y": 3230.0151,
+        "height": 377.85773
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1590",
+      "nativeId": 1590,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "帕哈岛",
+        "月矩力试验设计局"
+      ],
+      "region": "帕哈岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9951.46,
+        "y": 3346.093,
+        "height": 408.8349
+      },
+      "arrival": {
+        "x": 9958.545,
+        "y": 3342.93,
+        "height": 409.239
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1613",
+      "nativeId": 1613,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "新月神像",
+      "kind": "Goddess",
+      "areas": [
+        "虚海望"
+      ],
+      "region": "虚海望",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9633.44,
+        "y": 4974.03,
+        "height": 219.34
+      },
+      "arrival": {
+        "x": 9638.071,
+        "y": 4976.812,
+        "height": 218.37158
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1614",
+      "nativeId": 1614,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "新月神像",
+      "kind": "Goddess",
+      "areas": [
+        "逐浪野"
+      ],
+      "region": "逐浪野",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9664.909,
+        "y": 5565.878,
+        "height": 246.31
+      },
+      "arrival": {
+        "x": 9681.538,
+        "y": 5564.5205,
+        "height": 247.2711
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1615",
+      "nativeId": 1615,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "新月神像",
+      "kind": "Goddess",
+      "areas": [
+        "烟硌山峰"
+      ],
+      "region": "烟硌山峰",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9870.67,
+        "y": 6080.89,
+        "height": 223.07
+      },
+      "arrival": {
+        "x": 9870.319,
+        "y": 6076.124,
+        "height": 223.44057
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1665",
+      "nativeId": 1665,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "虚海望"
+      ],
+      "region": "虚海望",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9759.771,
+        "y": 4944.084,
+        "height": 203.43
+      },
+      "arrival": {
+        "x": 9758.903,
+        "y": 4946.8013,
+        "height": 203.67488
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1666",
+      "nativeId": 1666,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "虚海望",
+        "皮拉米达城"
+      ],
+      "region": "虚海望",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9452.989,
+        "y": 5232.729,
+        "height": 341.984
+      },
+      "arrival": {
+        "x": 9452.3,
+        "y": 5235.2485,
+        "height": 342.08243
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1667",
+      "nativeId": 1667,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "虚海望"
+      ],
+      "region": "虚海望",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9564.529,
+        "y": 5321,
+        "height": 243.214
+      },
+      "arrival": {
+        "x": 9562.006,
+        "y": 5322.2793,
+        "height": 243.42404
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1668",
+      "nativeId": 1668,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "虚海望",
+        "噩影泽地"
+      ],
+      "region": "虚海望",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9550.923,
+        "y": 5421.173,
+        "height": 233.674
+      },
+      "arrival": {
+        "x": 9547.103,
+        "y": 5417.4995,
+        "height": 235.23416
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1669",
+      "nativeId": 1669,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "虚海望",
+        "噩影泽地"
+      ],
+      "region": "虚海望",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9496.041,
+        "y": 5522.131,
+        "height": 212.5043
+      },
+      "arrival": {
+        "x": 9492.233,
+        "y": 5526.7075,
+        "height": 208.37251
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1670",
+      "nativeId": 1670,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "虚海望"
+      ],
+      "region": "虚海望",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9724.226,
+        "y": 5445.849,
+        "height": 252.4566
+      },
+      "arrival": {
+        "x": 9727.726,
+        "y": 5442.0386,
+        "height": 252.4
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1671",
+      "nativeId": 1671,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "逐浪野",
+        "厄布拉神柱"
+      ],
+      "region": "逐浪野",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 10056.84,
+        "y": 5630.542,
+        "height": 211.397
+      },
+      "arrival": {
+        "x": 10069.1,
+        "y": 5629.222,
+        "height": 212.235
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1672",
+      "nativeId": 1672,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "逐浪野",
+        "凯雷丝之翼"
+      ],
+      "region": "逐浪野",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 10275.25,
+        "y": 5759.933,
+        "height": 200.352
+      },
+      "arrival": {
+        "x": 10265.69,
+        "y": 5753.903,
+        "height": 200.51938
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1673",
+      "nativeId": 1673,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "逐浪野"
+      ],
+      "region": "逐浪野",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9541.175,
+        "y": 5863.657,
+        "height": 260.4117
+      },
+      "arrival": {
+        "x": 9541.722,
+        "y": 5868.8184,
+        "height": 260.82626
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1674",
+      "nativeId": 1674,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "烟硌山峰",
+        "特辖地研究所"
+      ],
+      "region": "烟硌山峰",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9548.759,
+        "y": 6262.288,
+        "height": 200.3076
+      },
+      "arrival": {
+        "x": 9545.525,
+        "y": 6260.5522,
+        "height": 200.52245
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1675",
+      "nativeId": 1675,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "逐浪野"
+      ],
+      "region": "逐浪野",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9777.187,
+        "y": 5811.407,
+        "height": 269.8461
+      },
+      "arrival": {
+        "x": 9775.385,
+        "y": 5817.818,
+        "height": 268.361
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1676",
+      "nativeId": 1676,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "烟硌山峰"
+      ],
+      "region": "烟硌山峰",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 10289.7,
+        "y": 6352.47,
+        "height": 224.434
+      },
+      "arrival": {
+        "x": 10286.954,
+        "y": 6356.9746,
+        "height": 224.50026
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1677",
+      "nativeId": 1677,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "烟硌山峰",
+        "苦壑崖"
+      ],
+      "region": "烟硌山峰",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9964.374,
+        "y": 6217.454,
+        "height": 228.875
+      },
+      "arrival": {
+        "x": 9961.27,
+        "y": 6220.651,
+        "height": 229.65024
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1678",
+      "nativeId": 1678,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "烟硌山峰",
+        "苦壑崖"
+      ],
+      "region": "烟硌山峰",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 10101.98,
+        "y": 6341.936,
+        "height": 241.0631
+      },
+      "arrival": {
+        "x": 10101.95,
+        "y": 6344.371,
+        "height": 241.132
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1679",
+      "nativeId": 1679,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "逐浪野"
+      ],
+      "region": "逐浪野",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9513.032,
+        "y": 5734.079,
+        "height": 220.2581
+      },
+      "arrival": {
+        "x": 9515.775,
+        "y": 5729.3506,
+        "height": 220.36047
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1680",
+      "nativeId": 1680,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "烟硌山峰"
+      ],
+      "region": "烟硌山峰",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9905.04,
+        "y": 5911.66,
+        "height": 241.4545
+      },
+      "arrival": {
+        "x": 9898.238,
+        "y": 5918.857,
+        "height": 241.389
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1681",
+      "nativeId": 1681,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "伦波岛",
+        "那夏镇"
+      ],
+      "region": "伦波岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9364.397,
+        "y": 1425.7,
+        "height": 204.3502
+      },
+      "arrival": {
+        "x": 9367.151,
+        "y": 1435.7632,
+        "height": 204.21
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1682",
+      "nativeId": 1682,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "伦波岛",
+        "那夏镇"
+      ],
+      "region": "伦波岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9528.84,
+        "y": 1628.45,
+        "height": 304.981
+      },
+      "arrival": {
+        "x": 9537.444,
+        "y": 1637.463,
+        "height": 306.27264
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1690",
+      "nativeId": 1690,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "无光的深都",
+      "kind": "MasteryDomain",
+      "areas": [
+        "伦波岛"
+      ],
+      "region": "伦波岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9971.47,
+        "y": 1828.78,
+        "height": 203.31
+      },
+      "arrival": {
+        "x": 9967.064,
+        "y": 1832.5421,
+        "height": 203.20871
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1692",
+      "nativeId": 1692,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "霜凝的机枢",
+      "kind": "BlessDomain",
+      "areas": [
+        "帕哈岛",
+        "绯沙盐沼"
+      ],
+      "region": "帕哈岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9381.51,
+        "y": 3153.57,
+        "height": 205.12
+      },
+      "arrival": {
+        "x": 9375.38,
+        "y": 3150.8877,
+        "height": 204.82042
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1694",
+      "nativeId": 1694,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "失落的月庭",
+      "kind": "ForgeryDomain",
+      "areas": [
+        "希汐岛",
+        "守誓者的圣所"
+      ],
+      "region": "希汐岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 10823.05,
+        "y": 1940.65,
+        "height": 209.76
+      },
+      "arrival": {
+        "x": 10828.352,
+        "y": 1936.386,
+        "height": 209.73271
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1698",
+      "nativeId": 1698,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "逐浪野",
+        "「末日后的乐园」"
+      ],
+      "region": "逐浪野",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9777.647,
+        "y": 5341.135,
+        "height": 8.744677
+      },
+      "arrival": {
+        "x": 9777.236,
+        "y": 5337.3174,
+        "height": 7.9476347
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1707",
+      "nativeId": 1707,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "逐浪野"
+      ],
+      "region": "逐浪野",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9666.249,
+        "y": 5696.751,
+        "height": 198.6516
+      },
+      "arrival": {
+        "x": 9671.311,
+        "y": 5693.0723,
+        "height": 198.42331
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1708",
+      "nativeId": 1708,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "「聚所·终夜长茔」",
+      "kind": "NodKraiMeetingPoint",
+      "areas": [
+        "帕哈岛",
+        "终夜长茔"
+      ],
+      "region": "帕哈岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9184.354,
+        "y": 3714.019,
+        "height": 236.0157
+      },
+      "arrival": {
+        "x": 9187.936,
+        "y": 3715.972,
+        "height": 234.26129
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1709",
+      "nativeId": 1709,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "「聚所·霜月之坊」",
+      "kind": "NodKraiMeetingPoint",
+      "areas": [
+        "希汐岛",
+        "霜月之坊"
+      ],
+      "region": "希汐岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 10364.25,
+        "y": 1818.278,
+        "height": 240.0823
+      },
+      "arrival": {
+        "x": 10362.527,
+        "y": 1814.7611,
+        "height": 240.21779
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1710",
+      "nativeId": 1710,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "「聚所·叮铃哐啷蛋卷工坊」",
+      "kind": "NodKraiMeetingPoint",
+      "areas": [
+        "伦波岛",
+        "叮铃哐啷蛋卷工坊"
+      ],
+      "region": "伦波岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9951.072,
+        "y": 1643.597,
+        "height": 204.868
+      },
+      "arrival": {
+        "x": 9955.294,
+        "y": 1640.9175,
+        "height": 204.97887
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1712",
+      "nativeId": 1712,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "伦波岛",
+        "蓝珀湖"
+      ],
+      "region": "伦波岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9129.06,
+        "y": 2252.358,
+        "height": 220.008
+      },
+      "arrival": {
+        "x": 9129,
+        "y": 2242,
+        "height": 219
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1719",
+      "nativeId": 1719,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "伦波岛",
+        "叮铃哐啷蛋卷工坊"
+      ],
+      "region": "伦波岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 10021.3,
+        "y": 1538.585,
+        "height": 204.326
+      },
+      "arrival": {
+        "x": 10018.34,
+        "y": 1539.379,
+        "height": 204.0539
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1724",
+      "nativeId": 1724,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "希汐岛",
+        "雷图礁"
+      ],
+      "region": "希汐岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 11062.55,
+        "y": 1589.31,
+        "height": 227.2817
+      },
+      "arrival": {
+        "x": 11060.908,
+        "y": 1592.6694,
+        "height": 227.2817
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1725",
+      "nativeId": 1725,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "希汐岛"
+      ],
+      "region": "希汐岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 10783.63,
+        "y": 1795.513,
+        "height": 200.783
+      },
+      "arrival": {
+        "x": 10781.35,
+        "y": 1794.053,
+        "height": 200.915
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1726",
+      "nativeId": 1726,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "伦波岛",
+        "北方训练场"
+      ],
+      "region": "伦波岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9728.011,
+        "y": 1808.961,
+        "height": 256.4443
+      },
+      "arrival": {
+        "x": 9711.327,
+        "y": 1804.26,
+        "height": 254.5
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1727",
+      "nativeId": 1727,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "伦波岛",
+        "北方训练场"
+      ],
+      "region": "伦波岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9873.979,
+        "y": 1717.405,
+        "height": 261.1723
+      },
+      "arrival": {
+        "x": 9885.505,
+        "y": 1718.958,
+        "height": 261.273
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1728",
+      "nativeId": 1728,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "伦波岛"
+      ],
+      "region": "伦波岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9745.46,
+        "y": 1912.69,
+        "height": 201.1212
+      },
+      "arrival": {
+        "x": 9746.342,
+        "y": 1916.9811,
+        "height": 201.1212
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1729",
+      "nativeId": 1729,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "伦波岛",
+        "星砂滩"
+      ],
+      "region": "伦波岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9559.167,
+        "y": 2133.635,
+        "height": 232.155
+      },
+      "arrival": {
+        "x": 9563.107,
+        "y": 2135.623,
+        "height": 231.836
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1730",
+      "nativeId": 1730,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "伦波岛",
+        "那夏镇"
+      ],
+      "region": "伦波岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9452.11,
+        "y": 1661.607,
+        "height": 228.067
+      },
+      "arrival": {
+        "x": 9458.039,
+        "y": 1660.775,
+        "height": 227.911
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1731",
+      "nativeId": 1731,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "伦波岛",
+        "苔骨荒原"
+      ],
+      "region": "伦波岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9354.734,
+        "y": 2109.239,
+        "height": 306.0217
+      },
+      "arrival": {
+        "x": 9351.935,
+        "y": 2104.426,
+        "height": 304.89
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1732",
+      "nativeId": 1732,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "伦波岛",
+        "蓝珀湖"
+      ],
+      "region": "伦波岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9095.593,
+        "y": 2298.685,
+        "height": 275.137
+      },
+      "arrival": {
+        "x": 9099.543,
+        "y": 2296.752,
+        "height": 274.281
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1733",
+      "nativeId": 1733,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "伦波岛"
+      ],
+      "region": "伦波岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 8954.35,
+        "y": 2504.698,
+        "height": 326.361
+      },
+      "arrival": {
+        "x": 8945.887,
+        "y": 2499.243,
+        "height": 325.926
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1734",
+      "nativeId": 1734,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "帕哈岛",
+        "绯沙盐沼"
+      ],
+      "region": "帕哈岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9203.098,
+        "y": 3305.727,
+        "height": 202.9635
+      },
+      "arrival": {
+        "x": 9204.655,
+        "y": 3302.4739,
+        "height": 203.26465
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1735",
+      "nativeId": 1735,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "伦波岛",
+        "苔骨荒原"
+      ],
+      "region": "伦波岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9220.759,
+        "y": 1902.998,
+        "height": 253.5184
+      },
+      "arrival": {
+        "x": 9222.424,
+        "y": 1899.539,
+        "height": 253.474
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1736",
+      "nativeId": 1736,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "伦波岛"
+      ],
+      "region": "伦波岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9658.44,
+        "y": 1729.82,
+        "height": 206.6315
+      },
+      "arrival": {
+        "x": 9657.726,
+        "y": 1725.224,
+        "height": 205.392
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1742",
+      "nativeId": 1742,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "烟硌山峰",
+        "靡穷深壑"
+      ],
+      "region": "烟硌山峰",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9903.156,
+        "y": 6380.936,
+        "height": -254.6875
+      },
+      "arrival": {
+        "x": 9900.887,
+        "y": 6381.8853,
+        "height": -254.70729
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1747",
+      "nativeId": 1747,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "「聚所·望崖营壁」",
+      "kind": "NodKraiMeetingPoint",
+      "areas": [
+        "烟硌山峰",
+        "望崖营壁"
+      ],
+      "region": "烟硌山峰",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9921.193,
+        "y": 6052.421,
+        "height": 231.8014
+      },
+      "arrival": {
+        "x": 9918.89,
+        "y": 6051.573,
+        "height": 231.7324
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1748",
+      "nativeId": 1748,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "「聚所·西风戍垒」",
+      "kind": "NodKraiMeetingPoint",
+      "areas": [
+        "逐浪野",
+        "西风戍垒"
+      ],
+      "region": "逐浪野",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9719.314,
+        "y": 5939.119,
+        "height": 288.9471
+      },
+      "arrival": {
+        "x": 9719.314,
+        "y": 5939.927,
+        "height": 289.0415
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1749",
+      "nativeId": 1749,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "「聚所·魔女的花园」",
+      "kind": "NodKraiMeetingPoint",
+      "areas": [
+        "虚海望",
+        "魔女的花园"
+      ],
+      "region": "虚海望",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9715.974,
+        "y": 5480.602,
+        "height": 195.4112
+      },
+      "arrival": {
+        "x": 9714.992,
+        "y": 5480.894,
+        "height": 195.58195
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1752",
+      "nativeId": 1752,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "新月神像",
+      "kind": "Goddess",
+      "areas": [
+        "杜南纳深坑",
+        "雾灵渚"
+      ],
+      "region": "杜南纳深坑",
+      "introducedIn": "6.7",
+      "position": {
+        "x": 8954.82,
+        "y": 5503.6,
+        "height": 200.18
+      },
+      "arrival": {
+        "x": 8960.807,
+        "y": 5503.615,
+        "height": 200.53369
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1770",
+      "nativeId": 1770,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "杜南纳深坑",
+        "杜南纳前进站"
+      ],
+      "region": "杜南纳深坑",
+      "introducedIn": "6.7",
+      "position": {
+        "x": 8476.53,
+        "y": 5648.06,
+        "height": 183.09
+      },
+      "arrival": {
+        "x": 8463.103,
+        "y": 5661.0815,
+        "height": 187.38628
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1771",
+      "nativeId": 1771,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "杜南纳深坑"
+      ],
+      "region": "杜南纳深坑",
+      "introducedIn": "6.7",
+      "position": {
+        "x": 8724.524,
+        "y": 5819.33,
+        "height": 72.319
+      },
+      "arrival": {
+        "x": 8732.813,
+        "y": 5796.165,
+        "height": 65.492
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1772",
+      "nativeId": 1772,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "杜南纳深坑"
+      ],
+      "region": "杜南纳深坑",
+      "introducedIn": "6.7",
+      "position": {
+        "x": 8672.942,
+        "y": 5657.411,
+        "height": -148.996
+      },
+      "arrival": {
+        "x": 8658.072,
+        "y": 5665.688,
+        "height": -150.169
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1803",
+      "nativeId": 1803,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "虚海望"
+      ],
+      "region": "虚海望",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9352.813,
+        "y": 5440.255,
+        "height": 201.442
+      },
+      "arrival": {
+        "x": 9351.525,
+        "y": 5442.8677,
+        "height": 201.57214
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1811",
+      "nativeId": 1811,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "月童的库藏",
+      "kind": "BlessDomain",
+      "areas": [
+        "烟硌山峰"
+      ],
+      "region": "烟硌山峰",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 10043.97,
+        "y": 5945.359,
+        "height": 200.3035
+      },
+      "arrival": {
+        "x": 10043.404,
+        "y": 5938.7,
+        "height": 200.6
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1829",
+      "nativeId": 1829,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "逐浪野"
+      ],
+      "region": "逐浪野",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9848.254,
+        "y": 5271.795,
+        "height": 200.2807
+      },
+      "arrival": {
+        "x": 9852.172,
+        "y": 5271.1567,
+        "height": 200.50378
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1830",
+      "nativeId": 1830,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "逐浪野"
+      ],
+      "region": "逐浪野",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 10030.25,
+        "y": 5480.807,
+        "height": 200.277
+      },
+      "arrival": {
+        "x": 10027.925,
+        "y": 5482.05,
+        "height": 200.3948
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1831",
+      "nativeId": 1831,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "虚海望"
+      ],
+      "region": "虚海望",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9552.812,
+        "y": 5156.021,
+        "height": 237.2479
+      },
+      "arrival": {
+        "x": 9554.542,
+        "y": 5153.0776,
+        "height": 237.16643
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1866",
+      "nativeId": 1866,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "帕哈岛"
+      ],
+      "region": "帕哈岛",
+      "introducedIn": "6.0",
+      "position": {
+        "x": 9479.851,
+        "y": 3353.61,
+        "height": 103.1261
+      },
+      "arrival": {
+        "x": 9487.761,
+        "y": 3348.585,
+        "height": 104
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1873",
+      "nativeId": 1873,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "逐浪野"
+      ],
+      "region": "逐浪野",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9702.766,
+        "y": 5677.237,
+        "height": 278.3242
+      },
+      "arrival": {
+        "x": 9707.631,
+        "y": 5674.04,
+        "height": 277.91226
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1886",
+      "nativeId": 1886,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "杜南纳深坑"
+      ],
+      "region": "杜南纳深坑",
+      "introducedIn": "6.7",
+      "position": {
+        "x": 9049.872,
+        "y": 5372.094,
+        "height": 200.752
+      },
+      "arrival": {
+        "x": 9066.096,
+        "y": 5364.4,
+        "height": 200.231
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1919",
+      "nativeId": 1919,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "赝月的研究所",
+      "kind": "TrounceDomain",
+      "areas": [
+        "烟硌山峰",
+        "特辖地研究所"
+      ],
+      "region": "烟硌山峰",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9532.071,
+        "y": 6394.153,
+        "height": 216.631
+      },
+      "arrival": {
+        "x": 9529.445,
+        "y": 6392.6514,
+        "height": 216.63
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1953",
+      "nativeId": 1953,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "烟硌山峰",
+        "苦壑崖"
+      ],
+      "region": "烟硌山峰",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9782.777,
+        "y": 6215.33,
+        "height": 294.522
+      },
+      "arrival": {
+        "x": 9780.7,
+        "y": 6213.2227,
+        "height": 294.6113
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1954",
+      "nativeId": 1954,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "虚海望",
+        "雷德·米勒的「伟大财宝」"
+      ],
+      "region": "虚海望",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9447.972,
+        "y": 5529.75,
+        "height": 90.282
+      },
+      "arrival": {
+        "x": 9451.202,
+        "y": 5531.3184,
+        "height": 90.18029
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1956",
+      "nativeId": 1956,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "逐浪野",
+        "厄布拉神柱"
+      ],
+      "region": "逐浪野",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9771.714,
+        "y": 5548.43,
+        "height": 232.418
+      },
+      "arrival": {
+        "x": 9774.191,
+        "y": 5539.8613,
+        "height": 237.36768
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1957",
+      "nativeId": 1957,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "逐浪野",
+        "厄布拉神柱"
+      ],
+      "region": "逐浪野",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9926.973,
+        "y": 5719.461,
+        "height": 222.838
+      },
+      "arrival": {
+        "x": 9920.595,
+        "y": 5728.6426,
+        "height": 221.1158
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:1960",
+      "nativeId": 1960,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "逐浪野",
+        "安瓦蒂尼尔湖"
+      ],
+      "region": "逐浪野",
+      "introducedIn": "6.3",
+      "position": {
+        "x": 9673.524,
+        "y": 6049.194,
+        "height": 282.8203
+      },
+      "arrival": {
+        "x": 9669.12,
+        "y": 6046.3574,
+        "height": 282.2899
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "Teyvat:2155",
+      "nativeId": 2155,
+      "mapName": "Teyvat",
+      "sceneId": 3,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "杜南纳深坑",
+        "杜南纳前进站"
+      ],
+      "region": "杜南纳深坑",
+      "introducedIn": "6.7",
+      "position": {
+        "x": 8381.681,
+        "y": 5737.902,
+        "height": -81.79146
+      },
+      "arrival": {
+        "x": 8378.32,
+        "y": 5735.649,
+        "height": -81.79146
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:2",
+      "nativeId": 2,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地",
+        "乌吉恩圈"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -1680.223,
+        "y": -907.226,
+        "height": 160.425
+      },
+      "arrival": {
+        "x": -1684.363,
+        "y": -901.413,
+        "height": 158.026
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:3",
+      "nativeId": 3,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地",
+        "乌吉恩圈"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -1561.802,
+        "y": -494.408,
+        "height": 133.052
+      },
+      "arrival": {
+        "x": -1562.4321,
+        "y": -511.45,
+        "height": 135.877
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:4",
+      "nativeId": 4,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地",
+        "乌吉恩圈"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -1381.282,
+        "y": -545.0283,
+        "height": 117.5827
+      },
+      "arrival": {
+        "x": -1383.2451,
+        "y": -552.01495,
+        "height": 117.88419
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:5",
+      "nativeId": 5,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地",
+        "乌吉恩圈"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -1738.738,
+        "y": -591.984,
+        "height": 121.15
+      },
+      "arrival": {
+        "x": -1738.2545,
+        "y": -587.8843,
+        "height": 121.20779
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:6",
+      "nativeId": 6,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地",
+        "伊比尼伯龙之眼"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -2761.796,
+        "y": -1678.318,
+        "height": 182.94
+      },
+      "arrival": {
+        "x": -2783.61,
+        "y": -1676.798,
+        "height": 194
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:7",
+      "nativeId": 7,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地",
+        "伊比尼伯龙之眼"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -2704.52,
+        "y": -1483.85,
+        "height": 67.49
+      },
+      "arrival": {
+        "x": -2693.9316,
+        "y": -1479.688,
+        "height": 67.16596
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:8",
+      "nativeId": 8,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地",
+        "伊比尼伯龙之眼"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -2387.106,
+        "y": -1587.151,
+        "height": 191.2832
+      },
+      "arrival": {
+        "x": -2389.5994,
+        "y": -1587.5383,
+        "height": 191.40216
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:9",
+      "nativeId": 9,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地",
+        "伊比尼伯龙之眼"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -2546.293,
+        "y": -1450.524,
+        "height": 367.3307
+      },
+      "arrival": {
+        "x": -2541.554,
+        "y": -1446.2823,
+        "height": 363.41806
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:11",
+      "nativeId": 11,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -1201.031,
+        "y": -2150.918,
+        "height": 159.113
+      },
+      "arrival": {
+        "x": -1202.3423,
+        "y": -2152.2654,
+        "height": 159.25966
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:14",
+      "nativeId": 14,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "「努尔寂石阵列」",
+      "kind": "NodKraiMeetingPoint",
+      "areas": [
+        "月之高地",
+        "努尔寂石阵列"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -3834.781,
+        "y": -406.2371,
+        "height": -96.1072
+      },
+      "arrival": {
+        "x": -3836.8784,
+        "y": -407.78897,
+        "height": -95.6409
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:15",
+      "nativeId": 15,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地",
+        "金屋"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": 751.644,
+        "y": -2598.697,
+        "height": 742.669
+      },
+      "arrival": {
+        "x": 754.01807,
+        "y": -2592.3032,
+        "height": 744.15546
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:16",
+      "nativeId": 16,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地",
+        "乌吉恩圈·动力引擎"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -1554.356,
+        "y": -280.676,
+        "height": -1273.723
+      },
+      "arrival": {
+        "x": -1561.6951,
+        "y": -284.0275,
+        "height": -1273.6338
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:17",
+      "nativeId": 17,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地",
+        "乌吉恩圈·动力引擎"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -1572.158,
+        "y": -390.299,
+        "height": -1438.287
+      },
+      "arrival": {
+        "x": -1561.7397,
+        "y": -382.77365,
+        "height": -1437.225
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:18",
+      "nativeId": 18,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月荡海"
+      ],
+      "region": "月荡海",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -209.442,
+        "y": 1171.739,
+        "height": 148.4582
+      },
+      "arrival": {
+        "x": -207.84953,
+        "y": 1165.8525,
+        "height": 149.4895
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:19",
+      "nativeId": 19,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月荡海"
+      ],
+      "region": "月荡海",
+      "introducedIn": "6.7",
+      "position": {
+        "x": 866.005,
+        "y": 1576.59,
+        "height": 60.483
+      },
+      "arrival": {
+        "x": 865.562,
+        "y": 1580.94,
+        "height": 60.567
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:20",
+      "nativeId": 20,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地",
+        "乌吉恩圈"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -1438.01,
+        "y": -413.66,
+        "height": 130.48
+      },
+      "arrival": {
+        "x": -1454.527,
+        "y": -404.358,
+        "height": 134.91
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:23",
+      "nativeId": 23,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地",
+        "旅者环形山"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -4261.34,
+        "y": -857.59,
+        "height": 76.90108
+      },
+      "arrival": {
+        "x": -4278.6455,
+        "y": -874.4471,
+        "height": 77.19083
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:24",
+      "nativeId": 24,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之暗面"
+      ],
+      "region": "月之暗面",
+      "introducedIn": "6.7",
+      "position": {
+        "x": 6243.457,
+        "y": -607.8207,
+        "height": -702.2398
+      },
+      "arrival": {
+        "x": 6270.6753,
+        "y": -617.3764,
+        "height": -694.6721
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:25",
+      "nativeId": 25,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之暗面"
+      ],
+      "region": "月之暗面",
+      "introducedIn": "6.7",
+      "position": {
+        "x": 6539.541,
+        "y": -621.2026,
+        "height": -676.826
+      },
+      "arrival": {
+        "x": 6542.8105,
+        "y": -617.3492,
+        "height": -677.93134
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:27",
+      "nativeId": 27,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -1795.281,
+        "y": -1300.526,
+        "height": 263.9683
+      },
+      "arrival": {
+        "x": -1791.022,
+        "y": -1286.2494,
+        "height": 264.54312
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:28",
+      "nativeId": 28,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地",
+        "古月风暴研究所"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -545.43,
+        "y": -914.09,
+        "height": 205.5181
+      },
+      "arrival": {
+        "x": -542.96686,
+        "y": -911.52826,
+        "height": 205.58943
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:29",
+      "nativeId": 29,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地",
+        "浮沤泊"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -1599.099,
+        "y": -2735.667,
+        "height": 223.9627
+      },
+      "arrival": {
+        "x": -1596,
+        "y": -2751,
+        "height": 224.5
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:30",
+      "nativeId": 30,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -1922.382,
+        "y": -323.0071,
+        "height": 207.4525
+      },
+      "arrival": {
+        "x": -1917.4686,
+        "y": -327.5283,
+        "height": 207.4525
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:31",
+      "nativeId": 31,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地",
+        "努尔寂石阵列"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -3565.381,
+        "y": -357.16,
+        "height": -59.34334
+      },
+      "arrival": {
+        "x": -3573.1013,
+        "y": -351.87506,
+        "height": -59.42359
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:32",
+      "nativeId": 32,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之暗面"
+      ],
+      "region": "月之暗面",
+      "introducedIn": "6.7",
+      "position": {
+        "x": 6676.561,
+        "y": -646.1582,
+        "height": -748.3265
+      },
+      "arrival": {
+        "x": 6674.111,
+        "y": -642.8653,
+        "height": -748.6155
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:33",
+      "nativeId": 33,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之暗面"
+      ],
+      "region": "月之暗面",
+      "introducedIn": "6.7",
+      "position": {
+        "x": 6767.785,
+        "y": -621.4679,
+        "height": -755.3699
+      },
+      "arrival": {
+        "x": 6769.1265,
+        "y": -615.7046,
+        "height": -755.1764
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:34",
+      "nativeId": 34,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月荡海"
+      ],
+      "region": "月荡海",
+      "introducedIn": "6.7",
+      "position": {
+        "x": 132.219,
+        "y": 1068.517,
+        "height": 104.5394
+      },
+      "arrival": {
+        "x": 134.231,
+        "y": 1063.242,
+        "height": 104.648
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:36",
+      "nativeId": 36,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地",
+        "星空生物捕捉站"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -1557.61,
+        "y": -684.03,
+        "height": 10314.49
+      },
+      "arrival": {
+        "x": -1568.318,
+        "y": -674.352,
+        "height": 10320.92
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:37",
+      "nativeId": 37,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地",
+        "玛歌的温室"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -1799.307,
+        "y": -777.2683,
+        "height": -377.7485
+      },
+      "arrival": {
+        "x": -1799.2155,
+        "y": -775.4494,
+        "height": -377.30283
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:39",
+      "nativeId": 39,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月荡海"
+      ],
+      "region": "月荡海",
+      "introducedIn": "6.7",
+      "position": {
+        "x": 506.94,
+        "y": 1597.392,
+        "height": 93.827
+      },
+      "arrival": {
+        "x": 505.604,
+        "y": 1592.443,
+        "height": 93.212
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:43",
+      "nativeId": 43,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月荡海"
+      ],
+      "region": "月荡海",
+      "introducedIn": "6.7",
+      "position": {
+        "x": 268.976,
+        "y": 745.456,
+        "height": 72.26
+      },
+      "arrival": {
+        "x": 269.41953,
+        "y": 753.55444,
+        "height": 69.75343
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:45",
+      "nativeId": 45,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地",
+        "乌吉恩圈"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -1494.02,
+        "y": -634.734,
+        "height": 184.156
+      },
+      "arrival": {
+        "x": -1489.801,
+        "y": -628.464,
+        "height": 183.997
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:46",
+      "nativeId": 46,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地",
+        "乌吉恩圈"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -1490.886,
+        "y": -821.592,
+        "height": 298.431
+      },
+      "arrival": {
+        "x": -1495.4,
+        "y": -814.779,
+        "height": 299.989
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:47",
+      "nativeId": 47,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -1730.424,
+        "y": -1058.013,
+        "height": 205.95
+      },
+      "arrival": {
+        "x": -1728.763,
+        "y": -1051.691,
+        "height": 206.018
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:48",
+      "nativeId": 48,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地",
+        "努尔寂石阵列"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -3936.214,
+        "y": -487.0964,
+        "height": -77.26614
+      },
+      "arrival": {
+        "x": -3933.8335,
+        "y": -490.01013,
+        "height": -77.21144
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:49",
+      "nativeId": 49,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -3949.309,
+        "y": -362.9645,
+        "height": -1572.21
+      },
+      "arrival": {
+        "x": -3955.8718,
+        "y": -362.177,
+        "height": -1572.1558
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:50",
+      "nativeId": 50,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月荡海"
+      ],
+      "region": "月荡海",
+      "introducedIn": "6.7",
+      "position": {
+        "x": 116.4327,
+        "y": 2210.074,
+        "height": 38.8684
+      },
+      "arrival": {
+        "x": 114.85799,
+        "y": 2214.442,
+        "height": 39.080933
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:51",
+      "nativeId": 51,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之暗面"
+      ],
+      "region": "月之暗面",
+      "introducedIn": "6.7",
+      "position": {
+        "x": 6828.348,
+        "y": -624.2809,
+        "height": -728.6885
+      },
+      "arrival": {
+        "x": 6830.457,
+        "y": -617.45654,
+        "height": -727.9049
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:54",
+      "nativeId": 54,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地",
+        "望月者号"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -1092.138,
+        "y": 291.8387,
+        "height": 9992.874
+      },
+      "arrival": {
+        "x": -1093.5582,
+        "y": 287.3174,
+        "height": 9992.803
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:55",
+      "nativeId": 55,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "「幕形态黑体物质笼实验室」",
+      "kind": "NodKraiMeetingPoint",
+      "areas": [
+        "月荡海",
+        "幕形态黑体物质笼实验室"
+      ],
+      "region": "月荡海",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -135.8397,
+        "y": 546.3867,
+        "height": 3.859995
+      },
+      "arrival": {
+        "x": -126.30746,
+        "y": 560.48865,
+        "height": 4
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:56",
+      "nativeId": 56,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地",
+        "乌吉恩圈"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -1741.74,
+        "y": -505.22,
+        "height": 195.2837
+      },
+      "arrival": {
+        "x": -1734.2859,
+        "y": -507.42352,
+        "height": 195.295
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:57",
+      "nativeId": 57,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月之高地"
+      ],
+      "region": "月之高地",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -1130.512,
+        "y": -2202.762,
+        "height": 157.9437
+      },
+      "arrival": {
+        "x": -1126.7357,
+        "y": -2196.6296,
+        "height": 158.14626
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:58",
+      "nativeId": 58,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月荡海"
+      ],
+      "region": "月荡海",
+      "introducedIn": "6.7",
+      "position": {
+        "x": 45.93871,
+        "y": 2283.616,
+        "height": 172.3553
+      },
+      "arrival": {
+        "x": 39.064865,
+        "y": 2284.5647,
+        "height": 170.52818
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    },
+    {
+      "id": "MoonCanon:62",
+      "nativeId": 62,
+      "mapName": "MoonCanon",
+      "sceneId": 102,
+      "name": "传送锚点",
+      "kind": "TeleportWaypoint",
+      "areas": [
+        "月荡海"
+      ],
+      "region": "月荡海",
+      "introducedIn": "6.7",
+      "position": {
+        "x": -371.9971,
+        "y": 1063.09,
+        "height": 109.97
+      },
+      "arrival": {
+        "x": -374.26016,
+        "y": 1069.8236,
+        "height": 110.75565
+      },
+      "routeStatus": "not_reviewed",
+      "routeId": null,
+      "prerequisites": [],
+      "notice": "Native point identity and coordinates only; no traversable path inferred."
+    }
+  ],
+  "rules": [
+    "A target coordinate does not establish a navigable route.",
+    "MoonCanon positions and Teyvat positions must never share a matcher or teleport map name.",
+    "Task prerequisites and mechanisms require timestamped video evidence.",
+    "Unknown or unreviewed steps cannot be counted as completed."
+  ]
+}
